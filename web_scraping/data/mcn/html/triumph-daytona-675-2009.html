@@ -1,0 +1,3119 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="//js-sec.indexww.com/ht/p/185605-155434007517315.js"></script>
+
+	
+<script>
+	window.pageStart = Date.now();
+	console.debug('Page Start');
+</script>
+
+<script>
+	var mcnConfig = {
+		debugMode: false,
+		cookieDomain: '.motorcyclenews.com',
+		galleryDesktopAdFrequency: 2,
+		galleryMobileAdFrequency: 5,
+		galleryMobileAdDuration: 2,
+		cmpProfileId: 5954,
+		privacyManagerId: 187767,
+		prebidReady: false
+	};
+</script>
+
+<script>
+	var coreJs = {
+		processDomReadyScripts: function() {
+			var chain = {
+				callbacks: coreJs.chainCompleteCallbacks,
+				queue: coreJs.domReadyScriptChain,
+				process: function() {
+					var self = this;
+					if (this.queue.length > 0) {
+						coreJs.injectScript(this.queue.shift(), true, function () {
+							self.process();
+						});
+					} else {
+						while (self.callbacks.length > 0) {
+							(self.callbacks.shift())();
+						}
+					}
+				}
+			}
+
+			chain.process();
+		},
+
+		isReady: false,
+		readyCallbacks: [],
+
+		injectScript: function (src, async, callback) {
+			var script = document.head.appendChild(document.createElement('script'));
+
+			if (typeof async !== 'undefined') {
+				script.async = async;
+			}
+
+			if (typeof callback === 'function') {
+				script.onload = function () {
+					script.onload = null;
+					callback();
+				};
+			}
+
+			script.src = src;
+			console.info('Init: Injected script "' + src + '" async=' + async);
+		},
+		
+		domReadyScriptChain: [
+			'/dist/_5-40-101/js/review.min.js'
+		],
+
+		chainCompleteCallbacks: [],
+		windowLoadCallbacks: []
+	};
+
+	coreJs.chainCompleteCallbacks.push(function () {
+		console.info('Init: Chain complete');
+		mcn.init();
+		coreJs.isReady = true;
+	});
+
+	coreJs.injectScript('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', true, function() {
+		console.info('Init: Injected jquery');
+		$(window).on('load', function () {
+			console.info('Init: Window loaded');
+			while (coreJs.windowLoadCallbacks.length > 0) {
+				(coreJs.windowLoadCallbacks.shift())();
+			}
+		});
+
+		$(document).ready(function () {
+			console.info('Init: Document ready');
+			coreJs.processDomReadyScripts();
+		});
+	});
+</script>
+	
+<script>
+	coreJs.windowLoadCallbacks.push(function () {
+		coreJs.injectScript("https://static.bauercdn.com/prebid/prebid4.14.0.js", true, function () {
+			console.info('Prebid: Script loaded');
+			if (window.mcnConfig.prebidReady) {
+				$(document).trigger('prebid.loaded');
+			} else {
+				window.mcnConfig.prebidReady = true;
+			}
+		});
+	});
+</script>
+
+	<title>TRIUMPH DAYTONA 675 (2009-2011) Review, Specs &amp; Prices | MCN</title>
+	<link rel="shortcut icon" href="/dist/_5-40-101/images/favicon.ico" />
+	
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="The Triumph Daytona 675 is a very viable alternative to the Japanese 600&#x27;s - MCN reviews the TRIUMPH DAYTONA 675, plus specs and owner ratings: Little racer">
+
+
+		<link rel="canonical" href="https://www.motorcyclenews.com/bike-reviews/triumph/daytona-675/2009/" />
+
+
+	
+
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org/",
+	"@type": "Review",
+	"itemReviewed": {
+		"@type": "Motorcycle",
+		"name": "TRIUMPH DAYTONA 675"
+
+
+				,"image": {
+					"@type": "ImageObject",
+					"url": "https://mcn-images.bauersecure.com/upload/219001/images/01triumph-daytona675.jpg"
+				}
+					
+
+				,"offers": {
+					"@type": "AggregateOffer",
+					"offerCount": "26",
+					"priceCurrency": "GBP",
+					"lowPrice": "4500",
+					"highPrice": "6000",
+					"offers": [
+						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/daytona-675/58950588/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/daytona-675/59061243/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/daytona-675/59053902/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/daytona-675/59065826/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/daytona-675/58902873/"
+								}
+												]
+				}
+				},
+	"reviewBody": "You would be hard pushed to tell the difference between the 2006 and 2009 models but stand closer and the differences jump out at you i.e. the new angular top fairing, Nissin monoblock calipers, revised suspension and so on. The engine and performance changes you can&#x2019;t see, but combined with the great handling chassis the Triumph Daytona 675 is a very viable alternative to the Japanese supersport mass. Check out this video report&amp;nbsp;from the Triumph Daytona 675 launch.",
+	"author": {
+		"@type": "Person",
+		"name": "MCN Staff",
+		"sameAs": [
+			"https://twitter.com/MCN",
+			"https://www.instagram.com/motorcyclenews/"
+		]
+	},
+	"datePublished": "2009-01-12T11:23:00.0000000Z",
+	"dateModified": "2014-11-21T14:08:58.0000000Z",
+	"reviewRating": {
+		"@type": "Rating",
+		"ratingValue": "4",
+		"bestRating": "5"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Bauer Media"
+	},
+    "sameAs": [
+       "https://www.facebook.com/MCN/",
+       "https://twitter.com/MCN",
+       "https://linkedin.com/MCN",
+       "https://www.instagram.com/motorcyclenews/"
+    ], 
+    "logo": {
+		"@type": "ImageObject",
+		"url": "https://www.motorcyclenews.com/dist/_5-40-101/images/logos/mcn.publisher.85x85.png",
+		"width": 85,
+		"height": 85 
+    }
+}
+</script>
+
+
+
+
+<meta property="og:url" content="https://www.motorcyclenews.com/bike-reviews/triumph/daytona-675/2009/" />
+<meta property="og:title" content="TRIUMPH DAYTONA 675 (2009-2011) Review, Specs &amp; Prices" />
+<meta property="og:description" content="The Triumph Daytona 675 is a very viable alternative to the Japanese 600&#x27;s - MCN reviews the TRIUMPH DAYTONA 675, plus specs and owner ratings: Little racer" />
+<meta property="fb:app_id" content="7714743854" />
+<meta property="og:type" content="Article" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:publisher" content="Motorcycle News" />
+
+	<meta property="og:image" content="https://mcn-images.bauersecure.com/upload/219001/images/01triumph-daytona675.jpg" />
+
+	<meta property="og:author" content="MCN Staff" />
+
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preconnect" href="https://www.googletagmanager.com">
+	<link rel="preconnect" href="https://securepubads.g.doubleclick.net" />
+
+		<link rel="amphtml" href="https://www.motorcyclenews.com/amp/bike-reviews/triumph/daytona-675/2009/" />
+
+	
+<link rel="stylesheet" href="/dist/_5-40-101/css/review.min.css" />
+
+		
+
+<script type="text/javascript">
+	!function () { var e = function () { var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) { try { if (n.frames[t]) { e = n; break } } catch (e) { } if (n === window.top) break; n = n.parent } e || (!function e() { var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) { var i = a.createElement("iframe"); i.style.cssText = "display:none", i.name = t, a.body.appendChild(i) } else setTimeout(e, 5); return !r }(), n.__tcfapi = function () { for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) { var i = { gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub" }; "function" == typeof n[2] && n[2](i) } else a.push(n) }, n.addEventListener("message", (function (e) { var t = "string" == typeof e.data, a = {}; try { a = t ? JSON.parse(e.data) : e.data } catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) { var i = { __tcfapiReturn: { returnValue: a, success: r, callId: n.callId } }; t && (i = JSON.stringify(i)), e.source.postMessage(i, "*") }), n.parameter) }), !1)) }; "undefined" != typeof module ? module.exports = e : e() }();
+</script>
+<script>
+	window._sp_ = {
+		config: {
+			accountId: 296,
+			baseEndpoint: 'https://cmp.motorcyclenews.com',
+			groupId: '5e5155d22d47738ac1cd84f4',
+			targetingParams: {
+				'tcfv2': 'true'
+			}
+		}
+	}
+</script>
+<script src="https://cmp.motorcyclenews.com/wrapperMessagingWithoutDetection.js"></script>
+	
+	
+
+<script>
+	coreJs.chainCompleteCallbacks.push(function () {
+		coreJs.injectScript("https://cdn.permutive.app/02469357-27fd-49a7-9dbc-f0d94ae65faa-web.js", true, function () {
+			console.info('Permutive: Script loaded');
+		});
+	});
+</script>
+
+<script>
+	!function (n, e, i) { if (!n) { n = n || {}, window.permutive = n, n.q = [], n.config = i || {}, n.config.apiKey = e, n.config.environment = n.config.environment || "production"; for (var o = ["addon", "identify", "track", "trigger", "query", "segment", "segments", "ready", "on", "once", "user", "consent"], r = 0; r < o.length; r++) { var t = o[r]; n[t] = function (e) { return function () { var i = Array.prototype.slice.call(arguments, 0); n.q.push({ functionName: e, arguments: i }) } }(t) } } }(window.permutive, "8be71353-1189-4ce1-a5cb-320dd35e89ba", { "consentRequired": true });
+	permutive.addon("web", {});
+</script>
+
+	<script>
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//cdn.onesignal.com/sdks/OneSignalSDK.js", true, function () {
+			console.info('OneSignal: Script loaded');
+
+			if (document.location.hostname === "www.motorcyclenews.com") {
+				var OneSignal = window.OneSignal || [];
+				OneSignal.push(function() {
+					OneSignal.init({
+						appId: "98918693-8f93-496c-af67-c8d96ec525be"
+					});
+					// move this before the domain check above for local testing.
+					$(document).trigger('oneSignal.loaded');
+				});
+			} else {
+				console.info('OneSignal: Push not called as hostname incorrect');
+			}
+		});
+	});
+</script>
+
+	
+<script type="text/javascript">
+(function() {
+	window.dm = window.dm ||{ AjaxData:[]};
+	window.dm.AjaxEvent = function(et, d, ssid, ad) {
+		dm.AjaxData.push({ et: et,d: d,ssid: ssid,ad: ad});
+		window.DotMetricsObj && DotMetricsObj.onAjaxDataUpdate();
+	};
+	var d = document,h = d.getElementsByTagName('head')[0],s = d.createElement('script');
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = 'https://uk-script.dotmetrics.net/door.js?d=www.motorcyclenews.com&t=bikereviews';
+	h.appendChild(s);
+} ());
+</script>
+</head>
+
+<body>
+
+	
+<script>
+var bauerDataLayer = [{
+	'siteName': 'MCN',
+	'productType': 'Motorcycle',
+	'cmsPageType': 'Templates.BikeReviews.DetailsPage',
+	'cmsPageId': '491930',
+	'cmsPageName': '2009',
+	'section': 'Bike Reviews',
+	'subSection1': 'TRIUMPH',
+	'subSection2': 'daytona',
+	'created': '-62135596800',
+	'makeName': 'TRIUMPH',
+	'modelName': 'TRIUMPH+DAYTONA%20675',
+	'categoryMcn': 'Sports'
+}];
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=xUOFojuTghcMLZ3prl6hMA&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);})(window, document,'script','bauerDataLayer','GTM-PS8LQC4');</script> 
+	<span class="screen-size-detector"></span>
+
+	<div class="off-canvas-content" data-off-canvas-content>
+		<div class="site-root">
+			
+<header class="site-header clearfix">
+	<strong class="show-for-sr">MCN</strong>
+	
+	<div data-sticky-container>
+		<div class="site-header-mobile top-bar hide-for-medium" data-sticky data-sticky-on="small" data-margin-top="0">
+			<div class="site-header-mobile__left">
+				<a class="site-header-mobile__logo" title="Home" href="/"></a>
+			</div>
+			<div class="site-header-mobile__middle">
+				<a class="site-header-mobile__middle__nav-link" href="/bike-reviews/">Reviews</a>
+				<a class="site-header-mobile__middle__nav-link" href="/bikes-for-sale/">For sale</a>
+				<a class="site-header-mobile__middle__nav-link" href="/news/">News</a>
+				<a class="site-header-mobile__middle__nav-link" href="/insurance/">Insurance</a>
+			</div>
+			<div class="site-header-mobile__right">
+				<button class="site-header-mobile__icon site-header-mobile__icon--menu menu-icon right-off-canvas-toggle" data-toggle="offCanvasRight">
+					<span class="site-header-mobile__icon__text">Menu</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	
+	<div data-sticky-container>
+		<div class="site-header-full show-for-medium" data-sticky data-sticky-on="medium" data-margin-top="0">
+			<div class="site-header-full__inner">
+				<a class="site-header-full__logo" title="Home" href="/">
+					<span class="icon fi-home"></span>
+				</a>
+				<a class="site-header-full__search-toggle fi-icon fi-icon--xlarge fi-magnifying-glass show-for-medium-only" href="#"></a>
+				<div class="site-header-full__right-search-box show-for-large">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+
+				
+
+<nav class="horizontal-site-nav">
+	<ul class="horizontal-site-nav__more-menu dropdown menu" data-dropdown-menu data-closing-time="0">
+		<li class="horizontal-site-nav__more-menu__item is-dropdown-submenu-parent">
+			<a href="#" class="horizontal-site-nav__more-menu__link">More<span class="show-for-large"> MCN</span></a>
+
+			<ul class="horizontal-site-nav__sub-nav horizontal-site-nav__more-menu__content menu">
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="horizontal-site-nav__menu dropdown menu" data-dropdown-menu data-closing-time="0">
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bike-reviews/"
+				    >
+					Bike Reviews
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+								    >
+									Search bike reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+								    >
+									Our test bikes
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bikes-for-sale/"
+				    >
+					Bikes For Sale
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+								    >
+									Search bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+								    >
+									Sell your bike
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+								    >
+									Bike check
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/news/"
+				    >
+					News
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/"
+								    >
+									Latest news
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+								    >
+									New bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-tech/"
+								    >
+									New tech
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sport/"
+								    >
+									Sport
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+								    >
+									Electric bikes coming soon
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/advice/"
+				    >
+					Advice
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/best/"
+								    >
+									Best
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+								    >
+									Riding tips
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+								    >
+									Learn to ride a motorbike with MCN
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/tests/"
+								    >
+									Tests
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+								    >
+									Maintenance
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+								    >
+									Travelling touring
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/parts/"
+								    >
+									Parts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+								    >
+									Buying and selling
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+								    >
+									Inspiration
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-gear/"
+								    >
+									New gear
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+								    >
+									Product picks
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/"
+								    >
+									Product reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-rider/"
+								    >
+									New riders
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/"
+				    >
+					Insurance
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="#"
+				    >
+					Get involved
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+								    >
+									#Ride5000miles
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/newsletter/"
+								    >
+									Subscribe to MCN weekly newsletter
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+								   target='_blank' rel='nofollow'>
+									Buy MCN T-shirts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+								   target='_blank' rel='nofollow'>
+									MCN Festival
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+								   target='_blank' rel='nofollow'>
+									Scottish Motorcycle Show
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+								    rel='nofollow'>
+									London Motorcycle Show
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar"
+				   target='_blank' >
+					Subscribe
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742"
+				   target='_blank' >
+					MCN Shop
+				</a>
+			</li>
+	</ul>
+</nav>
+
+				<div class="site-header-full__search-bar">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+			<div class="top-ad-container" data-sticky-container>
+				<div class="top-ad-container__inner">
+					<div data-id="leaderboard-1" class="top-ad advert" data-sticky data-margin-top="0" data-sticky-on="small"></div>
+				</div>
+			</div>
+
+			<div class="site-body">
+				
+<aside class="desktop-sidebar" data-max-mpu-count="30">
+
+
+<div id=stickyMpuPlaceholder1 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder1 data-sticky-on="xlarge">
+			
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder2 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder2 data-sticky-on="xlarge">
+			
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder3 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder3 data-sticky-on="xlarge">
+			
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder4 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder4 data-sticky-on="xlarge">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder5 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder5 data-sticky-on="xlarge">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder6 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder6 data-sticky-on="xlarge">
+			
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder7 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder7 data-sticky-on="xlarge">
+			
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder8 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder8 data-sticky-on="xlarge">
+			
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder9 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder9 data-sticky-on="xlarge">
+			
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder10 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder10 data-sticky-on="xlarge">
+			
+<div data-id="mpu-10" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder11 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder11 data-sticky-on="xlarge">
+			
+<div data-id="mpu-11" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder12 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder12 data-sticky-on="xlarge">
+			
+<div data-id="mpu-12" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder13 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder13 data-sticky-on="xlarge">
+			
+<div data-id="mpu-13" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder14 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder14 data-sticky-on="xlarge">
+			
+<div data-id="mpu-14" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder15 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder15 data-sticky-on="xlarge">
+			
+<div data-id="mpu-15" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder16 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder16 data-sticky-on="xlarge">
+			
+<div data-id="mpu-16" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder17 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder17 data-sticky-on="xlarge">
+			
+<div data-id="mpu-17" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder18 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder18 data-sticky-on="xlarge">
+			
+<div data-id="mpu-18" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder19 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder19 data-sticky-on="xlarge">
+			
+<div data-id="mpu-19" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder20 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder20 data-sticky-on="xlarge">
+			
+<div data-id="mpu-20" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder21 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder21 data-sticky-on="xlarge">
+			
+<div data-id="mpu-21" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder22 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder22 data-sticky-on="xlarge">
+			
+<div data-id="mpu-22" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder23 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder23 data-sticky-on="xlarge">
+			
+<div data-id="mpu-23" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder24 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder24 data-sticky-on="xlarge">
+			
+<div data-id="mpu-24" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder25 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder25 data-sticky-on="xlarge">
+			
+<div data-id="mpu-25" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder26 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder26 data-sticky-on="xlarge">
+			
+<div data-id="mpu-26" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder27 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder27 data-sticky-on="xlarge">
+			
+<div data-id="mpu-27" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder28 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder28 data-sticky-on="xlarge">
+			
+<div data-id="mpu-28" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder29 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder29 data-sticky-on="xlarge">
+			
+<div data-id="mpu-29" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder30 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder30 data-sticky-on="xlarge">
+			
+<div data-id="mpu-30" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div></aside>
+
+				<main class="site-content">
+					
+	<nav class="breadcrumb-list">
+				<ul class="breadcrumbs show-for-medium">
+							<li><a href="/">Home</a></li>
+							<li><a href="/bike-reviews/">Bike Reviews</a></li>
+							<li><a href="/bike-reviews/triumph/">TRIUMPH</a></li>
+							<li><a href="/triumph/daytona/">daytona</a></li>
+							<li><a href="/bike-reviews/triumph/daytona-675/">DAYTONA 675</a></li>
+							<li class="disabled">2009</li>
+				</ul>
+				<a class="breadcrumb-list__back-link hide-for-medium" href="/bike-reviews/triumph/daytona-675/">
+					<span class="fi-icon fi-arrow-up breadcrumb-list__back-link__icon"></span><span class="breadcrumb-list__back-link__text">See all TRIUMPH DAYTONA 675 reviews</span>
+				</a>
+	</nav>
+
+
+					
+
+
+
+<span class="last-viewed-model" data-make="triumph" data-model="daytona 675" />
+
+<article id="review" class="review">
+<img alt="" class="review__event-logger" data-src="https://tracking.bauermedia.co.uk/EventHandler.ashx?e=HHkbZZ3atHYkODBcU4gMTERnPJzrMAC5kDttjn%252b5iLd1U32j3RFiV0%2F70PVJ%252b29pb25rfIZKf9B7gXy57FFTTapQiAtYk8%252bPKq6nceKuAlqVCegLqM5jWAQVQw7pnl%252bAqBk9gmiPD2A2%252bE0YMHuptHehdlerCK3n5KnZeyE%2Fk9luJ%2FmQHDS9%2FXMJA9GoEn%2FKZCI%2FM6ZgP1ZRrLiuYz18Uct1J9tguuk0E7DCnX4dNQMc8IA5KmY0X4kd7YhSc69TXzqW4mpcT7lLzNsr8rZP9SrxY0RajabXobwyP5k749ec5N9chKjI1MCvpXssClegASA%252b79%2FDbexJGPzhRC9qWboAM8UaSnZZvHpZj%2FvxmIjY4xiiyzksxiCxRbsTYwoKGVdad%2FPO8KWSh29KdXyodwBQP85TaLXlstjeIIA18oAqKgIiLqyZm0T0Zr6C99mYyUoSsCsigjmZhiUCZuJgNa7NnfF1Jd93N2tR5FtuB5L9dq3xXQHV3mOAv7Bs%252bCqSdDZilsl8L52asDwK6146Xw%3D%3D" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+	<h1>TRIUMPH DAYTONA 675 (2009 - 2011) Review</h1>
+
+	<section class="review__headline-ratings grid-x">
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#review-overall">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">MCN rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+			</a>
+		</div>
+
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#ownersReviews">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">Owners&#x27; rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.6 out of 5">    <span style="width:92%" class="star-rating__stars__value">4.6 out of 5</span>  </span>    <span class="star-rating__text">(4.6/5)</span>  </span></span>
+			</a>
+		</div>
+	</section>
+
+	<div class="review__navigation">
+		<a href="#specs">
+			<span>Specs</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#ownersReviews">
+			<span>Owners' reviews</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#forSale">
+			<span class="show-for-medium">Bikes for sale</span><span class="show-for-small-only">For sale</span><span class="review__navigation__arrow"></span>
+		</a>
+	</div>
+
+	<section class="review__gallery-panel">
+		
+
+<section class="gallery-preview">
+		<figure class="gallery-preview__image gallery-link">
+			<img alt="Triumph Daytona 675 - big lean" data-lazy-interchange="[https://mcn-images.bauersecure.com/upload/219001/images/615x405/01triumph-daytona675.jpg, small], [https://mcn-images.bauersecure.com/upload/219001/images/999x666/01triumph-daytona675.jpg, medium], [https://mcn-images.bauersecure.com/upload/219001/images/600x400/01triumph-daytona675.jpg, large]" data-src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" />
+		</figure>
+		<div class="gallery-preview__count">
+			<span class="gallery-preview__count__item gallery-link">
+				<span class="gallery-preview__count__icon icon-35x35-camera"></span>
+				<span class="gallery-preview__count__value">9</span>
+			</span>
+
+		</div>
+
+		<div class="gallery-preview__button-container">
+				<button class="gallery-preview__button button gallery-link">	
+					<span class="gallery-preview__button__icon icon-35x35-camera"></span>
+					<span>View 9 images</span>
+				</button>
+
+		</div>
+</section>
+	</section>
+
+	<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+	<div class="show-for-medium-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<section class="review__summary">
+		
+
+
+
+		
+
+	<section class="review__at-a-glance">
+		<h2 class="review__summary__heading">At a glance</h2>
+		<table class="review__at-a-glance__table">
+			<tbody>
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Owners' reliability rating: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#ownersReviews"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.4 out of 5">    <span style="width:88%" class="star-rating__stars__value">4.4 out of 5</span>  </span>    <span class="star-rating__text">(4.4/5)</span>  </span></span></a></td>
+					</tr>
+
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Annual servicing cost: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#ownersReviews">&#xA3;170</a></td>
+					</tr>
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Power: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#specs">126 bhp</a></td>
+					</tr>
+
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Seat height: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								Medium 
+								<span class="review__at-a-glance__item__link__sub-info">(32.3 in / 820 mm)</span>
+							</a>
+						</td>
+					</tr>
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Weight: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								Low 
+								<span class="review__at-a-glance__item__link__sub-info">(357 lbs / 162 kg)</span>
+							</a>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+		
+	<h2 class="review__summary__heading">Prices</h2>
+	<section class="review__prices">
+		<div class="grid-x">
+			<div class="cell small-7">
+					<div class="review__prices__price">
+						<span class="review__prices__price__label">New</span>
+						<span class="review__prices__price__value">N/A</span>
+					</div>
+					
+					<div class="review__prices__price">
+						<span class="review__prices__price__label">Used</span>
+						<span class="review__prices__price__value">&#xA3;4,500 - &#xA3;6,000</span>
+					</div>
+
+			</div>
+			<div class="cell small-5">		
+					<a class="review__prices__button button" href="/bikes-for-sale/triumph/daytona-675/"><span class="review__prices__button__text">View bikes for sale</span></a>
+			</div>
+		</div>
+	</section>
+
+	</section>
+
+	<div class="show-for-large-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<div class="review__main-content">
+		<a name="review-overall" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Overall rating</h2>
+			<a href="#review-ride" class="review__main-content__anchor-link">Next up: Ride &amp; brakes</a>
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<aside class="review__publishing-info">
+					<div><strong>Author: MCN Staff</strong></div>
+
+				<div>Published: 12 January 2009</div>
+
+					<div>Updated: 21 November 2014</div>
+			</aside>
+
+			<p>You would be hard pushed to tell the difference between the 2006 and 2009 models but stand closer and the differences jump out at you i.e. the new angular top fairing, Nissin monoblock calipers, revised suspension and so on. The engine and performance changes you can’t see, but combined with the great handling chassis the Triumph Daytona 675 is a very viable alternative to the Japanese supersport mass. <a href="http://www.motorcyclenews.com/MCN/News/newsresults/videos/2008/December/dec1008-triumph-675-road-test/?&amp;R=EPI-104670">Check out this video report&nbsp;from the Triumph Daytona 675 launch.</a></p>
+		</div>
+
+		<a name="review-ride" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Ride quality &amp; brakes</h2>
+			<a href="#review-engine" class="review__main-content__anchor-link">Next up: Engine</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>Pure supersport seating stance of high seat and clip-ons but isn’t uncomfortable, more intimidating at first and the screen is typically low for hard speed riding. The ride is exemplary thanks to new suspension that features high and low speed compression damping front and rear, which makes the gap between road and track use easier to cross. Although quick steering the Triumph Daytona 675&nbsp;is a stable beast but was fitted with a steering damper to keep back road scratchers out of trouble. Ground clearance is not an issue on the Daytona 675, which is good because it can carry big corner speed with ease.</p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-engine" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Engine</h2>
+			<a href="#review-reliability" class="review__main-content__anchor-link">Next up: Reliability</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>Race team feedback led to many internal changes on the 2009 model to net an extra 3bhp, 1ftlb of torque and an extra 400rpm (max revs 13,900rpm) to play with. Forget about peak power, though. It’s the legendary flat but fat torque curve coupled with a midrange horsepower increase that makes the Triumph Daytona 675&nbsp;a breeze to ride day-in, day out without working up a sweat. If you want to rip it up then the Triumph&nbsp;675 will easily pump your adrenaline – especially on a trackday – simply by working the throttle harder. Gearbox mods have banished the sticky-shift feel of the previous model.</p>
+		</div>
+
+		<a name="review-reliability" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Reliability & build quality</h2>
+			<a href="#review-value" class="review__main-content__anchor-link">Next up: Value</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>Chassis components are no different to Japanese counterparts. This leaves the powertrain open to discussion, of which there are few web-based grumbles about the previous model.</p>
+		</div>
+
+		<a name="review-value" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Value vs rivals</h2>
+			<a href="#review-equipment" class="review__main-content__anchor-link">Next up: Equipment</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>Triumph’s Daytona 675 is perfectly poised to run with the Japanese pack, if not up front because of the way the engine doesn’t need to be worked so hard on the road.</p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-equipment" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Equipment</h2>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>Although updated running gear features throughout, the Triumph Daytona 675&nbsp;doesn’t wear anything majorly different to the rest of the supersport class. Triumph offered a large range of accessories when new from a plug-in quick shifter, computer adjustable ECU, Arrow exhausts and rearsets and more…</p>
+		</div>
+	</div>
+
+	<a name="forSale" class="review__anchor"></a>
+	
+
+<aside class="review__bfs">
+		<h2 class="review__bfs__heading">TRIUMPH DAYTONA 675 for sale with <span class="review__bfs__heading__highlight">MCN</span></h2>
+		<ul class="review__bfs__list">
+				<li class="review__bfs__item" data-tracking-label="D C MOTORCYCLES">
+					<a href="/bikes-for-sale/triumph/daytona-675/58950588/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="DAYTONA 675 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58950588/280889887/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">DAYTONA 675  (2010/10)</span>
+								<span class="review__bfs__item__price">&#xA3;4,495</span>
+								<span class="review__bfs__item__location">West Yorkshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Superbike Factory">
+					<a href="/bikes-for-sale/triumph/daytona-675/59061243/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="DAYTONA 675 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/59061243/1264929969/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">DAYTONA 675  (2009/09)</span>
+								<span class="review__bfs__item__price">&#xA3;4,691</span>
+								<span class="review__bfs__item__location">Cheshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Superbike Factory">
+					<a href="/bikes-for-sale/triumph/daytona-675/59053902/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="DAYTONA 675 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/59053902/274982504/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">DAYTONA 675  (2009/09)</span>
+								<span class="review__bfs__item__price">&#xA3;4,991</span>
+								<span class="review__bfs__item__location">Cheshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Superbike Factory">
+					<a href="/bikes-for-sale/triumph/daytona-675/59065826/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="DAYTONA 675 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/59065826/1791696796/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">DAYTONA 675  (2010/10)</span>
+								<span class="review__bfs__item__price">&#xA3;5,291</span>
+								<span class="review__bfs__item__location">Cheshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Destination Triumph Fareham">
+					<a href="/bikes-for-sale/triumph/daytona-675/58902873/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="DAYTONA 675 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58902873/1795393213/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">DAYTONA 675  (2010/10)</span>
+								<span class="review__bfs__item__price">&#xA3;5,995</span>
+								<span class="review__bfs__item__location">Hampshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+		</ul>
+		<div class="review__bfs__button-container">
+			<a class="review__bfs__button button" href="/bikes-for-sale/triumph/daytona-675/">View more bikes for sale</a>
+		</div>
+</aside>
+
+	<a name="specs" class="review__anchor"></a>
+
+	
+<section class="review__facts-and-figures">
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Specs</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine size</th>
+					<td class="review__facts-and-figures__item__value">675cc</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine type</th>
+					<td class="review__facts-and-figures__item__value">Liquid-cooled, 12v, inline-triple, four-stroke. Six gears</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Frame type</th>
+					<td class="review__facts-and-figures__item__value">Aluminium twin spar</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Fuel capacity</th>
+					<td class="review__facts-and-figures__item__value">17.4 litres</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Seat height</th>
+					<td class="review__facts-and-figures__item__value">820mm</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Bike weight</th>
+					<td class="review__facts-and-figures__item__value">162kg</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front suspension</th>
+					<td class="review__facts-and-figures__item__value">Rebound and high/low compression damping, spring preload</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear suspension</th>
+					<td class="review__facts-and-figures__item__value">Rebound and high/low compression damping, spring preload</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front brake</th>
+					<td class="review__facts-and-figures__item__value">2 x 308 discs with 4-piston monoblock calipers</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear brake</th>
+					<td class="review__facts-and-figures__item__value">220mm disc with single-piston caliper</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front tyre size</th>
+					<td class="review__facts-and-figures__item__value">120/70 x 17</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear tyre size</th>
+					<td class="review__facts-and-figures__item__value">180/55 x 17</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Mpg, costs &amp; insurance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Average fuel consumption</th>
+					<td class="review__facts-and-figures__item__value">39 mpg</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual road tax</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;93</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual service cost</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;170</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">New price</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Used price</th>
+					<td class="review__facts-and-figures__item__value">
+						&#xA3;4,500 - &#xA3;6,000
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Insurance group</th>
+					<td class="review__facts-and-figures__item__value">
+						16 of 17<br />
+							<a rel="nofollow" target="_blank" href="https://quotes.mcncompare.com/bike/PersonalInformation1.aspx?utm_campaign=multi-acq-compare-mcn&amp;utm_source=mcn&amp;utm_medium=referral&amp;utm_content=reviews-detail-value-section">How much to insure?</a>
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Warranty term</th>
+					<td class="review__facts-and-figures__item__value">Two year unlimited mileage</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Top speed &amp; performance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max power</th>
+					<td class="review__facts-and-figures__item__value">126 bhp</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max torque</th>
+					<td class="review__facts-and-figures__item__value">54 ft-lb</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Top speed</th>
+					<td class="review__facts-and-figures__item__value">156 mph</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">1/4 mile acceleration</th>
+					<td class="review__facts-and-figures__item__value">11.38 secs</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Tank range</th>
+					<td class="review__facts-and-figures__item__value">179 miles</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+	<section class="review__history-and-versions">
+			<h2 class="review__history-and-versions__heading">Model history &amp; versions</h2>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Model history</h3>
+					<p>2003-2004: Daytona 600 – 599cc 4-cylinder, 110bhp<br>2005-2006: Daytona 650 – 646cc, 4-cylinder, 112bhp<br>2006-2008: Daytona 675 – 675cc, 3-cylinder, 123bhp</p>
+				</div>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Other versions</h3>
+					<p>none</p>
+				</div>
+
+			<div class="review__history-and-versions__section">
+				<a href="/triumph/daytona/">Read more about the full TRIUMPH daytona range</a>
+			</div>
+	</section>
+
+
+	<a name="ownersReviews" class="review__anchor"></a>
+	
+
+<section class="review__owners-reviews-summary">
+	<h2 class="review__owners-reviews-summary__heading">
+		<span class="review__owners-reviews-summary__heading__inner">
+			Owners' reviews
+			<span class="review__owners-reviews-summary__heading__vehicle">for the TRIUMPH DAYTONA 675 (2009 - 2011)</span>
+		</span>
+	</h2>
+	<div class="review__owners-reviews-summary__intro">
+			<p class="review__owners-reviews-summary__intro__text">
+				<strong>16 owners</strong> have reviewed their TRIUMPH DAYTONA 675 (2009 - 2011) and rated it in a number of areas. Read what they have to say and what they like and dislike about the bike below.
+			</p>
+			<p class="review__owners-reviews-summary__intro__text">
+				<a href="/bike-reviews/review-your-bike/?review=491930">Review your TRIUMPH DAYTONA 675 (2009 - 2011)</a>
+			</p>
+			<table class="review__owners-reviews-summary__table">
+				<thead>
+					<tr>
+						<td colspan="2"><h3 class="review__owners-reviews-summary__table__heading">Summary of owners' reviews</h3></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Overall rating: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.6 out of 5">    <span style="width:92%" class="star-rating__stars__value">4.6 out of 5</span>  </span>    <span class="star-rating__text">(4.6/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Ride quality &amp; brakes: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.8 out of 5">    <span style="width:96%" class="star-rating__stars__value">4.8 out of 5</span>  </span>    <span class="star-rating__text">(4.8/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Engine: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.7 out of 5">    <span style="width:94%" class="star-rating__stars__value">4.7 out of 5</span>  </span>    <span class="star-rating__text">(4.7/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Reliability &amp; build quality: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.4 out of 5">    <span style="width:88%" class="star-rating__stars__value">4.4 out of 5</span>  </span>    <span class="star-rating__text">(4.4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Value vs rivals: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.4 out of 5">    <span style="width:88%" class="star-rating__stars__value">4.4 out of 5</span>  </span>    <span class="star-rating__text">(4.4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Equipment: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.2 out of 5">    <span style="width:84%" class="star-rating__stars__value">4.2 out of 5</span>  </span>    <span class="star-rating__text">(4.2/5)</span>  </span></span></td>
+					</tr>
+						<tr class="review__owners-reviews-summary__item">
+							<th class="review__owners-reviews-summary__item__label">Annual servicing cost: </th>
+							<td class="review__owners-reviews-summary__item__value"><strong>&#xA3;170</strong></td>
+						</tr>
+				</tbody>
+			</table>
+	</div>
+</section>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+		<section class="review__owners-reviews-container">
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Little racer</strong>
+	<div class="review__owners-review__published-info">
+		<strong>08 January 2021</strong> <span class="review__owners-review__published-info__author">by Tim Row</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2010</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;160</strong>
+		</p>
+
+		<p>Would recommend this bike to anyone and everyone &#x1F604;</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Easy to ride albeit a little compact. Brakes are fine as is acceleration :) At my age I wasn&#x27;t sure if I could do longish journeys but have 140 miles without a break :) other than a few clenched fists</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Sound of the triple s exquisite even with standard exhaust</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Only issue has has been servo and switch on gear selector</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Bought from Triumph dealer with full dealer device history.  One of my most wanted 600s and hasn&#x27;t disappointed. Good value and great fun.
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Daytona</strong>
+	<div class="review__owners-review__published-info">
+		<strong>10 April 2020</strong> <span class="review__owners-review__published-info__author">by James north</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Version: <strong>Se</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Year: <strong>2009</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;160</strong>
+		</p>
+
+		<p>Power and looks</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> &#xA3;4500 in 2018 privately
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">The best bike ever for chasing a BMW</strong>
+	<div class="review__owners-review__published-info">
+		<strong>03 April 2020</strong> <span class="review__owners-review__published-info__author">by Bobby</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Version: <strong>White and blue SE</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Year: <strong>2009</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;200</strong>
+		</p>
+
+		<p>Fits like a glove rides like a dream and every time I ride it I remember why I bought it. Some 25000 miles and 11 years later!</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">I have ridden 250 miles to Snetterton from  Somerset and back for BSB in one day just stopped for fuel once both ways. No problems.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Good torque you don&#x2019;t need to flap the gear box but when you do put weight on the front it can lift the front wheel.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Stator lost two lobes, found a racer selling road parts so cheap and easy fix.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Good tyres are short lived.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Carbon fibre wheels change how much load needed to push the bike into a corner, be careful the first time out!</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Private sale and after 11 years I have lost about &#xA3;1500 on the sale price
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Back in black</strong>
+	<div class="review__owners-review__published-info">
+		<strong>28 July 2018</strong> <span class="review__owners-review__published-info__author">by Shane</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2010</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;100</strong>
+		</p>
+
+		<p>Best features are it&#x27;s very light, almost like a 125 compared to a 2002 Aprilia Mille. It can take a magnetic tank bag and has enough room for a tail-pack. The worst feature is the plank-like seat after 50 miles and heat from the exhaust that&#x27;s routed under it. I&#x27;d recommend a GEL seat and gel grips like I fitted. A great bike tho. Sound it makes is pure F1 soundtrack. I went to Belgium and back on mine in 30c&#x2B; heat....I&#x27;ve done 1200 miles in 6 weeks too.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Suspension is hard so get it by a pro for your riding style and weight. &#xA3;50 well spent. Brakes you don&#x27;t even have to think about they are so good.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Goes like the clappers. Plenty enough for most and enjoyable to listen to without getting you into trouble at three-figure speeds.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Never gone wrong in 1200 miles in 6 weeks.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">My mates service my bikes as the dealer prices are ridiculous.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Fuel light instead of a gauge is poor show Triumph. Buy plenty of carbon. I&#x27;m running touring tyres as I tour on it. They are just as good as any till the weather gets colder then you&#x27;d need softer tyres to run hotter.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> I paid &#xA3;4800 for a 2010 model with 9,900 miles on the clock in black from a KTM dealer in June, they wanted &#xA3;5195. Full history, mostly Triumph.
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Brilliant ride shame about reliability</strong>
+	<div class="review__owners-review__published-info">
+		<strong>20 May 2016</strong> <span class="review__owners-review__published-info__author">by Bruiser666</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2009</strong>
+		</p>
+
+		<p>Best bike I&#x27;ve ever ridden and despite serious reliability problems still considering part ex for more recent model.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Problems and failures:&#xA;2x reg/rectifier failures (1 under warranty)&#xA;1 gear selector (under warranty)&#xA;2 sets of cracked header pipes (both under warranty)&#xA;rear brake master cylinder&#xA;Exup valve &#xA;Indicator stems went brittle and snapped</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline"></strong>
+	<div class="review__owners-review__published-info">
+		<strong>16 April 2016</strong> <span class="review__owners-review__published-info__author">by Sac73</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2010</strong>
+		</p>
+
+		<p>Would be 5 stars if it was the R version.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The torque curve is smooth all over the register. Especially with the standard exhaust. Aftermarket Arrow slip on with dB killer and mapping causes a dip in the torque curve around 7000 rpm.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">With the exception of the exhaust valve which needs adjusting sometimes.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The Daytona 675 don&#x27;t break down in the first place and can take lots of trashing at the track. Good fuel consumption. Expensive to insure compared to superbikes.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Nimble handling in combination with engine characteristics.&#xA;Arrow aftermarket rearsets are high quality. Pirelli Diablo SP tires works very far on the trackdays and are good for all except rainy conditions on the track.</p>
+		</div>
+	</div>
+
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">The best supersport currently on the market!</strong>
+	<div class="review__owners-review__published-info">
+		<strong>30 March 2016</strong> <span class="review__owners-review__published-info__author">by NoPasaran</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Version: <strong>Standard</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Year: <strong>2014</strong>
+		</p>
+
+		<p>IMHO, this is currently the best supersport one can buy. It&#x27;s light, it&#x27;s very agile, it loves the corners, very stable on straights, the engine is strong and sounds interesting, the KYB suspension is tight and works super, the brakes are powerful. Sitting position is quite committed but the reach to the pegs is good and the bike is so narrow (which also gives you confidence to lean more). Fantastic in every way! More bike than this is simply not necessary, especially if you primarily like to go around tight hairpins.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Chassis is fantastic. The KYB suspension works great, the spring rates are proper for my weight (200lb&#x2B; with gear), the springs feel tight but the bike is not jumping on uneven surface instead it processes the road very well. I haven&#x27;t tried the R version with Ohlins components, but I am very happy with KYB components. The breaks are top notch as well, at least for street and mountain riding.&#xA;The whole setup just inspires so much confidence, I am the quickest around corners on the Daytona, even though I have other 600cc and 1000cc sportbikes. Daytona just loves to lean and it makes riding very easy and enjoyable.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">I love the triple engine! It has good bottom, midrange and top power. It does whistle in a funny way, but I actually like that sound, it is special. The throttle is so smooth, there is no jerking on/off throttle, this bike is easy to ride even in city traffic (of course, it&#x27;s a waste of an unbelievable corner carver that D675 is, to use it up in the city, plus the sitting position is pretty committed so can get tiring in slow traffic).</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">I&#x27;ve put 8000km on mine so far, mostly on mountain hairpins, and it runs flawlessly.&#xA;Quality-wise - the fairing creaks a bit but everything sits tight.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">I&#x27;ve just done oil change and tyre change so far. Nothing had malfunctioned since I bought the bike new. I think the standard D675 bike is worth the money. I did order quickshifter for it, though.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Slipper clutch. Gear indicator. ABS. It&#x27;s well equipped. Does not have the traction control, but it is a 675 machine, it does not need TC the way a 1000cc machine needs it.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> I really love this machine. For me, it&#x27;s definitely worth the money.
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Best Bike You Will Ever Own</strong>
+	<div class="review__owners-review__published-info">
+		<strong>28 November 2015</strong> <span class="review__owners-review__published-info__author">by StikiTuppa</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Version: <strong>675R</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Year: <strong>2013</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;250</strong>
+		</p>
+
+		<p>Overall this bike has everything. Initial looks are stunning and the first experience riding it will give you a grin from ear to ear. The ride is comfortable for a super sports and the sound is amazing.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Ride quality for this type of bike is brilliant although I have had triumph fit a gel seat. The Brembo brakes stop you........effectively</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Engine is smooth, sounds great and delivers the power evenly and effortlessly</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Build quality is excellent and to date I have encountered no problems at all.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Whilst I do fill this bike up endlessly that is only because I just can&#x27;t stop riding it. Its a joy to ride and the only bind is having to fill it up or put it away for bed.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The Quick-shifter is a toy I would tick every time! Great toy to have on board and the fuel gauge is a must have option. So many bikes don&#x27;t have them which I just can&#x27;t understand</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> I bought my bike from Jordan&#x27;s in Leeds. Buying experience was helpful and informative. Full bike service back up and plenty of friendly advice was given at the time of the purchase.
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Amazing</strong>
+	<div class="review__owners-review__published-info">
+		<strong>09 March 2013</strong> <span class="review__owners-review__published-info__author">by </span>
+	</div>
+
+
+		<p>I purchased my 675 new in 2009 and it has had 2 recalls, gear selector and rectifier/regulator all done under warranty, i found the suspension a little hard for the road so had it reworked and set up by MCT suspension, probably the best money i have ever spent &quot;amazing&quot;. The tyres were changed from the Pirelli Supercorsa to Bridgestone S20 and now feels even better for road use, thrown soft panniers over the back, tent and all. Best bike ive ever owned in 32 years riding. </p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">12000 miles in.</strong>
+	<div class="review__owners-review__published-info">
+		<strong>17 August 2012</strong> <span class="review__owners-review__published-info__author">by magoo675</span>
+	</div>
+
+
+		<p>Little update on my 675, still use it every day for work, havent had 1 problem from 6k to 12k in 12 months. The only little thing i can comment on is dont trust the coolant MIN MAX, it always shows MIN, you must check the level at the top of the radiator. Apart from that, its still going great......</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-10" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-10" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Dayton 675</strong>
+	<div class="review__owners-review__published-info">
+		<strong>29 September 2011</strong> <span class="review__owners-review__published-info__author">by magoo675</span>
+	</div>
+
+
+		<p>Iv had a few bike over the years, naked, sports 1000&#x27;s and so on, i love this bike so much. Its like a little 400 but with 130bhp with the Arrow can. I use it every day for work, sun, rain, cold days.... Iv had the bike 13 months and its only let me down once last month with a Rectifier/Regulator failure. The bike over heated as the fan didnt kick in when in traffic, the bike over heated and spat all the coolant out on the road. I got it to Bill Smith in chester and it was fixed and back to me within 2 days. Great service......iv done 7000 miles on the bike from new and its been a dream to own, and i love my ride into work every day on it. As most 600cc are much the same in price, power and performance it was the look of the 675 that made the final choice for me, it just looks so much better than all the rest in its group.....and the noise of the Arrow can.......wow...... get one.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="2 out of 5">    <span style="width:40%" class="star-rating__stars__value">2 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Worst bike ive ever owned</strong>
+	<div class="review__owners-review__published-info">
+		<strong>05 August 2011</strong> <span class="review__owners-review__published-info__author">by Jconway651</span>
+	</div>
+
+
+		<p>Gear selector = warranty claim&#xA;Rectifier/Regulator failure = warranty claim&#xA;Cracked exhaust manifold = warranty claim&#xA;Blown engine due to snapped conrod = warranty claim (taken months)&#xA;&#xA;Coupled with poor customer service, no loan bike and poor dealer support has me fuming mad. All this from a 7 month old bike with 5,550 miles on.&#xA;Never had such poor customer service. Was brilliant when worked however, but if you need dependable machine and a dealership that cares go elsewhere.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="1 out of 5">    <span style="width:20%" class="star-rating__stars__value">1 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="1 out of 5">    <span style="width:20%" class="star-rating__stars__value">1 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="2 out of 5">    <span style="width:40%" class="star-rating__stars__value">2 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-11" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-11" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">675 best 600 on the road</strong>
+	<div class="review__owners-review__published-info">
+		<strong>27 September 2010</strong> <span class="review__owners-review__published-info__author">by fuzzyphill</span>
+	</div>
+
+
+		<p>nice1 triumph.the 675se wot a bike and its british. look out japs, were back. and would luv to see a 1000cc in that frame. </p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">TRIUMPH DAYTONA 675</strong>
+	<div class="review__owners-review__published-info">
+		<strong>30 March 2010</strong> <span class="review__owners-review__published-info__author">by chelseabiker</span>
+	</div>
+
+
+		<p>I would like to sum up the Daytona 675 in just two words - &quot;BLOODY BRILLIANT&quot;</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-12" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-12" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Don&#x27;t buy another 600 without trying this</strong>
+	<div class="review__owners-review__published-info">
+		<strong>02 October 2009</strong> <span class="review__owners-review__published-info__author">by MCNGuyP</span>
+	</div>
+
+
+		<p>A fantastic demonstration of the uselessness of peak power figures. The 675 makes 30% more power than an R6 or CBR600 at most points in the on-the-road rev range. Doesn&#x27;t need to be wound up to a shrieking climax to make progress and steers with a twitch of the eyeballs. It might be a supersport-class bike, but it&#x27;s got precious few of the genetic weaknesses the 600s have had bred into them in order to win races. 17,000rpm red lines? Amplified-mosquito exhaust notes? Keep &#x27;em! This stomps all over its peers on the road.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">675 is just brilliant!!</strong>
+	<div class="review__owners-review__published-info">
+		<strong>07 February 2009</strong> <span class="review__owners-review__published-info__author">by 675ryda</span>
+	</div>
+
+
+		<p>Having had Hondas before I was reluctant to change brands but I am glad I did!! Its just brilliant - ok it has many japanese parts but its British. It has a lovely smooth engine, great handling and propper brakes!! Its just a joy every time I ride it. Looks great and makes me feel great and thats what its all about!! Love It.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-13" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-13" class="mpu-ad advert"></div>
+						</div>
+					</div>
+		</section>
+
+	<a class="back-to-top" href="#">
+	<div class="back-to-top__circle">
+		<span class="back-to-top__circle__icon"></span>
+	</div>
+	<div>Back to top</div>
+</a>
+
+
+
+<section id="fullScreenGallery" class="full-screen-gallery" data-reveal>
+	<div class="full-screen-gallery__leaderboard-container">
+		<div data-id="leaderboard-gallery" class="leaderboard-gallery-ad advert"></div>
+	</div>
+	<div class="full-screen-gallery__sidebar show-for-large">
+		<div class="full-screen-gallery__mpu-container">
+			<div class="full-screen-gallery__mpu center-mpu-container">
+				<span class="hide-for-large">Advertisement<span class="full-screen-gallery__mpu__remaining-ad-duration"></span></span>
+				<div data-id="mpu-gallery" class="mpu-ad advert"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__caption-container">
+		<div class="full-screen-gallery__caption">
+					<span class="full-screen-gallery__caption__text">Triumph Daytona 675 - big lean</span>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__slider-container">
+		<div class="full-screen-gallery__controls">
+			<button title="Previous photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--prev fi-arrow-left"></button>
+			<button title="Next photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--next fi-arrow-right"></button>
+			<button title="Zoom in" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-in fi-zoom-in"></button>
+			<button title="Zoom out" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-out fi-zoom-out"></button>
+			<button title="Close gallery" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--close fi-x" data-close></button>
+		</div>
+
+		<div class="full-screen-gallery__slider royalSlider rsDefault">
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/01triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/01triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/219001/images/951x634/01triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/219001/images/870x580/01triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/219001/images/1026x684/01triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/219001/images/600x400/01triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Daytona 675 - big lean</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/219001/images/75x75/01triumph-daytona675.jpg?quality=50" alt="Triumph Daytona 675 - big lean"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/02triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/02triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/219001/images/951x634/02triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/219001/images/870x580/02triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/219001/images/1026x684/02triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/219001/images/600x400/02triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Daytona 675 - action shot</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/219001/images/75x75/02triumph-daytona675.jpg?quality=50" alt="Triumph Daytona 675 - action shot"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/03triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/03triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/219001/images/951x634/03triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/219001/images/870x580/03triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/219001/images/1026x684/03triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/219001/images/600x400/03triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Daytona 675 - on track</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/219001/images/75x75/03triumph-daytona675.jpg?quality=50" alt="Triumph Daytona 675 - on track"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/04triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/04triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/219001/images/951x634/04triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/219001/images/870x580/04triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/219001/images/1026x684/04triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/219001/images/600x400/04triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Daytona 675 - still shot</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/219001/images/75x75/04triumph-daytona675.jpg?quality=50" alt="Triumph Daytona 675 - still shot"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/05triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/05triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/219001/images/951x634/05triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/219001/images/870x580/05triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/219001/images/1026x684/05triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/219001/images/600x400/05triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Daytona 675 - knee down</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/219001/images/75x75/05triumph-daytona675.jpg?quality=50" alt="Triumph Daytona 675 - knee down"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/06triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/06triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/219001/images/951x634/06triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/219001/images/870x580/06triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/219001/images/1026x684/06triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/219001/images/600x400/06triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Daytona 675 - action</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/219001/images/75x75/06triumph-daytona675.jpg?quality=50" alt="Triumph Daytona 675 - action"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/07triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/07triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/219001/images/951x634/07triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/219001/images/870x580/07triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/219001/images/1026x684/07triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/219001/images/600x400/07triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Daytona 675 - action shot</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/219001/images/75x75/07triumph-daytona675.jpg?quality=50" alt="Triumph Daytona 675 - action shot"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/08triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/219001/images/1440x960/08triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/219001/images/951x634/08triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/219001/images/870x580/08triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/219001/images/1026x684/08triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/219001/images/600x400/08triumph-daytona675.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Daytona 675</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/219001/images/75x75/08triumph-daytona675.jpg?quality=50" alt="Triumph Daytona 675"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/488517/1440x960/123.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/488517/1440x960/123.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/488517/951x634/123.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/488517/870x580/123.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/488517/1026x684/123.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/488517/600x400/123.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span></span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/488517/75x75/123.jpg?quality=50" alt=""/>
+</a>
+
+
+		</div>
+	</div>
+
+</section></article>
+				</main>
+			</div>
+
+			<div data-id="inline-footer" class="footer-ad advert"></div>
+			
+<footer id="siteFooter" class="site-footer">
+	<ul class="site-footer__social">
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--facebook" href="https://www.facebook.com/MotorcycleNews" target="_blank" aria-label="Facebook">
+				<span class="fi-social-facebook"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--twitter" href="https://www.twitter.com/MCNNews/" target="_blank" aria-label="Twitter">
+				<span class="fi-social-twitter"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--youtube" href="https://www.youtube.com/user/motorcyclenewsdotcom/" target="_blank" aria-label="Youtube">
+				<span class="fi-social-youtube"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link" href="https://www.motorcyclenews.com/contact-us/" aria-label="Contact us">
+				<span class="fi-mail"></span>
+			</a>
+		</li>
+	</ul>
+	<div>
+		<a href="http://www.bauermedia.co.uk" target="_blank">
+			<img alt="" class="site-footer__logo" data-src="https://static-cdn.bauersecure.com/Common/Logos/bauer.52x52.png" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+		</a>
+		
+		
+<nav class="clearfix">
+	<ul class="site-footer__nav">
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="http://www.greatmagazines.co.uk/bws/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_content=mcnbottonnav&amp;utm_campaign=BAU_mcn"
+				    rel='nofollow'>
+					Subscribe
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/about/"
+				    >
+					About Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/contact-us/"
+				    >
+					Contact Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/terms-of-use/"
+				    >
+					Terms of Use
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/privacy-policy/"
+				    >
+					Cookie &amp; Privacy Policy
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://products.motorcyclenews.com/"
+				   target='_blank' >
+					Products
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://www.bauerlegal.co.uk/editorial-complaints-policy"
+				    rel='nofollow'>
+					Complaints
+				</a>
+			</li>
+		<li class="site-footer__nav__item">
+			<a class="site-footer__nav__link privacy-settings" href="#">Privacy settings</a>
+		</li>
+	</ul>
+</nav>
+
+		
+		<p class="site-footer__copyright">
+			&copy; 1955-2021 Bauer Media Group
+		</p>
+		<p class="site-footer__company-info">
+			Bauer Media Group consists of: Bauer Consumer Media Ltd, Company number: 01176085, Bauer Radio Ltd, Company Number: 1394141 <br />
+			Registered Office: Media House, Peterborough Business Park, Lynch Wood, Peterborough, PE2 6EA H Bauer Publishing, <br />
+			Company Number: LP003328 Registered Office: Academic House, 24-28 Oval Road, London, NW1 7DT.<br />
+			All registered in England and Wales. VAT no 918 5617 01
+			<br />
+			H Bauer Publishing are authorised and regulated for credit broking by the FCA (Ref No. 845898)
+		</p>
+	</div>
+</footer>
+
+			<div id="overlay" class="overlay-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="off-canvas position-right is-closed" id="offCanvasRight" data-off-canvas>
+		
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+		
+<ul class="mobile-site-nav">
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bike-reviews/" 
+		    >
+			Bike Reviews
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+						    >
+							Search bike reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+						    >
+							Our test bikes
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bikes-for-sale/" 
+		    >
+			Bikes For Sale
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+						    >
+							Search bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+						    >
+							Sell your bike
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+						    >
+							Bike check
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/news/" 
+		    >
+			News
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/"
+						    >
+							Latest news
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+						    >
+							New bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-tech/"
+						    >
+							New tech
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sport/"
+						    >
+							Sport
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+						    >
+							Electric bikes coming soon
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/advice/" 
+		    >
+			Advice
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/best/"
+						    >
+							Best
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+						    >
+							Riding tips
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+						    >
+							Learn to ride a motorbike with MCN
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/tests/"
+						    >
+							Tests
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+						    >
+							Maintenance
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+						    >
+							Travelling touring
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/parts/"
+						    >
+							Parts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+						    >
+							Buying and selling
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+						    >
+							Inspiration
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-gear/"
+						    >
+							New gear
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+						    >
+							Product picks
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/"
+						    >
+							Product reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-rider/"
+						    >
+							New riders
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/" 
+		    >
+			Insurance
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="#" 
+		    >
+			Get involved
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+						    >
+							#Ride5000miles
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/newsletter/"
+						    >
+							Subscribe to MCN weekly newsletter
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+						   target='_blank' rel='nofollow'>
+							Buy MCN T-shirts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+						   target='_blank' rel='nofollow'>
+							MCN Festival
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+						   target='_blank' rel='nofollow'>
+							Scottish Motorcycle Show
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+						    rel='nofollow'>
+							London Motorcycle Show
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar" 
+		   target='_blank' >
+			Subscribe
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742" 
+		   target='_blank' >
+			MCN Shop
+		</a>
+	</li>
+</ul>
+	</div>
+
+	<div class="off-canvas position-left is-closed" id="offCanvasLeft" data-off-canvas>
+		
+	</div>
+
+	
+<script type="text/javascript">
+	coreJs.chainCompleteCallbacks.push(function() {
+
+				var gptData = {"site":"SMOTORCYCLING/SMOT_MCN","targetingKeyValues":{"make_mcn":"triumph","model_mcn":"triumph_daytona-675","category_mcn":"sports"},"maxMpuCount":30};
+
+				//tcf version 2
+				window.__tcfapi('addEventListener', 2, function (tcData, success) {{
+					if (success && tcData.eventStatus === 'cmpuishown') {{
+						console.debug('SP: Surfacing CMP interface');
+					}}
+
+					if (success && tcData.eventStatus === 'useractioncomplete') {{
+						console.debug('SP: User submitted consent choices');
+
+						if (mcn.initGpt) {
+							mcn.initGpt(gptData);
+						}
+					}}
+
+					if (success && tcData.eventStatus === 'tcloaded') {{
+						console.debug('SP: TC string available');
+						window.__tcfapi('removeEventListener', 2, function (success) {{
+							if (success && mcn.initGpt) {{
+								mcn.initGpt(gptData);
+							}}
+						}}, tcData.listenerId);
+					}}
+				}});
+				});
+
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//securepubads.g.doubleclick.net/tag/js/gpt.js", true);
+	});
+
+</script>
+	
+
+<script type="text/javascript">
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//experience.tinypass.com/xbuilder/experience/load?aid=x9U7rnorpu", true, function() {
+			var tags = ["Templates.BikeReviews.DetailsPage"];
+
+tags.push("TRIUMPH");	
+tags.push("TRIUMPH+DAYTONA%20675");
+			window.tp.push(["setTags", tags]);
+			window.tp.push(["setContentSection", "Bike Reviews"]);
+		});
+	});
+
+	
+</script>
+</body>
+
+</html>

@@ -1,0 +1,2232 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="//js-sec.indexww.com/ht/p/185605-155434007517315.js"></script>
+
+	
+<script>
+	window.pageStart = Date.now();
+	console.debug('Page Start');
+</script>
+
+<script>
+	var mcnConfig = {
+		debugMode: false,
+		cookieDomain: '.motorcyclenews.com',
+		galleryDesktopAdFrequency: 2,
+		galleryMobileAdFrequency: 5,
+		galleryMobileAdDuration: 2,
+		cmpProfileId: 5954,
+		privacyManagerId: 187767,
+		prebidReady: false
+	};
+</script>
+
+<script>
+	var coreJs = {
+		processDomReadyScripts: function() {
+			var chain = {
+				callbacks: coreJs.chainCompleteCallbacks,
+				queue: coreJs.domReadyScriptChain,
+				process: function() {
+					var self = this;
+					if (this.queue.length > 0) {
+						coreJs.injectScript(this.queue.shift(), true, function () {
+							self.process();
+						});
+					} else {
+						while (self.callbacks.length > 0) {
+							(self.callbacks.shift())();
+						}
+					}
+				}
+			}
+
+			chain.process();
+		},
+
+		isReady: false,
+		readyCallbacks: [],
+
+		injectScript: function (src, async, callback) {
+			var script = document.head.appendChild(document.createElement('script'));
+
+			if (typeof async !== 'undefined') {
+				script.async = async;
+			}
+
+			if (typeof callback === 'function') {
+				script.onload = function () {
+					script.onload = null;
+					callback();
+				};
+			}
+
+			script.src = src;
+			console.info('Init: Injected script "' + src + '" async=' + async);
+		},
+		
+		domReadyScriptChain: [
+			'/dist/_5-40-101/js/review.min.js'
+		],
+
+		chainCompleteCallbacks: [],
+		windowLoadCallbacks: []
+	};
+
+	coreJs.chainCompleteCallbacks.push(function () {
+		console.info('Init: Chain complete');
+		mcn.init();
+		coreJs.isReady = true;
+	});
+
+	coreJs.injectScript('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', true, function() {
+		console.info('Init: Injected jquery');
+		$(window).on('load', function () {
+			console.info('Init: Window loaded');
+			while (coreJs.windowLoadCallbacks.length > 0) {
+				(coreJs.windowLoadCallbacks.shift())();
+			}
+		});
+
+		$(document).ready(function () {
+			console.info('Init: Document ready');
+			coreJs.processDomReadyScripts();
+		});
+	});
+</script>
+	
+<script>
+	coreJs.windowLoadCallbacks.push(function () {
+		coreJs.injectScript("https://static.bauercdn.com/prebid/prebid4.14.0.js", true, function () {
+			console.info('Prebid: Script loaded');
+			if (window.mcnConfig.prebidReady) {
+				$(document).trigger('prebid.loaded');
+			} else {
+				window.mcnConfig.prebidReady = true;
+			}
+		});
+	});
+</script>
+
+	<title>HARLEY-DAVIDSON LIVEWIRE (2019 - on) Review | MCN</title>
+	<link rel="shortcut icon" href="/dist/_5-40-101/images/favicon.ico" />
+	
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="Read MCN&#x27;s full detailed review of the all-electric Harley-Davidson Livewire here.">
+
+
+		<link rel="canonical" href="https://www.motorcyclenews.com/bike-reviews/harley-davidson/livewire/2019/" />
+
+
+	
+
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org/",
+	"@type": "Review",
+	"itemReviewed": {
+		"@type": "Motorcycle",
+		"name": "HARLEY-DAVIDSON LIVEWIRE"
+
+
+				,"image": {
+					"@type": "ImageObject",
+					"url": "https://mcn-images.bauersecure.com/PageFiles/667519/H-D-LiveWire-UK-01.jpg"
+				}
+					
+
+				,"offers": {
+					"@type": "AggregateOffer",
+					"offerCount": "2",
+					"priceCurrency": "GBP",
+					"lowPrice": "24800",
+					"highPrice": "26000",
+					"offers": [
+						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/harley-davidson/livewire/58351934/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/harley-davidson/livewire/57537232/"
+								}
+												]
+				}
+				},
+	"reviewBody": "On paper the LiveWire electric motorbike may appear heavy, lacking battery range and short on power and torque, but riding it tells a different story. It accelerates with the ferocity of a superbike, sounds like a fighter jet and even throbs like a pounding heartbeat at a standstill.&#xA;&#xA;Related-&amp;nbsp;Harley-Davidson LiveWire: the story&#xA;&#xA;It has an un-Harley-like passion for corners, is well-built, comfortable, smooth and easy to ride. It&#x2019;ll keep going for longer than some sportsbikes and takes an hour to fully fast-charge. It&#x2019;s expensive, lacks a petrol engine&#x2019;s drama and will never please the purist, but if this is the future we&#x2019;ll all have to face one day, things really won&#x2019;t be so bad.&#xA;Tackling the MCN 250 on a Harley-Davidson LiveWire&#xA;&#xA;While zooming around on the LiveWire is fun, it devours the battery. Without restraint, a full charge will last less than 60 miles. At a steady 70mph it&#x2019;ll scrape 70 miles. Over a mix of town and single-carriageway riding at the speed limit, theLiveWire lasts 90 to 100 miles.&#xA;But 250 miles around the UK&#x2019;s toughest test route means public charging. The LiveWire boasts a CCS (Combined Charging System) socket under the flap on its fake tank. Find the correct charger and a full refill of the 13.6kWh lithium-ion battery can be done in just over an hour. But it&#x2019;s a brave rider who turns up to a charging point with a near-flat battery, only to discover the unit&#x2019;s faulty or busy. It&#x2019;s always sensible to stop with range in hand.&#xA;The ride around the MCN 250 took three stops: one for 42 minutes (33% to 90%); one 32 (50% to 90%) and one 54 (28% to 100%). That&#x2019;s a total of just over two hours, most of which was spent drinking coffee or eating lunch.&#xA;Once home, plug in with the three-pin wall charger coiled up neatly under the seat. Harley describe it as an &#x2018;overnight&#x2019; charge and they&#x2019;re not kidding &#x2013; a 5%-to-full charge takes 12 hours 46 minutes. Best not come back too late from an evening ride if you want it ready the next morning.",
+	"author": {
+		"@type": "Person",
+		"name": "Michael Neeves and Martin Fitz-Gibbons",
+		"sameAs": [
+			"https://twitter.com/MCN",
+			"https://www.instagram.com/motorcyclenews/"
+		]
+	},
+	"datePublished": "2020-08-28T12:00:00.0000000Z",
+	"dateModified": "2020-08-28T17:24:31.0000000Z",
+	"reviewRating": {
+		"@type": "Rating",
+		"ratingValue": "4",
+		"bestRating": "5"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Bauer Media"
+	},
+    "sameAs": [
+       "https://www.facebook.com/MCN/",
+       "https://twitter.com/MCN",
+       "https://linkedin.com/MCN",
+       "https://www.instagram.com/motorcyclenews/"
+    ], 
+    "logo": {
+		"@type": "ImageObject",
+		"url": "https://www.motorcyclenews.com/dist/_5-40-101/images/logos/mcn.publisher.85x85.png",
+		"width": 85,
+		"height": 85 
+    }
+}
+</script>
+
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org/",
+			"@type": "VideoObject",
+			"name": "Harley-Davidson LiveWire review | MCN | Motorcyclenews.com />",
+			"description": "Read MCN&#x27;s full detailed review of the all-electric Harley-Davidson Livewire here.",
+			"thumbnailUrl": "https://i.ytimg.com/vi/wM0L84bNPXs/hqdefault.jpg",
+			"uploadDate": "2020-08-28T12:00:00.0000000Z",
+			"height": {
+				"@type": "QuantitativeValue",
+				"value": "113"
+			},
+			"width": {
+				"@type": "QuantitativeValue",
+				"value": "200"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Motorcycle News",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://www.motorcyclenews.com/dist/_5-40-101/images/logos/mcn.publisher.85x85.png",
+					"width": 85,
+					"height": 85
+				}
+			},
+			"author": {
+				"@type": "Person",
+				"name": "MCN - Motorcyclenews.com"
+			},
+			"contentUrl": "https://www.youtube.com/watch?v=wM0L84bNPXs",
+			"embedUrl": "https://www.youtube.com/embed/wM0L84bNPXs"
+		}
+		</script>
+
+
+
+<meta property="og:url" content="https://www.motorcyclenews.com/bike-reviews/harley-davidson/livewire/2019/" />
+<meta property="og:title" content="HARLEY-DAVIDSON LIVEWIRE (2019 - on) Review" />
+<meta property="og:description" content="Read MCN&#x27;s full detailed review of the all-electric Harley-Davidson Livewire here." />
+<meta property="fb:app_id" content="7714743854" />
+<meta property="og:type" content="Article" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:publisher" content="Motorcycle News" />
+
+	<meta property="og:image" content="https://mcn-images.bauersecure.com/PageFiles/667519/H-D-LiveWire-UK-01.jpg" />
+
+	<meta property="og:author" content="Michael Neeves and Martin Fitz-Gibbons" />
+
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preconnect" href="https://www.googletagmanager.com">
+	<link rel="preconnect" href="https://securepubads.g.doubleclick.net" />
+
+		<link rel="amphtml" href="https://www.motorcyclenews.com/amp/bike-reviews/harley-davidson/livewire/2019/" />
+
+	
+<link rel="stylesheet" href="/dist/_5-40-101/css/review.min.css" />
+
+		
+
+<script type="text/javascript">
+	!function () { var e = function () { var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) { try { if (n.frames[t]) { e = n; break } } catch (e) { } if (n === window.top) break; n = n.parent } e || (!function e() { var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) { var i = a.createElement("iframe"); i.style.cssText = "display:none", i.name = t, a.body.appendChild(i) } else setTimeout(e, 5); return !r }(), n.__tcfapi = function () { for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) { var i = { gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub" }; "function" == typeof n[2] && n[2](i) } else a.push(n) }, n.addEventListener("message", (function (e) { var t = "string" == typeof e.data, a = {}; try { a = t ? JSON.parse(e.data) : e.data } catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) { var i = { __tcfapiReturn: { returnValue: a, success: r, callId: n.callId } }; t && (i = JSON.stringify(i)), e.source.postMessage(i, "*") }), n.parameter) }), !1)) }; "undefined" != typeof module ? module.exports = e : e() }();
+</script>
+<script>
+	window._sp_ = {
+		config: {
+			accountId: 296,
+			baseEndpoint: 'https://cmp.motorcyclenews.com',
+			groupId: '5e5155d22d47738ac1cd84f4',
+			targetingParams: {
+				'tcfv2': 'true'
+			}
+		}
+	}
+</script>
+<script src="https://cmp.motorcyclenews.com/wrapperMessagingWithoutDetection.js"></script>
+	
+	
+
+<script>
+	coreJs.chainCompleteCallbacks.push(function () {
+		coreJs.injectScript("https://cdn.permutive.app/02469357-27fd-49a7-9dbc-f0d94ae65faa-web.js", true, function () {
+			console.info('Permutive: Script loaded');
+		});
+	});
+</script>
+
+<script>
+	!function (n, e, i) { if (!n) { n = n || {}, window.permutive = n, n.q = [], n.config = i || {}, n.config.apiKey = e, n.config.environment = n.config.environment || "production"; for (var o = ["addon", "identify", "track", "trigger", "query", "segment", "segments", "ready", "on", "once", "user", "consent"], r = 0; r < o.length; r++) { var t = o[r]; n[t] = function (e) { return function () { var i = Array.prototype.slice.call(arguments, 0); n.q.push({ functionName: e, arguments: i }) } }(t) } } }(window.permutive, "8be71353-1189-4ce1-a5cb-320dd35e89ba", { "consentRequired": true });
+	permutive.addon("web", {});
+</script>
+
+	<script>
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//cdn.onesignal.com/sdks/OneSignalSDK.js", true, function () {
+			console.info('OneSignal: Script loaded');
+
+			if (document.location.hostname === "www.motorcyclenews.com") {
+				var OneSignal = window.OneSignal || [];
+				OneSignal.push(function() {
+					OneSignal.init({
+						appId: "98918693-8f93-496c-af67-c8d96ec525be"
+					});
+					// move this before the domain check above for local testing.
+					$(document).trigger('oneSignal.loaded');
+				});
+			} else {
+				console.info('OneSignal: Push not called as hostname incorrect');
+			}
+		});
+	});
+</script>
+
+	
+<script type="text/javascript">
+(function() {
+	window.dm = window.dm ||{ AjaxData:[]};
+	window.dm.AjaxEvent = function(et, d, ssid, ad) {
+		dm.AjaxData.push({ et: et,d: d,ssid: ssid,ad: ad});
+		window.DotMetricsObj && DotMetricsObj.onAjaxDataUpdate();
+	};
+	var d = document,h = d.getElementsByTagName('head')[0],s = d.createElement('script');
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = 'https://uk-script.dotmetrics.net/door.js?d=www.motorcyclenews.com&t=bikereviews';
+	h.appendChild(s);
+} ());
+</script>
+</head>
+
+<body>
+
+	
+<script>
+var bauerDataLayer = [{
+	'siteName': 'MCN',
+	'productType': 'Motorcycle',
+	'cmsPageType': 'Templates.BikeReviews.DetailsPage',
+	'cmsPageId': '549579',
+	'cmsPageName': '2019',
+	'section': 'Bike Reviews',
+	'subSection1': 'HARLEY-DAVIDSON',
+	'subSection2': 'LIVEWIRE',
+	'created': '-62135596800',
+	'makeName': 'HARLEY-DAVIDSON',
+	'modelName': 'HARLEY-DAVIDSON+LIVEWIRE',
+	'categoryMcn': 'Electric'
+}];
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=xUOFojuTghcMLZ3prl6hMA&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);})(window, document,'script','bauerDataLayer','GTM-PS8LQC4');</script> 
+	<span class="screen-size-detector"></span>
+
+	<div class="off-canvas-content" data-off-canvas-content>
+		<div class="site-root">
+			
+<header class="site-header clearfix">
+	<strong class="show-for-sr">MCN</strong>
+	
+	<div data-sticky-container>
+		<div class="site-header-mobile top-bar hide-for-medium" data-sticky data-sticky-on="small" data-margin-top="0">
+			<div class="site-header-mobile__left">
+				<a class="site-header-mobile__logo" title="Home" href="/"></a>
+			</div>
+			<div class="site-header-mobile__middle">
+				<a class="site-header-mobile__middle__nav-link" href="/bike-reviews/">Reviews</a>
+				<a class="site-header-mobile__middle__nav-link" href="/bikes-for-sale/">For sale</a>
+				<a class="site-header-mobile__middle__nav-link" href="/news/">News</a>
+				<a class="site-header-mobile__middle__nav-link" href="/insurance/">Insurance</a>
+			</div>
+			<div class="site-header-mobile__right">
+				<button class="site-header-mobile__icon site-header-mobile__icon--menu menu-icon right-off-canvas-toggle" data-toggle="offCanvasRight">
+					<span class="site-header-mobile__icon__text">Menu</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	
+	<div data-sticky-container>
+		<div class="site-header-full show-for-medium" data-sticky data-sticky-on="medium" data-margin-top="0">
+			<div class="site-header-full__inner">
+				<a class="site-header-full__logo" title="Home" href="/">
+					<span class="icon fi-home"></span>
+				</a>
+				<a class="site-header-full__search-toggle fi-icon fi-icon--xlarge fi-magnifying-glass show-for-medium-only" href="#"></a>
+				<div class="site-header-full__right-search-box show-for-large">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+
+				
+
+<nav class="horizontal-site-nav">
+	<ul class="horizontal-site-nav__more-menu dropdown menu" data-dropdown-menu data-closing-time="0">
+		<li class="horizontal-site-nav__more-menu__item is-dropdown-submenu-parent">
+			<a href="#" class="horizontal-site-nav__more-menu__link">More<span class="show-for-large"> MCN</span></a>
+
+			<ul class="horizontal-site-nav__sub-nav horizontal-site-nav__more-menu__content menu">
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="horizontal-site-nav__menu dropdown menu" data-dropdown-menu data-closing-time="0">
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bike-reviews/"
+				    >
+					Bike Reviews
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+								    >
+									Search bike reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+								    >
+									Our test bikes
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bikes-for-sale/"
+				    >
+					Bikes For Sale
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+								    >
+									Search bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+								    >
+									Sell your bike
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+								    >
+									Bike check
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/news/"
+				    >
+					News
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/"
+								    >
+									Latest news
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+								    >
+									New bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-tech/"
+								    >
+									New tech
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sport/"
+								    >
+									Sport
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+								    >
+									Electric bikes coming soon
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/advice/"
+				    >
+					Advice
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/best/"
+								    >
+									Best
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+								    >
+									Riding tips
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+								    >
+									Learn to ride a motorbike with MCN
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/tests/"
+								    >
+									Tests
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+								    >
+									Maintenance
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+								    >
+									Travelling touring
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/parts/"
+								    >
+									Parts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+								    >
+									Buying and selling
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+								    >
+									Inspiration
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-gear/"
+								    >
+									New gear
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+								    >
+									Product picks
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/"
+								    >
+									Product reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-rider/"
+								    >
+									New riders
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/"
+				    >
+					Insurance
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="#"
+				    >
+					Get involved
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+								    >
+									#Ride5000miles
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/newsletter/"
+								    >
+									Subscribe to MCN weekly newsletter
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+								   target='_blank' rel='nofollow'>
+									Buy MCN T-shirts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+								   target='_blank' rel='nofollow'>
+									MCN Festival
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+								   target='_blank' rel='nofollow'>
+									Scottish Motorcycle Show
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+								    rel='nofollow'>
+									London Motorcycle Show
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar"
+				   target='_blank' >
+					Subscribe
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742"
+				   target='_blank' >
+					MCN Shop
+				</a>
+			</li>
+	</ul>
+</nav>
+
+				<div class="site-header-full__search-bar">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+			<div class="top-ad-container" data-sticky-container>
+				<div class="top-ad-container__inner">
+					<div data-id="leaderboard-1" class="top-ad advert" data-sticky data-margin-top="0" data-sticky-on="small"></div>
+				</div>
+			</div>
+
+			<div class="site-body">
+				
+<aside class="desktop-sidebar" data-max-mpu-count="30">
+
+
+<div id=stickyMpuPlaceholder1 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder1 data-sticky-on="xlarge">
+			
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder2 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder2 data-sticky-on="xlarge">
+			
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder3 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder3 data-sticky-on="xlarge">
+			
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder4 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder4 data-sticky-on="xlarge">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder5 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder5 data-sticky-on="xlarge">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder6 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder6 data-sticky-on="xlarge">
+			
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder7 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder7 data-sticky-on="xlarge">
+			
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder8 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder8 data-sticky-on="xlarge">
+			
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder9 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder9 data-sticky-on="xlarge">
+			
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder10 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder10 data-sticky-on="xlarge">
+			
+<div data-id="mpu-10" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder11 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder11 data-sticky-on="xlarge">
+			
+<div data-id="mpu-11" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder12 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder12 data-sticky-on="xlarge">
+			
+<div data-id="mpu-12" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder13 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder13 data-sticky-on="xlarge">
+			
+<div data-id="mpu-13" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder14 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder14 data-sticky-on="xlarge">
+			
+<div data-id="mpu-14" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder15 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder15 data-sticky-on="xlarge">
+			
+<div data-id="mpu-15" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder16 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder16 data-sticky-on="xlarge">
+			
+<div data-id="mpu-16" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder17 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder17 data-sticky-on="xlarge">
+			
+<div data-id="mpu-17" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder18 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder18 data-sticky-on="xlarge">
+			
+<div data-id="mpu-18" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder19 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder19 data-sticky-on="xlarge">
+			
+<div data-id="mpu-19" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder20 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder20 data-sticky-on="xlarge">
+			
+<div data-id="mpu-20" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder21 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder21 data-sticky-on="xlarge">
+			
+<div data-id="mpu-21" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder22 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder22 data-sticky-on="xlarge">
+			
+<div data-id="mpu-22" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder23 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder23 data-sticky-on="xlarge">
+			
+<div data-id="mpu-23" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder24 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder24 data-sticky-on="xlarge">
+			
+<div data-id="mpu-24" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder25 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder25 data-sticky-on="xlarge">
+			
+<div data-id="mpu-25" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder26 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder26 data-sticky-on="xlarge">
+			
+<div data-id="mpu-26" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder27 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder27 data-sticky-on="xlarge">
+			
+<div data-id="mpu-27" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder28 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder28 data-sticky-on="xlarge">
+			
+<div data-id="mpu-28" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder29 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder29 data-sticky-on="xlarge">
+			
+<div data-id="mpu-29" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder30 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder30 data-sticky-on="xlarge">
+			
+<div data-id="mpu-30" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div></aside>
+
+				<main class="site-content">
+					
+	<nav class="breadcrumb-list">
+				<ul class="breadcrumbs show-for-medium">
+							<li><a href="/">Home</a></li>
+							<li><a href="/bike-reviews/">Bike Reviews</a></li>
+							<li><a href="/bike-reviews/harley-davidson/">HARLEY-DAVIDSON</a></li>
+							<li><a href="/bike-reviews/harley-davidson/livewire/">LIVEWIRE</a></li>
+							<li class="disabled">2019</li>
+				</ul>
+				<a class="breadcrumb-list__back-link hide-for-medium" href="/bike-reviews/harley-davidson/livewire/">
+					<span class="fi-icon fi-arrow-up breadcrumb-list__back-link__icon"></span><span class="breadcrumb-list__back-link__text">See all HARLEY-DAVIDSON LIVEWIRE reviews</span>
+				</a>
+	</nav>
+
+
+					
+
+
+
+<span class="last-viewed-model" data-make="harley-davidson" data-model="livewire" />
+
+<article id="review" class="review">
+<img alt="" class="review__event-logger" data-src="https://tracking.bauermedia.co.uk/EventHandler.ashx?e=HHkbZZ3atHYkODBcU4gMTERnPJzrMAC5kDttjn%252b5iLd1U32j3RFiV0%2F70PVJ%252b29pb25rfIZKf9B7gXy57FFTTapQiAtYk8%252bPKq6nceKuAlqVCegLqM5jWAQVQw7pnl%252bAqBk9gmiPD2A2%252bE0YMHuptHehdlerCK3n5KnZeyE%2Fk9luJ%2FmQHDS9%2FXMJA9GoEn%2FKZCI%2FM6ZgP1ZRrLiuYz18Uct1J9tguuk0E7DCnX4dNQMc8IA5KmY0X4kd7YhSc69TXzqW4mpcT7lLzNsr8rZP9SrxY0RajabXobwyP5k749ec5N9chKjI1MCvpXssClegASA%252b79%2FDbexJGPzhRC9qWaxcoAU7wBbSkLxGCWjCytC3QKarxNyQcVE3537sEZgUPH6NdHD%2FAXaiGnu5yyGjKkW6d%252bKeBKi9FwxdwNkBs14pO2i1jjKKwwMpLbxObsPV5Y%252bGSAD8NzGn1nMf93tQfAJnmyhD7scBmVbQDz1XCHYz2tLB0%252bPAT5h6EZ6MO1qW8E17H27UcxRIskXNV2ggzg%3D%3D" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+	<h1>HARLEY-DAVIDSON LIVEWIRE (2019 - on) Review</h1>
+
+	<section class="review__headline-ratings grid-x">
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#review-overall">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">MCN rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+			</a>
+		</div>
+
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#ownersReviews">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">Owners&#x27; rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+			</a>
+		</div>
+	</section>
+
+	<div class="review__navigation">
+		<a href="#specs">
+			<span>Specs</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#ownersReviews">
+			<span>Owners' reviews</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#forSale">
+			<span class="show-for-medium">Bikes for sale</span><span class="show-for-small-only">For sale</span><span class="review__navigation__arrow"></span>
+		</a>
+	</div>
+
+	<section class="review__gallery-panel">
+		
+
+<section class="gallery-preview">
+		<figure class="gallery-preview__image gallery-link">
+			<img alt="Harley-Davidson LiveWire on UK roads" data-lazy-interchange="[https://mcn-images.bauersecure.com/PageFiles/667519/615x405/H-D-LiveWire-UK-01.jpg, small], [https://mcn-images.bauersecure.com/PageFiles/667519/999x666/H-D-LiveWire-UK-01.jpg, medium], [https://mcn-images.bauersecure.com/PageFiles/667519/600x400/H-D-LiveWire-UK-01.jpg, large]" data-src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" />
+		</figure>
+		<div class="gallery-preview__count">
+			<span class="gallery-preview__count__item gallery-link">
+				<span class="gallery-preview__count__icon icon-35x35-camera"></span>
+				<span class="gallery-preview__count__value">12</span>
+			</span>
+
+				<span class="gallery-preview__count__item  gallery-link" data-slide-index="12">
+					<span class="gallery-preview__count__icon icon-35x35-play"></span><span class="gallery-preview__count__value">1</span>
+				</span>
+		</div>
+
+		<div class="gallery-preview__button-container">
+				<button class="gallery-preview__button button gallery-link">	
+					<span class="gallery-preview__button__icon icon-35x35-camera"></span>
+					<span>View 12 images</span>
+				</button>
+
+				<button class="gallery-preview__button button gallery-link" data-slide-index="12">	
+					<span class="gallery-preview__button__icon icon-35x35-play"></span>
+					<span>View 1 video</span>
+				</button>
+		</div>
+</section>
+	</section>
+
+	<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+	<div class="show-for-medium-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<section class="review__summary">
+		
+	<section class="review__highlights">
+		<h2 class="review__summary__heading">Highlights</h2>
+		<ul class="review__highlights__list">
+				<li class="review__highlights__item">First electric motorbike from a mainstream manufacturer</li>
+				<li class="review__highlights__item">Instant torque and power</li>
+				<li class="review__highlights__item">Pulsing feedback at standstill</li>
+		</ul>
+	</section>
+
+
+
+	<a href="/advice/best/motorbikes/" class="mcn-award">
+		<div class="mcn-award__heading">
+			MCN AWARDS
+		</div>
+		<div class="mcn-award__text">
+			Best Electric Bike 2020
+		</div>
+		<div class="mcn-award__winner">
+			WINNER
+		</div>
+	</a>
+
+		
+
+	<section class="review__at-a-glance">
+		<h2 class="review__summary__heading">At a glance</h2>
+		<table class="review__at-a-glance__table">
+			<tbody>
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Owners' reliability rating: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#ownersReviews"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>    <span class="star-rating__text">(5/5)</span>  </span></span></a></td>
+					</tr>
+
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Power: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#specs">104 bhp</a></td>
+					</tr>
+
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Seat height: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								Low 
+								<span class="review__at-a-glance__item__link__sub-info">(30.7 in / 780 mm)</span>
+							</a>
+						</td>
+					</tr>
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Weight: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								High 
+								<span class="review__at-a-glance__item__link__sub-info">(549 lbs / 249 kg)</span>
+							</a>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+		
+	<h2 class="review__summary__heading">Prices</h2>
+	<section class="review__prices">
+		<div class="grid-x">
+			<div class="cell small-7">
+					<div class="review__prices__price">
+						<span class="review__prices__price__label">New</span>
+						<span class="review__prices__price__value">&#xA3;28,750</span>
+					</div>
+					
+					<div class="review__prices__price">
+						<span class="review__prices__price__label">Used</span>
+						<span class="review__prices__price__value">&#xA3;24,800 - &#xA3;26,000</span>
+					</div>
+
+			</div>
+			<div class="cell small-5">		
+					<a class="review__prices__button button" href="/bikes-for-sale/harley-davidson/livewire/"><span class="review__prices__button__text">View bikes for sale</span></a>
+			</div>
+		</div>
+	</section>
+
+	</section>
+
+	<div class="show-for-large-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<div class="review__main-content">
+		<a name="review-overall" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Overall rating</h2>
+			<a href="#review-ride" class="review__main-content__anchor-link">Next up: Ride &amp; brakes</a>
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<aside class="review__publishing-info">
+					<div><strong>Author: Michael Neeves and Martin Fitz-Gibbons</strong></div>
+
+				<div>Published: 28 August 2020</div>
+
+					<div>Updated: 28 August 2020</div>
+			</aside>
+
+			<p>On paper the LiveWire <a href="https://www.motorcyclenews.com/bike-reviews/harley-davidson/livewire/2019/" title="Best electric motorbikes">electric motorbike</a> may appear heavy, lacking battery range and short on power and torque, but riding it tells a different story. It accelerates with the ferocity of a superbike, sounds like a fighter jet and even throbs like a pounding heartbeat at a standstill.</p>
+<ul>
+<li><strong>Related-</strong>&nbsp;<a href="https://www.motorcyclenews.com/news/new-bikes/harley-livewire-production-bike-unveiled/" title="Harley-Davidson Livewire: the story">Harley-Davidson LiveWire: the story</a></li>
+</ul>
+<p>It has an un-Harley-like passion for corners, is well-built, comfortable, smooth and easy to ride. It’ll keep going for longer than some sportsbikes and takes an hour to fully fast-charge. It’s expensive, lacks a petrol engine’s drama and will never please the purist, but if this is the future we’ll all have to face one day, things really won’t be so bad.</p>
+<h2>Tackling the MCN 250 on a Harley-Davidson LiveWire</h2>
+<p><img title="Harley-Davidson LiveWire on UK roads" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Harley-Davidson LiveWire on UK roads" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/667519/615x0/h-d-livewire-uk-01.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/667519/900x0/h-d-livewire-uk-01.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>While zooming around on the LiveWire is fun, it devours the battery. Without restraint, a full charge will last less than 60 miles. At a steady 70mph it’ll scrape 70 miles. Over a mix of town and single-carriageway riding at the speed limit, theLiveWire lasts 90 to 100 miles.</p>
+<p>But 250 miles around the UK’s toughest test route means public charging. The LiveWire boasts a CCS (Combined Charging System) socket under the flap on its fake tank. Find the correct charger and a full refill of the 13.6kWh lithium-ion battery can be done in just over an hour. But it’s a brave rider who turns up to a charging point with a near-flat battery, only to discover the unit’s faulty or busy. It’s always sensible to stop with range in hand.</p>
+<p>The ride around the MCN 250 took three stops: one for 42 minutes (33% to 90%); one 32 (50% to 90%) and one 54 (28% to 100%). That’s a total of just over two hours, most of which was spent drinking coffee or eating lunch.</p>
+<p>Once home, plug in with the three-pin wall charger coiled up neatly under the seat. Harley describe it as an ‘overnight’ charge and they’re not kidding – a 5%-to-full charge takes 12 hours 46 minutes. Best not come back too late from an evening ride if you want it ready the next morning.</p>
+<p><div>
+
+<div class="video-player">
+		<div class="video-player__container" data-video-url="https://www.youtube.com/embed/wM0L84bNPXs" data-enable-js-api="false" data-ga-tracking-category="" data-ga-tracking-action="" data-ga-tracking-label="">
+				<img alt="" class="video-player__container__preview" data-lazy-interchange="[https://img.youtube.com/vi/wM0L84bNPXs/hqdefault.jpg, small], [https://img.youtube.com/vi/wM0L84bNPXs/maxresdefault.jpg, medium]" data-src="" src="">
+
+				<span class="video-player__container__button"></span>
+		</div>
+</div></div></p>
+		</div>
+
+		<a name="review-ride" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Ride quality &amp; brakes</h2>
+			<a href="#review-engine" class="review__main-content__anchor-link">Next up: Engine</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>The LiveWire isn’t just a motorcycle with a futuristic engine, it has a cheeky side, too, reminiscent of a Ducati Monster (the LiveWire’s 1490mm wheelbase is only 5mm longer).</p>
+<p>This isn’t just the most powerful Harley currently in production (although they never quote power figures, so we’ll have to take their word for it), the smoothest, or most technologically advanced, but it also has a genuine appetite for corners. Did someone say <a href="https://www.motorcyclenews.com/bike-reviews/buell/" title="Read expert Buell reviews with MCN">Buell</a>?</p>
+<p>Straight line stability is unflappable, there’s acres of ground clearance and although the Harley doesn’t respond well to fast direction changes (without a little wobble), its crisp steering has all the hallmarks of being developed by a test team that knows how a bike should roll neatly in the corners.&nbsp;</p>
+<p>Push very hard and you can get the LiveWire’s hips shaking and specially developed 17in Michelin Scorcher Sport tyres (180-section rear, 120 front) give decent grip, to a point, but they let go under the force of hard front and rear braking, setting the ABS off in protest. These are the only times you’re really aware of the LiveWire’s excessive weight.</p>
+<p>Quiet electric bikes never cover up road noise, but such is the tautness and quality of the LiveWire’s chassis components you never hear its suspension crash, or bang over bumps and there’s no chain slapping against the swingarm, either, as like all Harleys, the LiveWire runs a silent, mess-free belt drive. It’s the least clattery battery bike we’ve ever ridden.</p>
+<p>As accomplished as the Harley is, I’ll admit it lacks the involvement and excitement that clutch and gears give you. I miss the drama of spinning an engine and feeling the hot, mechanical din play out beneath you. You can’t even rev an electric bike in a tunnel to get an earful of rasping exhaust and growling airbox.&nbsp;</p>
+<p>Maybe it isn’t worth convincing the pure petrol head. Maybe the LiveWire isn’t meant for us, but for the next generation to enjoy? Riding their electric Harleys around in the future, will they find our love of the smelly old combustion engine as quaint as we look back at the steam engine generation?</p>
+<h2>Riding the Harley-Davidson LiveWire on UK roads</h2>
+<p><img title="Harley-Davidson LiveWire side" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Harley-Davidson LiveWire side" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/667519/615x0/h-d-livewire-uk-03.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/667519/900x0/h-d-livewire-uk-03.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>But beyond all the ‘how fast’, ‘how far’ and ‘how long’ stuff, the LiveWire feels, works and rides like a familiar motorcycle, not a far-out science experiment. Chassis-wise it feels more conventional than any Harley built over the last 117 years.</p>
+<p>Pushing it around you can sense it’s carrying some timber. Harley claim 251kg – chunky, but still 5kg lighter than an <a href="https://www.motorcyclenews.com/bike-reviews/harley-davidson/sportster-883/2015/" title="Read MCN's Harley-Davidson Sportster 883 Iron bike review here">883 Iron</a>, and not too different to solid roadsters like <a href="http://https://www.motorcyclenews.com/bike-reviews/bmw/r1250r/2019/" title="Read MCN's BMW R1250R bike review here">BMW’s R1250R</a> or <a href="http://https://www.motorcyclenews.com/bike-reviews/honda/cb1100rs/cb1100rs/" title="Read MCN's Honda CB1100RS bike review here">Honda’s CB1100RS</a>.</p>
+<p>Once moving it doesn’t feel lardy or bulky, tipping into turns easily, willingly and accurately, albeit with a slightly tail-heavy stance. Its 45° of ground clearance is plenty too. Change direction quickly at speed and you can definitely feel that mass as a physical reluctance at the bars, but most of the time it’s much like a normal naked.</p>
+<p>Fully adjustable Showa suspension is firmly sprung, with a slightly harsh ride over rough surfaces. But the flip-side is decent chassis control. Radial Brembo brakes have plenty of power, yet the LiveWire doesn’t dive much. Accelerate hard and the linkage-free shock doesn’t jump or pump.</p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-engine" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Engine</h2>
+			<a href="#review-reliability" class="review__main-content__anchor-link">Next up: Reliability</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p><a href="https://www.motorcyclenews.com/bike-reviews/harley-davidson/" title="Read Harley-Davidson reviews with MCN here">Harley’s</a> 'Renewable Energy Storage System' (a 15.5kWh high-voltage lithium ion battery pack with a built-in power generation system, to you and me) is the unbridled centrepiece of the LiveWire.</p>
+<p>Featuring horizontal cooling fins its cast aluminium case doubles up as a stressed chassis member with the frame and headstock bolted around it. This modular design surely points to more diverse models in the future.&nbsp;</p>
+<p>A cable and three pin plug that lives under the seat plugs into your 240-volt household supply, giving 13 miles for every hour of charging. An on-board DC Fast Charge (192 miles for every hour’s charge) lets you use the petrol pump-like car chargers you’ll find everywhere from to service stations to selected Harley dealers from September.&nbsp;</p>
+<p>Placed beneath the battery is the 'H-D Revelation' permanent magnet water-cooled electric motor. Harley claims 0-60mph in just three secs and a neck cracking 60-80mph in 1.9 secs - perfect for instant overtakes.</p>
+<p>Riding the LiveWire at its world launch in Portland, Oregon, we cover 66 miles of city and twisty road riding and are a flagrantly throttle-happy as you’d be on a bike where you know Harley won’t leave you stranded with a flat battery.</p>
+<p>Finishing with 18% charge and 24 miles remaining, isn’t bad for a day out enjoying yourself (except the bits where it’s illegal to filter through traffic). That’s 90 miles on a single charge and only five miles shy of what Harley says it’ll do for combined stop-and-go motorway miles.&nbsp;</p>
+<p>With a more careful right hand and regenerative braking dialled-in, Harley’s claimed 146 miles range in town is entirely possible. The LiveWire isn’t a touring bike by any stretch, but for blasting around your favourite back roads or commuting, battery range is acceptable.</p>
+<p>You can plug in overnight at home, like you would a smartphone, or juice-up on the road at a fast-charging station. Harley says it’ll take 40 minutes to charge to 80%, or full in an hour. Finding charging stations in the UK maybe getting easier, but they’re still not everywhere, so there’ll still be some planning needed to ease range anxiety.&nbsp;</p>
+<p>The LiveWire is the first electric motorcycle to be produced by a major motorcycle manufacturer and Harley are the first to have gone the whole hog to create the infrastructure to support it. 12 UK dealers (250 worldwide) will be set-up with 24kW charging stations and factory specialist technicians.&nbsp;</p>
+<p>With its lofty price tag the LiveWire will be an electric dream for all but the well-healed, but some of that cost is offset by cheaper running and service costs than a petrol engine. The first service is at 1000 miles, then every 5000 and the battery has a five-year unlimited mileage warranty.</p>
+<p>Electric bikes are only going to get cheaper as demand grows. That’s happening already in the car world, where there’s less of a stigma for battery power, but most riders will still prefer pistons, cranks and cams, no matter how well the LiveWire rides.</p>
+<h2>Riding the Harley-Davidson LiveWire on UK roads</h2>
+<p><img title="Harley-Davidson LiveWire UK charging station" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Harley-Davidson LiveWire UK charging station" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/667519/615x0/h-d-livewire-uk-06.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/667519/900x0/h-d-livewire-uk-06.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>With your eyes shut, you’d never guess this is a made-in-America Harley. The liquid-cooled electric motor is faultlessly smooth and whisper-quiet. The riding position has no trace of cruiser – heels sit directly below the seat, hands spread by a wide, flat, low bar. Forget Harley: think <a href="http://https://www.motorcyclenews.com/bike-reviews/triumph/speed-triple-1050-rs/2018/" title="Read MCN's Triumph Speed Triple RS bike review here">Triumph Speed Triple</a> with a lower seat and pegs.</p>
+<p>Along the A16 it holds 60mph with a controlled calm, politely picking past slow-moving lorries. There’s no gearbox or clutch, just the motor, a 90° bevel gear and a belt drive to the back wheel. Turn the twistgrip, go faster. You can’t be in the wrong gear, can’t be in the wrong part of the power curve, can’t miss a shift and can’t stall.</p>
+<p>It’s seriously quick, too. A full-throttle standing start in Sport mode sees the dash jump from 0 to 60mph in three seconds. Top speed is an indicated 114mph. But most impressive is its supernatural shove once rolling: 40mph to 80mph takes 2.5 seconds.</p>
+<p>The lack of noise or gear shifting doesn’t detract – if anything, it makes the rabid, relentless turn of speed even more eye-opening. You’re shoved back in the seat, tensing to hold on, yet the bike barely seems to be trying. It’s like being thrown forwards by an invisible hand.</p>
+		</div>
+
+		<a name="review-reliability" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Reliability & build quality</h2>
+			<a href="#review-value" class="review__main-content__anchor-link">Next up: Value</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>Tried and tested chassis components and Bosch electronics shouldn’t cause problems in the long term and its electric motor has fewer moving parts to go wrong then a petrol engine. Harley are giving a five year unlimited mileage warranty on the battery pack.</p>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">We’re riding Harley Davidson’s electric Livewire today. You can read all about what makes it tick by clicking on the link below, but right now the burning question is: what’s it like to ride? We’re about to find out. <a href="https://t.co/dhIlTNCPYH">https://t.co/dhIlTNCPYH</a> <a href="https://t.co/I5d1hzI2oJ">pic.twitter.com/I5d1hzI2oJ</a></p>
+— Motor Cycle News (@MCNnews) <a href="https://twitter.com/MCNnews/status/1151148949404651520?ref_src=twsrc%5Etfw">July 16, 2019</a></blockquote>
+<script src="https://platform.twitter.com/widgets.js"></script>
+		</div>
+
+		<a name="review-value" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Value vs rivals</h2>
+			<a href="#review-equipment" class="review__main-content__anchor-link">Next up: Equipment</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="2 out of 5">    <span style="width:40%" class="star-rating__stars__value">2 out of 5</span>  </span>    <span class="star-rating__text">(2/5)</span>  </span></span>
+				</div>
+
+			<p>With its lofty price tag the LiveWire will be an electric dream for all but the well-healed, but some of that cost is offset by cheaper running and service costs than petrol power.</p>
+<p><img title="Harley-Davidson Livewire static" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Harley-Davidson Livewire static" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/667519/615x0/harley-davidson-livewire-02.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/667519/900x0/harley-davidson-livewire-02.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-equipment" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Equipment</h2>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>    <span class="star-rating__text">(5/5)</span>  </span></span>
+				</div>
+
+			<p>Build quality and attention to detail are what you’d insist on for such a high-ticket price. Switchgear blocks and buttons are Tonka Toy-tough, there’s a colour TFT dash, LED lights, keyless ignition, a 12v charger (the less popular C-type USB) and perfect paint finishes, from the anodised metal look of the ‘fuel tank’ to the aluminium frame, motor and battery pack. Thin, exposed wiring to the front indicators is the only glitch in the Matrix</p>
+<p>An ‘H-D Connect’ phone app (free subscription for the first year) connects to the LiveWire by both cellular for long range and Bluetooth for up-close.</p>
+<p>It’ll point you to charging points, give you a live charging update while you nip off for a coffee and help you with everything from suspension set-up advice (based on rider weight), to finding your way around via Sat Nav.</p>
+<p>It’ll give you service update, warn you if your LiveWire is being tampered with, or lifted into the back of a van by a particularly burly bunch of thieves. Harley also offers the usual range of official accessories, including a carbon single seat cover and screen, levers and covers.</p>
+		</div>
+	</div>
+
+	<a name="forSale" class="review__anchor"></a>
+	
+
+<aside class="review__bfs">
+		<h2 class="review__bfs__heading">HARLEY-DAVIDSON LIVEWIRE for sale with <span class="review__bfs__heading__highlight">MCN</span></h2>
+		<ul class="review__bfs__list">
+				<li class="review__bfs__item" data-tracking-label="Sykes Harley-Davidson">
+					<a href="/bikes-for-sale/harley-davidson/livewire/58351934/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="LIVEWIRE " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58351934/450508459/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">LIVEWIRE  (2020/20)</span>
+								<span class="review__bfs__item__price">&#xA3;24,750</span>
+								<span class="review__bfs__item__location">East Sussex</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Sykes Harley-Davidson">
+					<a href="/bikes-for-sale/harley-davidson/livewire/57537232/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="LIVEWIRE " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/57537232/280889887/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">LIVEWIRE  (2020/20)</span>
+								<span class="review__bfs__item__price">&#xA3;25,995</span>
+								<span class="review__bfs__item__location">East Sussex</span>
+							</div>
+						</div>
+					</a>
+				</li>
+		</ul>
+		<div class="review__bfs__button-container">
+			<a class="review__bfs__button button" href="/bikes-for-sale/harley-davidson/livewire/">View more bikes for sale</a>
+		</div>
+</aside>
+
+	<a name="specs" class="review__anchor"></a>
+
+	
+<section class="review__facts-and-figures">
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Specs</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine size</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine type</th>
+					<td class="review__facts-and-figures__item__value">Water-cooled internal permanent magnet synchronous motor</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Frame type</th>
+					<td class="review__facts-and-figures__item__value">Cast aluminium trellis</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Fuel capacity</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Seat height</th>
+					<td class="review__facts-and-figures__item__value">780mm</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Bike weight</th>
+					<td class="review__facts-and-figures__item__value">249kg</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front suspension</th>
+					<td class="review__facts-and-figures__item__value">Showa 43mm forks, fully adjustable</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear suspension</th>
+					<td class="review__facts-and-figures__item__value">Single Showa shock, fully adjustable</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front brake</th>
+					<td class="review__facts-and-figures__item__value">2 x 300mm front discs with four-piston Brembo monobloc radial calipers. Cornering ABS</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear brake</th>
+					<td class="review__facts-and-figures__item__value">260mm rear disc with twin-piston caliper Cornering ABS</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front tyre size</th>
+					<td class="review__facts-and-figures__item__value">120/70 x 17</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear tyre size</th>
+					<td class="review__facts-and-figures__item__value">180/55 x 17</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Mpg, costs &amp; insurance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Average fuel consumption</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual road tax</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual service cost</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">New price</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;28,750</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Used price</th>
+					<td class="review__facts-and-figures__item__value">
+						&#xA3;24,800 - &#xA3;26,000
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Insurance group</th>
+					<td class="review__facts-and-figures__item__value">
+						-<br />
+							<a rel="nofollow" target="_blank" href="https://quotes.mcncompare.com/bike/PersonalInformation1.aspx?utm_campaign=multi-acq-compare-mcn&amp;utm_source=mcn&amp;utm_medium=referral&amp;utm_content=reviews-detail-value-section">How much to insure?</a>
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Warranty term</th>
+					<td class="review__facts-and-figures__item__value">Two years</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Top speed &amp; performance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max power</th>
+					<td class="review__facts-and-figures__item__value">104 bhp</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max torque</th>
+					<td class="review__facts-and-figures__item__value">86 ft-lb</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Top speed</th>
+					<td class="review__facts-and-figures__item__value">115 mph</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">1/4 mile acceleration</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Tank range</th>
+					<td class="review__facts-and-figures__item__value">110 miles</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+	<section class="review__history-and-versions">
+			<h2 class="review__history-and-versions__heading">Model history &amp; versions</h2>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Model history</h3>
+					<p><strong>2019:</strong> Electric LiveWire launched and available in dealers in September.&nbsp;</p>
+				</div>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Other versions</h3>
+					<p>None.</p>
+				</div>
+
+	</section>
+
+
+	<a name="ownersReviews" class="review__anchor"></a>
+	
+
+<section class="review__owners-reviews-summary">
+	<h2 class="review__owners-reviews-summary__heading">
+		<span class="review__owners-reviews-summary__heading__inner">
+			Owners' reviews
+			<span class="review__owners-reviews-summary__heading__vehicle">for the HARLEY-DAVIDSON LIVEWIRE (2019 - on)</span>
+		</span>
+	</h2>
+	<div class="review__owners-reviews-summary__intro">
+			<p class="review__owners-reviews-summary__intro__text">
+				<strong>1 owner</strong> has reviewed their HARLEY-DAVIDSON LIVEWIRE (2019 - on) and rated it in a number of areas. Read what they have to say and what they like and dislike about the bike below.
+			</p>
+			<p class="review__owners-reviews-summary__intro__text">
+				<a href="/bike-reviews/review-your-bike/?review=549579">Review your HARLEY-DAVIDSON LIVEWIRE (2019 - on)</a>
+			</p>
+			<table class="review__owners-reviews-summary__table">
+				<thead>
+					<tr>
+						<td colspan="2"><h3 class="review__owners-reviews-summary__table__heading">Summary of owners' reviews</h3></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Overall rating: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Ride quality &amp; brakes: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>    <span class="star-rating__text">(5/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Engine: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>    <span class="star-rating__text">(5/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Reliability &amp; build quality: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>    <span class="star-rating__text">(5/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Value vs rivals: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Equipment: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</section>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+		<section class="review__owners-reviews-container">
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">A great motorcycle. Not just a great Harley. A great bike.</strong>
+	<div class="review__owners-review__published-info">
+		<strong>06 October 2020</strong> <span class="review__owners-review__published-info__author">by IronSaint</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2020</strong>
+		</p>
+
+		<p>Near perfect for everything except long distance touring. Whisper quiet, agile, nimble, and able to go a fair distance on a charge. Maintenance free and truly enjoyable to ride.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Closest thing to TRON you will ever experience. Seat comfortable even at the end of the day. Handles brilliantly and moves like a fish on amphetamines.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">0-60mph in 3 seconds means you can drag race right out of the box if you want to. 50-70mph is unreal, with a throttle response that&#x27;s practically preternatural. The only thing holding this back from wider acceptance is battery range - and given how fast battery technology is changing this is most certainly going to be a non-issue within five years.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Compared to other manufacturers, this is a premium product. When one spends that kind of money on anything - they expect good materials and a well thought out piece of equipment. It&#x27;s pretty much grab and go with few moving parts to go wrong.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">This is a pricier motorcycle than most. You will certainly save money in terms of not needing transmission fluid replacement, oil changes, air filter changes, valve adjustment, transmission adjustment, cable lubrication and so forth, but DC charging isn&#x27;t cheap and there&#x27;s a higher up-front acquisition cost. Then again by definition EVs are more expensive vehicles - your average EV car is priced much higher than a comparable ICE vehicle.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The grips are a little hard on the hands, but the ride position is perfect, the seat sturdy and well finished, the fairing stylish and good looking.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> The MoCo is highly motivated to sell these. Take advantage before interest picks up and there&#x27;s less pressure on them to find a market.
+		</p>
+</div>		</section>
+
+	<a class="back-to-top" href="#">
+	<div class="back-to-top__circle">
+		<span class="back-to-top__circle__icon"></span>
+	</div>
+	<div>Back to top</div>
+</a>
+
+
+
+<section id="fullScreenGallery" class="full-screen-gallery" data-reveal>
+	<div class="full-screen-gallery__leaderboard-container">
+		<div data-id="leaderboard-gallery" class="leaderboard-gallery-ad advert"></div>
+	</div>
+	<div class="full-screen-gallery__sidebar show-for-large">
+		<div class="full-screen-gallery__mpu-container">
+			<div class="full-screen-gallery__mpu center-mpu-container">
+				<span class="hide-for-large">Advertisement<span class="full-screen-gallery__mpu__remaining-ad-duration"></span></span>
+				<div data-id="mpu-gallery" class="mpu-ad advert"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__caption-container">
+		<div class="full-screen-gallery__caption">
+					<span class="full-screen-gallery__caption__text">Harley-Davidson LiveWire on UK roads</span>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__slider-container">
+		<div class="full-screen-gallery__controls">
+			<button title="Previous photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--prev fi-arrow-left"></button>
+			<button title="Next photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--next fi-arrow-right"></button>
+			<button title="Zoom in" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-in fi-zoom-in"></button>
+			<button title="Zoom out" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-out fi-zoom-out"></button>
+			<button title="Close gallery" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--close fi-x" data-close></button>
+		</div>
+
+		<div class="full-screen-gallery__slider royalSlider rsDefault">
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/H-D-LiveWire-UK-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/H-D-LiveWire-UK-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/H-D-LiveWire-UK-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/H-D-LiveWire-UK-01.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson LiveWire on UK roads</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/H-D-LiveWire-UK-01.jpg?quality=50" alt="Harley-Davidson LiveWire on UK roads"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/H-D-LiveWire-UK-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/H-D-LiveWire-UK-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/H-D-LiveWire-UK-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/H-D-LiveWire-UK-02.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson LiveWire UK</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/H-D-LiveWire-UK-02.jpg?quality=50" alt="Harley-Davidson LiveWire UK"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/H-D-LiveWire-UK-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/H-D-LiveWire-UK-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/H-D-LiveWire-UK-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/H-D-LiveWire-UK-03.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson LiveWire side</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/H-D-LiveWire-UK-03.jpg?quality=50" alt="Harley-Davidson LiveWire side"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/H-D-LiveWire-UK-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/H-D-LiveWire-UK-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/H-D-LiveWire-UK-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/H-D-LiveWire-UK-04.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson LiveWire UK national speed limit</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/H-D-LiveWire-UK-04.jpg?quality=50" alt="Harley-Davidson LiveWire UK national speed limit"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/H-D-LiveWire-UK-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/H-D-LiveWire-UK-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/H-D-LiveWire-UK-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/H-D-LiveWire-UK-05.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson LiveWire in UK traffic</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/H-D-LiveWire-UK-05.jpg?quality=50" alt="Harley-Davidson LiveWire in UK traffic"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/H-D-LiveWire-UK-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/H-D-LiveWire-UK-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/H-D-LiveWire-UK-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/H-D-LiveWire-UK-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/H-D-LiveWire-UK-06.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson LiveWire UK charging station</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/H-D-LiveWire-UK-06.jpg?quality=50" alt="Harley-Davidson LiveWire UK charging station"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-davidson-livewire-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-davidson-livewire-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/harley-davidson-livewire-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/harley-davidson-livewire-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/harley-davidson-livewire-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/harley-davidson-livewire-02.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>The LiveWire is the firm&#x27;s first electric motorcycle</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/harley-davidson-livewire-02.jpg?quality=50" alt="The LiveWire is the firm&#x27;s first electric motorcycle"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-davidson-livewire-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-davidson-livewire-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/harley-davidson-livewire-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/harley-davidson-livewire-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/harley-davidson-livewire-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/harley-davidson-livewire-10.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson LiveWire is packed with tech</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/harley-davidson-livewire-10.jpg?quality=50" alt="Harley-Davidson LiveWire is packed with tech"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-davidson-livewire-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-davidson-livewire-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/harley-davidson-livewire-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/harley-davidson-livewire-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/harley-davidson-livewire-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/harley-davidson-livewire-11.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson LiveWire is a good looking bike</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/harley-davidson-livewire-11.jpg?quality=50" alt="Harley-Davidson LiveWire is a good looking bike"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-livewire-riding-2.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-livewire-riding-2.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/harley-livewire-riding-2.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/harley-livewire-riding-2.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/harley-livewire-riding-2.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/harley-livewire-riding-2.JPG?mode=max&amp;quality=90&amp;scale=down">
+	<span>Right turn on the Harley-Davidson Livewire</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/harley-livewire-riding-2.JPG?quality=50" alt="Right turn on the Harley-Davidson Livewire"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-livewire-riding-3.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-livewire-riding-3.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/harley-livewire-riding-3.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/harley-livewire-riding-3.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/harley-livewire-riding-3.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/harley-livewire-riding-3.JPG?mode=max&amp;quality=90&amp;scale=down">
+	<span>Town riding on the the Harley-Davidson Livewire</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/harley-livewire-riding-3.JPG?quality=50" alt="Town riding on the the Harley-Davidson Livewire"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-livewire-riding-4.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/667519/1440x960/harley-livewire-riding-4.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/667519/951x634/harley-livewire-riding-4.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/667519/870x580/harley-livewire-riding-4.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/667519/1026x684/harley-livewire-riding-4.JPG?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/667519/600x400/harley-livewire-riding-4.JPG?mode=max&amp;quality=90&amp;scale=down">
+	<span>Banked over on the Harley-Davidson Livewire</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/667519/75x75/harley-livewire-riding-4.JPG?quality=50" alt="Banked over on the Harley-Davidson Livewire"/>
+</a>
+
+
+
+<div class="rsContent" data-gallery-video>
+	<img src="https://img.youtube.com/vi/wM0L84bNPXs/default.jpg" class="rsTmb">
+	<div class="rsTmb">
+		<span class="rsVideoTmb fi-play"></span>
+	</div>
+	
+	<div class="full-screen-gallery__video-slide">
+		
+
+<div class="video-player">
+		<div class="video-player__container" data-video-url="https://www.youtube.com/embed/wM0L84bNPXs"
+				data-enable-js-api="true"
+				data-ga-tracking-category=""
+				data-ga-tracking-action=""
+				data-ga-tracking-label="">
+				<img alt="" class="video-player__container__preview" data-lazy-interchange="[https://img.youtube.com/vi/wM0L84bNPXs/hqdefault.jpg, small], [https://img.youtube.com/vi/wM0L84bNPXs/maxresdefault.jpg, medium]" data-src="" src="" />
+
+				<span class="video-player__container__button"></span>
+		</div>
+</div>
+	</div>
+</div>
+		</div>
+	</div>
+
+		<script async src="//www.youtube.com/iframe_api"></script>
+</section></article>
+				</main>
+			</div>
+
+			<div data-id="inline-footer" class="footer-ad advert"></div>
+			
+<footer id="siteFooter" class="site-footer">
+	<ul class="site-footer__social">
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--facebook" href="https://www.facebook.com/MotorcycleNews" target="_blank" aria-label="Facebook">
+				<span class="fi-social-facebook"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--twitter" href="https://www.twitter.com/MCNNews/" target="_blank" aria-label="Twitter">
+				<span class="fi-social-twitter"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--youtube" href="https://www.youtube.com/user/motorcyclenewsdotcom/" target="_blank" aria-label="Youtube">
+				<span class="fi-social-youtube"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link" href="https://www.motorcyclenews.com/contact-us/" aria-label="Contact us">
+				<span class="fi-mail"></span>
+			</a>
+		</li>
+	</ul>
+	<div>
+		<a href="http://www.bauermedia.co.uk" target="_blank">
+			<img alt="" class="site-footer__logo" data-src="https://static-cdn.bauersecure.com/Common/Logos/bauer.52x52.png" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+		</a>
+		
+		
+<nav class="clearfix">
+	<ul class="site-footer__nav">
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="http://www.greatmagazines.co.uk/bws/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_content=mcnbottonnav&amp;utm_campaign=BAU_mcn"
+				    rel='nofollow'>
+					Subscribe
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/about/"
+				    >
+					About Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/contact-us/"
+				    >
+					Contact Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/terms-of-use/"
+				    >
+					Terms of Use
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/privacy-policy/"
+				    >
+					Cookie &amp; Privacy Policy
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://products.motorcyclenews.com/"
+				   target='_blank' >
+					Products
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://www.bauerlegal.co.uk/editorial-complaints-policy"
+				    rel='nofollow'>
+					Complaints
+				</a>
+			</li>
+		<li class="site-footer__nav__item">
+			<a class="site-footer__nav__link privacy-settings" href="#">Privacy settings</a>
+		</li>
+	</ul>
+</nav>
+
+		
+		<p class="site-footer__copyright">
+			&copy; 1955-2021 Bauer Media Group
+		</p>
+		<p class="site-footer__company-info">
+			Bauer Media Group consists of: Bauer Consumer Media Ltd, Company number: 01176085, Bauer Radio Ltd, Company Number: 1394141 <br />
+			Registered Office: Media House, Peterborough Business Park, Lynch Wood, Peterborough, PE2 6EA H Bauer Publishing, <br />
+			Company Number: LP003328 Registered Office: Academic House, 24-28 Oval Road, London, NW1 7DT.<br />
+			All registered in England and Wales. VAT no 918 5617 01
+			<br />
+			H Bauer Publishing are authorised and regulated for credit broking by the FCA (Ref No. 845898)
+		</p>
+	</div>
+</footer>
+
+			<div id="overlay" class="overlay-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="off-canvas position-right is-closed" id="offCanvasRight" data-off-canvas>
+		
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+		
+<ul class="mobile-site-nav">
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bike-reviews/" 
+		    >
+			Bike Reviews
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+						    >
+							Search bike reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+						    >
+							Our test bikes
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bikes-for-sale/" 
+		    >
+			Bikes For Sale
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+						    >
+							Search bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+						    >
+							Sell your bike
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+						    >
+							Bike check
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/news/" 
+		    >
+			News
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/"
+						    >
+							Latest news
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+						    >
+							New bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-tech/"
+						    >
+							New tech
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sport/"
+						    >
+							Sport
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+						    >
+							Electric bikes coming soon
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/advice/" 
+		    >
+			Advice
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/best/"
+						    >
+							Best
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+						    >
+							Riding tips
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+						    >
+							Learn to ride a motorbike with MCN
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/tests/"
+						    >
+							Tests
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+						    >
+							Maintenance
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+						    >
+							Travelling touring
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/parts/"
+						    >
+							Parts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+						    >
+							Buying and selling
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+						    >
+							Inspiration
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-gear/"
+						    >
+							New gear
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+						    >
+							Product picks
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/"
+						    >
+							Product reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-rider/"
+						    >
+							New riders
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/" 
+		    >
+			Insurance
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="#" 
+		    >
+			Get involved
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+						    >
+							#Ride5000miles
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/newsletter/"
+						    >
+							Subscribe to MCN weekly newsletter
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+						   target='_blank' rel='nofollow'>
+							Buy MCN T-shirts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+						   target='_blank' rel='nofollow'>
+							MCN Festival
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+						   target='_blank' rel='nofollow'>
+							Scottish Motorcycle Show
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+						    rel='nofollow'>
+							London Motorcycle Show
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar" 
+		   target='_blank' >
+			Subscribe
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742" 
+		   target='_blank' >
+			MCN Shop
+		</a>
+	</li>
+</ul>
+	</div>
+
+	<div class="off-canvas position-left is-closed" id="offCanvasLeft" data-off-canvas>
+		
+	</div>
+
+	
+<script type="text/javascript">
+	coreJs.chainCompleteCallbacks.push(function() {
+
+				var gptData = {"site":"SMOTORCYCLING/SMOT_MCN","targetingKeyValues":{"make_mcn":"harley-davidson","model_mcn":"harley-davidson_livewire","category_mcn":"electric"},"maxMpuCount":30};
+
+				//tcf version 2
+				window.__tcfapi('addEventListener', 2, function (tcData, success) {{
+					if (success && tcData.eventStatus === 'cmpuishown') {{
+						console.debug('SP: Surfacing CMP interface');
+					}}
+
+					if (success && tcData.eventStatus === 'useractioncomplete') {{
+						console.debug('SP: User submitted consent choices');
+
+						if (mcn.initGpt) {
+							mcn.initGpt(gptData);
+						}
+					}}
+
+					if (success && tcData.eventStatus === 'tcloaded') {{
+						console.debug('SP: TC string available');
+						window.__tcfapi('removeEventListener', 2, function (success) {{
+							if (success && mcn.initGpt) {{
+								mcn.initGpt(gptData);
+							}}
+						}}, tcData.listenerId);
+					}}
+				}});
+				});
+
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//securepubads.g.doubleclick.net/tag/js/gpt.js", true);
+	});
+
+</script>
+	
+
+<script type="text/javascript">
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//experience.tinypass.com/xbuilder/experience/load?aid=x9U7rnorpu", true, function() {
+			var tags = ["Templates.BikeReviews.DetailsPage"];
+
+tags.push("HARLEY-DAVIDSON");	
+tags.push("HARLEY-DAVIDSON+LIVEWIRE");
+			window.tp.push(["setTags", tags]);
+			window.tp.push(["setContentSection", "Bike Reviews"]);
+		});
+	});
+
+	
+</script>
+</body>
+
+</html>

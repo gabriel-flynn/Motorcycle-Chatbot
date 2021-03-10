@@ -1,0 +1,2009 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="//js-sec.indexww.com/ht/p/185605-155434007517315.js"></script>
+
+	
+<script>
+	window.pageStart = Date.now();
+	console.debug('Page Start');
+</script>
+
+<script>
+	var mcnConfig = {
+		debugMode: false,
+		cookieDomain: '.motorcyclenews.com',
+		galleryDesktopAdFrequency: 2,
+		galleryMobileAdFrequency: 5,
+		galleryMobileAdDuration: 2,
+		cmpProfileId: 5954,
+		privacyManagerId: 187767,
+		prebidReady: false
+	};
+</script>
+
+<script>
+	var coreJs = {
+		processDomReadyScripts: function() {
+			var chain = {
+				callbacks: coreJs.chainCompleteCallbacks,
+				queue: coreJs.domReadyScriptChain,
+				process: function() {
+					var self = this;
+					if (this.queue.length > 0) {
+						coreJs.injectScript(this.queue.shift(), true, function () {
+							self.process();
+						});
+					} else {
+						while (self.callbacks.length > 0) {
+							(self.callbacks.shift())();
+						}
+					}
+				}
+			}
+
+			chain.process();
+		},
+
+		isReady: false,
+		readyCallbacks: [],
+
+		injectScript: function (src, async, callback) {
+			var script = document.head.appendChild(document.createElement('script'));
+
+			if (typeof async !== 'undefined') {
+				script.async = async;
+			}
+
+			if (typeof callback === 'function') {
+				script.onload = function () {
+					script.onload = null;
+					callback();
+				};
+			}
+
+			script.src = src;
+			console.info('Init: Injected script "' + src + '" async=' + async);
+		},
+		
+		domReadyScriptChain: [
+			'/dist/_5-40-101/js/review.min.js'
+		],
+
+		chainCompleteCallbacks: [],
+		windowLoadCallbacks: []
+	};
+
+	coreJs.chainCompleteCallbacks.push(function () {
+		console.info('Init: Chain complete');
+		mcn.init();
+		coreJs.isReady = true;
+	});
+
+	coreJs.injectScript('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', true, function() {
+		console.info('Init: Injected jquery');
+		$(window).on('load', function () {
+			console.info('Init: Window loaded');
+			while (coreJs.windowLoadCallbacks.length > 0) {
+				(coreJs.windowLoadCallbacks.shift())();
+			}
+		});
+
+		$(document).ready(function () {
+			console.info('Init: Document ready');
+			coreJs.processDomReadyScripts();
+		});
+	});
+</script>
+	
+<script>
+	coreJs.windowLoadCallbacks.push(function () {
+		coreJs.injectScript("https://static.bauercdn.com/prebid/prebid4.14.0.js", true, function () {
+			console.info('Prebid: Script loaded');
+			if (window.mcnConfig.prebidReady) {
+				$(document).trigger('prebid.loaded');
+			} else {
+				window.mcnConfig.prebidReady = true;
+			}
+		});
+	});
+</script>
+
+	<title>HARLEY-DAVIDSON XR1200 (2010-2012) Motorcycle Review | MCN</title>
+	<link rel="shortcut icon" href="/dist/_5-40-101/images/favicon.ico" />
+	
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="Based on the 2009 XR1200, the XR1200X has vastly improved, multi-adjustable suspension - MCN reviews the HARLEY-DAVIDSON XR1200, plus specs and owner ratings: A great everyday bike with a bit of character.">
+
+
+		<link rel="canonical" href="https://www.motorcyclenews.com/bike-reviews/harley-davidson/xr1200/2010/" />
+
+
+	
+
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org/",
+	"@type": "Review",
+	"itemReviewed": {
+		"@type": "Motorcycle",
+		"name": "HARLEY-DAVIDSON XR1200"
+
+
+				,"image": {
+					"@type": "ImageObject",
+					"url": "https://mcn-images.bauersecure.com/upload/259436/images/01harley-davidson-xr1200x.jpg"
+				}
+					
+	},
+	"reviewBody": "Based on the 2009 XR1200, the XR1200X is slightly more sports biased than the sports biased XR1200. Confused? Don&#x2019;t be. All you have to think about is the X-model has vastly improved, multi-adjustable suspension that makes a difference when riding 187kg of American muscle on our roads.&#xA;&#xA;Harley-Davidson Sportster model history&#xA;&#xA;It also comes in a menacing black paint scheme with black exhausts. Engine spec remains the same as the XR1200. Just remember Harley&#x2019;s idea of sports bike performance is nothing like a 600-1000cc sports machine produced in the past 20 years.",
+	"author": {
+		"@type": "Person",
+		"name": "MCN Staff",
+		"sameAs": [
+			"https://twitter.com/MCN",
+			"https://www.instagram.com/motorcyclenews/"
+		]
+	},
+	"datePublished": "2009-11-05T10:31:00.0000000Z",
+	"dateModified": "2019-09-26T16:53:18.0000000Z",
+	"reviewRating": {
+		"@type": "Rating",
+		"ratingValue": "4",
+		"bestRating": "5"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Bauer Media"
+	},
+    "sameAs": [
+       "https://www.facebook.com/MCN/",
+       "https://twitter.com/MCN",
+       "https://linkedin.com/MCN",
+       "https://www.instagram.com/motorcyclenews/"
+    ], 
+    "logo": {
+		"@type": "ImageObject",
+		"url": "https://www.motorcyclenews.com/dist/_5-40-101/images/logos/mcn.publisher.85x85.png",
+		"width": 85,
+		"height": 85 
+    }
+}
+</script>
+
+
+
+
+<meta property="og:url" content="https://www.motorcyclenews.com/bike-reviews/harley-davidson/xr1200/2010/" />
+<meta property="og:title" content="HARLEY-DAVIDSON XR1200 (2010-2012) Motorcycle Review" />
+<meta property="og:description" content="Based on the 2009 XR1200, the XR1200X has vastly improved, multi-adjustable suspension - MCN reviews the HARLEY-DAVIDSON XR1200, plus specs and owner ratings: A great everyday bike with a bit of character." />
+<meta property="fb:app_id" content="7714743854" />
+<meta property="og:type" content="Article" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:publisher" content="Motorcycle News" />
+
+	<meta property="og:image" content="https://mcn-images.bauersecure.com/upload/259436/images/01harley-davidson-xr1200x.jpg" />
+
+	<meta property="og:author" content="MCN Staff" />
+
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preconnect" href="https://www.googletagmanager.com">
+	<link rel="preconnect" href="https://securepubads.g.doubleclick.net" />
+
+		<link rel="amphtml" href="https://www.motorcyclenews.com/amp/bike-reviews/harley-davidson/xr1200/2010/" />
+
+	
+<link rel="stylesheet" href="/dist/_5-40-101/css/review.min.css" />
+
+		
+
+<script type="text/javascript">
+	!function () { var e = function () { var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) { try { if (n.frames[t]) { e = n; break } } catch (e) { } if (n === window.top) break; n = n.parent } e || (!function e() { var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) { var i = a.createElement("iframe"); i.style.cssText = "display:none", i.name = t, a.body.appendChild(i) } else setTimeout(e, 5); return !r }(), n.__tcfapi = function () { for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) { var i = { gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub" }; "function" == typeof n[2] && n[2](i) } else a.push(n) }, n.addEventListener("message", (function (e) { var t = "string" == typeof e.data, a = {}; try { a = t ? JSON.parse(e.data) : e.data } catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) { var i = { __tcfapiReturn: { returnValue: a, success: r, callId: n.callId } }; t && (i = JSON.stringify(i)), e.source.postMessage(i, "*") }), n.parameter) }), !1)) }; "undefined" != typeof module ? module.exports = e : e() }();
+</script>
+<script>
+	window._sp_ = {
+		config: {
+			accountId: 296,
+			baseEndpoint: 'https://cmp.motorcyclenews.com',
+			groupId: '5e5155d22d47738ac1cd84f4',
+			targetingParams: {
+				'tcfv2': 'true'
+			}
+		}
+	}
+</script>
+<script src="https://cmp.motorcyclenews.com/wrapperMessagingWithoutDetection.js"></script>
+	
+	
+
+<script>
+	coreJs.chainCompleteCallbacks.push(function () {
+		coreJs.injectScript("https://cdn.permutive.app/02469357-27fd-49a7-9dbc-f0d94ae65faa-web.js", true, function () {
+			console.info('Permutive: Script loaded');
+		});
+	});
+</script>
+
+<script>
+	!function (n, e, i) { if (!n) { n = n || {}, window.permutive = n, n.q = [], n.config = i || {}, n.config.apiKey = e, n.config.environment = n.config.environment || "production"; for (var o = ["addon", "identify", "track", "trigger", "query", "segment", "segments", "ready", "on", "once", "user", "consent"], r = 0; r < o.length; r++) { var t = o[r]; n[t] = function (e) { return function () { var i = Array.prototype.slice.call(arguments, 0); n.q.push({ functionName: e, arguments: i }) } }(t) } } }(window.permutive, "8be71353-1189-4ce1-a5cb-320dd35e89ba", { "consentRequired": true });
+	permutive.addon("web", {});
+</script>
+
+	<script>
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//cdn.onesignal.com/sdks/OneSignalSDK.js", true, function () {
+			console.info('OneSignal: Script loaded');
+
+			if (document.location.hostname === "www.motorcyclenews.com") {
+				var OneSignal = window.OneSignal || [];
+				OneSignal.push(function() {
+					OneSignal.init({
+						appId: "98918693-8f93-496c-af67-c8d96ec525be"
+					});
+					// move this before the domain check above for local testing.
+					$(document).trigger('oneSignal.loaded');
+				});
+			} else {
+				console.info('OneSignal: Push not called as hostname incorrect');
+			}
+		});
+	});
+</script>
+
+	
+<script type="text/javascript">
+(function() {
+	window.dm = window.dm ||{ AjaxData:[]};
+	window.dm.AjaxEvent = function(et, d, ssid, ad) {
+		dm.AjaxData.push({ et: et,d: d,ssid: ssid,ad: ad});
+		window.DotMetricsObj && DotMetricsObj.onAjaxDataUpdate();
+	};
+	var d = document,h = d.getElementsByTagName('head')[0],s = d.createElement('script');
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = 'https://uk-script.dotmetrics.net/door.js?d=www.motorcyclenews.com&t=bikereviews';
+	h.appendChild(s);
+} ());
+</script>
+</head>
+
+<body>
+
+	
+<script>
+var bauerDataLayer = [{
+	'siteName': 'MCN',
+	'productType': 'Motorcycle',
+	'cmsPageType': 'Templates.BikeReviews.DetailsPage',
+	'cmsPageId': '492344',
+	'cmsPageName': '2010',
+	'section': 'Bike Reviews',
+	'subSection1': 'HARLEY-DAVIDSON',
+	'subSection2': 'XR1200',
+	'created': '-62135596800',
+	'makeName': 'HARLEY-DAVIDSON',
+	'modelName': 'HARLEY-DAVIDSON+XR1200',
+	'categoryMcn': 'Custom'
+}];
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=xUOFojuTghcMLZ3prl6hMA&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);})(window, document,'script','bauerDataLayer','GTM-PS8LQC4');</script> 
+	<span class="screen-size-detector"></span>
+
+	<div class="off-canvas-content" data-off-canvas-content>
+		<div class="site-root">
+			
+<header class="site-header clearfix">
+	<strong class="show-for-sr">MCN</strong>
+	
+	<div data-sticky-container>
+		<div class="site-header-mobile top-bar hide-for-medium" data-sticky data-sticky-on="small" data-margin-top="0">
+			<div class="site-header-mobile__left">
+				<a class="site-header-mobile__logo" title="Home" href="/"></a>
+			</div>
+			<div class="site-header-mobile__middle">
+				<a class="site-header-mobile__middle__nav-link" href="/bike-reviews/">Reviews</a>
+				<a class="site-header-mobile__middle__nav-link" href="/bikes-for-sale/">For sale</a>
+				<a class="site-header-mobile__middle__nav-link" href="/news/">News</a>
+				<a class="site-header-mobile__middle__nav-link" href="/insurance/">Insurance</a>
+			</div>
+			<div class="site-header-mobile__right">
+				<button class="site-header-mobile__icon site-header-mobile__icon--menu menu-icon right-off-canvas-toggle" data-toggle="offCanvasRight">
+					<span class="site-header-mobile__icon__text">Menu</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	
+	<div data-sticky-container>
+		<div class="site-header-full show-for-medium" data-sticky data-sticky-on="medium" data-margin-top="0">
+			<div class="site-header-full__inner">
+				<a class="site-header-full__logo" title="Home" href="/">
+					<span class="icon fi-home"></span>
+				</a>
+				<a class="site-header-full__search-toggle fi-icon fi-icon--xlarge fi-magnifying-glass show-for-medium-only" href="#"></a>
+				<div class="site-header-full__right-search-box show-for-large">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+
+				
+
+<nav class="horizontal-site-nav">
+	<ul class="horizontal-site-nav__more-menu dropdown menu" data-dropdown-menu data-closing-time="0">
+		<li class="horizontal-site-nav__more-menu__item is-dropdown-submenu-parent">
+			<a href="#" class="horizontal-site-nav__more-menu__link">More<span class="show-for-large"> MCN</span></a>
+
+			<ul class="horizontal-site-nav__sub-nav horizontal-site-nav__more-menu__content menu">
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="horizontal-site-nav__menu dropdown menu" data-dropdown-menu data-closing-time="0">
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bike-reviews/"
+				    >
+					Bike Reviews
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+								    >
+									Search bike reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+								    >
+									Our test bikes
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bikes-for-sale/"
+				    >
+					Bikes For Sale
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+								    >
+									Search bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+								    >
+									Sell your bike
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+								    >
+									Bike check
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/news/"
+				    >
+					News
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/"
+								    >
+									Latest news
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+								    >
+									New bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-tech/"
+								    >
+									New tech
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sport/"
+								    >
+									Sport
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+								    >
+									Electric bikes coming soon
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/advice/"
+				    >
+					Advice
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/best/"
+								    >
+									Best
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+								    >
+									Riding tips
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+								    >
+									Learn to ride a motorbike with MCN
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/tests/"
+								    >
+									Tests
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+								    >
+									Maintenance
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+								    >
+									Travelling touring
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/parts/"
+								    >
+									Parts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+								    >
+									Buying and selling
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+								    >
+									Inspiration
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-gear/"
+								    >
+									New gear
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+								    >
+									Product picks
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/"
+								    >
+									Product reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-rider/"
+								    >
+									New riders
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/"
+				    >
+					Insurance
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="#"
+				    >
+					Get involved
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+								    >
+									#Ride5000miles
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/newsletter/"
+								    >
+									Subscribe to MCN weekly newsletter
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+								   target='_blank' rel='nofollow'>
+									Buy MCN T-shirts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+								   target='_blank' rel='nofollow'>
+									MCN Festival
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+								   target='_blank' rel='nofollow'>
+									Scottish Motorcycle Show
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+								    rel='nofollow'>
+									London Motorcycle Show
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar"
+				   target='_blank' >
+					Subscribe
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742"
+				   target='_blank' >
+					MCN Shop
+				</a>
+			</li>
+	</ul>
+</nav>
+
+				<div class="site-header-full__search-bar">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+			<div class="top-ad-container" data-sticky-container>
+				<div class="top-ad-container__inner">
+					<div data-id="leaderboard-1" class="top-ad advert" data-sticky data-margin-top="0" data-sticky-on="small"></div>
+				</div>
+			</div>
+
+			<div class="site-body">
+				
+<aside class="desktop-sidebar" data-max-mpu-count="30">
+
+
+<div id=stickyMpuPlaceholder1 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder1 data-sticky-on="xlarge">
+			
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder2 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder2 data-sticky-on="xlarge">
+			
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder3 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder3 data-sticky-on="xlarge">
+			
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder4 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder4 data-sticky-on="xlarge">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder5 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder5 data-sticky-on="xlarge">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder6 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder6 data-sticky-on="xlarge">
+			
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder7 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder7 data-sticky-on="xlarge">
+			
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder8 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder8 data-sticky-on="xlarge">
+			
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder9 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder9 data-sticky-on="xlarge">
+			
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder10 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder10 data-sticky-on="xlarge">
+			
+<div data-id="mpu-10" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder11 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder11 data-sticky-on="xlarge">
+			
+<div data-id="mpu-11" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder12 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder12 data-sticky-on="xlarge">
+			
+<div data-id="mpu-12" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder13 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder13 data-sticky-on="xlarge">
+			
+<div data-id="mpu-13" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder14 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder14 data-sticky-on="xlarge">
+			
+<div data-id="mpu-14" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder15 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder15 data-sticky-on="xlarge">
+			
+<div data-id="mpu-15" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder16 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder16 data-sticky-on="xlarge">
+			
+<div data-id="mpu-16" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder17 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder17 data-sticky-on="xlarge">
+			
+<div data-id="mpu-17" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder18 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder18 data-sticky-on="xlarge">
+			
+<div data-id="mpu-18" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder19 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder19 data-sticky-on="xlarge">
+			
+<div data-id="mpu-19" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder20 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder20 data-sticky-on="xlarge">
+			
+<div data-id="mpu-20" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder21 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder21 data-sticky-on="xlarge">
+			
+<div data-id="mpu-21" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder22 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder22 data-sticky-on="xlarge">
+			
+<div data-id="mpu-22" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder23 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder23 data-sticky-on="xlarge">
+			
+<div data-id="mpu-23" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder24 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder24 data-sticky-on="xlarge">
+			
+<div data-id="mpu-24" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder25 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder25 data-sticky-on="xlarge">
+			
+<div data-id="mpu-25" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder26 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder26 data-sticky-on="xlarge">
+			
+<div data-id="mpu-26" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder27 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder27 data-sticky-on="xlarge">
+			
+<div data-id="mpu-27" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder28 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder28 data-sticky-on="xlarge">
+			
+<div data-id="mpu-28" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder29 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder29 data-sticky-on="xlarge">
+			
+<div data-id="mpu-29" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder30 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder30 data-sticky-on="xlarge">
+			
+<div data-id="mpu-30" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div></aside>
+
+				<main class="site-content">
+					
+	<nav class="breadcrumb-list">
+				<ul class="breadcrumbs show-for-medium">
+							<li><a href="/">Home</a></li>
+							<li><a href="/bike-reviews/">Bike Reviews</a></li>
+							<li><a href="/bike-reviews/harley-davidson/">HARLEY-DAVIDSON</a></li>
+							<li><a href="/bike-reviews/harley-davidson/xr1200/">XR1200</a></li>
+							<li class="disabled">2010</li>
+				</ul>
+				<a class="breadcrumb-list__back-link hide-for-medium" href="/bike-reviews/harley-davidson/xr1200/">
+					<span class="fi-icon fi-arrow-up breadcrumb-list__back-link__icon"></span><span class="breadcrumb-list__back-link__text">See all HARLEY-DAVIDSON XR1200 reviews</span>
+				</a>
+	</nav>
+
+
+					
+
+
+
+<span class="last-viewed-model" data-make="harley-davidson" data-model="xr1200" />
+
+<article id="review" class="review">
+<img alt="" class="review__event-logger" data-src="https://tracking.bauermedia.co.uk/EventHandler.ashx?e=HHkbZZ3atHYkODBcU4gMTERnPJzrMAC5kDttjn%252b5iLd1U32j3RFiV0%2F70PVJ%252b29pb25rfIZKf9B7gXy57FFTTapQiAtYk8%252bPKq6nceKuAlqVCegLqM5jWAQVQw7pnl%252bAqBk9gmiPD2A2%252bE0YMHuptHehdlerCK3n5KnZeyE%2Fk9luJ%2FmQHDS9%2FXMJA9GoEn%2FKZCI%2FM6ZgP1ZRrLiuYz18Uct1J9tguuk0E7DCnX4dNQMc8IA5KmY0X4kd7YhSc69TXzqW4mpcT7lLzNsr8rZP9SrxY0RajabXobwyP5k749ec5N9chKjI1MCvpXssClegASA%252b79%2FDbexJGPzhRC9qWVRQgKWLVZqqQerLJN%2FGmDdWeLgltM1UqGBKmNWQmDa28BkmCK20bSI5DL9%252bVYyeGxTkosOcLoXjuwz9MW9MWM6VauzUZBi4V5bqsYIz2P5pprVP7z7OsXM%252b1t3Wt9ModpJ4TRpmleUXGyYeHcAKeO9bMbujXCaQrzwwEnzkOz0zOAlF4NrCzhyiQlM0wf1BIA%3D%3D" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+	<h1>HARLEY-DAVIDSON XR1200 (2010 - 2012) Review</h1>
+
+	<section class="review__headline-ratings grid-x">
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#review-overall">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">MCN rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+			</a>
+		</div>
+
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#ownersReviews">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">Owners&#x27; rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.5 out of 5">    <span style="width:90%" class="star-rating__stars__value">4.5 out of 5</span>  </span>    <span class="star-rating__text">(4.5/5)</span>  </span></span>
+			</a>
+		</div>
+	</section>
+
+	<div class="review__navigation">
+		<a href="#specs">
+			<span>Specs</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#ownersReviews">
+			<span>Owners' reviews</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#forSale">
+			<span class="show-for-medium">Bikes for sale</span><span class="show-for-small-only">For sale</span><span class="review__navigation__arrow"></span>
+		</a>
+	</div>
+
+	<section class="review__gallery-panel">
+		
+
+<section class="gallery-preview">
+		<figure class="gallery-preview__image gallery-link">
+			<img alt="Harley-Davidson XR1200X" data-lazy-interchange="[https://mcn-images.bauersecure.com/upload/259436/images/615x405/01harley-davidson-xr1200x.jpg, small], [https://mcn-images.bauersecure.com/upload/259436/images/999x666/01harley-davidson-xr1200x.jpg, medium], [https://mcn-images.bauersecure.com/upload/259436/images/600x400/01harley-davidson-xr1200x.jpg, large]" data-src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" />
+		</figure>
+		<div class="gallery-preview__count">
+			<span class="gallery-preview__count__item gallery-link">
+				<span class="gallery-preview__count__icon icon-35x35-camera"></span>
+				<span class="gallery-preview__count__value">3</span>
+			</span>
+
+		</div>
+
+		<div class="gallery-preview__button-container">
+				<button class="gallery-preview__button button gallery-link">	
+					<span class="gallery-preview__button__icon icon-35x35-camera"></span>
+					<span>View 3 images</span>
+				</button>
+
+		</div>
+</section>
+	</section>
+
+	<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+	<div class="show-for-medium-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<section class="review__summary">
+		
+
+
+
+		
+
+	<section class="review__at-a-glance">
+		<h2 class="review__summary__heading">At a glance</h2>
+		<table class="review__at-a-glance__table">
+			<tbody>
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Owners' reliability rating: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#ownersReviews"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></a></td>
+					</tr>
+
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Power: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#specs">90 bhp</a></td>
+					</tr>
+
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Seat height: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								Medium 
+								<span class="review__at-a-glance__item__link__sub-info">(31.3 in / 795 mm)</span>
+							</a>
+						</td>
+					</tr>
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Weight: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								High 
+								<span class="review__at-a-glance__item__link__sub-info">(573 lbs / 260 kg)</span>
+							</a>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+		
+
+	</section>
+
+	<div class="show-for-large-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<div class="review__main-content">
+		<a name="review-overall" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Overall rating</h2>
+			<a href="#review-ride" class="review__main-content__anchor-link">Next up: Ride &amp; brakes</a>
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<aside class="review__publishing-info">
+					<div><strong>Author: MCN Staff</strong></div>
+
+				<div>Published: 05 November 2009</div>
+
+					<div>Updated: 26 September 2019</div>
+			</aside>
+
+			<p>Based on the 2009 XR1200, the XR1200X is slightly more sports biased than the sports biased XR1200. Confused? Don’t be. All you have to think about is the X-model has vastly improved, multi-adjustable suspension that makes a difference when riding 187kg of American muscle on our roads.</p>
+<ul>
+<li><a href="https://www.motorcyclenews.com/harley-davidson/sportster/" title="Find MCN's Harley-Davidson Sportster model guide here">Harley-Davidson Sportster model history</a></li>
+</ul>
+<p>It also comes in a menacing black paint scheme with black exhausts. Engine spec remains the same as the XR1200. Just remember Harley’s idea of sports bike performance is nothing like a 600-1000cc sports machine produced in the past 20 years.</p>
+		</div>
+
+		<a name="review-ride" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Ride quality &amp; brakes</h2>
+			<a href="#review-engine" class="review__main-content__anchor-link">Next up: Engine</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>The addition of Showa pig piston forks and piggyback shocks puts the accomplished XR1200 onto another rung of the handling ladder.</p>
+<p>There’s a lot more feedback from front and rear wheels and the front end feels considerably more settled on the brakes. At the same time it is supple enough to rubbish the Queen’s crumbling highways.</p>
+<p>This means you can actually wring every last drop of performance from the XR1200X and make use of it. Or simply enjoy the slow revving nature of the bike with an improved, polished even, ride quality.</p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-engine" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Engine</h2>
+			<a href="#review-reliability" class="review__main-content__anchor-link">Next up: Reliability</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>The air-cooled 1202cc is all torque – 74ftlb of it – with not a lot more horsepower to top off the lowdown punt, but then it is based on the 1200 Sportster but with higher compression and upswept, high volume 2:1:2 exhausts (see XR1200 review for full details).&nbsp;</p>
+		</div>
+
+		<a name="review-reliability" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Reliability & build quality</h2>
+			<a href="#review-value" class="review__main-content__anchor-link">Next up: Value</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="2 out of 5">    <span style="width:40%" class="star-rating__stars__value">2 out of 5</span>  </span>    <span class="star-rating__text">(2/5)</span>  </span></span>
+				</div>
+
+			<p>The Harley-Davidson chassis range is slowly but surely getting updated. Better brakes and suspension figure highly, as per the XR1200 and XR1200X.</p>
+<p>But somewhere along the line H-D have forgotten about the simple things like why is the clutch cable flapping in the breeze; why are the footpegs and foot controls so chunky-ugly yet so loose, and so on?</p>
+		</div>
+
+		<a name="review-value" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Value vs rivals</h2>
+			<a href="#review-equipment" class="review__main-content__anchor-link">Next up: Equipment</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>By being a Harley-Davidson, a sporty one at that, Harley fans will rave about the sub £10k price of £9170. But this figure is up £925 on the basic £8245 XR1200, and even with the superb Showa suspension this is no justification for the higher price tag.</p>
+<p>If Harley is serious about swaying sports bike riders to ride Harley, it has to do better in all areas.</p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-equipment" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Equipment</h2>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>The XR1200 scores 2 out of 3 for equipment in its review because of its very basic spec. The 1200X nets another mark because of the very capable – very desirable – Showa suspension.</p>
+		</div>
+	</div>
+
+	<a name="forSale" class="review__anchor"></a>
+	
+
+<aside class="review__bfs">
+		<div class="review__bfs__button-container">
+			<a class="review__bfs__button button" href="/bikes-for-sale/search-results/">Search MCN bikes for sale</a>
+		</div>
+</aside>
+
+	<a name="specs" class="review__anchor"></a>
+
+	
+<section class="review__facts-and-figures">
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Specs</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine size</th>
+					<td class="review__facts-and-figures__item__value">1202cc</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine type</th>
+					<td class="review__facts-and-figures__item__value">Air-cooled, pushrod, 4v four-stroke V-twin. Five gears</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Frame type</th>
+					<td class="review__facts-and-figures__item__value">Tubular steel double cradle</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Fuel capacity</th>
+					<td class="review__facts-and-figures__item__value">13.25 litres</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Seat height</th>
+					<td class="review__facts-and-figures__item__value">795mm</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Bike weight</th>
+					<td class="review__facts-and-figures__item__value">260kg</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front suspension</th>
+					<td class="review__facts-and-figures__item__value">Fully adjustable</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear suspension</th>
+					<td class="review__facts-and-figures__item__value">Adjustable for preload and compression damping</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front brake</th>
+					<td class="review__facts-and-figures__item__value">2 x 292mm discs with 4-piston calipers</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear brake</th>
+					<td class="review__facts-and-figures__item__value">260mm disc with single-piston caliper</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front tyre size</th>
+					<td class="review__facts-and-figures__item__value">120/70 x 18</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear tyre size</th>
+					<td class="review__facts-and-figures__item__value">180/55 x 17</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Mpg, costs &amp; insurance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Average fuel consumption</th>
+					<td class="review__facts-and-figures__item__value">45 mpg</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual road tax</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;93</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual service cost</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">New price</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Used price</th>
+					<td class="review__facts-and-figures__item__value">
+						-
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Insurance group</th>
+					<td class="review__facts-and-figures__item__value">
+						11 of 17<br />
+							<a rel="nofollow" target="_blank" href="https://quotes.mcncompare.com/bike/PersonalInformation1.aspx?utm_campaign=multi-acq-compare-mcn&amp;utm_source=mcn&amp;utm_medium=referral&amp;utm_content=reviews-detail-value-section">How much to insure?</a>
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Warranty term</th>
+					<td class="review__facts-and-figures__item__value">Two year unlimited mileage</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Top speed &amp; performance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max power</th>
+					<td class="review__facts-and-figures__item__value">90 bhp</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max torque</th>
+					<td class="review__facts-and-figures__item__value">74 ft-lb</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Top speed</th>
+					<td class="review__facts-and-figures__item__value">125 mph</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">1/4 mile acceleration</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Tank range</th>
+					<td class="review__facts-and-figures__item__value">120 miles</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+	<section class="review__history-and-versions">
+			<h2 class="review__history-and-versions__heading">Model history &amp; versions</h2>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Model history</h3>
+					<p>2008: <a href="http://www.motorcyclenews.com/MCN/bikereviews/searchresults/Bike-Reviews/Harley-Davidson/Harley-Davidson-XR1200R-2008-current/?&amp;R=EPI-100475">XR1200R</a> released<br>2010: XR1200X released</p>
+				</div>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Other versions</h3>
+					<p>XR1200R: the bike the XR1200X is based on</p>
+				</div>
+
+	</section>
+
+
+	<a name="ownersReviews" class="review__anchor"></a>
+	
+
+<section class="review__owners-reviews-summary">
+	<h2 class="review__owners-reviews-summary__heading">
+		<span class="review__owners-reviews-summary__heading__inner">
+			Owners' reviews
+			<span class="review__owners-reviews-summary__heading__vehicle">for the HARLEY-DAVIDSON XR1200 (2010 - 2012)</span>
+		</span>
+	</h2>
+	<div class="review__owners-reviews-summary__intro">
+			<p class="review__owners-reviews-summary__intro__text">
+				<strong>2 owners</strong> have reviewed their HARLEY-DAVIDSON XR1200 (2010 - 2012) and rated it in a number of areas. Read what they have to say and what they like and dislike about the bike below.
+			</p>
+			<p class="review__owners-reviews-summary__intro__text">
+				<a href="/bike-reviews/review-your-bike/?review=492344">Review your HARLEY-DAVIDSON XR1200 (2010 - 2012)</a>
+			</p>
+			<table class="review__owners-reviews-summary__table">
+				<thead>
+					<tr>
+						<td colspan="2"><h3 class="review__owners-reviews-summary__table__heading">Summary of owners' reviews</h3></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Overall rating: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.5 out of 5">    <span style="width:90%" class="star-rating__stars__value">4.5 out of 5</span>  </span>    <span class="star-rating__text">(4.5/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Ride quality &amp; brakes: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>    <span class="star-rating__text">(5/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Engine: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Reliability &amp; build quality: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Value vs rivals: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.5 out of 5">    <span style="width:90%" class="star-rating__stars__value">4.5 out of 5</span>  </span>    <span class="star-rating__text">(4.5/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Equipment: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</section>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+		<section class="review__owners-reviews-container">
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">A great everyday bike with a bit of character.</strong>
+	<div class="review__owners-review__published-info">
+		<strong>29 December 2015</strong> <span class="review__owners-review__published-info__author">by Paul</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Version: <strong>XR1200X</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Year: <strong>2010</strong>
+		</p>
+
+		<p>Tick over is too lumpy at traffic lights. Indicator switches on both sides is mad because you have to have to let go of the throttle and brake to be able to turn right!! Self cancelling is great and should be on all bikes so that seems to conform to the philosophy of HD 50% right is good enough. The lack of attention to detail is the biggest annoyance.&#xA;&#xA;Bought the bike because the gearbox on my R1 went bang and couldn&#x27;t resist sending it to Kevin Stephenson to get more power out of it, big tick on the power front but I don&#x27;t have enough will power and would lose my license if I rode it every day. Bought the XR because it is slow but still good fun, would recommend it to anyone with a fast bike that needs an everyday ride that&#x27;s still good fun and handles great. It&#x27;s a bike that doesn&#x27;t force you to go fast but it will surprise you if you pushed it. Will kick on even when you short shift.&#xA;&#xA;This bike is all about the engine and suspension.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Got the X version and the brakes and suspension are first class. Very relaxing to ride and will corner as fast as you want. Needs a steering damper to cope with fast sweepers that have a few bumps!</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Apart from the lumpy tick over it&#x27;s got great usable power for everyday use, Can go surprisingly fast in the rain as traction is very predictable. Spin up the back wheel on the R1 and you could easily be off, do it on the XR and it&#x27;s survivable. Short shifting away from the lights will leave a lot of other bikes revving their nuts off just to keep up.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Frame is just starting to go rusty and wiring is a mess so is bound to go wrong. Cable routing is arcane and seems to be an afterthought. In general it has a very low amount of engineering design or was designed by an apprentice/trainee. This bike is built to go wrong.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Haven&#x27;t had it long enough to be able to judge. Simple pushrod V twin should be simple enough to maintain, has electronic ignition and hydraulic tappets so it should only need oil and grease. Not enough power to wear out tyres.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">No fuel gauge and you have a choice of clock or trip but not both together. It&#x27;s bare bones. For this type of bike why not have an old fashioned dual seat like the aftermarket Corbin dual seat as standard, it&#x27;s not a racer, it wouldn&#x27;t ruin the looks and would make the bike better if you had friends which isn&#x27;t something Harley seem to think their owners have.&#xA;Headlight is crap, a real old fashioned candle in a beer bottle, My 41 year old Kawasaki H1 has a better headlamp and that&#x27;s got a 25W tungsten bulb.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Bought from Billau Motorcycles who were great, shipped the bike to me when they said they would.
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">The XR1200X is a blank canvas for your dream bike </strong>
+	<div class="review__owners-review__published-info">
+		<strong>08 December 2009</strong> <span class="review__owners-review__published-info__author">by cjgarvin</span>
+	</div>
+
+
+		<p>First, let me say that I&#x27;m mildly pissed off Europeans got this bike first. I&#x27;m in American street racer and we had to wait a year to get the first &quot;American&quot; XR1200. But, I eventually got mine and I love it. As a former Yamaha owner, I had to learn that all Harley&#x27;s are bone stock, with tons of room for modifications. The average Harley owner here in the States spends $10,000 additional in performance modifications to their engines, breaks, body ect because that&#x27;s what Harley Davidson is all about--customization-- to make your bike uniquely different than everyone else&#x27;s. &#xA;My  XR1200X is a kick ass bike that likes to brawl and won&#x27;t get tired and never lets me down. The low end torque is fabulous and it&#x27;s meant to race strongly around street corners at 55MPH--with short spurts of 110 to 120 MPH until I hit another turn. It&#x27;s a flat track race bike for the street--that&#x27;s all it is. It&#x27;s not a cross country 150MPH bike. Get a VMax if that&#x27;s what you&#x2019;re into--but no one in St. Louis, MO USA has beaten me racing around the streets on my XR1200. No one! Not BMW, not Yamaha, not Honda, which are all outstanding bikes, but all fall to the bikes launch torque in tight city streets. Yes, those bikes can scream by if the straightaway is a little longer, but by the time they catch up, I&#x27;m carving the turn and torqueing out again--just like in flat track. At a stop, the bike&#x27;s idle will pull you forward in 2nd gear without stalling! My friend who rides a Honda CBR 1000RR was amazed by that. &#xA;Stage 1 performance modifications I recommend to get the most out of your XR1200X or XR1200 1) Get the SUPERTRAPP XR1200 2:2 MEGAPHONE Exhaust SYSTEM. Your bike will sound like a muscle car! It is also 20 pounds lighter than the stock HD exhaust and squeezes 12 more horses out of your engine. 2) Get the Power Commander V fuel injection system by Dyna Jet along with Auto Tune. Dyno charts prove this will give you 15 more horses and more torque at the higher RPM ranges, plus improved my gas mileage. &#xA;More advanced mods: Have your Harley dealer install Screamin&#x27; Eagle&#xAE; Performance Valve Spring Kit (18013-03A) and Screamin&#x27; Eagle&#xAE; Tappets (18572-07) Both of these beef up my engine for high horsepower/high RPM applications to 7000 RPMs.&#xA;Follow your owner&#x2019;s manual break in procedures to the letter! Use 93 octane fuel. After the initial 1000-mile break in, use Screaming Eagle synthetic engine oil. Before riding, let your bike warm up for three or four minutes without revving the engine. &#xA;I have and do all these things and take pride in riding my XR1200X motorcycle.     &#xA;</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+						</div>
+					</div>
+		</section>
+
+	<a class="back-to-top" href="#">
+	<div class="back-to-top__circle">
+		<span class="back-to-top__circle__icon"></span>
+	</div>
+	<div>Back to top</div>
+</a>
+
+
+
+<section id="fullScreenGallery" class="full-screen-gallery" data-reveal>
+	<div class="full-screen-gallery__leaderboard-container">
+		<div data-id="leaderboard-gallery" class="leaderboard-gallery-ad advert"></div>
+	</div>
+	<div class="full-screen-gallery__sidebar show-for-large">
+		<div class="full-screen-gallery__mpu-container">
+			<div class="full-screen-gallery__mpu center-mpu-container">
+				<span class="hide-for-large">Advertisement<span class="full-screen-gallery__mpu__remaining-ad-duration"></span></span>
+				<div data-id="mpu-gallery" class="mpu-ad advert"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__caption-container">
+		<div class="full-screen-gallery__caption">
+					<span class="full-screen-gallery__caption__text">Harley-Davidson XR1200X</span>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__slider-container">
+		<div class="full-screen-gallery__controls">
+			<button title="Previous photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--prev fi-arrow-left"></button>
+			<button title="Next photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--next fi-arrow-right"></button>
+			<button title="Zoom in" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-in fi-zoom-in"></button>
+			<button title="Zoom out" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-out fi-zoom-out"></button>
+			<button title="Close gallery" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--close fi-x" data-close></button>
+		</div>
+
+		<div class="full-screen-gallery__slider royalSlider rsDefault">
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/259436/images/1440x960/01harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/259436/images/1440x960/01harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/259436/images/951x634/01harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/259436/images/870x580/01harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/259436/images/1026x684/01harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/259436/images/600x400/01harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson XR1200X</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/259436/images/75x75/01harley-davidson-xr1200x.jpg?quality=50" alt="Harley-Davidson XR1200X"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/259436/images/1440x960/02harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/259436/images/1440x960/02harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/259436/images/951x634/02harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/259436/images/870x580/02harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/259436/images/1026x684/02harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/259436/images/600x400/02harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson XR1200X</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/259436/images/75x75/02harley-davidson-xr1200x.jpg?quality=50" alt="Harley-Davidson XR1200X"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/259436/images/1440x960/03harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/259436/images/1440x960/03harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/259436/images/951x634/03harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/259436/images/870x580/03harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/259436/images/1026x684/03harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/259436/images/600x400/03harley-davidson-xr1200x.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Harley-Davidson XR1200X</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/259436/images/75x75/03harley-davidson-xr1200x.jpg?quality=50" alt="Harley-Davidson XR1200X"/>
+</a>
+
+
+		</div>
+	</div>
+
+</section></article>
+				</main>
+			</div>
+
+			<div data-id="inline-footer" class="footer-ad advert"></div>
+			
+<footer id="siteFooter" class="site-footer">
+	<ul class="site-footer__social">
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--facebook" href="https://www.facebook.com/MotorcycleNews" target="_blank" aria-label="Facebook">
+				<span class="fi-social-facebook"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--twitter" href="https://www.twitter.com/MCNNews/" target="_blank" aria-label="Twitter">
+				<span class="fi-social-twitter"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--youtube" href="https://www.youtube.com/user/motorcyclenewsdotcom/" target="_blank" aria-label="Youtube">
+				<span class="fi-social-youtube"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link" href="https://www.motorcyclenews.com/contact-us/" aria-label="Contact us">
+				<span class="fi-mail"></span>
+			</a>
+		</li>
+	</ul>
+	<div>
+		<a href="http://www.bauermedia.co.uk" target="_blank">
+			<img alt="" class="site-footer__logo" data-src="https://static-cdn.bauersecure.com/Common/Logos/bauer.52x52.png" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+		</a>
+		
+		
+<nav class="clearfix">
+	<ul class="site-footer__nav">
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="http://www.greatmagazines.co.uk/bws/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_content=mcnbottonnav&amp;utm_campaign=BAU_mcn"
+				    rel='nofollow'>
+					Subscribe
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/about/"
+				    >
+					About Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/contact-us/"
+				    >
+					Contact Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/terms-of-use/"
+				    >
+					Terms of Use
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/privacy-policy/"
+				    >
+					Cookie &amp; Privacy Policy
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://products.motorcyclenews.com/"
+				   target='_blank' >
+					Products
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://www.bauerlegal.co.uk/editorial-complaints-policy"
+				    rel='nofollow'>
+					Complaints
+				</a>
+			</li>
+		<li class="site-footer__nav__item">
+			<a class="site-footer__nav__link privacy-settings" href="#">Privacy settings</a>
+		</li>
+	</ul>
+</nav>
+
+		
+		<p class="site-footer__copyright">
+			&copy; 1955-2021 Bauer Media Group
+		</p>
+		<p class="site-footer__company-info">
+			Bauer Media Group consists of: Bauer Consumer Media Ltd, Company number: 01176085, Bauer Radio Ltd, Company Number: 1394141 <br />
+			Registered Office: Media House, Peterborough Business Park, Lynch Wood, Peterborough, PE2 6EA H Bauer Publishing, <br />
+			Company Number: LP003328 Registered Office: Academic House, 24-28 Oval Road, London, NW1 7DT.<br />
+			All registered in England and Wales. VAT no 918 5617 01
+			<br />
+			H Bauer Publishing are authorised and regulated for credit broking by the FCA (Ref No. 845898)
+		</p>
+	</div>
+</footer>
+
+			<div id="overlay" class="overlay-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="off-canvas position-right is-closed" id="offCanvasRight" data-off-canvas>
+		
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+		
+<ul class="mobile-site-nav">
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bike-reviews/" 
+		    >
+			Bike Reviews
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+						    >
+							Search bike reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+						    >
+							Our test bikes
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bikes-for-sale/" 
+		    >
+			Bikes For Sale
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+						    >
+							Search bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+						    >
+							Sell your bike
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+						    >
+							Bike check
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/news/" 
+		    >
+			News
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/"
+						    >
+							Latest news
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+						    >
+							New bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-tech/"
+						    >
+							New tech
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sport/"
+						    >
+							Sport
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+						    >
+							Electric bikes coming soon
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/advice/" 
+		    >
+			Advice
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/best/"
+						    >
+							Best
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+						    >
+							Riding tips
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+						    >
+							Learn to ride a motorbike with MCN
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/tests/"
+						    >
+							Tests
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+						    >
+							Maintenance
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+						    >
+							Travelling touring
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/parts/"
+						    >
+							Parts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+						    >
+							Buying and selling
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+						    >
+							Inspiration
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-gear/"
+						    >
+							New gear
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+						    >
+							Product picks
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/"
+						    >
+							Product reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-rider/"
+						    >
+							New riders
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/" 
+		    >
+			Insurance
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="#" 
+		    >
+			Get involved
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+						    >
+							#Ride5000miles
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/newsletter/"
+						    >
+							Subscribe to MCN weekly newsletter
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+						   target='_blank' rel='nofollow'>
+							Buy MCN T-shirts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+						   target='_blank' rel='nofollow'>
+							MCN Festival
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+						   target='_blank' rel='nofollow'>
+							Scottish Motorcycle Show
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+						    rel='nofollow'>
+							London Motorcycle Show
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar" 
+		   target='_blank' >
+			Subscribe
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742" 
+		   target='_blank' >
+			MCN Shop
+		</a>
+	</li>
+</ul>
+	</div>
+
+	<div class="off-canvas position-left is-closed" id="offCanvasLeft" data-off-canvas>
+		
+	</div>
+
+	
+<script type="text/javascript">
+	coreJs.chainCompleteCallbacks.push(function() {
+
+				var gptData = {"site":"SMOTORCYCLING/SMOT_MCN","targetingKeyValues":{"make_mcn":"harley-davidson","model_mcn":"harley-davidson_xr1200","category_mcn":"custom"},"maxMpuCount":30};
+
+				//tcf version 2
+				window.__tcfapi('addEventListener', 2, function (tcData, success) {{
+					if (success && tcData.eventStatus === 'cmpuishown') {{
+						console.debug('SP: Surfacing CMP interface');
+					}}
+
+					if (success && tcData.eventStatus === 'useractioncomplete') {{
+						console.debug('SP: User submitted consent choices');
+
+						if (mcn.initGpt) {
+							mcn.initGpt(gptData);
+						}
+					}}
+
+					if (success && tcData.eventStatus === 'tcloaded') {{
+						console.debug('SP: TC string available');
+						window.__tcfapi('removeEventListener', 2, function (success) {{
+							if (success && mcn.initGpt) {{
+								mcn.initGpt(gptData);
+							}}
+						}}, tcData.listenerId);
+					}}
+				}});
+				});
+
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//securepubads.g.doubleclick.net/tag/js/gpt.js", true);
+	});
+
+</script>
+	
+
+<script type="text/javascript">
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//experience.tinypass.com/xbuilder/experience/load?aid=x9U7rnorpu", true, function() {
+			var tags = ["Templates.BikeReviews.DetailsPage"];
+
+tags.push("HARLEY-DAVIDSON");	
+tags.push("HARLEY-DAVIDSON+XR1200");
+			window.tp.push(["setTags", tags]);
+			window.tp.push(["setContentSection", "Bike Reviews"]);
+		});
+	});
+
+	
+</script>
+</body>
+
+</html>

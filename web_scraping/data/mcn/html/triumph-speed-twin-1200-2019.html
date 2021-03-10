@@ -1,0 +1,2847 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="//js-sec.indexww.com/ht/p/185605-155434007517315.js"></script>
+
+	
+<script>
+	window.pageStart = Date.now();
+	console.debug('Page Start');
+</script>
+
+<script>
+	var mcnConfig = {
+		debugMode: false,
+		cookieDomain: '.motorcyclenews.com',
+		galleryDesktopAdFrequency: 2,
+		galleryMobileAdFrequency: 5,
+		galleryMobileAdDuration: 2,
+		cmpProfileId: 5954,
+		privacyManagerId: 187767,
+		prebidReady: false
+	};
+</script>
+
+<script>
+	var coreJs = {
+		processDomReadyScripts: function() {
+			var chain = {
+				callbacks: coreJs.chainCompleteCallbacks,
+				queue: coreJs.domReadyScriptChain,
+				process: function() {
+					var self = this;
+					if (this.queue.length > 0) {
+						coreJs.injectScript(this.queue.shift(), true, function () {
+							self.process();
+						});
+					} else {
+						while (self.callbacks.length > 0) {
+							(self.callbacks.shift())();
+						}
+					}
+				}
+			}
+
+			chain.process();
+		},
+
+		isReady: false,
+		readyCallbacks: [],
+
+		injectScript: function (src, async, callback) {
+			var script = document.head.appendChild(document.createElement('script'));
+
+			if (typeof async !== 'undefined') {
+				script.async = async;
+			}
+
+			if (typeof callback === 'function') {
+				script.onload = function () {
+					script.onload = null;
+					callback();
+				};
+			}
+
+			script.src = src;
+			console.info('Init: Injected script "' + src + '" async=' + async);
+		},
+		
+		domReadyScriptChain: [
+			'/dist/_5-40-101/js/review.min.js'
+		],
+
+		chainCompleteCallbacks: [],
+		windowLoadCallbacks: []
+	};
+
+	coreJs.chainCompleteCallbacks.push(function () {
+		console.info('Init: Chain complete');
+		mcn.init();
+		coreJs.isReady = true;
+	});
+
+	coreJs.injectScript('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', true, function() {
+		console.info('Init: Injected jquery');
+		$(window).on('load', function () {
+			console.info('Init: Window loaded');
+			while (coreJs.windowLoadCallbacks.length > 0) {
+				(coreJs.windowLoadCallbacks.shift())();
+			}
+		});
+
+		$(document).ready(function () {
+			console.info('Init: Document ready');
+			coreJs.processDomReadyScripts();
+		});
+	});
+</script>
+	
+<script>
+	coreJs.windowLoadCallbacks.push(function () {
+		coreJs.injectScript("https://static.bauercdn.com/prebid/prebid4.14.0.js", true, function () {
+			console.info('Prebid: Script loaded');
+			if (window.mcnConfig.prebidReady) {
+				$(document).trigger('prebid.loaded');
+			} else {
+				window.mcnConfig.prebidReady = true;
+			}
+		});
+	});
+</script>
+
+	<title>TRIUMPH SPEED TWIN 1200 (2019 - on) Review | MCN</title>
+	<link rel="shortcut icon" href="/dist/_5-40-101/images/favicon.ico" />
+	
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="Read the in-depth expert MCN Triumph Speed Twin review - far more than just a comfier Thruxton.">
+
+
+		<link rel="canonical" href="https://www.motorcyclenews.com/bike-reviews/triumph/speed-twin-1200/2019/" />
+
+
+	
+
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org/",
+	"@type": "Review",
+	"itemReviewed": {
+		"@type": "Motorcycle",
+		"name": "TRIUMPH SPEED TWIN 1200"
+
+
+				,"image": {
+					"@type": "ImageObject",
+					"url": "https://mcn-images.bauersecure.com/PageFiles/666047/1speed-twin-2.jpg"
+				}
+					
+
+				,"offers": {
+					"@type": "AggregateOffer",
+					"offerCount": "23",
+					"priceCurrency": "GBP",
+					"lowPrice": "8600",
+					"highPrice": "10000",
+					"offers": [
+						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/speed-twin-1200/58942152/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/speed-twin-1200/58902897/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/speed-twin-1200/59034627/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/speed-twin-1200/7731779/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/triumph/speed-twin-1200/58303857/"
+								}
+												]
+				}
+				},
+	"reviewBody": "Triumph&#x2019;s new Speed Twin is more than just a comfier Thruxton. Taking the best bits from the raciest of their retros and laid back roadsters it&#x2019;s fast, fun, all-day comfy, easy to manage and despite its modest suspension and braking hardware, has the ride quality, poise and stopping power of a Street or Speed Triple.&#xA;&#xA;Latest news:&amp;nbsp;2021 Triumph Bonneville family unveiled&#xA;Related: Triumph Speed Twin long-term test&#xA;Related: Triumph Speed Twin (2019): the story&#xA;Related: Renstall Moto caf&#xE9; racer kit for Speed Twin&#xA;&#xA;The throttle response isn&#x2019;t as polished as many Triumphs and some may still want the ability to fine-tune their suspension, but the Speed Twin is a classy, affordable slab of retro that its rivals will struggle to keep in their sights.",
+	"author": {
+		"@type": "Person",
+		"name": "Michael Neeves",
+		"sameAs": [
+			"https://twitter.com/MCN",
+			"https://www.instagram.com/motorcyclenews/"
+		]
+	},
+	"datePublished": "2021-03-05T15:00:00.0000000Z",
+	"dateModified": "2021-03-05T15:19:11.0000000Z",
+	"reviewRating": {
+		"@type": "Rating",
+		"ratingValue": "4",
+		"bestRating": "5"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Bauer Media"
+	},
+    "sameAs": [
+       "https://www.facebook.com/MCN/",
+       "https://twitter.com/MCN",
+       "https://linkedin.com/MCN",
+       "https://www.instagram.com/motorcyclenews/"
+    ], 
+    "logo": {
+		"@type": "ImageObject",
+		"url": "https://www.motorcyclenews.com/dist/_5-40-101/images/logos/mcn.publisher.85x85.png",
+		"width": 85,
+		"height": 85 
+    }
+}
+</script>
+
+
+
+
+<meta property="og:url" content="https://www.motorcyclenews.com/bike-reviews/triumph/speed-twin-1200/2019/" />
+<meta property="og:title" content="TRIUMPH SPEED TWIN 1200 (2019 - on) Review" />
+<meta property="og:description" content="Read the in-depth expert MCN Triumph Speed Twin review - far more than just a comfier Thruxton." />
+<meta property="fb:app_id" content="7714743854" />
+<meta property="og:type" content="Article" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:publisher" content="Motorcycle News" />
+
+	<meta property="og:image" content="https://mcn-images.bauersecure.com/PageFiles/666047/1speed-twin-2.jpg" />
+
+	<meta property="og:author" content="Michael Neeves" />
+
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preconnect" href="https://www.googletagmanager.com">
+	<link rel="preconnect" href="https://securepubads.g.doubleclick.net" />
+
+		<link rel="amphtml" href="https://www.motorcyclenews.com/amp/bike-reviews/triumph/speed-twin-1200/2019/" />
+
+	
+<link rel="stylesheet" href="/dist/_5-40-101/css/review.min.css" />
+
+		
+
+<script type="text/javascript">
+	!function () { var e = function () { var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) { try { if (n.frames[t]) { e = n; break } } catch (e) { } if (n === window.top) break; n = n.parent } e || (!function e() { var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) { var i = a.createElement("iframe"); i.style.cssText = "display:none", i.name = t, a.body.appendChild(i) } else setTimeout(e, 5); return !r }(), n.__tcfapi = function () { for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) { var i = { gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub" }; "function" == typeof n[2] && n[2](i) } else a.push(n) }, n.addEventListener("message", (function (e) { var t = "string" == typeof e.data, a = {}; try { a = t ? JSON.parse(e.data) : e.data } catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) { var i = { __tcfapiReturn: { returnValue: a, success: r, callId: n.callId } }; t && (i = JSON.stringify(i)), e.source.postMessage(i, "*") }), n.parameter) }), !1)) }; "undefined" != typeof module ? module.exports = e : e() }();
+</script>
+<script>
+	window._sp_ = {
+		config: {
+			accountId: 296,
+			baseEndpoint: 'https://cmp.motorcyclenews.com',
+			groupId: '5e5155d22d47738ac1cd84f4',
+			targetingParams: {
+				'tcfv2': 'true'
+			}
+		}
+	}
+</script>
+<script src="https://cmp.motorcyclenews.com/wrapperMessagingWithoutDetection.js"></script>
+	
+	
+
+<script>
+	coreJs.chainCompleteCallbacks.push(function () {
+		coreJs.injectScript("https://cdn.permutive.app/02469357-27fd-49a7-9dbc-f0d94ae65faa-web.js", true, function () {
+			console.info('Permutive: Script loaded');
+		});
+	});
+</script>
+
+<script>
+	!function (n, e, i) { if (!n) { n = n || {}, window.permutive = n, n.q = [], n.config = i || {}, n.config.apiKey = e, n.config.environment = n.config.environment || "production"; for (var o = ["addon", "identify", "track", "trigger", "query", "segment", "segments", "ready", "on", "once", "user", "consent"], r = 0; r < o.length; r++) { var t = o[r]; n[t] = function (e) { return function () { var i = Array.prototype.slice.call(arguments, 0); n.q.push({ functionName: e, arguments: i }) } }(t) } } }(window.permutive, "8be71353-1189-4ce1-a5cb-320dd35e89ba", { "consentRequired": true });
+	permutive.addon("web", {});
+</script>
+
+	<script>
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//cdn.onesignal.com/sdks/OneSignalSDK.js", true, function () {
+			console.info('OneSignal: Script loaded');
+
+			if (document.location.hostname === "www.motorcyclenews.com") {
+				var OneSignal = window.OneSignal || [];
+				OneSignal.push(function() {
+					OneSignal.init({
+						appId: "98918693-8f93-496c-af67-c8d96ec525be"
+					});
+					// move this before the domain check above for local testing.
+					$(document).trigger('oneSignal.loaded');
+				});
+			} else {
+				console.info('OneSignal: Push not called as hostname incorrect');
+			}
+		});
+	});
+</script>
+
+	
+<script type="text/javascript">
+(function() {
+	window.dm = window.dm ||{ AjaxData:[]};
+	window.dm.AjaxEvent = function(et, d, ssid, ad) {
+		dm.AjaxData.push({ et: et,d: d,ssid: ssid,ad: ad});
+		window.DotMetricsObj && DotMetricsObj.onAjaxDataUpdate();
+	};
+	var d = document,h = d.getElementsByTagName('head')[0],s = d.createElement('script');
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = 'https://uk-script.dotmetrics.net/door.js?d=www.motorcyclenews.com&t=bikereviews';
+	h.appendChild(s);
+} ());
+</script>
+</head>
+
+<body>
+
+	
+<script>
+var bauerDataLayer = [{
+	'siteName': 'MCN',
+	'productType': 'Motorcycle',
+	'cmsPageType': 'Templates.BikeReviews.DetailsPage',
+	'cmsPageId': '549088',
+	'cmsPageName': '2019',
+	'section': 'Bike Reviews',
+	'subSection1': 'TRIUMPH',
+	'subSection2': 'Street Twin',
+	'created': '-62135596800',
+	'makeName': 'TRIUMPH',
+	'modelName': 'TRIUMPH+SPEED%20TWIN%201200',
+	'categoryMcn': 'Retro'
+}];
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=xUOFojuTghcMLZ3prl6hMA&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);})(window, document,'script','bauerDataLayer','GTM-PS8LQC4');</script> 
+	<span class="screen-size-detector"></span>
+
+	<div class="off-canvas-content" data-off-canvas-content>
+		<div class="site-root">
+			
+<header class="site-header clearfix">
+	<strong class="show-for-sr">MCN</strong>
+	
+	<div data-sticky-container>
+		<div class="site-header-mobile top-bar hide-for-medium" data-sticky data-sticky-on="small" data-margin-top="0">
+			<div class="site-header-mobile__left">
+				<a class="site-header-mobile__logo" title="Home" href="/"></a>
+			</div>
+			<div class="site-header-mobile__middle">
+				<a class="site-header-mobile__middle__nav-link" href="/bike-reviews/">Reviews</a>
+				<a class="site-header-mobile__middle__nav-link" href="/bikes-for-sale/">For sale</a>
+				<a class="site-header-mobile__middle__nav-link" href="/news/">News</a>
+				<a class="site-header-mobile__middle__nav-link" href="/insurance/">Insurance</a>
+			</div>
+			<div class="site-header-mobile__right">
+				<button class="site-header-mobile__icon site-header-mobile__icon--menu menu-icon right-off-canvas-toggle" data-toggle="offCanvasRight">
+					<span class="site-header-mobile__icon__text">Menu</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	
+	<div data-sticky-container>
+		<div class="site-header-full show-for-medium" data-sticky data-sticky-on="medium" data-margin-top="0">
+			<div class="site-header-full__inner">
+				<a class="site-header-full__logo" title="Home" href="/">
+					<span class="icon fi-home"></span>
+				</a>
+				<a class="site-header-full__search-toggle fi-icon fi-icon--xlarge fi-magnifying-glass show-for-medium-only" href="#"></a>
+				<div class="site-header-full__right-search-box show-for-large">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+
+				
+
+<nav class="horizontal-site-nav">
+	<ul class="horizontal-site-nav__more-menu dropdown menu" data-dropdown-menu data-closing-time="0">
+		<li class="horizontal-site-nav__more-menu__item is-dropdown-submenu-parent">
+			<a href="#" class="horizontal-site-nav__more-menu__link">More<span class="show-for-large"> MCN</span></a>
+
+			<ul class="horizontal-site-nav__sub-nav horizontal-site-nav__more-menu__content menu">
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="horizontal-site-nav__menu dropdown menu" data-dropdown-menu data-closing-time="0">
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bike-reviews/"
+				    >
+					Bike Reviews
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+								    >
+									Search bike reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+								    >
+									Our test bikes
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bikes-for-sale/"
+				    >
+					Bikes For Sale
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+								    >
+									Search bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+								    >
+									Sell your bike
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+								    >
+									Bike check
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/news/"
+				    >
+					News
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/"
+								    >
+									Latest news
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+								    >
+									New bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-tech/"
+								    >
+									New tech
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sport/"
+								    >
+									Sport
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+								    >
+									Electric bikes coming soon
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/advice/"
+				    >
+					Advice
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/best/"
+								    >
+									Best
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+								    >
+									Riding tips
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+								    >
+									Learn to ride a motorbike with MCN
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/tests/"
+								    >
+									Tests
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+								    >
+									Maintenance
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+								    >
+									Travelling touring
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/parts/"
+								    >
+									Parts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+								    >
+									Buying and selling
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+								    >
+									Inspiration
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-gear/"
+								    >
+									New gear
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+								    >
+									Product picks
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/"
+								    >
+									Product reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-rider/"
+								    >
+									New riders
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/"
+				    >
+					Insurance
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="#"
+				    >
+					Get involved
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+								    >
+									#Ride5000miles
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/newsletter/"
+								    >
+									Subscribe to MCN weekly newsletter
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+								   target='_blank' rel='nofollow'>
+									Buy MCN T-shirts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+								   target='_blank' rel='nofollow'>
+									MCN Festival
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+								   target='_blank' rel='nofollow'>
+									Scottish Motorcycle Show
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+								    rel='nofollow'>
+									London Motorcycle Show
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar"
+				   target='_blank' >
+					Subscribe
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742"
+				   target='_blank' >
+					MCN Shop
+				</a>
+			</li>
+	</ul>
+</nav>
+
+				<div class="site-header-full__search-bar">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+			<div class="top-ad-container" data-sticky-container>
+				<div class="top-ad-container__inner">
+					<div data-id="leaderboard-1" class="top-ad advert" data-sticky data-margin-top="0" data-sticky-on="small"></div>
+				</div>
+			</div>
+
+			<div class="site-body">
+				
+<aside class="desktop-sidebar" data-max-mpu-count="30">
+
+
+<div id=stickyMpuPlaceholder1 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder1 data-sticky-on="xlarge">
+			
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder2 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder2 data-sticky-on="xlarge">
+			
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder3 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder3 data-sticky-on="xlarge">
+			
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder4 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder4 data-sticky-on="xlarge">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder5 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder5 data-sticky-on="xlarge">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder6 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder6 data-sticky-on="xlarge">
+			
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder7 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder7 data-sticky-on="xlarge">
+			
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder8 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder8 data-sticky-on="xlarge">
+			
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder9 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder9 data-sticky-on="xlarge">
+			
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder10 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder10 data-sticky-on="xlarge">
+			
+<div data-id="mpu-10" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder11 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder11 data-sticky-on="xlarge">
+			
+<div data-id="mpu-11" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder12 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder12 data-sticky-on="xlarge">
+			
+<div data-id="mpu-12" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder13 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder13 data-sticky-on="xlarge">
+			
+<div data-id="mpu-13" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder14 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder14 data-sticky-on="xlarge">
+			
+<div data-id="mpu-14" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder15 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder15 data-sticky-on="xlarge">
+			
+<div data-id="mpu-15" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder16 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder16 data-sticky-on="xlarge">
+			
+<div data-id="mpu-16" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder17 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder17 data-sticky-on="xlarge">
+			
+<div data-id="mpu-17" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder18 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder18 data-sticky-on="xlarge">
+			
+<div data-id="mpu-18" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder19 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder19 data-sticky-on="xlarge">
+			
+<div data-id="mpu-19" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder20 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder20 data-sticky-on="xlarge">
+			
+<div data-id="mpu-20" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder21 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder21 data-sticky-on="xlarge">
+			
+<div data-id="mpu-21" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder22 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder22 data-sticky-on="xlarge">
+			
+<div data-id="mpu-22" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder23 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder23 data-sticky-on="xlarge">
+			
+<div data-id="mpu-23" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder24 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder24 data-sticky-on="xlarge">
+			
+<div data-id="mpu-24" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder25 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder25 data-sticky-on="xlarge">
+			
+<div data-id="mpu-25" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder26 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder26 data-sticky-on="xlarge">
+			
+<div data-id="mpu-26" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder27 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder27 data-sticky-on="xlarge">
+			
+<div data-id="mpu-27" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder28 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder28 data-sticky-on="xlarge">
+			
+<div data-id="mpu-28" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder29 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder29 data-sticky-on="xlarge">
+			
+<div data-id="mpu-29" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder30 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder30 data-sticky-on="xlarge">
+			
+<div data-id="mpu-30" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div></aside>
+
+				<main class="site-content">
+					
+	<nav class="breadcrumb-list">
+				<ul class="breadcrumbs show-for-medium">
+							<li><a href="/">Home</a></li>
+							<li><a href="/bike-reviews/">Bike Reviews</a></li>
+							<li><a href="/bike-reviews/triumph/">TRIUMPH</a></li>
+							<li><a href="/triumph/street-twin/">Street Twin</a></li>
+							<li><a href="/bike-reviews/triumph/speed-twin-1200/">SPEED TWIN 1200</a></li>
+							<li class="disabled">2019</li>
+				</ul>
+				<a class="breadcrumb-list__back-link hide-for-medium" href="/bike-reviews/triumph/speed-twin-1200/">
+					<span class="fi-icon fi-arrow-up breadcrumb-list__back-link__icon"></span><span class="breadcrumb-list__back-link__text">See all TRIUMPH SPEED TWIN 1200 reviews</span>
+				</a>
+	</nav>
+
+
+					
+
+
+
+<span class="last-viewed-model" data-make="triumph" data-model="speed twin 1200" />
+
+<article id="review" class="review">
+<img alt="" class="review__event-logger" data-src="https://tracking.bauermedia.co.uk/EventHandler.ashx?e=HHkbZZ3atHYkODBcU4gMTERnPJzrMAC5kDttjn%252b5iLd1U32j3RFiV0%2F70PVJ%252b29pb25rfIZKf9B7gXy57FFTTapQiAtYk8%252bPKq6nceKuAlqVCegLqM5jWAQVQw7pnl%252bAqBk9gmiPD2A2%252bE0YMHuptHehdlerCK3n5KnZeyE%2Fk9luJ%2FmQHDS9%2FXMJA9GoEn%2FKZCI%2FM6ZgP1ZRrLiuYz18Uct1J9tguuk0E7DCnX4dNQMc8IA5KmY0X4kd7YhSc69TXzqW4mpcT7lLzNsr8rZP9SrxY0RajabXobwyP5k749ec5N9chKjI1MCvpXssClegASA%252b79%2FDbexJGPzhRC9qWfAY6fNA%252bXf18SgwRtjBD0ORpj04pmERMtcd%252bpTxCO4NZc8%2FawwIVSDbvYs4KX2uzlCPr0lBXYOYpfUcrUVG%2FLCVNtE2jt6H9VBodSEaPffPYa5WJzQk3WmDi2%252b8Yo8cVHCdGhTmPveUEQScEKVLYO%252b%252bzJWlmTQX2EPXLpqdesUREiwBKsLIPlcNmxCa80p72w%3D%3D" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+	<h1>TRIUMPH SPEED TWIN 1200 (2019 - on) Review</h1>
+
+	<section class="review__headline-ratings grid-x">
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#review-overall">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">MCN rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+			</a>
+		</div>
+
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#ownersReviews">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">Owners&#x27; rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.4 out of 5">    <span style="width:89%" class="star-rating__stars__value">4.4 out of 5</span>  </span>    <span class="star-rating__text">(4.4/5)</span>  </span></span>
+			</a>
+		</div>
+	</section>
+
+	<div class="review__navigation">
+		<a href="#specs">
+			<span>Specs</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#ownersReviews">
+			<span>Owners' reviews</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#forSale">
+			<span class="show-for-medium">Bikes for sale</span><span class="show-for-small-only">For sale</span><span class="review__navigation__arrow"></span>
+		</a>
+	</div>
+
+	<section class="review__gallery-panel">
+		
+
+<section class="gallery-preview">
+		<figure class="gallery-preview__image gallery-link">
+			<img alt="Triumph Speed Twin 1200 in action" data-lazy-interchange="[https://mcn-images.bauersecure.com/PageFiles/666047/615x405/1speed-twin-2.jpg, small], [https://mcn-images.bauersecure.com/PageFiles/666047/999x666/1speed-twin-2.jpg, medium], [https://mcn-images.bauersecure.com/PageFiles/666047/600x400/1speed-twin-2.jpg, large]" data-src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" />
+		</figure>
+		<div class="gallery-preview__count">
+			<span class="gallery-preview__count__item gallery-link">
+				<span class="gallery-preview__count__icon icon-35x35-camera"></span>
+				<span class="gallery-preview__count__value">15</span>
+			</span>
+
+		</div>
+
+		<div class="gallery-preview__button-container">
+				<button class="gallery-preview__button button gallery-link">	
+					<span class="gallery-preview__button__icon icon-35x35-camera"></span>
+					<span>View 15 images</span>
+				</button>
+
+		</div>
+</section>
+	</section>
+
+	<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+	<div class="show-for-medium-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<section class="review__summary">
+		
+	<section class="review__highlights">
+		<h2 class="review__summary__heading">Highlights</h2>
+		<ul class="review__highlights__list">
+				<li class="review__highlights__item">Triumph retro chic</li>
+				<li class="review__highlights__item">All day comfort</li>
+				<li class="review__highlights__item">Torque-laden 1200cc parallel twin</li>
+		</ul>
+	</section>
+
+
+
+		
+
+	<section class="review__at-a-glance">
+		<h2 class="review__summary__heading">At a glance</h2>
+		<table class="review__at-a-glance__table">
+			<tbody>
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Owners' reliability rating: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#ownersReviews"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.7 out of 5">    <span style="width:93%" class="star-rating__stars__value">4.7 out of 5</span>  </span>    <span class="star-rating__text">(4.7/5)</span>  </span></span></a></td>
+					</tr>
+
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Annual servicing cost: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#ownersReviews">&#xA3;280</a></td>
+					</tr>
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Power: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#specs">96 bhp</a></td>
+					</tr>
+
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Seat height: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								Medium 
+								<span class="review__at-a-glance__item__link__sub-info">(31.8 in / 807 mm)</span>
+							</a>
+						</td>
+					</tr>
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Weight: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								Medium 
+								<span class="review__at-a-glance__item__link__sub-info">(432 lbs / 196 kg)</span>
+							</a>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+		
+	<h2 class="review__summary__heading">Prices</h2>
+	<section class="review__prices">
+		<div class="grid-x">
+			<div class="cell small-7">
+					<div class="review__prices__price">
+						<span class="review__prices__price__label">New</span>
+						<span class="review__prices__price__value">&#xA3;10,500</span>
+					</div>
+					
+					<div class="review__prices__price">
+						<span class="review__prices__price__label">Used</span>
+						<span class="review__prices__price__value">&#xA3;8,600 - &#xA3;10,000</span>
+					</div>
+
+			</div>
+			<div class="cell small-5">		
+					<a class="review__prices__button button" href="/bikes-for-sale/triumph/speed-twin-1200/"><span class="review__prices__button__text">View bikes for sale</span></a>
+			</div>
+		</div>
+	</section>
+
+	</section>
+
+	<div class="show-for-large-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<div class="review__main-content">
+		<a name="review-overall" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Overall rating</h2>
+			<a href="#review-ride" class="review__main-content__anchor-link">Next up: Ride &amp; brakes</a>
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<aside class="review__publishing-info">
+					<div><strong>Author: Michael Neeves</strong></div>
+
+				<div>Published: 05 March 2021</div>
+
+					<div>Updated: 05 March 2021</div>
+			</aside>
+
+			<p>Triumph’s new Speed Twin is more than just a comfier Thruxton. Taking the best bits from the raciest of their retros and laid back roadsters it’s fast, fun, all-day comfy, easy to manage and despite its modest suspension and braking hardware, has the ride quality, poise and stopping power of a <a href="https://www.motorcyclenews.com/triumph/street-triple/" title="Read the full history of the Triumph Street Triple with MCN today">Street</a> or <a href="https://www.motorcyclenews.com/triumph/speed-triple/" title="Read the full history of the Triumph Speed Triple with MCN">Speed Triple</a>.</p>
+<ul>
+<li><strong><strong>Latest news</strong>:&nbsp;</strong><a title="Read about the 2021 Triumph Bonneville family here" href="https://www.motorcyclenews.com/news/new-bikes/2021-triumph-bonneville-range/">2021 Triumph Bonneville family unveiled</a></li>
+<li><strong>Related:</strong> <a title="Read MCN's long-term test review of the Triumph Speed Twin here" href="https://www.motorcyclenews.com/mcn-motorycles/long-term-test-triumph-speed-twin-2019/">Triumph Speed Twin long-term test</a></li>
+<li><strong>Related:</strong> <a href="https://www.motorcyclenews.com/news/new-bikes/triumph-speed-twin/" title="Triumph Speed Twin: the story">Triumph Speed Twin (2019): the story</a></li>
+<li><strong>Related:</strong> <a title="Read about the café racer kit here" href="https://www.motorcyclenews.com/news/2020/october/triumph-speed-twin-cafe-racer-rennstall-moto/">Renstall Moto café racer kit for Speed Twin</a></li>
+</ul>
+<p>The throttle response isn’t as polished as many <a href="https://www.motorcyclenews.com/bike-reviews/triumph/" title="Read expert Triumph reviews today">Triumphs</a> and some may still want the ability to fine-tune their suspension, but the Speed Twin is a classy, affordable slab of retro that its rivals will struggle to keep in their sights.</p>
+<p><div>
+
+<div class="video-player">
+		<div class="video-player__container" data-video-url="https://www.youtube.com/embed/lqBpbrjCR6k" data-enable-js-api="false" data-ga-tracking-category="" data-ga-tracking-action="" data-ga-tracking-label="">
+				<img alt="" class="video-player__container__preview" data-lazy-interchange="[https://img.youtube.com/vi/lqBpbrjCR6k/hqdefault.jpg, small], [https://img.youtube.com/vi/lqBpbrjCR6k/maxresdefault.jpg, medium]" data-src="" src="">
+
+				<span class="video-player__container__button"></span>
+		</div>
+</div></div></p>
+		</div>
+
+		<a name="review-ride" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Ride quality &amp; brakes</h2>
+			<a href="#review-engine" class="review__main-content__anchor-link">Next up: Engine</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>Sustained hours in the saddle won't bother your joints. Pegs are 4mm lower and 38mm further forward than the Thruxton's, seat height is lower (just 807mm), despite having 10mm more padding and the tapered bars have more than a hint of ready-for-action Speed Triple about them.</p>
+<p>Twinges of derrière discomfort eventually creep in after around six hours in the saddle - about five hours better than the torturous Thruxton's.&nbsp;</p>
+<p>Aside from a new subframe, aluminium down tubes and the odd bracket, the Speed Twin’s frame is the same as the Thruxton's. Suspension is by KYB: non-adjustable forks up front and preload-adjustable twin shocks at the rear. Don't worry about the lack of twiddlers because the chassis set-up is Triumph at its glorious best.</p>
+<p><img title="Conventional forks feature on the bike" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Conventional forks feature on the bike" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/666047/615x0/speed-twin-5.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/666047/900x0/speed-twin-5.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>Perfectly balanced and with sumptuous ride quality, the Speed Twin rolls through corners with a twinkle in its eye and slightly lazy steering geometry makes fast corners its party piece. Slowing down the fork dive on the brakes with a dab of compression damping would be nice (if we’re being fussy), but the suspension will be bang-on for most riders and styles.</p>
+<p>Lightweight seven spoke wheels contribute to the Speed Twin's breezy agility and Pirelli Diablo Rosso III tyres (the good ones, not cheap spec OEs) dig in hard once they’re up to temperature. Four piston, four-pad Brembos may not be radial, but who cares when they ooze this much power and feel?</p>
+<p><strong> </strong></p>
+<hr>
+<p><strong> Triumph’s Chief Product Officer, Steve Sargent explains why they put the Thruxton on a 10kg diet to create the Speed Twin.</strong></p>
+<p>"We started with the engine to see what inertia we could get out of it and one of the biggest opportunities was the clutch. The Speed Twin has a different clutch basket and lighter, more heavily machined gear, which saves about a kilo," he explained.&nbsp;</p>
+<p>"On the front end of the bike the combined wheel and disc assembly is about 2.9 kilos lighter and we replaced the frame’s steel cradle with aluminium – a first for any <a href="https://www.motorcyclenews.com/triumph/bonneville/" title="Read the history of the Triumph Bonneville with MCN">Bonneville model</a>. We’ve taken another 1.6 kilos out of the rear wheel, as well.</p>
+<p>"Reducing inertia benefits the handling the most. The more weight you've got in anything that's spinning fast is going to make it harder to change direction. That reduction in inertia liberated quite a lot out of the chassis, in terms of how quickly the bike turns-in and how precise it is.</p>
+<p><img title="Twin shocks get preload adjustment" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Twin shocks get preload adjustment" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/666047/615x0/speed-twin-1.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/666047/900x0/speed-twin-1.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>"We actually ended up lengthening the wheelbase over the Thruxton and if we hadn't done that it actually starts to get a little bit too flighty. On the rake we're 0.1 degrees further out, there's more trail and a 15mm longer wheelbase [thanks to a longer chain].</p>
+<p>"Overall, the weight bias is slightly more towards the front end of the bike now, so it's gone from a 48% front-end bias to a 50%. We've got the same suspension spring rates as the Thruxton with less rear preload and higher oil level on the front, for slightly different air damping in the forks.&nbsp;</p>
+<p>"We had to make those changes to the chassis to get the stability back after reducing weight and inertia."</p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-engine" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Engine</h2>
+			<a href="#review-reliability" class="review__main-content__anchor-link">Next up: Reliability</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>A reworked 'High Power' 1200cc parallel twin-cylinder Thruxton lump provides the Speed Twin's beating heart and darkly gruff soundtrack. The motor alone is 2.5kg lighter, thanks to its revised clutch assembly and new engine covers. It even has a magnesium cam cover, like a <a href="https://www.motorcyclenews.com/bike-reviews/ducati/1299-superleggera/2017/" title="Read MCN's detailed review of the 1299 Superleggera today">Ducati Superleggera</a>.&nbsp;</p>
+<p>Making 96bhp to the crank, the Speed Twin delivers supersport punch when you dial in the revs, but there's so much grunt, delivered from almost tickover, it’s more rewarding to use lazy gears in the corners and surf the Triumph’s great wave of torque on the way out.</p>
+<p><img title="The bike features the same engine as the Thruxton" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="The bike features the same engine as the Thruxton" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/666047/615x0/speed-twin-3.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/666047/900x0/speed-twin-3.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>Triumph are masters of ironing out the glitches from their ride-by-wire throttles, but the Speed Twin's fuelling is a little abrupt on and off the throttle at low speed, but once you're rolling (or in Rain mode) the throttle becomes nicely damped.</p>
+		</div>
+
+		<a name="review-reliability" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Reliability & build quality</h2>
+			<a href="#review-value" class="review__main-content__anchor-link">Next up: Value</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>    <span class="star-rating__text">(5/5)</span>  </span></span>
+				</div>
+
+			<p>Judging by our <a href="https://www.motorcyclenews.com/bike-reviews/triumph/speed-twin-1200/2019/#ownersReviews" title="Triumph Speed Twin owners' reviews">Triumph Speed Twin owners' reviews</a>, there doesn't seem to be a huge amount wrong with the Speed Twin's build quality or reliablity. It scores mainly four or five stars, with no negative feedback at time of publication.</p>
+		</div>
+
+		<a name="review-value" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Value vs rivals</h2>
+			<a href="#review-equipment" class="review__main-content__anchor-link">Next up: Equipment</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p><a href="https://www.motorcyclenews.com/bike-reviews/triumph/" title="Read expert Triumph motorcycle reviews with MCN today">Triumph</a> gives you get bundles of style, performance, tech and quality parts for little money, but the Speed Twin is ever so slightly more expensive than the comparable <a href="https://www.motorcyclenews.com/news/first-rides-tests/2017/march/bmw-r-nine-t-pure-first-ride/" title="Read MCN's first ride of the BMW R nineT Pure today">BMW R nine T Pure</a> and <a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/z900rs/2017/" title="Read about the Kawasaki Z900RS with MCN today">Kawasaki Z900RS</a>.</p>
+<p><a href="https://www.motorcyclenews.com/bike-reviews/triumph/street-twin/" title="Read about the Triumph Street Twin today">Street Twin</a> owners who want a bit more oomph (ok, a lot more: 49% more power and 40% more torque) will love the new Speed Twin, as will <a href="https://www.motorcyclenews.com/bike-reviews/triumph/bonneville-t120/2016/" title="Read MCN's detailed review of the 2016-on Bonneville T120 today">Bonneville T120</a> riders who just want a bit more of everything and Thruxton owners who value their wrists.</p>
+<p>It also has enough power and joyful handling to keep all but the most speed-crazed sportsbike and super naked fans happy and relaxed on the road, too.</p>
+<h2>Triumph Speed Twin vs 2021 BMW R nine T</h2>
+<p><img title="Triumph Speed Twin vs BMW R nine T" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Triumph Speed Twin vs BMW R nine T" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/666047/615x0/bmwrninet_triumphspeedtwin.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/666047/900x0/bmwrninet_triumphspeedtwin.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>BMW and Triumph are head and shoulders ahead of the game when it comes to creating modern, old-school charmers with sizzling performance.</p>
+<p>There are machines that do the job of cruising in a haze of yesteryear bliss for a lot less, but the R nine T and Speed Twin are apex predators.</p>
+<p>Both are stripped-down, straight-barred roadsters, detailed to within an inch of their turn-ups with big brakes, quality suspension and electronics hidden neatly away. Both have tank badges with genuine history – the Triumph is Steve McQueen and the Beemer the soldiers chasing him.</p>
+<p>On paper their twin cylinder engines are similar, too. The BMW punches out 108bhp and 86lb.ft of torque from its updated Euro5-spec 1170cc boxer and the Triumph produces 96bhp and 83lb.ft from a 1200cc parallel twin.</p>
+<p><img title="Triumph Speed Twin" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Triumph Speed Twin" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/666047/615x0/triumphspeedtwin-2.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/666047/900x0/triumphspeedtwin-2.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>But bikes aren’t ridden on paper, and out on the road the way their engines look and act couldn’t be more different. The liquid-cooled Speed Twin burbles away with its cylinders neatly in line, dishing out impeccable thrust throughout the revs. Over on the air/oil cooled R nine T its punchier, more instant delivery comes from huge power stations sticking out horizontally in front of your shins.</p>
+<p>They’ll both do around 140mph on a good day and either machine will scratch the itch of those who’ve left their sportsbikes behind. They’re the most unlikely wheelie machines when you turn the electronics off, too.</p>
+<p>It’s a close call. Each bike is deliciously finished and detailed, easy to get on with and compared with their cheaper, less powerful rivals, they are genuinely quick and sharp in the bends. If you like your Sunday mornings to end with a silly grin and flies in your teeth, these are the bikes for you.</p>
+<p><img title="Triumph Speed Twin filler cap" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Triumph Speed Twin filler cap" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/666047/615x0/triumphspeedtwin-5.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/666047/900x0/triumphspeedtwin-5.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>The Triumph is the one you’ll buy with your head. It’s cheaper, more polished and comes with everything you need to tickle your classic taste buds – from its Monza fuel cap to the burble from its big parallel twin engine.</p>
+<p>The brakes, suspension and tyres (in the winter) aren’t quite as good as the BMW’s and it isn’t as roomy, but if you can live with those things you’ve just saved yourself a stack-load of cash.</p>
+<p>But from the moment the R nine T wakes from its slumber, kicking to the right as it crackles into life, you know you’re on something special. Some might not enjoy its Germanic quirkiness, but it’s one of the most magnificent feelgood sportsbikes around.</p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-equipment" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Equipment</h2>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+				</div>
+
+			<p>As we've come to expect from Triumph’s latest generation of retros, you get a lot of tasty spec for your money, including riding modes, traction control, ABS, a torque assist clutch, new clocks, LED lights, a USB charger, bar end mirrors, a Monza fuel cap and immobiliser, as well as over 80 Speed Twin specific accessories.</p>
+		</div>
+	</div>
+
+	<a name="forSale" class="review__anchor"></a>
+	
+
+<aside class="review__bfs">
+		<h2 class="review__bfs__heading">TRIUMPH SPEED TWIN 1200 for sale with <span class="review__bfs__heading__highlight">MCN</span></h2>
+		<ul class="review__bfs__list">
+				<li class="review__bfs__item" data-tracking-label="Superbike Factory">
+					<a href="/bikes-for-sale/triumph/speed-twin-1200/58942152/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="SPEED TWIN 1200 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58942152/1818270580/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">SPEED TWIN 1200  (2019/19)</span>
+								<span class="review__bfs__item__price">&#xA3;8,591</span>
+								<span class="review__bfs__item__location">Cheshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Destination Triumph Washington">
+					<a href="/bikes-for-sale/triumph/speed-twin-1200/58902897/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="SPEED TWIN 1200 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58902897/280889887/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">SPEED TWIN 1200  (2019/68)</span>
+								<span class="review__bfs__item__price">&#xA3;8,849</span>
+								<span class="review__bfs__item__location">West Sussex</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Performance Triumph Cheltenham">
+					<a href="/bikes-for-sale/triumph/speed-twin-1200/59034627/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="SPEED TWIN 1200 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/59034627/1728023930/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">SPEED TWIN 1200  (2019/68)</span>
+								<span class="review__bfs__item__price">&#xA3;8,895</span>
+								<span class="review__bfs__item__location">Gloucestershire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="">
+					<a href="/bikes-for-sale/triumph/speed-twin-1200/7731779/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="SPEED TWIN 1200 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/private/7731779/754214634/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">SPEED TWIN 1200  (2019/19)</span>
+								<span class="review__bfs__item__price">&#xA3;9,250</span>
+								<span class="review__bfs__item__location">Worcs</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Roy Jervis &amp; Co Ltd">
+					<a href="/bikes-for-sale/triumph/speed-twin-1200/58303857/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="SPEED TWIN 1200 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58303857/824375906/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">SPEED TWIN 1200  (2020/20)</span>
+								<span class="review__bfs__item__price">&#xA3;9,750</span>
+								<span class="review__bfs__item__location">Derbyshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+		</ul>
+		<div class="review__bfs__button-container">
+			<a class="review__bfs__button button" href="/bikes-for-sale/triumph/speed-twin-1200/">View more bikes for sale</a>
+		</div>
+</aside>
+
+	<a name="specs" class="review__anchor"></a>
+
+	
+<section class="review__facts-and-figures">
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Specs</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine size</th>
+					<td class="review__facts-and-figures__item__value">1200cc</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine type</th>
+					<td class="review__facts-and-figures__item__value">Liquid-cooled, 8v parallel twin</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Frame type</th>
+					<td class="review__facts-and-figures__item__value">Tubular steel with aluminium cradle</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Fuel capacity</th>
+					<td class="review__facts-and-figures__item__value">14.5 litres</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Seat height</th>
+					<td class="review__facts-and-figures__item__value">807mm</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Bike weight</th>
+					<td class="review__facts-and-figures__item__value">196kg</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front suspension</th>
+					<td class="review__facts-and-figures__item__value">41mm KYB forks, non adjustable</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear suspension</th>
+					<td class="review__facts-and-figures__item__value">Twin KYB shocks, preload adjustable</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front brake</th>
+					<td class="review__facts-and-figures__item__value">2 x 305mm discs with four-piston Brembo calipers. ABS</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear brake</th>
+					<td class="review__facts-and-figures__item__value">220mm rear disc with single-piston Nissin caliper. ABS</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front tyre size</th>
+					<td class="review__facts-and-figures__item__value">120/70 x 17</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear tyre size</th>
+					<td class="review__facts-and-figures__item__value">160/60 x 17</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Mpg, costs &amp; insurance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Average fuel consumption</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual road tax</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;93</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual service cost</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;280</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">New price</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;10,500</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Used price</th>
+					<td class="review__facts-and-figures__item__value">
+						&#xA3;8,600 - &#xA3;10,000
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Insurance group</th>
+					<td class="review__facts-and-figures__item__value">
+						-<br />
+							<a rel="nofollow" target="_blank" href="https://quotes.mcncompare.com/bike/PersonalInformation1.aspx?utm_campaign=multi-acq-compare-mcn&amp;utm_source=mcn&amp;utm_medium=referral&amp;utm_content=reviews-detail-value-section">How much to insure?</a>
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Warranty term</th>
+					<td class="review__facts-and-figures__item__value">Two years</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Top speed &amp; performance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max power</th>
+					<td class="review__facts-and-figures__item__value">96 bhp</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max torque</th>
+					<td class="review__facts-and-figures__item__value">83 ft-lb</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Top speed</th>
+					<td class="review__facts-and-figures__item__value">135 mph</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">1/4 mile acceleration</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Tank range</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+	<section class="review__history-and-versions">
+			<h2 class="review__history-and-versions__heading">Model history &amp; versions</h2>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Model history</h3>
+					<ul>
+<li><strong>2019:</strong> Speed Twin launched with a <a title="Read MCN's detailed Triumph Thruxton 1200 review here" href="https://www.motorcyclenews.com/bike-reviews/triumph/thruxton-1200/2016/">Triumph Thruxton</a>-based engine and chassis with roadster styling and riding position.</li>
+</ul>
+				</div>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Other versions</h3>
+					<p>None.</p>
+				</div>
+
+			<div class="review__history-and-versions__section">
+				<a href="/triumph/street-twin/">Read more about the full TRIUMPH Street Twin range</a>
+			</div>
+	</section>
+
+
+
+<section class="review__long-term-test">
+    <h2 class="review__long-term-test__heading"><span class="review__long-term-test__heading__brand">MCN</span> Long term test reports</h2>
+    <div class="grid-x">
+        <div class="cell large-6">
+			<img alt="MCN Fleet: Torquey Triumph Speed Twin shows mercy on its stock tyres" class="review__long-term-test__main-image" data-src="/PageFiles/671546/600x400/01_Triumph_speed_twin.jpg" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" />
+        </div>
+        <div class="cell large-6">
+            <div class="review__long-term-test__details">
+                <h3 class="review__long-term-test__details__subheading">MCN Fleet: Torquey Triumph Speed Twin shows mercy on its stock tyres</h3>
+                <p class="review__long-term-test__details__content-preview">Looking back on those heady days of Springtime, when the tarmac was warm and the Triumph Speed Twin&#x27;s odometer was only showing triple digits, I distinctly remember wondering about how much abuse the rear tyre was taking.&#xA;Sure, the Triumph retro is no big-power sportsbike, but given the fact that th<span>&hellip;</span></p>
+            </div>
+            <a href="/mcn-motorycles/long-term-test-triumph-speed-twin-2019/" class="review__long-term-test__link button">Read the latest report</a>
+        </div>
+    </div>
+</section>
+	<a name="ownersReviews" class="review__anchor"></a>
+	
+
+<section class="review__owners-reviews-summary">
+	<h2 class="review__owners-reviews-summary__heading">
+		<span class="review__owners-reviews-summary__heading__inner">
+			Owners' reviews
+			<span class="review__owners-reviews-summary__heading__vehicle">for the TRIUMPH SPEED TWIN 1200 (2019 - on)</span>
+		</span>
+	</h2>
+	<div class="review__owners-reviews-summary__intro">
+			<p class="review__owners-reviews-summary__intro__text">
+				<strong>9 owners</strong> have reviewed their TRIUMPH SPEED TWIN 1200 (2019 - on) and rated it in a number of areas. Read what they have to say and what they like and dislike about the bike below.
+			</p>
+			<p class="review__owners-reviews-summary__intro__text">
+				<a href="/bike-reviews/review-your-bike/?review=549088">Review your TRIUMPH SPEED TWIN 1200 (2019 - on)</a>
+			</p>
+			<table class="review__owners-reviews-summary__table">
+				<thead>
+					<tr>
+						<td colspan="2"><h3 class="review__owners-reviews-summary__table__heading">Summary of owners' reviews</h3></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Overall rating: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.4 out of 5">    <span style="width:89%" class="star-rating__stars__value">4.4 out of 5</span>  </span>    <span class="star-rating__text">(4.4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Ride quality &amp; brakes: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.3 out of 5">    <span style="width:87%" class="star-rating__stars__value">4.3 out of 5</span>  </span>    <span class="star-rating__text">(4.3/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Engine: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.9 out of 5">    <span style="width:98%" class="star-rating__stars__value">4.9 out of 5</span>  </span>    <span class="star-rating__text">(4.9/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Reliability &amp; build quality: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.7 out of 5">    <span style="width:93%" class="star-rating__stars__value">4.7 out of 5</span>  </span>    <span class="star-rating__text">(4.7/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Value vs rivals: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.9 out of 5">    <span style="width:98%" class="star-rating__stars__value">4.9 out of 5</span>  </span>    <span class="star-rating__text">(4.9/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Equipment: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.9 out of 5">    <span style="width:98%" class="star-rating__stars__value">4.9 out of 5</span>  </span>    <span class="star-rating__text">(4.9/5)</span>  </span></span></td>
+					</tr>
+						<tr class="review__owners-reviews-summary__item">
+							<th class="review__owners-reviews-summary__item__label">Annual servicing cost: </th>
+							<td class="review__owners-reviews-summary__item__value"><strong>&#xA3;280</strong></td>
+						</tr>
+				</tbody>
+			</table>
+	</div>
+</section>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+		<section class="review__owners-reviews-container">
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">best all rounder</strong>
+	<div class="review__owners-review__published-info">
+		<strong>20 February 2021</strong> <span class="review__owners-review__published-info__author">by Russell Woodward</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2020</strong>
+		</p>
+
+		<p>Considering the budget suspension it handles very well, the brakes are good and the torque from the engine is fantastic  There is a lot of throttle play but this can be sorted with spacers and the tank range is a bit limited   i would recommend this to friends</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">This bike does it all, bimbling about, touring, and if you feel like it a bit of scratching and you can ride it all day due to riding position and seat comfort</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">torque, torque and more torque</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">This bike looks fantastic as standard but it is improved by fitting a tail tidy, also I would suggest fitting throttle spacers to get over the snatchy action, Vance and Hines exhausts and xpipe to decat and KN filter all of which makes it sound better and gives you a bit better throttle response    standard tyres are very good</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> dealer  very good service
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">18 months 6000 miles and still love it.</strong>
+	<div class="review__owners-review__published-info">
+		<strong>30 November 2020</strong> <span class="review__owners-review__published-info__author">by Steve T</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Version: <strong>1200</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Year: <strong>2019</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;200</strong>
+		</p>
+
+		<p>Great sound and handling. I&#x27;ve made a few upgrades having owned this bike for 18 months. Original tires lasted 5000 miles before it went pop with gentle riding, believe this is ok for expectancy. Love the sound with the V&amp;H exhaust but without the cat even better. Tail tidy a bit of luggage added. Up graded the seat to a Bonnie seat gives 2cm on the height and much better pillion space, it also adds to comfort for the rider. It needs a bit of modification to fit but worth the effort for two up. All in all a great bike and still a thrill to own and ride.  A great bike.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Great ride -Only minor issue with brakes which bind a little at low speed making the final stop and foot down a bit more of a judgement. Triumph factory Manager says it needs to be ridden harder on the brakes to clear the dust due to sport brake design. Not sure I like the idea of braking hard for no reason and it only lasts a mile or so before it returns. Sill only a minor point.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Love the low down torque and sound V&amp;H fitted as std on mine.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Getting on average 62mpg actual. Can nudge up to 70mpg if I try. Fuel take 0 miles appears on average 35miles before tank is empty. But once you know you can get 200 miles on a tank with out worry.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Its got all I need as was a demo model.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Good dealer experience
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">My favorite bike....perhaps ever!</strong>
+	<div class="review__owners-review__published-info">
+		<strong>04 September 2020</strong> <span class="review__owners-review__published-info__author">by Damo666</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2019</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;180</strong>
+		</p>
+
+		<p>It&#x27;s a very sweet handling bike, with more than enough grunt to put a smile on your face. It reminds me of the KTM 950 SM I used to have, but with a lower seat and better looks. At normal road speeds it&#x27;s not slow either.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The brakes are very good. I&#x27;m used to radial Brembo&#x27;s, these aren&#x27;t radials but they are Brembo&#x27;s and they stop it very quickly indeed. They offer really good feel if you are really pressing on, on some of the shocking roads near me i have had the antilock kick, to the point I&#x27;d say its a little on the sensitive side. But other than that they have been excellent overall. Ride quality is a mixed bag, smooth flowing A&#x2B; B roads the suspension will be fine and the bike handles everything most people would want, unfortunately a large number of the roads near me are not like that. The chassis copes fine, but the suspension struggles. Mine is now running Maxton Rear shocks and i will be getting the fork internals done soon. The difference on one B road i ride regularly is now about 20mph, if I&#x27;d done that before I&#x27;d have ended up in a hedge. This is a shame, I do wish they had given it slightly better suspension that was adjustable. But once that is sorted, the bike handles brilliantly everywhere.  The Rosso 3 tyres it come on really suite the bike as well, I really like Pirellis and these are brilliant.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Initially the low speed fuelling was the worst I&#x27;ve had on any bike, however a DNA filter and more miles seems to have smoothed it out a lot. Having said that, the engine is the star of the show, it drives from low down really well and  when you are moving at normal speeds the pick up is a hoot, I actually prefer riding it as an experience to my MT 10SP. Nearly everything is despatched with a briefest of twists. The gearbox is precise and clutch light and it thuds forward with very little provocation and I absolutely love the sound through the Vance &amp; Hines cans I have on it.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The aluminium everywhere, other than the mudguards, fur up as soon as they get wet for any period of time (An hour in the rain will do it). It came as a bit of a shock, as it&#x27;s been years since I&#x27;ve seen corrosion form that quickly on a bike. I tend to have to use autosol and elbow grease to keep it looking new (other than dowsing everything in ACF50).  Mechanically it&#x27;s been faultless.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Triumph charge more for their servicing than other manufacturers, however my experience has been excellent so far and the dealership have really impressed me compared to some others I&#x27;ve dealt with over the years (Youles Blackburn).</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">I actually really like the clocks, they look basic but give me all the information I need. Definitely fit the heated grips, it does make a difference in the middle of winter, and the work well. Accessories wise you can blow a fortune, knock yourself out. Tyre wise, it&#x27;s running standard Rosso 3&#x27;s, not some OEM rubbish that looks like them but isn&#x27;t. The bike was developed for these tyres and I would stick with them, they are excellent and seem to be offering a good compromise of performance and longevity.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Bought from a dealer. Paid full price as they were new and everyone wanted one, there was a delay to get them.
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Just beautiful</strong>
+	<div class="review__owners-review__published-info">
+		<strong>18 April 2020</strong> <span class="review__owners-review__published-info__author">by Deeks</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2019</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;300</strong>
+		</p>
+
+		<p>Gorgeous ride, build, incredibly versatile in use and customisation option. And a stunner look at and listen to.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Ride quality is awesome. Sadly, front brakes have warped slightly, which doesn&#x2019;t affect the ride, but Triumph will replace these under warranty.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">TORQUE ALL DAY IN ALL CONDITIONS.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">A relatively weak battery has been my only complaint. Otherwise it is spot-on.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Haven&#x2019;t serviced it yet.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Ride by wire is like having 3 different bikes in your garage. Amazing.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Smooth and unpushy.
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">I really like my speed twin 1200</strong>
+	<div class="review__owners-review__published-info">
+		<strong>17 April 2020</strong> <span class="review__owners-review__published-info__author">by Stephen Latchford</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2019</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;250</strong>
+		</p>
+
+		<p>Superb handling, brakes, looks and sound. The sidestand is tricky to locate with your foot.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Has chronic brake squeal coming to a halt.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Superb spread of power .</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Great amount of equipment for a retro, would like a thermometer</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Easy with no stress
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">2019 Speed Twin - shame about the brakes!</strong>
+	<div class="review__owners-review__published-info">
+		<strong>22 October 2019</strong> <span class="review__owners-review__published-info__author">by Mark Packham</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2019</strong>
+		</p>
+
+		<p>Great bike only spoiled by loud squeeling from front brake when coming to a stop.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Would be 5 out of 5 but for front brake squeel problem, handles very well, comfortable.  Stay in the saddle between fill ups.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Brilliant engine, so much torque.  Bit glitchy at low speeds unless in rain mode.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">As above, squeeling front brake and gear change connecting rod fell off on a ride.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Only had 1st service, included in purchase.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Everything I need</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Bought new from Triumphworld, Chesterfield.  Very good buying experience.  Paid more or less asking price.
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Great looking retro that is a hoot to ride.</strong>
+	<div class="review__owners-review__published-info">
+		<strong>19 October 2019</strong> <span class="review__owners-review__published-info__author">by Steve Twin</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2019</strong>
+		</p>
+
+		<p>As others have said the engine is a peach and I love the low weight coming as I am from serious illness my GSA was just too heavy. It&#x27;s very easy to ride at a relaxed pace and deceptively fast if you want to get a move on.  All the power you need in the real world. I&#x27;ve just completed a tour in Germany from the UK and completed 1600 miles at 64 mpg - I avoid motorways most of the time. On the last day I rode 570 miles home in heavy rain so I can attest to the fact that the slim looking saddle is comfortable and you can tour. Issues? Well the turning circle is limited as is luggage carrying capacity - fine for a couple of weeks but a GS it isn&#x27;t! The standard suspension set up is very good but adjusting the rear shocks for luggage or a pillion is awkward as the access is restricted by the exhaust - oh yes they sound lovely!</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The brakes are superb though I&#x27;m getting some squeal, probably just need a thorough clean. Strong and progressive. Th handling set up out if the box is really good and the Pirelli Rosso III tyres inspire confidence wet or dry.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">It sounds good has lovely mid range torque and flies if you open it up.  Riding it the sense is of a strong, well engineered motor. It combines a relaxed easy ride when you are just enjoying the roads with a sense of power and urgency when you want it.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Only completed 2500 miles so far as I&#x27;ve had the bike for less than three months - the build and finish seem excellent, we shall see.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Has used no oil and has only cost me a replacement tyre - can&#x27;t blame Triumph for the nail!</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Tricky as its the simplicity that appeals. I only ride in sport mode, I know how to be more subtle in the wet. Ive added a small dart screen which is of some use but looks so good it could be mistaken for an official part. Also added a Hepco Becker rack for practicality.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Bizarrely I bought this as a &quot;used&quot; bike from a dealer who had sold it to it&#x27;s first owner who never rode it. It had 5.7 delivery miles and I paid &#xA3;800 less than the price of a new one.
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Thruxton in Sheep&#x27;s Clothing</strong>
+	<div class="review__owners-review__published-info">
+		<strong>30 May 2019</strong> <span class="review__owners-review__published-info__author">by duanedragon</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2019</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;500</strong>
+		</p>
+
+		<p>The best and worst features about this bike: The best part about this bike is the solid performance. The engine is the focal point and an absolute jewel. There are more powerful bikes but this thing accelerates everywhere, all the time thanks to its large displacement twin cylinder engine. It no Hayabusa but will get to illegal speeds nearly as quickly and with much less drama. The sounds it makes are lovely. The worst part about it is there is no Speed Twin R, for now. The throttle is not as snatchy as some reviewers would have you believe. I ride mine in Sport mode daily and with a pillion Rain works a charm.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The stock suspension is just fine. I weigh 180 and flog the bike on nice Saturday mornings. Even with a pillion at ABS threshold braking it doesn&#x27;t bottom out. The front brakes are an odd duck. Generally they work great but have occasional groans at low speeds and sometime seem like they need a few stops to warm up. The longer you look at the bike the more you realize it&#x27;s a hodge-podge of other Bonneville&#x27;s parts with a better Thruxton R motor. It is the best streetbike you can buy for any amount of money. After 4 hours I need a 10 minute break. On Sunday rides to a favorite breakfast place 2-up there are no complaints. It accommodates a passenger with ease and still has enough beans in it&#x27;s pockets to lift the front wheel in 2nd.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">I wanted to give the engine 5 of 5 but frankly it doesn&#x27;t have the frenetic top end hit of large displacement 4 cyls. R1&#x27;s at go-to-jail speeds will leave you on the freeway. 135mph is not 170mph but frankly I don&#x27;t suffer from a lack of power on the street and the way the motor makes power makes it so much more usable than a 4cyl. The engine is a sweety and not many reviews have done justice to the fact that it delivers all that grunt RIGHT NOW. Any gear, any speed, if the engine is turning it is producing enough power to settle the chassis on corner exit or beat that Acura for lane choice. Not a lot of shifting required. If you can see a hole in traffic it is yours. The bike has the grunt and brakes to make it a very capable streetbike.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Don&#x27;t know about the 10K service as I only have 2k miles on it but budgeting for LOF&#x27;s, tires, and chains is just part of riding. I do my own maintenance and so far the bike has been a real peach to work on. When the sun is out I am riding.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">This bike has the best tires you can get. So glad Triumph put a 160mm rear tire on it because it makes the bike turn so much better than a fatter rear. Modern 17 inch sportbike tires are light years better than tires from 20 years ago and the stock ones on this bike are not only VERY good but are sized appropriately.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> I had been loitering around the store for a few weeks developing a relationship with the dealer. On the morning I bought it I showed up on my Suzuki DRZ400sm and took it for a test ride with the salesman. I never gave the keys back. I payed full-bore retail for my bike. No haggling. For this I got a Triumph T-shirt, back-pack, pen, planner, and towards the end it felt like the salesman was just grabbing stuff and giving it to me. No regrets. This is a very reasonably priced bike and truth be told if you are trying to save money through ethnic bartering at a premium brand dealer you are in the wrong place.
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">A bike for town commutes, travelling and fun blasts.</strong>
+	<div class="review__owners-review__published-info">
+		<strong>22 March 2019</strong> <span class="review__owners-review__published-info__author">by FiveTriumphs</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2019</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;249</strong>
+		</p>
+
+		<p>Recommend = Yes&#xA;Best:  handling, handling and handling, agile, good feel from confidence inspiring brakes, tyres give lots of confidence on corners and in the wet. Comfortable riding at speed. Had a seat upgrade and Dart screen on my T120 and in my view these aren&#x2019;t needed on this bike. &#xA;Worst: I weigh 85kg and find the suspension brilliant on at least 95% of roads and bends, but a few poor surfaces make me want better. I&#x2019;m on the softest preload already and it&#x2019;s harder, thumpier, than my Street Triple, so there&#x2019;s nowhere to go. Admittedly, I&#x2019;m coming to it from the Bonneville side of preference, not the Thruxton. I&#x2019;ve ordered softer KYB shocks through my dealer and fitted Thruxton Weslake cone cans for the greater sound :)</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The bike is great around town on most roads and super on faster roads. Changing direction is soooo easy, as is leaning it over for fun. Both brakes are very good with plenty of feel front and rear. They scrape a score of 5 in my opinion, The suspension manages a 3, hence 4 average.&#xA;I&#x2019;ve done a couple of 100 - 150 mile trips (up to 75 mph plus:) ) and the comfort is good - seat firm but OK, riding position excellent, no buffeting, 60 year old wrists and neck have no issues. Controls are easy to use. Reports of slightly snatchy road and race modes worried me a little, but I now use race mode around town with no reason to worry.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Nice noise as standard, with some popping, but a little more volume from the aftermarket options worked for me. Power delivery is linear - determined hand gives really determined acceleration. Fast enough to be exciting and speed limits arrive too soon. Open road overtakes happen perhaps more than they should. More fun than Tiger Sport or T120...</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">I&#x2019;ve had four previous Triumphs - Tiger Sport, T120 Black, Street Triple 675, Sprint ST - and done some winter riding on all of them. The finish on this looks to be slightly better. No problem from the last few weeks of rain and slightly salty roads!</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Purchase price is at the upper end of what I felt able to pay, I&#x2019;d give it 5/5 if the suspension was softer and I didn&#x2019;t feel the need to upgrade it!&#xA;Can&#x2019;t complain about the 10,000 mile service interval. &#xA;Dealer hourly rates are reasonable.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">It&#x2019;s a modern Bonneville - ABS, traction control.&#xA;The agile handling, low weight and smallish size for a 1200 form my favourite feature. It&#x2019;s a great package. Handlebar and bar end mirrors are excellent. Mode button and electrics fall easily to hand. I use rain mode in the wet.&#xA;I&#x2019;ve used Triumphs own heated grips and their new 2in1 goretex gloves. These have worked much bettter than my two year old ( Ride magazine) winter warmth award winning gloves. I&#x2019;ve ordered midrange adjustable KYB shocks (about &#xA3;350) as I prefer a more compliant ride. Weslake cones are good value at under &#xA3;300 and not too loud with the baffles in or out. I prefer the baffles in. These slipons are under half the price of Vance and Hines and a bit cruder to look at.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> My local Triumph dealer gave me a two test rides - the second to try some more rough town roads, so were very helpful. They also did a good deal on accessories, as the brand new Speed Twin launch meant discounts on the bike were hard for them to swallow. I saved a couple of hundred pounds through some small free accessories and some further free fitting of accessories I contributed to.
+		</p>
+</div>		</section>
+
+	<a class="back-to-top" href="#">
+	<div class="back-to-top__circle">
+		<span class="back-to-top__circle__icon"></span>
+	</div>
+	<div>Back to top</div>
+</a>
+
+
+
+<section id="fullScreenGallery" class="full-screen-gallery" data-reveal>
+	<div class="full-screen-gallery__leaderboard-container">
+		<div data-id="leaderboard-gallery" class="leaderboard-gallery-ad advert"></div>
+	</div>
+	<div class="full-screen-gallery__sidebar show-for-large">
+		<div class="full-screen-gallery__mpu-container">
+			<div class="full-screen-gallery__mpu center-mpu-container">
+				<span class="hide-for-large">Advertisement<span class="full-screen-gallery__mpu__remaining-ad-duration"></span></span>
+				<div data-id="mpu-gallery" class="mpu-ad advert"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__caption-container">
+		<div class="full-screen-gallery__caption">
+					<span class="full-screen-gallery__caption__text">Triumph Speed Twin 1200 in action</span>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__slider-container">
+		<div class="full-screen-gallery__controls">
+			<button title="Previous photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--prev fi-arrow-left"></button>
+			<button title="Next photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--next fi-arrow-right"></button>
+			<button title="Zoom in" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-in fi-zoom-in"></button>
+			<button title="Zoom out" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-out fi-zoom-out"></button>
+			<button title="Close gallery" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--close fi-x" data-close></button>
+		</div>
+
+		<div class="full-screen-gallery__slider royalSlider rsDefault">
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/1speed-twin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/1speed-twin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/1speed-twin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/1speed-twin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/1speed-twin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/1speed-twin-2.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Speed Twin 1200 in action</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/1speed-twin-2.jpg?quality=50" alt="Triumph Speed Twin 1200 in action"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/3-speed-twin-details.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/3-speed-twin-details.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/3-speed-twin-details.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/3-speed-twin-details.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/3-speed-twin-details.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/3-speed-twin-details.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Name revives that of original 1937 performance twin</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/3-speed-twin-details.jpg?quality=50" alt="Name revives that of original 1937 performance twin"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/BMWRNineT_TriumphSpeedTwin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/BMWRNineT_TriumphSpeedTwin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/BMWRNineT_TriumphSpeedTwin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/BMWRNineT_TriumphSpeedTwin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/BMWRNineT_TriumphSpeedTwin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/BMWRNineT_TriumphSpeedTwin.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Speed Twin vs BMW R nine T</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/BMWRNineT_TriumphSpeedTwin.jpg?quality=50" alt="Triumph Speed Twin vs BMW R nine T"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/speed-twin-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/speed-twin-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/speed-twin-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/speed-twin-1.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Twin shocks feature preload adjustment</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/speed-twin-1.jpg?quality=50" alt="Twin shocks feature preload adjustment"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/speed-twin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/speed-twin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/speed-twin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/speed-twin-3.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>The Speed Twin uses the same motor as the Thruxton 1200</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/speed-twin-3.jpg?quality=50" alt="The Speed Twin uses the same motor as the Thruxton 1200"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/speed-twin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/speed-twin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/speed-twin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/speed-twin-4.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Speed Twin in action</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/speed-twin-4.jpg?quality=50" alt="Triumph Speed Twin in action"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/speed-twin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/speed-twin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/speed-twin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/speed-twin-5.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>The bike features conventional front forks</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/speed-twin-5.jpg?quality=50" alt="The bike features conventional front forks"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-6.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-6.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/speed-twin-6.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/speed-twin-6.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/speed-twin-6.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/speed-twin-6.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>The Speed Twin takes a right-hand bend</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/speed-twin-6.jpg?quality=50" alt="The Speed Twin takes a right-hand bend"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-7.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-7.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/speed-twin-7.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/speed-twin-7.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/speed-twin-7.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/speed-twin-7.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>The lazy handling makes fast corners great fun</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/speed-twin-7.jpg?quality=50" alt="The lazy handling makes fast corners great fun"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-clocks.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin-clocks.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/speed-twin-clocks.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/speed-twin-clocks.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/speed-twin-clocks.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/speed-twin-clocks.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Retro-style twin dials are carried over from the Triumph Thruxton 1200</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/speed-twin-clocks.jpg?quality=50" alt="Retro-style twin dials are carried over from the Triumph Thruxton 1200"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/speed-twin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/speed-twin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/speed-twin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/speed-twin.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/speed-twin.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>The 2019 Triumph Speed Twin</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/speed-twin.jpg?quality=50" alt="The 2019 Triumph Speed Twin"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/TriumphSpeedTwin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/TriumphSpeedTwin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/TriumphSpeedTwin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/TriumphSpeedTwin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/TriumphSpeedTwin-2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/TriumphSpeedTwin-2.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Speed Twin</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/TriumphSpeedTwin-2.jpg?quality=50" alt="Triumph Speed Twin"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/TriumphSpeedTwin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/TriumphSpeedTwin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/TriumphSpeedTwin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/TriumphSpeedTwin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/TriumphSpeedTwin-3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/TriumphSpeedTwin-3.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Speed Twin clocks</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/TriumphSpeedTwin-3.jpg?quality=50" alt="Triumph Speed Twin clocks"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/TriumphSpeedTwin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/TriumphSpeedTwin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/TriumphSpeedTwin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/TriumphSpeedTwin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/TriumphSpeedTwin-4.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/TriumphSpeedTwin-4.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Speed Twin rear</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/TriumphSpeedTwin-4.jpg?quality=50" alt="Triumph Speed Twin rear"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/TriumphSpeedTwin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/666047/1440x960/TriumphSpeedTwin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/666047/951x634/TriumphSpeedTwin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/666047/870x580/TriumphSpeedTwin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/666047/1026x684/TriumphSpeedTwin-5.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/666047/600x400/TriumphSpeedTwin-5.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Triumph Speed Twin filler cap</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/666047/75x75/TriumphSpeedTwin-5.jpg?quality=50" alt="Triumph Speed Twin filler cap"/>
+</a>
+
+
+		</div>
+	</div>
+
+</section></article>
+				</main>
+			</div>
+
+			<div data-id="inline-footer" class="footer-ad advert"></div>
+			
+<footer id="siteFooter" class="site-footer">
+	<ul class="site-footer__social">
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--facebook" href="https://www.facebook.com/MotorcycleNews" target="_blank" aria-label="Facebook">
+				<span class="fi-social-facebook"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--twitter" href="https://www.twitter.com/MCNNews/" target="_blank" aria-label="Twitter">
+				<span class="fi-social-twitter"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--youtube" href="https://www.youtube.com/user/motorcyclenewsdotcom/" target="_blank" aria-label="Youtube">
+				<span class="fi-social-youtube"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link" href="https://www.motorcyclenews.com/contact-us/" aria-label="Contact us">
+				<span class="fi-mail"></span>
+			</a>
+		</li>
+	</ul>
+	<div>
+		<a href="http://www.bauermedia.co.uk" target="_blank">
+			<img alt="" class="site-footer__logo" data-src="https://static-cdn.bauersecure.com/Common/Logos/bauer.52x52.png" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+		</a>
+		
+		
+<nav class="clearfix">
+	<ul class="site-footer__nav">
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="http://www.greatmagazines.co.uk/bws/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_content=mcnbottonnav&amp;utm_campaign=BAU_mcn"
+				    rel='nofollow'>
+					Subscribe
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/about/"
+				    >
+					About Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/contact-us/"
+				    >
+					Contact Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/terms-of-use/"
+				    >
+					Terms of Use
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/privacy-policy/"
+				    >
+					Cookie &amp; Privacy Policy
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://products.motorcyclenews.com/"
+				   target='_blank' >
+					Products
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://www.bauerlegal.co.uk/editorial-complaints-policy"
+				    rel='nofollow'>
+					Complaints
+				</a>
+			</li>
+		<li class="site-footer__nav__item">
+			<a class="site-footer__nav__link privacy-settings" href="#">Privacy settings</a>
+		</li>
+	</ul>
+</nav>
+
+		
+		<p class="site-footer__copyright">
+			&copy; 1955-2021 Bauer Media Group
+		</p>
+		<p class="site-footer__company-info">
+			Bauer Media Group consists of: Bauer Consumer Media Ltd, Company number: 01176085, Bauer Radio Ltd, Company Number: 1394141 <br />
+			Registered Office: Media House, Peterborough Business Park, Lynch Wood, Peterborough, PE2 6EA H Bauer Publishing, <br />
+			Company Number: LP003328 Registered Office: Academic House, 24-28 Oval Road, London, NW1 7DT.<br />
+			All registered in England and Wales. VAT no 918 5617 01
+			<br />
+			H Bauer Publishing are authorised and regulated for credit broking by the FCA (Ref No. 845898)
+		</p>
+	</div>
+</footer>
+
+			<div id="overlay" class="overlay-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="off-canvas position-right is-closed" id="offCanvasRight" data-off-canvas>
+		
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+		
+<ul class="mobile-site-nav">
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bike-reviews/" 
+		    >
+			Bike Reviews
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+						    >
+							Search bike reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+						    >
+							Our test bikes
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bikes-for-sale/" 
+		    >
+			Bikes For Sale
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+						    >
+							Search bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+						    >
+							Sell your bike
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+						    >
+							Bike check
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/news/" 
+		    >
+			News
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/"
+						    >
+							Latest news
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+						    >
+							New bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-tech/"
+						    >
+							New tech
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sport/"
+						    >
+							Sport
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+						    >
+							Electric bikes coming soon
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/advice/" 
+		    >
+			Advice
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/best/"
+						    >
+							Best
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+						    >
+							Riding tips
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+						    >
+							Learn to ride a motorbike with MCN
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/tests/"
+						    >
+							Tests
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+						    >
+							Maintenance
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+						    >
+							Travelling touring
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/parts/"
+						    >
+							Parts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+						    >
+							Buying and selling
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+						    >
+							Inspiration
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-gear/"
+						    >
+							New gear
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+						    >
+							Product picks
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/"
+						    >
+							Product reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-rider/"
+						    >
+							New riders
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/" 
+		    >
+			Insurance
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="#" 
+		    >
+			Get involved
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+						    >
+							#Ride5000miles
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/newsletter/"
+						    >
+							Subscribe to MCN weekly newsletter
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+						   target='_blank' rel='nofollow'>
+							Buy MCN T-shirts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+						   target='_blank' rel='nofollow'>
+							MCN Festival
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+						   target='_blank' rel='nofollow'>
+							Scottish Motorcycle Show
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+						    rel='nofollow'>
+							London Motorcycle Show
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar" 
+		   target='_blank' >
+			Subscribe
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742" 
+		   target='_blank' >
+			MCN Shop
+		</a>
+	</li>
+</ul>
+	</div>
+
+	<div class="off-canvas position-left is-closed" id="offCanvasLeft" data-off-canvas>
+		
+	</div>
+
+	
+<script type="text/javascript">
+	coreJs.chainCompleteCallbacks.push(function() {
+
+				var gptData = {"site":"SMOTORCYCLING/SMOT_MCN","targetingKeyValues":{"make_mcn":"triumph","model_mcn":"triumph_speed-twin-1200","category_mcn":"retro"},"maxMpuCount":30};
+
+				//tcf version 2
+				window.__tcfapi('addEventListener', 2, function (tcData, success) {{
+					if (success && tcData.eventStatus === 'cmpuishown') {{
+						console.debug('SP: Surfacing CMP interface');
+					}}
+
+					if (success && tcData.eventStatus === 'useractioncomplete') {{
+						console.debug('SP: User submitted consent choices');
+
+						if (mcn.initGpt) {
+							mcn.initGpt(gptData);
+						}
+					}}
+
+					if (success && tcData.eventStatus === 'tcloaded') {{
+						console.debug('SP: TC string available');
+						window.__tcfapi('removeEventListener', 2, function (success) {{
+							if (success && mcn.initGpt) {{
+								mcn.initGpt(gptData);
+							}}
+						}}, tcData.listenerId);
+					}}
+				}});
+				});
+
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//securepubads.g.doubleclick.net/tag/js/gpt.js", true);
+	});
+
+</script>
+	
+
+<script type="text/javascript">
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//experience.tinypass.com/xbuilder/experience/load?aid=x9U7rnorpu", true, function() {
+			var tags = ["Templates.BikeReviews.DetailsPage"];
+
+tags.push("TRIUMPH");	
+tags.push("TRIUMPH+SPEED%20TWIN%201200");
+			window.tp.push(["setTags", tags]);
+			window.tp.push(["setContentSection", "Bike Reviews"]);
+		});
+	});
+
+	
+</script>
+</body>
+
+</html>

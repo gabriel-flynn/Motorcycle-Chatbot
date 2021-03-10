@@ -1,0 +1,2804 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="//js-sec.indexww.com/ht/p/185605-155434007517315.js"></script>
+
+	
+<script>
+	window.pageStart = Date.now();
+	console.debug('Page Start');
+</script>
+
+<script>
+	var mcnConfig = {
+		debugMode: false,
+		cookieDomain: '.motorcyclenews.com',
+		galleryDesktopAdFrequency: 2,
+		galleryMobileAdFrequency: 5,
+		galleryMobileAdDuration: 2,
+		cmpProfileId: 5954,
+		privacyManagerId: 187767,
+		prebidReady: false
+	};
+</script>
+
+<script>
+	var coreJs = {
+		processDomReadyScripts: function() {
+			var chain = {
+				callbacks: coreJs.chainCompleteCallbacks,
+				queue: coreJs.domReadyScriptChain,
+				process: function() {
+					var self = this;
+					if (this.queue.length > 0) {
+						coreJs.injectScript(this.queue.shift(), true, function () {
+							self.process();
+						});
+					} else {
+						while (self.callbacks.length > 0) {
+							(self.callbacks.shift())();
+						}
+					}
+				}
+			}
+
+			chain.process();
+		},
+
+		isReady: false,
+		readyCallbacks: [],
+
+		injectScript: function (src, async, callback) {
+			var script = document.head.appendChild(document.createElement('script'));
+
+			if (typeof async !== 'undefined') {
+				script.async = async;
+			}
+
+			if (typeof callback === 'function') {
+				script.onload = function () {
+					script.onload = null;
+					callback();
+				};
+			}
+
+			script.src = src;
+			console.info('Init: Injected script "' + src + '" async=' + async);
+		},
+		
+		domReadyScriptChain: [
+			'/dist/_5-40-101/js/review.min.js'
+		],
+
+		chainCompleteCallbacks: [],
+		windowLoadCallbacks: []
+	};
+
+	coreJs.chainCompleteCallbacks.push(function () {
+		console.info('Init: Chain complete');
+		mcn.init();
+		coreJs.isReady = true;
+	});
+
+	coreJs.injectScript('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', true, function() {
+		console.info('Init: Injected jquery');
+		$(window).on('load', function () {
+			console.info('Init: Window loaded');
+			while (coreJs.windowLoadCallbacks.length > 0) {
+				(coreJs.windowLoadCallbacks.shift())();
+			}
+		});
+
+		$(document).ready(function () {
+			console.info('Init: Document ready');
+			coreJs.processDomReadyScripts();
+		});
+	});
+</script>
+	
+<script>
+	coreJs.windowLoadCallbacks.push(function () {
+		coreJs.injectScript("https://static.bauercdn.com/prebid/prebid4.14.0.js", true, function () {
+			console.info('Prebid: Script loaded');
+			if (window.mcnConfig.prebidReady) {
+				$(document).trigger('prebid.loaded');
+			} else {
+				window.mcnConfig.prebidReady = true;
+			}
+		});
+	});
+</script>
+
+	<title>Kawasaki Ninja 300 (2012-2018) review &amp; used buying guide | MCN</title>
+	<link rel="shortcut icon" href="/dist/_5-40-101/images/favicon.ico" />
+	
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="Read our in-depth, expert Kawasaki Ninja 300 review on MCN - an affordable A2-compliant junior sportsbike with an eminently thrashable motor.">
+
+
+		<link rel="canonical" href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-300/2012/" />
+
+
+	
+
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org/",
+	"@type": "Review",
+	"itemReviewed": {
+		"@type": "Motorcycle",
+		"name": "KAWASAKI NINJA 300"
+
+
+				,"image": {
+					"@type": "ImageObject",
+					"url": "https://mcn-images.bauersecure.com/PageFiles/489811/Kawasaki_Ninja_300_1.jpg"
+				}
+					
+
+				,"offers": {
+					"@type": "AggregateOffer",
+					"offerCount": "7",
+					"priceCurrency": "GBP",
+					"lowPrice": "2500",
+					"highPrice": "3300",
+					"offers": [
+						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/kawasaki/ninja-300/59088381/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/kawasaki/ninja-300/58914749/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/kawasaki/ninja-300/58996084/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/kawasaki/ninja-300/59072051/"
+								}
+							,						
+								{
+									"@type": "Offer",
+									"url": "https://www.motorcyclenews.com/bikes-for-sale/kawasaki/ninja-300/58024370/"
+								}
+												]
+				}
+				},
+	"reviewBody": "The 2012-2017 Kawasaki Ninja 300 was a comprehensive update of 2008&#x2019;s Ninja 250R which, truth be told, wasn&#x2019;t really a whole lot more than a microwave-reheated GPX250. But the 300 saw significant improvements throughout. As well as its larger and more powerful motor it also got a stiffer frame, plus new suspension, wheels, clocks, pegs and sharper bodywork. It&#x27;s a high-revving, hard-working mini-Ninja with huge appeal for those who dream of ragging the living wotsits out of a ZX-6R or ZX-10R.&amp;nbsp;&#xA;&#xA;Related: Best A2 licence motorbikes&#xA;&#xA;The Ninja 300&#x2019;s arrival coincided with the ominous-sounding European Union Third Directive &#x2013; new licensing laws that kicked in on 19th January 2013. Before then, young riders who passed their test served a two-year 33bhp restriction &#x2013; which is what the 250R was designed for. But overnight that 33bhp limit was binned, replaced by a new A2 licence with a 47bhp limit. The existing class of novice bikes suddenly needed more power.&#xA;And that&#x2019;s what the Ninja 300 offered. A longer stroke increased the engine&#x2019;s capacity to 296cc, while power climbed to 39bhp. But the screaming nature of the 250R was unchanged &#x2013; it remains a bike with a ravenous appetite for revs. With maximum torque served way up 10,000rpm it needs a rider who&#x2019;s prepared to put the effort in, someone who loves the satisfaction of squeezing every last drop of speed from an engine. If you want to lug around lazily in a high gear letting the bike do the work, look elsewhere.&#xA;And yet, while the motor&#x2019;s pretty demanding, the rest of the Ninja 300 definitely isn&#x2019;t. Its riding position is upright and easygoing, with clip-ons that rise high above the top yoke, a slim and low seat, a ridiculously light clutch and incredibly tight steering lock. It even has practical touches like bungee hooks, a small stash space under the pillion seat, a fuel gauge on the dash, an easy 200-mile tank range and optional ABS.&#xA;The Kawasaki Ninja 300 was replaced by the Ninja 400 in 2018. The Ninja 300 was sold alongside a naked version of the same bike called the Kawasaki Z300.&#xA;Watch Kawasaki Ninja 300 video review",
+	"author": {
+		"@type": "Person",
+		"name": "Martin Fitz-Gibbons",
+		"sameAs": [
+			"https://twitter.com/MCN",
+			"https://www.instagram.com/motorcyclenews/"
+		]
+	},
+	"datePublished": "2021-02-17T11:12:00.0000000Z",
+	"dateModified": "2021-02-17T11:18:25.0000000Z",
+	"reviewRating": {
+		"@type": "Rating",
+		"ratingValue": "3",
+		"bestRating": "5"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Bauer Media"
+	},
+    "sameAs": [
+       "https://www.facebook.com/MCN/",
+       "https://twitter.com/MCN",
+       "https://linkedin.com/MCN",
+       "https://www.instagram.com/motorcyclenews/"
+    ], 
+    "logo": {
+		"@type": "ImageObject",
+		"url": "https://www.motorcyclenews.com/dist/_5-40-101/images/logos/mcn.publisher.85x85.png",
+		"width": 85,
+		"height": 85 
+    }
+}
+</script>
+
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org/",
+			"@type": "VideoObject",
+			"name": "Kawasaki Ninja 300 />",
+			"description": "Read our in-depth, expert Kawasaki Ninja 300 review on MCN - an affordable A2-compliant junior sportsbike with an eminently thrashable motor.",
+			"thumbnailUrl": "https://i.ytimg.com/vi/rQ3c_VOHTHQ/hqdefault.jpg",
+			"uploadDate": "2021-02-17T11:12:00.0000000Z",
+			"height": {
+				"@type": "QuantitativeValue",
+				"value": "113"
+			},
+			"width": {
+				"@type": "QuantitativeValue",
+				"value": "200"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Motorcycle News",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://www.motorcyclenews.com/dist/_5-40-101/images/logos/mcn.publisher.85x85.png",
+					"width": 85,
+					"height": 85
+				}
+			},
+			"author": {
+				"@type": "Person",
+				"name": "MCN - Motorcyclenews.com"
+			},
+			"contentUrl": "https://www.youtube.com/watch?v=rQ3c_VOHTHQ",
+			"embedUrl": "https://www.youtube.com/embed/rQ3c_VOHTHQ"
+		}
+		</script>
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org/",
+			"@type": "VideoObject",
+			"name": "A2 shootout! KTM RC390 vs Ninja 300 vs Honda CBR300R / CBR500R | Group Test />",
+			"description": "Read our in-depth, expert Kawasaki Ninja 300 review on MCN - an affordable A2-compliant junior sportsbike with an eminently thrashable motor.",
+			"thumbnailUrl": "https://i.ytimg.com/vi/U9e2bYbodu8/hqdefault.jpg",
+			"uploadDate": "2021-02-17T11:12:00.0000000Z",
+			"height": {
+				"@type": "QuantitativeValue",
+				"value": "113"
+			},
+			"width": {
+				"@type": "QuantitativeValue",
+				"value": "200"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Motorcycle News",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://www.motorcyclenews.com/dist/_5-40-101/images/logos/mcn.publisher.85x85.png",
+					"width": 85,
+					"height": 85
+				}
+			},
+			"author": {
+				"@type": "Person",
+				"name": "MCN - Motorcyclenews.com"
+			},
+			"contentUrl": "https://www.youtube.com/watch?v=U9e2bYbodu8",
+			"embedUrl": "https://www.youtube.com/embed/U9e2bYbodu8"
+		}
+		</script>
+
+
+
+<meta property="og:url" content="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-300/2012/" />
+<meta property="og:title" content="Kawasaki Ninja 300 (2012-2018) review &amp; used buying guide" />
+<meta property="og:description" content="Read our in-depth, expert Kawasaki Ninja 300 review on MCN - an affordable A2-compliant junior sportsbike with an eminently thrashable motor." />
+<meta property="fb:app_id" content="7714743854" />
+<meta property="og:type" content="Article" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:publisher" content="Motorcycle News" />
+
+	<meta property="og:image" content="https://mcn-images.bauersecure.com/PageFiles/489811/Kawasaki_Ninja_300_1.jpg" />
+
+	<meta property="og:author" content="Martin Fitz-Gibbons" />
+
+	<link rel="preconnect" href="https://www.google-analytics.com">
+	<link rel="preconnect" href="https://www.googletagmanager.com">
+	<link rel="preconnect" href="https://securepubads.g.doubleclick.net" />
+
+		<link rel="amphtml" href="https://www.motorcyclenews.com/amp/bike-reviews/kawasaki/ninja-300/2012/" />
+
+	
+<link rel="stylesheet" href="/dist/_5-40-101/css/review.min.css" />
+
+		
+
+<script type="text/javascript">
+	!function () { var e = function () { var e, t = "__tcfapiLocator", a = [], n = window; for (; n;) { try { if (n.frames[t]) { e = n; break } } catch (e) { } if (n === window.top) break; n = n.parent } e || (!function e() { var a = n.document, r = !!n.frames[t]; if (!r) if (a.body) { var i = a.createElement("iframe"); i.style.cssText = "display:none", i.name = t, a.body.appendChild(i) } else setTimeout(e, 5); return !r }(), n.__tcfapi = function () { for (var e, t = arguments.length, n = new Array(t), r = 0; r < t; r++)n[r] = arguments[r]; if (!n.length) return a; if ("setGdprApplies" === n[0]) n.length > 3 && 2 === parseInt(n[1], 10) && "boolean" == typeof n[3] && (e = n[3], "function" == typeof n[2] && n[2]("set", !0)); else if ("ping" === n[0]) { var i = { gdprApplies: e, cmpLoaded: !1, cmpStatus: "stub" }; "function" == typeof n[2] && n[2](i) } else a.push(n) }, n.addEventListener("message", (function (e) { var t = "string" == typeof e.data, a = {}; try { a = t ? JSON.parse(e.data) : e.data } catch (e) { } var n = a.__tcfapiCall; n && window.__tcfapi(n.command, n.version, (function (a, r) { var i = { __tcfapiReturn: { returnValue: a, success: r, callId: n.callId } }; t && (i = JSON.stringify(i)), e.source.postMessage(i, "*") }), n.parameter) }), !1)) }; "undefined" != typeof module ? module.exports = e : e() }();
+</script>
+<script>
+	window._sp_ = {
+		config: {
+			accountId: 296,
+			baseEndpoint: 'https://cmp.motorcyclenews.com',
+			groupId: '5e5155d22d47738ac1cd84f4',
+			targetingParams: {
+				'tcfv2': 'true'
+			}
+		}
+	}
+</script>
+<script src="https://cmp.motorcyclenews.com/wrapperMessagingWithoutDetection.js"></script>
+	
+	
+
+<script>
+	coreJs.chainCompleteCallbacks.push(function () {
+		coreJs.injectScript("https://cdn.permutive.app/02469357-27fd-49a7-9dbc-f0d94ae65faa-web.js", true, function () {
+			console.info('Permutive: Script loaded');
+		});
+	});
+</script>
+
+<script>
+	!function (n, e, i) { if (!n) { n = n || {}, window.permutive = n, n.q = [], n.config = i || {}, n.config.apiKey = e, n.config.environment = n.config.environment || "production"; for (var o = ["addon", "identify", "track", "trigger", "query", "segment", "segments", "ready", "on", "once", "user", "consent"], r = 0; r < o.length; r++) { var t = o[r]; n[t] = function (e) { return function () { var i = Array.prototype.slice.call(arguments, 0); n.q.push({ functionName: e, arguments: i }) } }(t) } } }(window.permutive, "8be71353-1189-4ce1-a5cb-320dd35e89ba", { "consentRequired": true });
+	permutive.addon("web", {});
+</script>
+
+	<script>
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//cdn.onesignal.com/sdks/OneSignalSDK.js", true, function () {
+			console.info('OneSignal: Script loaded');
+
+			if (document.location.hostname === "www.motorcyclenews.com") {
+				var OneSignal = window.OneSignal || [];
+				OneSignal.push(function() {
+					OneSignal.init({
+						appId: "98918693-8f93-496c-af67-c8d96ec525be"
+					});
+					// move this before the domain check above for local testing.
+					$(document).trigger('oneSignal.loaded');
+				});
+			} else {
+				console.info('OneSignal: Push not called as hostname incorrect');
+			}
+		});
+	});
+</script>
+
+	
+<script type="text/javascript">
+(function() {
+	window.dm = window.dm ||{ AjaxData:[]};
+	window.dm.AjaxEvent = function(et, d, ssid, ad) {
+		dm.AjaxData.push({ et: et,d: d,ssid: ssid,ad: ad});
+		window.DotMetricsObj && DotMetricsObj.onAjaxDataUpdate();
+	};
+	var d = document,h = d.getElementsByTagName('head')[0],s = d.createElement('script');
+	s.type = 'text/javascript';
+	s.async = true;
+	s.src = 'https://uk-script.dotmetrics.net/door.js?d=www.motorcyclenews.com&t=bikereviews';
+	h.appendChild(s);
+} ());
+</script>
+</head>
+
+<body>
+
+	
+<script>
+var bauerDataLayer = [{
+	'siteName': 'MCN',
+	'productType': 'Motorcycle',
+	'cmsPageType': 'Templates.BikeReviews.DetailsPage',
+	'cmsPageId': '493224',
+	'cmsPageName': '2012',
+	'section': 'Bike Reviews',
+	'subSection1': 'KAWASAKI',
+	'subSection2': 'Ninja',
+	'created': '-62135596800',
+	'makeName': 'KAWASAKI',
+	'modelName': 'KAWASAKI+NINJA%20300',
+	'categoryMcn': 'Sports'
+}];
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+ '&gtm_auth=xUOFojuTghcMLZ3prl6hMA&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);})(window, document,'script','bauerDataLayer','GTM-PS8LQC4');</script> 
+	<span class="screen-size-detector"></span>
+
+	<div class="off-canvas-content" data-off-canvas-content>
+		<div class="site-root">
+			
+<header class="site-header clearfix">
+	<strong class="show-for-sr">MCN</strong>
+	
+	<div data-sticky-container>
+		<div class="site-header-mobile top-bar hide-for-medium" data-sticky data-sticky-on="small" data-margin-top="0">
+			<div class="site-header-mobile__left">
+				<a class="site-header-mobile__logo" title="Home" href="/"></a>
+			</div>
+			<div class="site-header-mobile__middle">
+				<a class="site-header-mobile__middle__nav-link" href="/bike-reviews/">Reviews</a>
+				<a class="site-header-mobile__middle__nav-link" href="/bikes-for-sale/">For sale</a>
+				<a class="site-header-mobile__middle__nav-link" href="/news/">News</a>
+				<a class="site-header-mobile__middle__nav-link" href="/insurance/">Insurance</a>
+			</div>
+			<div class="site-header-mobile__right">
+				<button class="site-header-mobile__icon site-header-mobile__icon--menu menu-icon right-off-canvas-toggle" data-toggle="offCanvasRight">
+					<span class="site-header-mobile__icon__text">Menu</span>
+				</button>
+			</div>
+		</div>
+	</div>
+	
+	<div data-sticky-container>
+		<div class="site-header-full show-for-medium" data-sticky data-sticky-on="medium" data-margin-top="0">
+			<div class="site-header-full__inner">
+				<a class="site-header-full__logo" title="Home" href="/">
+					<span class="icon fi-home"></span>
+				</a>
+				<a class="site-header-full__search-toggle fi-icon fi-icon--xlarge fi-magnifying-glass show-for-medium-only" href="#"></a>
+				<div class="site-header-full__right-search-box show-for-large">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+
+				
+
+<nav class="horizontal-site-nav">
+	<ul class="horizontal-site-nav__more-menu dropdown menu" data-dropdown-menu data-closing-time="0">
+		<li class="horizontal-site-nav__more-menu__item is-dropdown-submenu-parent">
+			<a href="#" class="horizontal-site-nav__more-menu__link">More<span class="show-for-large"> MCN</span></a>
+
+			<ul class="horizontal-site-nav__sub-nav horizontal-site-nav__more-menu__content menu">
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="horizontal-site-nav__menu dropdown menu" data-dropdown-menu data-closing-time="0">
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bike-reviews/"
+				    >
+					Bike Reviews
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+								    >
+									Search bike reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+								    >
+									Our test bikes
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/bikes-for-sale/"
+				    >
+					Bikes For Sale
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+								    >
+									Search bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+								    >
+									Sell your bike
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+								    >
+									Bike check
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/news/"
+				    >
+					News
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/"
+								    >
+									Latest news
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+								    >
+									New bikes
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-tech/"
+								    >
+									New tech
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/sport/"
+								    >
+									Sport
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+								    >
+									Electric bikes coming soon
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="/advice/"
+				    >
+					Advice
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/best/"
+								    >
+									Best
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+								    >
+									Riding tips
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+								    >
+									Learn to ride a motorbike with MCN
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/tests/"
+								    >
+									Tests
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+								    >
+									Maintenance
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+								    >
+									Travelling touring
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/parts/"
+								    >
+									Parts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+								    >
+									Buying and selling
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+								    >
+									Inspiration
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-gear/"
+								    >
+									New gear
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+								    >
+									Product picks
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/product-reviews/"
+								    >
+									Product reviews
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/new-rider/"
+								    >
+									New riders
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/"
+				    >
+					Insurance
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item is-dropdown-submenu-parent">
+				<a class="horizontal-site-nav__item__link" href="#"
+				    >
+					Get involved
+				</a>
+					<ul class="horizontal-site-nav__sub-nav menu hide">
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+								    >
+									#Ride5000miles
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="/newsletter/"
+								    >
+									Subscribe to MCN weekly newsletter
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+								   target='_blank' rel='nofollow'>
+									Buy MCN T-shirts
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+								   target='_blank' rel='nofollow'>
+									MCN Festival
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+								   target='_blank' rel='nofollow'>
+									Scottish Motorcycle Show
+								</a>
+							</li>
+							<li class="horizontal-site-nav__sub-nav__item">
+								<a class="horizontal-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+								    rel='nofollow'>
+									London Motorcycle Show
+								</a>
+							</li>
+					</ul>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar"
+				   target='_blank' >
+					Subscribe
+				</a>
+			</li>
+			<li class="horizontal-site-nav__item ">
+				<a class="horizontal-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742"
+				   target='_blank' >
+					MCN Shop
+				</a>
+			</li>
+	</ul>
+</nav>
+
+				<div class="site-header-full__search-bar">
+					
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+			<div class="top-ad-container" data-sticky-container>
+				<div class="top-ad-container__inner">
+					<div data-id="leaderboard-1" class="top-ad advert" data-sticky data-margin-top="0" data-sticky-on="small"></div>
+				</div>
+			</div>
+
+			<div class="site-body">
+				
+<aside class="desktop-sidebar" data-max-mpu-count="30">
+
+
+<div id=stickyMpuPlaceholder1 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder1 data-sticky-on="xlarge">
+			
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder2 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder2 data-sticky-on="xlarge">
+			
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder3 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder3 data-sticky-on="xlarge">
+			
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder4 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder4 data-sticky-on="xlarge">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder5 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder5 data-sticky-on="xlarge">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder6 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder6 data-sticky-on="xlarge">
+			
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder7 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder7 data-sticky-on="xlarge">
+			
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder8 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder8 data-sticky-on="xlarge">
+			
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder9 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder9 data-sticky-on="xlarge">
+			
+<div data-id="mpu-9" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder10 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder10 data-sticky-on="xlarge">
+			
+<div data-id="mpu-10" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder11 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder11 data-sticky-on="xlarge">
+			
+<div data-id="mpu-11" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder12 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder12 data-sticky-on="xlarge">
+			
+<div data-id="mpu-12" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder13 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder13 data-sticky-on="xlarge">
+			
+<div data-id="mpu-13" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder14 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder14 data-sticky-on="xlarge">
+			
+<div data-id="mpu-14" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder15 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder15 data-sticky-on="xlarge">
+			
+<div data-id="mpu-15" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder16 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder16 data-sticky-on="xlarge">
+			
+<div data-id="mpu-16" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder17 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder17 data-sticky-on="xlarge">
+			
+<div data-id="mpu-17" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder18 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder18 data-sticky-on="xlarge">
+			
+<div data-id="mpu-18" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder19 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder19 data-sticky-on="xlarge">
+			
+<div data-id="mpu-19" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder20 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder20 data-sticky-on="xlarge">
+			
+<div data-id="mpu-20" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder21 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder21 data-sticky-on="xlarge">
+			
+<div data-id="mpu-21" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder22 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder22 data-sticky-on="xlarge">
+			
+<div data-id="mpu-22" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder23 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder23 data-sticky-on="xlarge">
+			
+<div data-id="mpu-23" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder24 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder24 data-sticky-on="xlarge">
+			
+<div data-id="mpu-24" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder25 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder25 data-sticky-on="xlarge">
+			
+<div data-id="mpu-25" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder26 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder26 data-sticky-on="xlarge">
+			
+<div data-id="mpu-26" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder27 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder27 data-sticky-on="xlarge">
+			
+<div data-id="mpu-27" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder28 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder28 data-sticky-on="xlarge">
+			
+<div data-id="mpu-28" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder29 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder29 data-sticky-on="xlarge">
+			
+<div data-id="mpu-29" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div>
+
+<div id=stickyMpuPlaceholder30 class="desktop-sidebar__sticky-placeholder">
+	<div data-sticky-container>
+		<div data-sticky data-margin-top="6" data-anchor=stickyMpuPlaceholder30 data-sticky-on="xlarge">
+			
+<div data-id="mpu-30" class="mpu-ad advert"></div>
+		</div>
+	</div>
+</div></aside>
+
+				<main class="site-content">
+					
+	<nav class="breadcrumb-list">
+				<ul class="breadcrumbs show-for-medium">
+							<li><a href="/">Home</a></li>
+							<li><a href="/bike-reviews/">Bike Reviews</a></li>
+							<li><a href="/bike-reviews/kawasaki/">KAWASAKI</a></li>
+							<li><a href="/kawasaki/ninja/">Ninja</a></li>
+							<li><a href="/bike-reviews/kawasaki/ninja-300/">NINJA 300</a></li>
+							<li class="disabled">2012</li>
+				</ul>
+				<a class="breadcrumb-list__back-link hide-for-medium" href="/bike-reviews/kawasaki/ninja-300/">
+					<span class="fi-icon fi-arrow-up breadcrumb-list__back-link__icon"></span><span class="breadcrumb-list__back-link__text">See all KAWASAKI NINJA 300 reviews</span>
+				</a>
+	</nav>
+
+
+					
+
+
+
+<span class="last-viewed-model" data-make="kawasaki" data-model="ninja 300" />
+
+<article id="review" class="review">
+<img alt="" class="review__event-logger" data-src="https://tracking.bauermedia.co.uk/EventHandler.ashx?e=HHkbZZ3atHYkODBcU4gMTERnPJzrMAC5kDttjn%252b5iLd1U32j3RFiV0%2F70PVJ%252b29pb25rfIZKf9B7gXy57FFTTapQiAtYk8%252bPKq6nceKuAlqVCegLqM5jWAQVQw7pnl%252bAqBk9gmiPD2A2%252bE0YMHuptHehdlerCK3n5KnZeyE%2Fk9luJ%2FmQHDS9%2FXMJA9GoEn%2FKZCI%2FM6ZgP1ZRrLiuYz18Uct1J9tguuk0E7DCnX4dNQMc8IA5KmY0X4kd7YhSc69TXzqW4mpcT7lLzNsr8rZP9SrxY0RajabXobwyP5k749ec5N9chKjI1MCvpXssClegASA%252b79%2FDbexJGPzhRC9qWSTUHcafmLXVxJ1TJKZecwvvufwTGQ%2FY3Mhc7F0jXczVuPYpm7%252b5omQ0wojNdYiYmxLhdsXtfFEOMNkgk7PBt4NW0EKwQVqD3G4X9kJ%2FkVCK6mxnXftmhjIzGzIAQd85OW5RC6DW%252bUn1TVktiBDkVb9ClpOqv%2FKu7Evdmeg7htORqjhswdZJa7BqUDnCy1cQ3Q%3D%3D" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+	<h1>KAWASAKI NINJA 300 (2012 - 2017) Review</h1>
+
+	<section class="review__headline-ratings grid-x">
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#review-overall">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">MCN rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+			</a>
+		</div>
+
+		<div class="cell small-6 medium-5 large-4">
+			<a href="#ownersReviews">
+				<span class="star-rating star-rating--small"><span class="star-rating__label">Owners&#x27; rating</span><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span>
+			</a>
+		</div>
+	</section>
+
+	<div class="review__navigation">
+		<a href="#specs">
+			<span>Specs</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#ownersReviews">
+			<span>Owners' reviews</span><span class="review__navigation__arrow" />
+		</a>
+
+		<span class="review__navigation__divider"></span>
+
+		<a href="#forSale">
+			<span class="show-for-medium">Bikes for sale</span><span class="show-for-small-only">For sale</span><span class="review__navigation__arrow"></span>
+		</a>
+	</div>
+
+	<section class="review__gallery-panel">
+		
+
+<section class="gallery-preview">
+		<figure class="gallery-preview__image gallery-link">
+			<img alt="2012-2017 Kawasaki Ninja 300 review" data-lazy-interchange="[https://mcn-images.bauersecure.com/PageFiles/489811/615x405/Kawasaki_Ninja_300_1.jpg, small], [https://mcn-images.bauersecure.com/PageFiles/489811/999x666/Kawasaki_Ninja_300_1.jpg, medium], [https://mcn-images.bauersecure.com/PageFiles/489811/600x400/Kawasaki_Ninja_300_1.jpg, large]" data-src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" src="/dist/_5-40-101/images/placeholders/transparent.675x450.png" />
+		</figure>
+		<div class="gallery-preview__count">
+			<span class="gallery-preview__count__item gallery-link">
+				<span class="gallery-preview__count__icon icon-35x35-camera"></span>
+				<span class="gallery-preview__count__value">20</span>
+			</span>
+
+				<span class="gallery-preview__count__item  gallery-link" data-slide-index="20">
+					<span class="gallery-preview__count__icon icon-35x35-play"></span><span class="gallery-preview__count__value">2</span>
+				</span>
+		</div>
+
+		<div class="gallery-preview__button-container">
+				<button class="gallery-preview__button button gallery-link">	
+					<span class="gallery-preview__button__icon icon-35x35-camera"></span>
+					<span>View 20 images</span>
+				</button>
+
+				<button class="gallery-preview__button button gallery-link" data-slide-index="20">	
+					<span class="gallery-preview__button__icon icon-35x35-play"></span>
+					<span>View 2 videos</span>
+				</button>
+		</div>
+</section>
+	</section>
+
+	<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+	<div class="show-for-medium-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<section class="review__summary">
+		
+	<section class="review__highlights">
+		<h2 class="review__summary__heading">Highlights</h2>
+		<ul class="review__highlights__list">
+				<li class="review__highlights__item">A2-compliant junior sportsbike</li>
+				<li class="review__highlights__item">Mini-Ninja appeal for new riders</li>
+				<li class="review__highlights__item">Solid, high-revving engine</li>
+		</ul>
+	</section>
+
+
+
+		
+
+	<section class="review__at-a-glance">
+		<h2 class="review__summary__heading">At a glance</h2>
+		<table class="review__at-a-glance__table">
+			<tbody>
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Owners' reliability rating: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#ownersReviews"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></a></td>
+					</tr>
+
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Annual servicing cost: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#ownersReviews">&#xA3;450</a></td>
+					</tr>
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Power: </th>
+						<td class="review__at-a-glance__item__value"><a class="review__at-a-glance__item__link" href="#specs">39 bhp</a></td>
+					</tr>
+
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Seat height: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								Medium 
+								<span class="review__at-a-glance__item__link__sub-info">(30.9 in / 785 mm)</span>
+							</a>
+						</td>
+					</tr>
+		
+					<tr class="review__at-a-glance__item">
+						<th class="review__at-a-glance__item__label">Weight: </th>
+						<td class="review__at-a-glance__item__value">
+							<a class="review__at-a-glance__item__link" href="#specs">
+								Low 
+								<span class="review__at-a-glance__item__link__sub-info">(379 lbs / 172 kg)</span>
+							</a>
+						</td>
+					</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+		
+	<h2 class="review__summary__heading">Prices</h2>
+	<section class="review__prices">
+		<div class="grid-x">
+			<div class="cell small-7">
+					<div class="review__prices__price">
+						<span class="review__prices__price__label">New</span>
+						<span class="review__prices__price__value">N/A</span>
+					</div>
+					
+					<div class="review__prices__price">
+						<span class="review__prices__price__label">Used</span>
+						<span class="review__prices__price__value">&#xA3;2,500 - &#xA3;3,300</span>
+					</div>
+
+			</div>
+			<div class="cell small-5">		
+					<a class="review__prices__button button" href="/bikes-for-sale/kawasaki/ninja-300/"><span class="review__prices__button__text">View bikes for sale</span></a>
+			</div>
+		</div>
+	</section>
+
+	</section>
+
+	<div class="show-for-large-only right-mpu-container">
+		
+<div data-id="mpu-1" class="mpu-ad advert"></div>
+	</div>
+
+	<div class="review__main-content">
+		<a name="review-overall" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Overall rating</h2>
+			<a href="#review-ride" class="review__main-content__anchor-link">Next up: Ride &amp; brakes</a>
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<aside class="review__publishing-info">
+					<div><strong>Author: Martin Fitz-Gibbons</strong></div>
+
+				<div>Published: 17 February 2021</div>
+
+					<div>Updated: 17 February 2021</div>
+			</aside>
+
+			<p>The 2012-2017 Kawasaki Ninja 300 was a comprehensive update of 2008’s <a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-250r/2008/" title="2008 Kawasaki Ninja 250R review on MCN">Ninja 250R</a> which, truth be told, wasn’t really a whole lot more than a microwave-reheated GPX250. But the 300 saw significant improvements throughout. As well as its larger and more powerful motor it also got a stiffer frame, plus new suspension, wheels, clocks, pegs and sharper bodywork. It's a high-revving, hard-working mini-Ninja with huge appeal for those who dream of ragging the living wotsits out of a <a href="http://https://www.motorcyclenews.com/bike-reviews/kawasaki/zx-6r/2019/" title="2019 Kawasaki ZX-6R review on MCN">ZX-6R</a> or <a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/zx-10r/2019/" title="2019 Kawasaki ZX-10R review on MCN">ZX-10R</a>.&nbsp;</p>
+<ul>
+<li><strong>Related</strong>: <a href="https://www.motorcyclenews.com/advice/best/a2-licence-motorbikes/" title="Best A2 licence motorbikes">Best A2 licence motorbikes</a></li>
+</ul>
+<p>The Ninja 300’s arrival coincided with the ominous-sounding European Union Third Directive – new licensing laws that kicked in on 19th January 2013. Before then, young riders who passed their test served a two-year 33bhp restriction – which is what the 250R was designed for. But overnight that 33bhp limit was binned, replaced by a new <a href="https://www.motorcyclenews.com/advice/tests/how-to-pass-a2-motorbike-licence/" title="How to pass your A2 motorbike licence">A2 licence</a> with a 47bhp limit. The existing class of novice bikes suddenly needed more power.</p>
+<p>And that’s what the Ninja 300 offered. A longer stroke increased the engine’s capacity to 296cc, while power climbed to 39bhp. But the screaming nature of the 250R was unchanged – it remains a bike with a ravenous appetite for revs. With maximum torque served way up 10,000rpm it needs a rider who’s prepared to put the effort in, someone who loves the satisfaction of squeezing every last drop of speed from an engine. If you want to lug around lazily in a high gear letting the bike do the work, look elsewhere.</p>
+<p>And yet, while the motor’s pretty demanding, the rest of the Ninja 300 definitely isn’t. Its riding position is upright and easygoing, with clip-ons that rise high above the top yoke, a slim and low seat, a ridiculously light clutch and incredibly tight steering lock. It even has practical touches like bungee hooks, a small stash space under the pillion seat, a fuel gauge on the dash, an easy 200-mile tank range and optional ABS.</p>
+<p>The Kawasaki Ninja 300 was replaced by the <a href="/bike-reviews/kawasaki/ninja-400/" title="Full Kawasaki Ninja 400 review on MCN">Ninja 400</a> in 2018. The Ninja 300 was sold alongside a naked version of the same bike called the <a href="http://https://www.motorcyclenews.com/bike-reviews/kawasaki/z300/20151/" title="Kawasaki Z300 review on MCN">Kawasaki Z300</a>.</p>
+<h2>Watch Kawasaki Ninja 300 video review</h2>
+<p><div>
+
+<div class="video-player">
+		<div class="video-player__container" data-video-url="https://www.youtube.com/embed/rQ3c_VOHTHQ" data-enable-js-api="false" data-ga-tracking-category="" data-ga-tracking-action="" data-ga-tracking-label="">
+				<img alt="" class="video-player__container__preview" data-lazy-interchange="[https://img.youtube.com/vi/rQ3c_VOHTHQ/hqdefault.jpg, small], [https://img.youtube.com/vi/rQ3c_VOHTHQ/maxresdefault.jpg, medium]" data-src="" src="">
+
+				<span class="video-player__container__button"></span>
+		</div>
+</div></div></p>
+		</div>
+
+		<a name="review-ride" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Ride quality &amp; brakes</h2>
+			<a href="#review-engine" class="review__main-content__anchor-link">Next up: Engine</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>The Ninja 300 tips in with a featherlight touch and tracks round turns cleanly and confidently. Its steel-tube frame was reinforced from the 250R’s, and suspension action is greatly improved by its softer springs and more controlled damping. The wider 140-section rear tyre is still fairly skinny, giving little resistance at turn-in, while ground clearance is easily enough for kneedown lean angles.</p>
+<p>However, be in no doubt that the Ninja is built as an affordable, friendly, easy-to-ride machine, not a hard-charging track refugee in the vein of the old 250 two-strokes and 400 fours. Its upright riding position and high bars don’t naturally encourage you to get your weight over the front end, while the spindly unadjustable 37mm forks and basic shock are built for high streets, not back straights. If you want to carry momentum smoothly along open A-roads, it’s great fun. If you expect the precision and poise of a scaled-down ZX-6R, you’ll be left wanting.</p>
+<p><img src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/489811/615x0/kawasaki_ninja_300_2.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/489811/900x0/kawasaki_ninja_300_2.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<ul>
+<li><strong>Related</strong>:&nbsp;<a title="How to ride a motorbike on a trackday" href="https://www.motorcyclenews.com/advice/riding-tips/how-to-complete-your-first-motorbike-trackday/">How to ride your motorbike on a trackday</a></li>
+</ul>
+<p>When new, the 300’s weakest point was its IRC Road Winner tyres. By now most used machines should have (thankfully) moved onto a set of something else entirely. Bridgestone’s BT-45 is an ageing but still decent option, while the crossply version of Metzeler’s Roadtec 01 is available to fit the Ninja’s sizes. Speaking of which, be sure to check the size of whatever tyres are fitted to any used bike you look at. They should be a 110/70 front and 140/70 rear, but plenty of owners opt for fatter 120 fronts and 150 rears – in part because they prefer the look, but also because some high-profile radial tyres are available in these sizes. Our advice is to stick only to the sizes, models and construction approved by each tyre manufacturer.</p>
+<p>Brakes are basic, with a single petal disc and a two-piston caliper at each end, but reasonably effective on the rare occasions they’re needed to slow the Ninja’s 172kg kerb weight. ABS was an option, but unpopular with buyers at first. In its initial two years, non-ABS bikes outsold ABS bikes four to one, but by the end of the 300’s life the balance had swung in favour of those with anti-lock. If you want an ABS bike – and we’d recommend it – you might need to look a little harder if your budget only stretches for an older bike, or just pay a little more for a later machine.</p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-2" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-engine" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Engine</h2>
+			<a href="#review-reliability" class="review__main-content__anchor-link">Next up: Reliability</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>On paper, the Ninja 300 simply uses a long-stroke version of the Ninja 250R’s motor, which itself shared identical architecture with the GPX250 (originally used by cavemen to chase woolly mammoths). However, there’s a bit more to it than that. While the basic layout remains the same – it’s a parallel twin with a 180° crank – there are loads of internal differences. In evolving from the 250, the 300 also gains different pistons, conrods, valves and sleeveless cylinders, as well as new cases. Even the switch to a cartridge-style oil filter was new.</p>
+<p>Nonetheless, despite all the modernisation its capacity is still just 296cc, so those two tiny pistons need to be worked hard. When you’ve only got small explosions, you need lots of them – and so the Ninja 300’s makes power much in the same way you could be crushed under a pile of a billion ants, rather than one grand piano. Maximum torque is just 20lb·ft, yet the motor needs to be spinning at 10,000rpm to conjure up even that. Peak power (Kawasaki claim 39bhp; about 35 reaches the rear tyre) is at 11,000rpm and the redline is 13,000. There’s no powerband as such – it’s not like the delivery suddenly goes all Jekyll &amp; Hyde at the top end – but for maximum motion you’ll be stirring the six-speed gearbox frequently to keep the motor spinning at five-figure speeds. At least the 300’s motor is rubber-mounted, which helps to mute the tingly, high-frequency vibration felt on the 250R.</p>
+<p><img src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/489811/615x0/ninja300-09.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/489811/900x0/ninja300-09.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>The 300 also uses a slip/assist clutch, which serves two purposes. Firstly, and more usefully, it lightens the clutch lever action because it let Kawasaki reduce the number of clutch springs fitted. Secondly it acts as a slipper clutch, disengaging on aggressive block downshifts to stop the rear wheel from skipping and sliding – though, in fairness, that’s not really much of a problem on the 300. Still, nicer to have it than not.&nbsp;</p>
+<p>The Kawasaki Ninja 300 top speed is 93mph.&nbsp;</p>
+		</div>
+
+		<a name="review-reliability" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Reliability & build quality</h2>
+			<a href="#review-value" class="review__main-content__anchor-link">Next up: Value</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>Component appearance and overall sense of quality are a noticeable, intentional improvement over the 250R. The wheels have a smart 10-spoke design, shaped after the ZZR1400’s. Most of the sharp bodywork’s fasteners are cleverly hidden out of sight. Footpegs have a sleeker, serrated, sporty style rather than the 250’s chunky rubber-topped items.</p>
+<p>But there are still a few shortcomings. The rear brake pedal looks like it cost pennies to produce, while thinly-finished heelplates scuff up quickly and make a bike look like it’s had a harder life than it has. Clutch and front brake levers are both unadjustable, while the basic-design chain adjusters (threaded rods sticking out the back of a box-section swingarm) don’t really shout premium either.</p>
+<h2>2012-2017 Kawasaki Ninja 300 owners' reviews on MCN</h2>
+<p>However, the good news is that the Ninja 300’s fundamentals are sturdy. <a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-300/#ownersReviews" title="Kawasaki Ninja 300 owners' reviews on MCN">Owners report</a> very few major issues, and even though the motors tend to spend most of their lives at high revs, they’re generally solid. So long as the bike’s been serviced on time, high mileage alone shouldn’t be a concern as far as the engine goes.</p>
+<p>There’s one other thing worth mentioning if you’re looking to buy a first-year model: recalls. There were two in 2013. The first was to fit a new ECU, as the original was found to have an internal fault that could cause the engine to stall. Another only affected ABS models, but involves replacing the whole ABS unit. If you’re looking at a used 2013 machine, check whether it’s affected by either of these and, if so, whether there’s proof that the work has been done.</p>
+		</div>
+
+		<a name="review-value" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Value vs rivals</h2>
+			<a href="#review-equipment" class="review__main-content__anchor-link">Next up: Equipment</a>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>Running costs are, on the whole, pretty low. The small-capacity motor means road tax is cheap. Slim crossply tyres don’t cost much and last ages. Even thrashed hard the motor still returns over 60mpg, and with a less-frantic right hand you could see 75mpg. That’s fairly good – though perhaps not astonishing compared with a Honda NC700, a Yamaha MT-07 or even a gently ridden ER-6f, all of which offer similar economy despite having twice the capacity.</p>
+<p>Insurance-wise it’s comparable to natural rivals such as the <a href="/bike-reviews/yamaha/r3/2015/" title="2015 Yamaha R3 review on MCN">Yamaha YZF-R3</a>. One detail that may be worth bearing in mind is that the Ninja 300’s ignition barrel doesn’t have an immobiliser, whereas the <a href="https://www.motorcyclenews.com/bike-reviews/honda/cbr500r/2014/" title="2014 Honda CBR500R review on MCN">Honda CBR500R</a> does.</p>
+<p>Private sales start at just over £2000, with dealer sales around £2500 – but the price window is very narrow, with even the most expensive bikes topping out around £3000. Prices seem to be very slightly lower than a Yamaha R3 or <a href="https://www.motorcyclenews.com/bike-reviews/ktm/rc390/2014/" title="2014 KTM RC390 review on MCN">KTM RC390</a> for a similar age and mileage.</p>
+<p>However, there is one fly in the low-cost ointment. The Ninja’s official service schedule includes valve clearance checks every 7600 miles. That’s a £300+ job at a franchised Kawasaki dealer. And with that in mind, it’s unsurprising that many valve checks get skipped, or a seller will (claim to) have done the work themselves. Always check, and look for proof, when valves were last inspected.</p>
+<p>In 2012 MCN pit the Ninja 300 against its main rivals at the time - the <a title="KTM RC390 review on MCN" href="https://www.motorcyclenews.com/bike-reviews/ktm/rc390/2014/">KTM RC390</a> and the <a title="Yamaha R3 review on MCN" href="https://www.motorcyclenews.com/bike-reviews/yamaha/r3/2019/">Yamaha YZF-R3</a>.</p>
+<p><img title="Kawasaki Ninja 300 vs Yamaha YZF-R3 vs KTM RC390" src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="Kawasaki Ninja 300 vs Yamaha YZF-R3 vs KTM RC390" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/489811/615x0/kawasaki_ninja_300_group.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/489811/900x0/kawasaki_ninja_300_group.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>Our tester Andy Davidson said: "The 2012 Kawasaki Ninja is a good laugh if you keep the revs up, but its competitors surpass it with a more modern feel. The KTM lacks in build quality and its harsher, track-focused ride is fun but tiresome as an everyday machine. The Yamaha takes the win as it’s the most competitively priced, has the best build quality and is a credible, very well thought-out machine. It’s exciting, easy to ride, more forgiving than its competitors and is a proper big bike in its own right. Yamaha are onto a winner with the new R3."</p>
+<h2>Watch: Kawasaki Ninja 300 vs KTM RC390 vs Honda CBR300R / CBR500R</h2>
+<p><div>
+
+<div class="video-player">
+		<div class="video-player__container" data-video-url="https://www.youtube.com/embed/U9e2bYbodu8" data-enable-js-api="false" data-ga-tracking-category="" data-ga-tracking-action="" data-ga-tracking-label="">
+				<img alt="" class="video-player__container__preview" data-lazy-interchange="[https://img.youtube.com/vi/U9e2bYbodu8/hqdefault.jpg, small], [https://img.youtube.com/vi/U9e2bYbodu8/maxresdefault.jpg, medium]" data-src="" src="">
+
+				<span class="video-player__container__button"></span>
+		</div>
+</div></div></p>
+		</div>
+
+		<div class="review__main-content__ad-container hide-for-xlarge">
+			<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+			<div class="show-for-medium right-mpu-container">
+				
+<div data-id="mpu-3" class="mpu-ad advert"></div>
+			</div>
+		</div>
+
+		<a name="review-equipment" class="review__anchor"></a>
+		<div class="review__main-content__section">
+			<h2 class="review__main-content__heading">Equipment</h2>
+
+				<div class="review__main-content__rating-container">
+					<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>    <span class="star-rating__text">(3/5)</span>  </span></span>
+				</div>
+
+			<p>The Ninja 300 is from a time and a class where equipment expectations were fairly minimal. ABS-equipped versions are available, though the system was a £400 option and most buyers chose to save money, making it rare on early models.</p>
+<p>The clocks have an LCD panel that includes a six-bar fuel gauge, which is handy and looks far flasher than the 250R’s twin dials. That slipper clutch lends some bragging rights in certain circles too. There’s also a neat, small, two-layer storage compartment under the pillion seat, if you need to take a pair of thin things out for a ride. Otherwise, running gear is fairly simple – the only suspension adjustment is five-position preload on the shock.</p>
+<p><img src="/dist/_5-40-101/images/placeholders/transparent.600x400.png" alt="" data-lazy-interchange="[https://mcn-images.bauersecure.com/pagefiles/489811/615x0/kawasaki_ninja_300_3.jpg, small], [https://mcn-images.bauersecure.com/pagefiles/489811/900x0/kawasaki_ninja_300_3.jpg, medium]" data-src="/dist/_5-40-101/images/placeholders/transparent.600x400.png"></p>
+<p>Most Ninja 300s have been attacked by accessory-catalogue-wielding owners. Aftermarket exhausts are a firm favourite, with owners keen to unleash a bit more volume (as standard it sounds very soft and flat) from a fruitier end can. As ever it’s not worth paying a penny extra for, but not really a problem so long as the owner includes the OE part with the sale. Smarter, subtler improvements such as braided brake lines, sharper pads and decent tyres should be welcomed. Non-standard levers and bar-ends could be a hint that the bike’s been dropped (not uncommon with its often inexperienced audience), so scour plastics, mirrors and peg-ends for further evidence of falls.</p>
+		</div>
+	</div>
+
+	<a name="forSale" class="review__anchor"></a>
+	
+
+<aside class="review__bfs">
+		<h2 class="review__bfs__heading">KAWASAKI NINJA 300 for sale with <span class="review__bfs__heading__highlight">MCN</span></h2>
+		<ul class="review__bfs__list">
+				<li class="review__bfs__item" data-tracking-label="Orwell Motorcycles Limited">
+					<a href="/bikes-for-sale/kawasaki/ninja-300/59088381/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="NINJA 300 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/59088381/450508459/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">NINJA 300  (2014/14)</span>
+								<span class="review__bfs__item__price">&#xA3;2,495</span>
+								<span class="review__bfs__item__location">Suffolk</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Superbike Factory">
+					<a href="/bikes-for-sale/kawasaki/ninja-300/58914749/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="NINJA 300 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58914749/1818270580/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">NINJA 300  (2013/13)</span>
+								<span class="review__bfs__item__price">&#xA3;2,691</span>
+								<span class="review__bfs__item__location">Cheshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Superbike Factory">
+					<a href="/bikes-for-sale/kawasaki/ninja-300/58996084/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="NINJA 300 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58996084/1818270580/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">NINJA 300  (2014/14)</span>
+								<span class="review__bfs__item__price">&#xA3;2,891</span>
+								<span class="review__bfs__item__location">Cheshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Superbike Factory">
+					<a href="/bikes-for-sale/kawasaki/ninja-300/59072051/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="NINJA 300 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/59072051/1728023930/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">NINJA 300  (2014/14)</span>
+								<span class="review__bfs__item__price">&#xA3;2,891</span>
+								<span class="review__bfs__item__location">Cheshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="review__bfs__item" data-tracking-label="Superbike Factory">
+					<a href="/bikes-for-sale/kawasaki/ninja-300/58024370/">
+						<div class="grid-x">
+							<div class="cell small-7 review__bfs__item__image-cell">
+<img alt="NINJA 300 " class="thumbnail review__bfs__item__image" data-src="/images/classifieds/dealer/58024370/1818270580/160x120/0.jpg" src="/dist/_5-40-101/images/placeholders/transparent.160x120.png" />							</div>
+							<div class="cell small-5 review__bfs__item__info-cell">
+								<span class="review__bfs__item__title">NINJA 300  (2016/16)</span>
+								<span class="review__bfs__item__price">&#xA3;3,187</span>
+								<span class="review__bfs__item__location">Cheshire</span>
+							</div>
+						</div>
+					</a>
+				</li>
+		</ul>
+		<div class="review__bfs__button-container">
+			<a class="review__bfs__button button" href="/bikes-for-sale/kawasaki/ninja-300/">View more bikes for sale</a>
+		</div>
+</aside>
+
+	<a name="specs" class="review__anchor"></a>
+
+	
+<section class="review__facts-and-figures">
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Specs</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine size</th>
+					<td class="review__facts-and-figures__item__value">296cc</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Engine type</th>
+					<td class="review__facts-and-figures__item__value">Four-stroke, liquid-cooled DOHC, 8v parallel twin</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Frame type</th>
+					<td class="review__facts-and-figures__item__value">Tubular steel</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Fuel capacity</th>
+					<td class="review__facts-and-figures__item__value">17 litres</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Seat height</th>
+					<td class="review__facts-and-figures__item__value">785mm</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Bike weight</th>
+					<td class="review__facts-and-figures__item__value">172kg</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front suspension</th>
+					<td class="review__facts-and-figures__item__value">37mm conventional forks, non-adjustable</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear suspension</th>
+					<td class="review__facts-and-figures__item__value">Five-way adjustable pre-load shock</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front brake</th>
+					<td class="review__facts-and-figures__item__value">1x290mm petal disc. dual-piston caliper</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear brake</th>
+					<td class="review__facts-and-figures__item__value">1x220mm petal disc, two-piston caliper</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Front tyre size</th>
+					<td class="review__facts-and-figures__item__value">110/70 ZR17</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Rear tyre size</th>
+					<td class="review__facts-and-figures__item__value">140/70 ZR17</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Mpg, costs &amp; insurance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Average fuel consumption</th>
+					<td class="review__facts-and-figures__item__value">75 mpg</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual road tax</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;44</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Annual service cost</th>
+					<td class="review__facts-and-figures__item__value">&#xA3;450</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">New price</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Used price</th>
+					<td class="review__facts-and-figures__item__value">
+						&#xA3;2,500 - &#xA3;3,300
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Insurance group</th>
+					<td class="review__facts-and-figures__item__value">
+						8 of 17<br />
+							<a rel="nofollow" target="_blank" href="https://quotes.mcncompare.com/bike/PersonalInformation1.aspx?utm_campaign=multi-acq-compare-mcn&amp;utm_source=mcn&amp;utm_medium=referral&amp;utm_content=reviews-detail-value-section">How much to insure?</a>
+					</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Warranty term</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-4" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="review__facts-and-figures__table-container">
+		<table class="review__facts-and-figures__table">
+			<thead>
+				<tr>
+					<td colspan="2"><h2 class="review__facts-and-figures__table__heading">Top speed &amp; performance</h2></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max power</th>
+					<td class="review__facts-and-figures__item__value">39 bhp</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Max torque</th>
+					<td class="review__facts-and-figures__item__value">20 ft-lb</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Top speed</th>
+					<td class="review__facts-and-figures__item__value">93 mph</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">1/4 mile acceleration</th>
+					<td class="review__facts-and-figures__item__value">-</td>
+				</tr>
+				<tr class="review__facts-and-figures__item">
+					<th class="review__facts-and-figures__item__label">Tank range</th>
+					<td class="review__facts-and-figures__item__value">280 miles</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+	<section class="review__history-and-versions">
+			<h2 class="review__history-and-versions__heading">Model history &amp; versions</h2>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Model history</h3>
+					<ul>
+<li>2013-2017 Kawasaki Ninja 300</li>
+</ul>
+<p>More power and sophistication than the 2008-2012 Ninja 250R (for some reason the 300 didn’t get to keep the ‘R’ bit of the name), landing just in time for the new A2 licence. Credible Ninja styling, upright riding position and a parallel twin that needs to be kept on the boil. ABS optional. SE model is the exact same bike with jazzier graphics and red wheel stripes. Discontinued at the end of 2016, with a <a title="Read MCN's full review of the Ninja 400 here" href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-400/">Ninja 400</a> arriving for 2018.</p>
+				</div>
+				<div class="review__history-and-versions__section">
+					<h3 class="review__history-and-versions__section__heading">Other versions</h3>
+					<ul>
+<li><strong>Kawasaki Ninja 250SL</strong></li>
+</ul>
+<p>Short-lived, single-cylinder, sporty-styled sibling makes just 27bhp but is 20kg lighter than the Ninja 300. Feels more like a big 125 than a ‘proper’ A2 motorcycle.</p>
+<ul>
+<li><strong>Kawasaki Z300</strong></li>
+</ul>
+<p>Naked version of the Ninja 300 with same engine, power, frame and running gear. Flat bars instead of clip-ons, but otherwise a similar riding experience.</p>
+<ul>
+<li><strong>Kawasaki Versys-X 300</strong></li>
+</ul>
+<p>Adventure-styled upright all-rounder powered by the same 296cc parallel twin as the Ninja. Revvy power delivery feels a bit at odds with something otherwise trying to be sensible and practical.</p>
+<p><strong>More Kawasaki Ninja reviews on MCN</strong></p>
+<ul>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-125/">Kawasaki Ninja 125 review (2019-on)</a></li>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-250r/">Kawasaki Ninja 250R review (2008-2011)</a></li>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-250sl/">Kawasaki Ninja 250SL review (2015-on)</a></li>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-400/">Kawasaki Ninja 400 review (2018-on)</a></li>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-650/">Kawasaki Ninja 650 review (2017-on)</a></li>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-h2/2015/">Kawasaki Ninja H2 review (2015-on)</a></li>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-h2/2019/">Kawasaki Ninja H2 review (2019-on)</a></li>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-h2-sx/2018/">Kawasaki Ninja H2 SX review (2018-on)</a></li>
+<li><a href="https://www.motorcyclenews.com/bike-reviews/kawasaki/ninja-h2r/">Kawasaki Ninja H2R review (2015-on)</a></li>
+</ul>
+				</div>
+
+			<div class="review__history-and-versions__section">
+				<a href="/kawasaki/ninja/">Read more about the full KAWASAKI Ninja range</a>
+			</div>
+	</section>
+
+
+	<a name="ownersReviews" class="review__anchor"></a>
+	
+
+<section class="review__owners-reviews-summary">
+	<h2 class="review__owners-reviews-summary__heading">
+		<span class="review__owners-reviews-summary__heading__inner">
+			Owners' reviews
+			<span class="review__owners-reviews-summary__heading__vehicle">for the KAWASAKI NINJA 300 (2012 - 2017)</span>
+		</span>
+	</h2>
+	<div class="review__owners-reviews-summary__intro">
+			<p class="review__owners-reviews-summary__intro__text">
+				<strong>6 owners</strong> have reviewed their KAWASAKI NINJA 300 (2012 - 2017) and rated it in a number of areas. Read what they have to say and what they like and dislike about the bike below.
+			</p>
+			<p class="review__owners-reviews-summary__intro__text">
+				<a href="/bike-reviews/review-your-bike/?review=493224">Review your KAWASAKI NINJA 300 (2012 - 2017)</a>
+			</p>
+			<table class="review__owners-reviews-summary__table">
+				<thead>
+					<tr>
+						<td colspan="2"><h3 class="review__owners-reviews-summary__table__heading">Summary of owners' reviews</h3></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Overall rating: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Ride quality &amp; brakes: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3.5 out of 5">    <span style="width:70%" class="star-rating__stars__value">3.5 out of 5</span>  </span>    <span class="star-rating__text">(3.5/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Engine: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4.7 out of 5">    <span style="width:93%" class="star-rating__stars__value">4.7 out of 5</span>  </span>    <span class="star-rating__text">(4.7/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Reliability &amp; build quality: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Value vs rivals: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+					<tr class="review__owners-reviews-summary__item">
+						<th class="review__owners-reviews-summary__item__label">Equipment: </th>
+						<td class="review__owners-reviews-summary__item__value"><span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>    <span class="star-rating__text">(4/5)</span>  </span></span></td>
+					</tr>
+						<tr class="review__owners-reviews-summary__item">
+							<th class="review__owners-reviews-summary__item__label">Annual servicing cost: </th>
+							<td class="review__owners-reviews-summary__item__value"><strong>&#xA3;450</strong></td>
+						</tr>
+				</tbody>
+			</table>
+	</div>
+</section>
+
+	<div class="hide-for-xlarge">
+		<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+		<div class="show-for-medium right-mpu-container">
+			
+<div data-id="mpu-5" class="mpu-ad advert"></div>
+		</div>
+	</div>
+
+		<section class="review__owners-reviews-container">
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline"></strong>
+	<div class="review__owners-review__published-info">
+		<strong>22 March 2020</strong> <span class="review__owners-review__published-info__author">by GreenKawa300</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Version: <strong>non-ABS</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Year: <strong>2016</strong>
+		</p>
+
+		<p>Great build quality, very reliable and excellent first bike or twisty-road carver. I take it out of town to twisty roads as much as I can and a year and 6,000 miles later haven&#x27;t quite mastered it so am happy to keep another year or two. It&#x27;s still really entertaining and cheap to own. It&#x27;s very practical and frugal, super lightweight and for the entry-level market I think the quality is great. I have an A2 license and I&#x27;ve ridden Yamaha MT-03 660cc (first bike that I still own), Kawasaki ER-5, Honda CB500F, and KTM&#x27;s Duke 390 and RC390 as well and overall it has to be my favorite for how flickable and fun it is and the screaming twin is a blast. The KTMs are just too small for my height (5&#x27;11&quot;) though I do like the RC390 more sporty seating position and MT-03&#x27;s massive torque (for an A2 bike).</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">The suspension and brakes are good. Excellent all around and managed to stop in time when riding a bit too fast in the fog and getting caught off guard by an unexpected roundabout. A couple of times the slipper clutch saved my butt when I downshifted too hard and nearly slid the bike sideways. I think it&#x27;s a fantastic all-rounder and even got me out of a long stretch of unpaved road without any issues.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">For a 300cc twin this thing is fantastic. It screams when youre racing in twisties and getting it to sing above 8,000rpm to it&#x27;s 13,000 redline is so much fun. The engine can probably handle a lot more, maybe 15-17,000 rpm if there was no limiter, and you need to push it to keep a fast pace (it&#x27;s not very torquey and won&#x27;t handle two-up well). Slipper clutch as standard, first gear is a bit short.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Engine, suspension and electrics are great. No issues except one small chip on the gas tank (the paint seems a bit thin), otherwise very happy with reliability.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">I service it myself (oil/filter changes every 3,500 mi) or so. Spark plugs changed as well (time consuming though as you need to remove plastics and the gas tank) for cheap. Tires seem to be my biggest cost as I buy soft and relatively expensive Pirellis and love to ride aggressively outside of town.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Standard stuff, nothing spectacular for a bike of it&#x27;s class - slipper clutch really is a nice touch and the clutch pull is super light. Would make for an excellent first bike for almost anyone considering the low seat height, constant power delivery (not jumpy in any way), and super light weight. I wish it came with LED headlights and blinkers. &#xA;&#xA;My only real gripe is that the angle of the levers on the throttle side is not really adjustable (to have straight arms and not bend your wrist) - might be a bit of discomfort for long-distance riding but I did 300&#x2B; miles in a day with no issues.</p>
+		</div>
+	</div>
+
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Mr</strong>
+	<div class="review__owners-review__published-info">
+		<strong>19 January 2018</strong> <span class="review__owners-review__published-info__author">by Bryan</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2014</strong>
+		</p>
+
+		<p>Bought 2nd hand with 3400 miles on. I have done around 2k of mainly daly commuting. Pretty much all seems great. Bought for a few reasons one being mpg which I can get around 73-74mpg but don&#x2019;t get near the quoted 280 miles per tank. Around 205 the light is blinking away at me. Thoroughly enjoy the bike though and performs as well as you would expect a 300 to. &#xA;Quite a narrow bike (part of the reason I bought it, so it can get up my side alley and in the back garden).</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">No major brake slams yet but daily commute involves an average of 3-4 idiots pulling out on you and managed to stop each time. I don&#x2019;t have the abs versiob</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Like I said, what you would expect from a 300. Seems to be able to pull in any gear and get you out of trouble or off the lights quick enough</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Bit to son to tell for me but no problems so far</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Around &#xA3;16 to fill up does me over 200 miles. Cheap tax cheap insurance</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Gear indicator would be nice. Personally I think the standard exhaust is fairly ugly and will change as soon as I can</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Bought from dealer (suoerbike factory) and they were great. Bought blind and wasn&#x2019;t disappointed when the bike was delivered
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-6" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Ninja300krt</strong>
+	<div class="review__owners-review__published-info">
+		<strong>16 November 2017</strong> <span class="review__owners-review__published-info__author">by Bruno Mota</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Version: <strong>KRT</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Year: <strong>2016</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;150</strong>
+		</p>
+
+		<p>Happy with the bike overall. Rev happy if you need it to be but easily manageable. It will react quickly if you open the throttle like an idiot. Very easy to manoeuvre in town between traffic. I do mostly B roads followed by centre town traffic and the bike glides trough it all.&#xA;Would not recommend this bike only if you are doing any frequent motorway miles. She can do it but it feels like she is giving it all she has, all the time. I felt this at 80mph...&#xA;As a whole, this bike works best as a in town commuter and B-road fun. It feels solid and powerful enough for a 300. I also ride a Suzuki GS500F 2004 and other than comfort and overall stability due to weight, the Ninja would still be my choice.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Bought the bike new so i knew the brakes needed time to settle in. Still don&#x2019;t feel they are the best compared to my partners Yamaha R3. I touch them and the bike responds a lot sharper. Maybe I&#x2019;m not used to using both brakes as often as other bikes.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">No issues with engine.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Built well, no complaints. Still no corrosion even though I ride in all weathers. I only have a complaint which is, on both sides now, the decals are coming off. Replacing them will cost &#xA3;25 per decal plus labor. Not something you want to do yourself. I&#x2019;ve owned the bike from new with just 5500 miles by now. Every other part of the bike looks good.&#xA;I&#x2019;ve only had to take the bike back once because an issue was detected during the service. My rear wheel ball bearings got sorted within a week and under warranty. This did not affect the handling of the bike when i rode it for the time i was waiting to get it sorted.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Only done the usual services in order to keep the bike with good service history at the dealership. Roughly &#xA3;120 each but i know the next big service will be around &#xA3;450. They offer monthly plans but I don&#x2019;t want an additional direct debit on my account. Usually fill up my tank with &#xA3;15/16. I&#x2019;ve done 200 miles with a full tank being more conservative than not. Open the throttle and that will drop to 188 miles. Still good for me. Plus lots of fun on B roads.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">ABS as standard.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> First time I bought a bike from dealer so don&#x2019;t have anything to compare it to. It was an ok experience for me. The person that handled my purchase was very professional and a nice guy. My only gripe is after being told that my bike was one of the few left, I&#x2019;ve now seen quite a few more waiting to be sold.&#xA;I paid &#xA3;5499.
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="2 out of 5">    <span style="width:40%" class="star-rating__stars__value">2 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">I&#x27;ll get another Suzuki or Honda next time</strong>
+	<div class="review__owners-review__published-info">
+		<strong>19 September 2016</strong> <span class="review__owners-review__published-info__author">by david</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2014</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;700</strong>
+		</p>
+
+		<p>Decent engine, Kawasaki cheaped out big time on something&#x27;s though.  The OEM chain has to be replaced in the same amount of time the one I replaced with took to need it&#x27;s first adjustment, which isn&#x27;t so bad chains I expect to replace but come on Kawasaki that&#x27;s pretty poor.  The biggest issue I have with this bike is that I had to replace to fork springs.  At about a year and a half off the showroom floor the front got very soft.  I contacted Kawasaki and the rep said to replace the fork fluid, I told him that seemed like it was not likely to the problem based on the performance but eventually against my better judgement has the fluid replaced.  It did not improve anything, and Kawasaki had told me that it&#x27;s considered normal maintenance that they don&#x27;t publish any thing about.  Yes I do know that it is a normal maintenance thing, but on other bikes I&#x27;ve owned it&#x27;s been anywhere from 7-8 years or the bike needed other things replaced and was getting to be such high milage (150k&#x2B;) that doing the forks and then everything else wasn&#x27;t really worth it so I just went ahead and got a new bike.  The suspension on the ninja got to be so bad that it was a safety concern for me, I had rear wheel locks when I never would have expected it on any of the other bikes I&#x27;ve owned it the ninja during the first year, it felt unstable during anything but the most conservative commuter cornering, the front end would dip badly when letting off the throttle, etc.  &#xA;I tried to contact Kawasaki about it again and one of their reps just quit responding while I was emailing back and forth. So finally I just went ahead and replaced the springs.  And all the sudden the performance was like it was during the first year of the bikes life.  I contacted the BBB seeking reimbursement from Kawasaki figuring that they would at least do something, but no.  No reimbursement for the first reps poor advice to charge fluid, and nothing for the replaced springs.  Long story short I&#x27;ve been recommending against Kawasaki when friends ask about getting into a motorcycle, and I&#x27;ll be going back to either Suzuki or Honda when I get my next bike.  I know that the dealer&#x27;s will say it&#x27;s an entry level bike so it&#x27;s not as well manufactured as some of their others, but my Suzuki was an entry level 250cc and never had any problems that got me to contact the manufacturer over owning it for 8 out so years.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="1 out of 5">    <span style="width:20%" class="star-rating__stars__value">1 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Factory suspension went way down hill.  Around a year and a half it was trying to ride for more then 20 or so min (commuting).  Before the suspension went bad it was good for an afternoon ride with one nicd break in the middle, maybe 4 hour ride with a twenty min or so break to strech in the middle.  Back to that with the replaced fork springs</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="2 out of 5">    <span style="width:40%" class="star-rating__stars__value">2 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="2 out of 5">    <span style="width:40%" class="star-rating__stars__value">2 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Needing to perform parts replacements to get it back to showroom performance (suspension) put this well over what it should be</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Suggest short levers (depending on personal taste), I&#x27;ve been very happy with the michiline pilot tires on it-good grip on normal Street conditions including occasional rain and they look like they&#x27;ll have a good life span (these are the tires I replaced the factory installed ones with).  It came set up to be a good standard bike, nothing awesome nothing horrible</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Dealer, purchased new, don&#x27;t recall advertised price paid about 6300usd
+		</p>
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-7" class="mpu-ad advert"></div>
+						</div>
+					</div>
+
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">Brand New</strong>
+	<div class="review__owners-review__published-info">
+		<strong>29 July 2016</strong> <span class="review__owners-review__published-info__author">by JapanRider92</span>
+	</div>
+
+		<p class="review__owners-review__info">
+			Year: <strong>2014</strong>
+		</p>
+		<p class="review__owners-review__info">
+			Annual servicing cost: <strong>&#xA3;500</strong>
+		</p>
+
+		<p>I just purchased this bike yesterday. Put 75 miles on it. Love this bike. I rode a GS500F, then went to a Shadow 750, and now here. I do a lot of street riding versus open road with big curves and this bike has been great for it so far. It&#x27;s a lot more nimble than the Shadow and just as quick as the GS500. Seat position is a little more straight up versus your typical sport bike which is nice when I cruised on the highway for a little bit. I was able to get up to 95mph and still had some to go before redline (I&#x27;m 5&#x27;11&#x27;&#x27; and ~210lbs). Would definitely recommend to anyone looking for a practical yet fun motorcycle.</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Everything is great. I think the brakes are a little squishy but that&#x27;s probably a me thing.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">FUN</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Quality seems great. Not much vibration even at 95mph. It&#x27;s too new for me to comment on reliability but Kaw doesn&#x27;t usually put out bad bikes.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="3 out of 5">    <span style="width:60%" class="star-rating__stars__value">3 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Same as any other except the 7500 change. That one&#x27;s a little pricier due to valves.</p>
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+				<p class="review__owners-review__detail__text">Everything was cool. My complaint is the under seat storage seems kind of small compared to other sport bikes I&#x27;ve seen. Maybe that&#x27;s a me thing too.</p>
+		</div>
+	</div>
+
+		<p class="review__owners-review__info">
+			<strong>Buying experience:</strong> Dealer - Was awesome. I bought from them previously so they took off $700.
+		</p>
+</div>
+
+
+<div class="review__owners-review">
+	<span class="review__owners-review__star-rating"><span class="star-rating "><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span></span>
+	<strong class="review__owners-review__headline">top speed</strong>
+	<div class="review__owners-review__published-info">
+		<strong>07 June 2014</strong> <span class="review__owners-review__published-info__author">by stevieboy94</span>
+	</div>
+
+
+		<p>Top speed is a lot higher than 93 test rode one feels smooth in the gear changes acceleration is pritty much instant, if the 250r can do 110 I&#x27;m sure the 300 can do a little bit more</p>
+
+	<div class="review__owners-review__details-container">
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Ride quality &amp; brakes</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Engine</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Reliability &amp; build quality</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Value vs rivals</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="5 out of 5">    <span style="width:100%" class="star-rating__stars__value">5 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+
+		<div class="review__owners-review__detail">
+			<strong class="review__owners-review__detail__title">Equipment</strong>
+			<span class="review__owners-review__detail__rating">
+				<span class="star-rating star-rating--small"><span class="star-rating__value-container">  <span class="star-rating__stars" title ="4 out of 5">    <span style="width:80%" class="star-rating__stars__value">4 out of 5</span>  </span>  </span></span>
+			</span>
+
+		</div>
+	</div>
+
+</div>					<div class="hide-for-xlarge">
+						<div class="hide-for-medium center-mpu-container center-mpu-container--with-message">
+							
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+						</div>
+						<div class="show-for-medium right-mpu-container">
+							
+<div data-id="mpu-8" class="mpu-ad advert"></div>
+						</div>
+					</div>
+		</section>
+
+	<a class="back-to-top" href="#">
+	<div class="back-to-top__circle">
+		<span class="back-to-top__circle__icon"></span>
+	</div>
+	<div>Back to top</div>
+</a>
+
+
+
+<section id="fullScreenGallery" class="full-screen-gallery" data-reveal>
+	<div class="full-screen-gallery__leaderboard-container">
+		<div data-id="leaderboard-gallery" class="leaderboard-gallery-ad advert"></div>
+	</div>
+	<div class="full-screen-gallery__sidebar show-for-large">
+		<div class="full-screen-gallery__mpu-container">
+			<div class="full-screen-gallery__mpu center-mpu-container">
+				<span class="hide-for-large">Advertisement<span class="full-screen-gallery__mpu__remaining-ad-duration"></span></span>
+				<div data-id="mpu-gallery" class="mpu-ad advert"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__caption-container">
+		<div class="full-screen-gallery__caption">
+					<span class="full-screen-gallery__caption__text"></span>
+		</div>
+	</div>
+
+	<div class="full-screen-gallery__slider-container">
+		<div class="full-screen-gallery__controls">
+			<button title="Previous photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--prev fi-arrow-left"></button>
+			<button title="Next photo" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--next fi-arrow-right"></button>
+			<button title="Zoom in" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-in fi-zoom-in"></button>
+			<button title="Zoom out" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--zoom-out fi-zoom-out"></button>
+			<button title="Close gallery" class="full-screen-gallery__controls__button full-screen-gallery__controls__button--close fi-x" data-close></button>
+		</div>
+
+		<div class="full-screen-gallery__slider royalSlider rsDefault">
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/Kawasaki_Ninja_300_1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/Kawasaki_Ninja_300_1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/Kawasaki_Ninja_300_1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/Kawasaki_Ninja_300_1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/Kawasaki_Ninja_300_1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/Kawasaki_Ninja_300_1.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span></span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/Kawasaki_Ninja_300_1.jpg?quality=50" alt=""/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/Kawasaki_Ninja_300_2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/Kawasaki_Ninja_300_2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/Kawasaki_Ninja_300_2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/Kawasaki_Ninja_300_2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/Kawasaki_Ninja_300_2.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/Kawasaki_Ninja_300_2.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span></span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/Kawasaki_Ninja_300_2.jpg?quality=50" alt=""/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/Kawasaki_Ninja_300_3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/Kawasaki_Ninja_300_3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/Kawasaki_Ninja_300_3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/Kawasaki_Ninja_300_3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/Kawasaki_Ninja_300_3.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/Kawasaki_Ninja_300_3.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 top speed is 93mph, but the clocks show more</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/Kawasaki_Ninja_300_3.jpg?quality=50" alt="Kawasaki Ninja 300 top speed is 93mph, but the clocks show more"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/Kawasaki_Ninja_300_group.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/Kawasaki_Ninja_300_group.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/Kawasaki_Ninja_300_group.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/Kawasaki_Ninja_300_group.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/Kawasaki_Ninja_300_group.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/Kawasaki_Ninja_300_group.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 vs Yamaha YZF-R3 vs KTM RC390</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/Kawasaki_Ninja_300_group.jpg?quality=50" alt="Kawasaki Ninja 300 vs Yamaha YZF-R3 vs KTM RC390"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/upload/301744/images/1440x960/ninja-300-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/upload/301744/images/1440x960/ninja-300-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/upload/301744/images/951x634/ninja-300-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/upload/301744/images/870x580/ninja-300-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/upload/301744/images/1026x684/ninja-300-1.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/upload/301744/images/600x400/ninja-300-1.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span></span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/upload/301744/images/75x75/ninja-300-1.jpg?quality=50" alt=""/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-01.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-01.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 ridden on track cornering</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-01.jpg?quality=50" alt="Kawasaki Ninja 300 ridden on track cornering"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-02.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-02.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 knee down on bend</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-02.jpg?quality=50" alt="Kawasaki Ninja 300 knee down on bend"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-03.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-03.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 on road cornering</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-03.jpg?quality=50" alt="Kawasaki Ninja 300 on road cornering"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-04.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-04.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 on a bridge ridden in leathers</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-04.jpg?quality=50" alt="Kawasaki Ninja 300 on a bridge ridden in leathers"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-05.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-05.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 front end tracking shot with headlight</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-05.jpg?quality=50" alt="Kawasaki Ninja 300 front end tracking shot with headlight"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-06.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-06.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 overhead cornering shot</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-06.jpg?quality=50" alt="Kawasaki Ninja 300 overhead cornering shot"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-07.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-07.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-07.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-07.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-07.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-07.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 close cropped leaning in bend</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-07.jpg?quality=50" alt="Kawasaki Ninja 300 close cropped leaning in bend"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-08.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-08.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-08.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-08.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-08.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-08.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 with knee almost down</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-08.jpg?quality=50" alt="Kawasaki Ninja 300 with knee almost down"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-09.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-09.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-09.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-09.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-09.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-09.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 engine</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-09.jpg?quality=50" alt="Kawasaki Ninja 300 engine"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-10.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-10.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 brake lever</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-10.jpg?quality=50" alt="Kawasaki Ninja 300 brake lever"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-11.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-11.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 dials</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-11.jpg?quality=50" alt="Kawasaki Ninja 300 dials"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-12.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-12.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-12.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-12.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-12.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-12.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 brake disc</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-12.jpg?quality=50" alt="Kawasaki Ninja 300 brake disc"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-13.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-13.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-13.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-13.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-13.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-13.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 luggage compartment</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-13.jpg?quality=50" alt="Kawasaki Ninja 300 luggage compartment"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-14.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-14.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-14.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-14.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-14.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-14.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 frame</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-14.jpg?quality=50" alt="Kawasaki Ninja 300 frame"/>
+</a>
+				
+<a class="rsImg" href="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-15.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xxl="https://mcn-images.bauersecure.com/PageFiles/489811/1440x960/ninja300-15.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-xl="https://mcn-images.bauersecure.com/PageFiles/489811/951x634/ninja300-15.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-l="https://mcn-images.bauersecure.com/PageFiles/489811/870x580/ninja300-15.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-m="https://mcn-images.bauersecure.com/PageFiles/489811/1026x684/ninja300-15.jpg?mode=max&amp;quality=90&amp;scale=down"
+   data-href-s="https://mcn-images.bauersecure.com/PageFiles/489811/600x400/ninja300-15.jpg?mode=max&amp;quality=90&amp;scale=down">
+	<span>Kawasaki Ninja 300 static in front of graffiti</span>
+	<img class="rsTmb" src="https://mcn-images.bauersecure.com/PageFiles/489811/75x75/ninja300-15.jpg?quality=50" alt="Kawasaki Ninja 300 static in front of graffiti"/>
+</a>
+
+
+
+<div class="rsContent" data-gallery-video>
+	<img src="https://img.youtube.com/vi/rQ3c_VOHTHQ/default.jpg" class="rsTmb">
+	<div class="rsTmb">
+		<span class="rsVideoTmb fi-play"></span>
+	</div>
+	
+	<div class="full-screen-gallery__video-slide">
+		
+
+<div class="video-player">
+		<div class="video-player__container" data-video-url="https://www.youtube.com/embed/rQ3c_VOHTHQ"
+				data-enable-js-api="true"
+				data-ga-tracking-category=""
+				data-ga-tracking-action=""
+				data-ga-tracking-label="">
+				<img alt="" class="video-player__container__preview" data-lazy-interchange="[https://img.youtube.com/vi/rQ3c_VOHTHQ/hqdefault.jpg, small], [https://img.youtube.com/vi/rQ3c_VOHTHQ/maxresdefault.jpg, medium]" data-src="" src="" />
+
+				<span class="video-player__container__button"></span>
+		</div>
+</div>
+	</div>
+</div>
+
+<div class="rsContent" data-gallery-video>
+	<img src="https://img.youtube.com/vi/U9e2bYbodu8/default.jpg" class="rsTmb">
+	<div class="rsTmb">
+		<span class="rsVideoTmb fi-play"></span>
+	</div>
+	
+	<div class="full-screen-gallery__video-slide">
+		
+
+<div class="video-player">
+		<div class="video-player__container" data-video-url="https://www.youtube.com/embed/U9e2bYbodu8"
+				data-enable-js-api="true"
+				data-ga-tracking-category=""
+				data-ga-tracking-action=""
+				data-ga-tracking-label="">
+				<img alt="" class="video-player__container__preview" data-lazy-interchange="[https://img.youtube.com/vi/U9e2bYbodu8/hqdefault.jpg, small], [https://img.youtube.com/vi/U9e2bYbodu8/maxresdefault.jpg, medium]" data-src="" src="" />
+
+				<span class="video-player__container__button"></span>
+		</div>
+</div>
+	</div>
+</div>
+		</div>
+	</div>
+
+		<script async src="//www.youtube.com/iframe_api"></script>
+</section></article>
+				</main>
+			</div>
+
+			<div data-id="inline-footer" class="footer-ad advert"></div>
+			
+<footer id="siteFooter" class="site-footer">
+	<ul class="site-footer__social">
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--facebook" href="https://www.facebook.com/MotorcycleNews" target="_blank" aria-label="Facebook">
+				<span class="fi-social-facebook"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--twitter" href="https://www.twitter.com/MCNNews/" target="_blank" aria-label="Twitter">
+				<span class="fi-social-twitter"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link site-footer__social__link--youtube" href="https://www.youtube.com/user/motorcyclenewsdotcom/" target="_blank" aria-label="Youtube">
+				<span class="fi-social-youtube"></span>
+			</a>
+		</li>
+		<li class="site-footer__social__item">
+			<a class="site-footer__social__link" href="https://www.motorcyclenews.com/contact-us/" aria-label="Contact us">
+				<span class="fi-mail"></span>
+			</a>
+		</li>
+	</ul>
+	<div>
+		<a href="http://www.bauermedia.co.uk" target="_blank">
+			<img alt="" class="site-footer__logo" data-src="https://static-cdn.bauersecure.com/Common/Logos/bauer.52x52.png" src="/dist/_5-40-101/images/placeholders/transparent.png" />
+		</a>
+		
+		
+<nav class="clearfix">
+	<ul class="site-footer__nav">
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="http://www.greatmagazines.co.uk/bws/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_content=mcnbottonnav&amp;utm_campaign=BAU_mcn"
+				    rel='nofollow'>
+					Subscribe
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/about/"
+				    >
+					About Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/contact-us/"
+				    >
+					Contact Us
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/terms-of-use/"
+				    >
+					Terms of Use
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="/privacy-policy/"
+				    >
+					Cookie &amp; Privacy Policy
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://products.motorcyclenews.com/"
+				   target='_blank' >
+					Products
+				</a>
+			</li>
+			<li class="site-footer__nav__item">
+				<a class="site-footer__nav__link" href="https://www.bauerlegal.co.uk/editorial-complaints-policy"
+				    rel='nofollow'>
+					Complaints
+				</a>
+			</li>
+		<li class="site-footer__nav__item">
+			<a class="site-footer__nav__link privacy-settings" href="#">Privacy settings</a>
+		</li>
+	</ul>
+</nav>
+
+		
+		<p class="site-footer__copyright">
+			&copy; 1955-2021 Bauer Media Group
+		</p>
+		<p class="site-footer__company-info">
+			Bauer Media Group consists of: Bauer Consumer Media Ltd, Company number: 01176085, Bauer Radio Ltd, Company Number: 1394141 <br />
+			Registered Office: Media House, Peterborough Business Park, Lynch Wood, Peterborough, PE2 6EA H Bauer Publishing, <br />
+			Company Number: LP003328 Registered Office: Academic House, 24-28 Oval Road, London, NW1 7DT.<br />
+			All registered in England and Wales. VAT no 918 5617 01
+			<br />
+			H Bauer Publishing are authorised and regulated for credit broking by the FCA (Ref No. 845898)
+		</p>
+	</div>
+</footer>
+
+			<div id="overlay" class="overlay-ad advert"></div>
+		</div>
+	</div>
+
+	<div class="off-canvas position-right is-closed" id="offCanvasRight" data-off-canvas>
+		
+<div class="grid-x search-box" data-search-url="/site-search/">
+	<div class="cell small-10 medium-11 large-10">
+		<input class="search-box__input" name="searchField" type="search" placeholder="Search by keyword" value="">
+	</div>
+	<div class="cell small-2 medium-1 large-2">
+		<button class="search-box__button button" type="button">
+			<span class="search-box__button__icon fi-icon fi-magnifying-glass"></span>
+		</button>
+	</div>
+</div>
+		
+<ul class="mobile-site-nav">
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bike-reviews/" 
+		    >
+			Bike Reviews
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/bike-reviews/search-results/"
+						    >
+							Search bike reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.motorcyclenews.com/mcn-motorycles/"
+						    >
+							Our test bikes
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/bikes-for-sale/" 
+		    >
+			Bikes For Sale
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/bikes-for-sale/search-results/"
+						    >
+							Search bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sell-your-bike/"
+						    >
+							Sell your bike
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="http://www.mcnbikecheck.com/?utm_source=mcn&amp;utm_medium=referral&amp;utm_campaign=mainmenu"
+						    >
+							Bike check
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/news/" 
+		    >
+			News
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/"
+						    >
+							Latest news
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/"
+						    >
+							New bikes
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-tech/"
+						    >
+							New tech
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/sport/"
+						    >
+							Sport
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/new-bikes/electric-motorbikes-coming-soon-/"
+						    >
+							Electric bikes coming soon
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="/advice/" 
+		    >
+			Advice
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/best/"
+						    >
+							Best
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/riding-tips/"
+						    >
+							Riding tips
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/learning-to-ride/"
+						    >
+							Learn to ride a motorbike with MCN
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/tests/"
+						    >
+							Tests
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/maintenance/"
+						    >
+							Maintenance
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/travelling-touring/"
+						    >
+							Travelling touring
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/parts/"
+						    >
+							Parts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/buying-selling/"
+						    >
+							Buying and selling
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/advice/inspiration/"
+						    >
+							Inspiration
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-gear/"
+						    >
+							New gear
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/product-picks/"
+						    >
+							Product picks
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/product-reviews/"
+						    >
+							Product reviews
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/new-rider/"
+						    >
+							New riders
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.motorcyclenews.com/insurance/" 
+		    >
+			Insurance
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="#" 
+		    >
+			Get involved
+		</a>
+			<ul class="mobile-site-nav__sub-nav">
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/news/ride5000miles/"
+						    >
+							#Ride5000miles
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="/newsletter/"
+						    >
+							Subscribe to MCN weekly newsletter
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.shotdeadinthehead.com/mcn?utm_source=MCN%5FHP%5FSD%5FHP&amp;utm_medium=LN&amp;utm_content=MP&amp;utm_campaign=mcn%5Fhomepage%5Fshop%5Fbutton%5Fcms&amp;pushnav=menu"
+						   target='_blank' rel='nofollow'>
+							Buy MCN T-shirts
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnfestival.com/"
+						   target='_blank' rel='nofollow'>
+							MCN Festival
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.scottishmotorcycleshow.com"
+						   target='_blank' rel='nofollow'>
+							Scottish Motorcycle Show
+						</a>
+					</li>
+					<li class="mobile-site-nav__sub-nav__item">
+						<a class="mobile-site-nav__sub-nav__item__link" href="https://www.mcnmotorcycleshow.com/"
+						    rel='nofollow'>
+							London Motorcycle Show
+						</a>
+					</li>
+			</ul>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.greatmagazines.co.uk/mcn?utm_source=dynamic&amp;utm_medium=bws&amp;utm_campaign=bau_mcn&amp;utm_content=navbar" 
+		   target='_blank' >
+			Subscribe
+		</a>
+	</li>
+	<li class="mobile-site-nav__item">
+		<a class="mobile-site-nav__item__link" href="https://www.sportsbikeshop.co.uk/mcn/#/500,2122,742" 
+		   target='_blank' >
+			MCN Shop
+		</a>
+	</li>
+</ul>
+	</div>
+
+	<div class="off-canvas position-left is-closed" id="offCanvasLeft" data-off-canvas>
+		
+	</div>
+
+	
+<script type="text/javascript">
+	coreJs.chainCompleteCallbacks.push(function() {
+
+				var gptData = {"site":"SMOTORCYCLING/SMOT_MCN","targetingKeyValues":{"make_mcn":"kawasaki","model_mcn":"kawasaki_ninja-300","category_mcn":"sports"},"maxMpuCount":30};
+
+				//tcf version 2
+				window.__tcfapi('addEventListener', 2, function (tcData, success) {{
+					if (success && tcData.eventStatus === 'cmpuishown') {{
+						console.debug('SP: Surfacing CMP interface');
+					}}
+
+					if (success && tcData.eventStatus === 'useractioncomplete') {{
+						console.debug('SP: User submitted consent choices');
+
+						if (mcn.initGpt) {
+							mcn.initGpt(gptData);
+						}
+					}}
+
+					if (success && tcData.eventStatus === 'tcloaded') {{
+						console.debug('SP: TC string available');
+						window.__tcfapi('removeEventListener', 2, function (success) {{
+							if (success && mcn.initGpt) {{
+								mcn.initGpt(gptData);
+							}}
+						}}, tcData.listenerId);
+					}}
+				}});
+				});
+
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//securepubads.g.doubleclick.net/tag/js/gpt.js", true);
+	});
+
+</script>
+	
+
+<script type="text/javascript">
+	coreJs.windowLoadCallbacks.push(function() {
+		coreJs.injectScript("//experience.tinypass.com/xbuilder/experience/load?aid=x9U7rnorpu", true, function() {
+			var tags = ["Templates.BikeReviews.DetailsPage"];
+
+tags.push("KAWASAKI");	
+tags.push("KAWASAKI+NINJA%20300");
+			window.tp.push(["setTags", tags]);
+			window.tp.push(["setContentSection", "Bike Reviews"]);
+		});
+	});
+
+	
+</script>
+</body>
+
+</html>
