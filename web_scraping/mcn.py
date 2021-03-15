@@ -1,7 +1,10 @@
 # Script to scrape motorcyclenews.com for reviews
 import pickle
+import re
+import sys
 import urllib.request
-from os import mkdir
+from os import mkdir, listdir
+from os.path import isfile, join
 from time import sleep
 from urllib.error import HTTPError
 from urllib.parse import urljoin
@@ -12,6 +15,14 @@ base_url = "https://www.motorcyclenews.com"
 data_folder = 'data'
 mcn_folder = 'mcn'
 html_folder = 'html'
+
+# There's an Enfield and Royal Enfield - should that be treated the same? Not really familiar with those bikes
+manufacturers = ["APRILIA", "ARTISAN", "BIMOTA", "BMW", "BENELLI", "CAGIVA", "CF MOTO", "ENFIELD", "DERBI", "DUCATI",
+                 "GILERA", "HARLEY-DAVIDSON",
+                 "HESKETH", "HUSQVARNA", "HONDA", "LEXMOTO", "KAWASAKI", "KTM", "MZ", "MONDIAL", "MOTO-GUZZI", "MORINI",
+                 "MV-AGUSTA", "PIAGGIO", "PEUGEOT",
+                 "RIEJU", "ROYAL ENFIELD", "SHERCO", "SUZUKI", "SWM", "TRIUMPH", "VICTORY", "YAMAHA", "WK BIKES",
+                 "ZONTES"]
 
 
 def build_url(page_number):
@@ -61,8 +72,60 @@ def scrape_review_html_pages():
         sleep(1)
 
 
+def extractModelAndYear(model_and_year):
+    # MCN doesn't include the year for some reason for the 72
+    if model_and_year == "HARLEY-DAVIDSON XL1200 SPORTSTER 72":
+        model_and_year = "HARLEY-DAVIDSON XL1200 SPORTSTER 72 (2012 - 2016)"
+
+    matches = re.findall(r"^([\w\-]+) ([\w\-\s./&+]+) \(([\d]+)\s?-\s?([\w]+)\)", model_and_year)[0]
+
+    manufacturer = ""
+    model = ""
+    year_start = 1800
+    year_end = 1800
+
+    curr_string = ""
+    found_manufacturer = False
+    for index, match in enumerate(matches, start=0):
+        if not found_manufacturer:
+            if match in manufacturers:
+                manufacturer = match
+                found_manufacturer = True
+                curr_string = ""
+            elif f'{curr_string} {match.split(" ")[0]}' in manufacturers:
+                manufacturer = curr_string + match.split(" ")[0]
+                found_manufacturer = True
+                curr_string = match.replace(match.split(" ")[0], "")
+            else:
+                curr_string += match
+        if found_manufacturer and index >= 1:
+            if match.isnumeric() and len(match) == 4:
+                model = curr_string
+                year_start = int(match)
+                year_end = matches[index + 1]
+                break
+            else:
+                curr_string += match
+
+    return manufacturer, model, year_start, year_end
+
+
+def parseHtml():
+    path = f'{data_folder}/{mcn_folder}/{html_folder}'
+    files = [f for f in listdir(path) if isfile(join(path, f))]
+
+    for file in files:
+        html = BeautifulSoup(open(f'{path}/{file}'))
+
+        # Extract model and year
+        model_and_year = html.find("h1").text.upper().replace("REVIEW", "")
+        print(model_and_year)
+        manufacturer, model, year_start, year_end = extractModelAndYear(model_and_year)
+
+
 if __name__ == "__main__":
     # uncomment to regenerate review or html pages
     # scrape_review_urls()
     # scrape_review_html_pages()
+    parseHtml()
     pass
