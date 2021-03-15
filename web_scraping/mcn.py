@@ -72,7 +72,7 @@ def scrape_review_html_pages():
         sleep(1)
 
 
-def extractModelAndYear(model_and_year):
+def extract_model_and_year(model_and_year):
     # MCN doesn't include the year for some reason for the 72
     if model_and_year == "HARLEY-DAVIDSON XL1200 SPORTSTER 72":
         model_and_year = "HARLEY-DAVIDSON XL1200 SPORTSTER 72 (2012 - 2016)"
@@ -110,17 +110,43 @@ def extractModelAndYear(model_and_year):
     return manufacturer, model, year_start, year_end
 
 
+def extract_power_seat_and_weight(at_a_glance_items):
+    power = None
+    seat_category = None
+    seat_height = None
+    weight_category = None
+    weight = None
+    for item in at_a_glance_items:
+        item = item.text
+        item_arr = item.split(":")
+        category = item_arr[0].strip()
+        if category == "Power":
+            power = re.findall(r":\s+([\d.]+)", item)[0]
+        elif category == "Seat height":
+            match = re.findall(r":\s+([\w]+)\s+\(([\d.]+)", item)[0]
+            seat_category, seat_height = match[0], match[1]
+        elif category == "Weight":
+            match = re.findall(r":\s+([\w]+)\s+\(([\d.]+)", item)[0]
+            weight_category, weight = match[0], match[1]
+
+    return power, seat_height, weight
+
+
 def parseHtml():
     path = f'{data_folder}/{mcn_folder}/{html_folder}'
     files = [f for f in listdir(path) if isfile(join(path, f))]
 
     for file in files:
-        html = BeautifulSoup(open(f'{path}/{file}'))
+        html = BeautifulSoup(open(f'{path}/{file}'), features="html.parser")
 
-        # Extract model and year
+        # # Extract model and year
         model_and_year = html.find("h1").text.upper().replace("REVIEW", "")
         print(model_and_year)
-        manufacturer, model, year_start, year_end = extractModelAndYear(model_and_year)
+        manufacturer, model, year_start, year_end = extract_model_and_year(model_and_year)
+
+        # Extract information from "At a glance" section
+        at_a_glance_items = html.find_all("tr", class_="review__at-a-glance__item")
+        power, seat_height, weight = extract_power_seat_and_weight(at_a_glance_items)
 
 
 if __name__ == "__main__":
