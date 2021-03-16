@@ -8,7 +8,7 @@ class Motorcycle:
     :param price: price of this motorcycle if I were to go out and buy it today (based off kbb values)
     :param category: type of motorcycle (sport bike, adventure bike, naked bike, etc.)
     :param is_new: is a bike that is currently being produced/manufactured - might remove this later as this might complicate things a bit
-    :param engine_size: size of the engine ub cubic centimeters
+    :param engine_size: size of the engine in cubic centimeters
     :param engine_type: engine type - might just keep this at v4, i4, i2, v-twin, etc. for now
     :param insurance_group: group from 1 to 17 (17 being the most expensive) the motorcycle is in
     :param mpg: mpg of the motorcycle
