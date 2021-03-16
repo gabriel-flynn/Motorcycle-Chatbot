@@ -1,7 +1,6 @@
 # Script to scrape motorcyclenews.com for reviews
 import pickle
 import re
-import sys
 import urllib.request
 from os import mkdir, listdir
 from os.path import isfile, join
@@ -185,36 +184,87 @@ def extract_rating_and_review_section_information(html):
                   equipment=rating_list[5], equipment_review_text=equipment_rating_text)
 
 
+def get_engine_type(html, engine_type_str):
+    # Check engine type
+    if re.search(r"(flat four)", engine_type_str):
+        engine_type = "flat4"
+    elif re.search(r"(transverse four)", engine_type_str):
+        engine_type = "transverse4"
+    elif re.search(r"(v4|vee 4)", engine_type_str):
+        engine_type = "v4"
+    elif re.search(
+            r"(inline four|inlinefour|parallel 4cylinder|in line four|vfour|four cylinder|in line 4|inline 4|dohc four|inline, fourcylinder)",
+            engine_type_str):
+        engine_type = "i4"
+    elif re.search(r"(electric|amp|brushless motor|magnet)", engine_type_str):
+        engine_type = "electric"
+    elif re.search(r"(ltwin)", engine_type_str):
+        engine_type = "LTwin"
+    elif re.search(r"(vtwin|v twin|vwin|2 cylinder 75 degree)", engine_type_str):
+        engine_type = "vtwin"
+    elif re.search(r"(flat twin|flattwin)", engine_type_str):
+        engine_type = "flat2"
+    elif re.search(r"(parallel twin|paralleltwin|in line twin|twincylinder|parallel 2cylinder|paralle twin|twin)",
+                   engine_type_str):  # add twin
+        engine_type = "i2"
+    elif re.search(r"(threecylinder|three cylinder|triple|3cylinder|inline three)", engine_type_str):
+        engine_type = "i3"
+    elif re.search(r"(flat six|flat6|horizontallyopposed sixcylinder)", engine_type_str):
+        engine_type = "flat6"
+    elif re.search(r"(inline six|inline 6cylinder)", engine_type_str):
+        engine_type = "i6"
+    elif re.search(r"(boxer twin|boxertwin|twocylinder [\w\s]+boxer engine)", engine_type_str):
+        engine_type = "box2"
+    elif re.search(r"(single)", engine_type_str):
+        engine_type = "i1"
+    else:
+        model_and_year = html.find("h1").text.upper().replace("REVIEW", "")
+        print(model_and_year)
+        engine_type = ""
+        print(engine_type_str)
+    return engine_type
+
+
 def extract_engine_info_insurance_info_tank_range_and_power(html):
     sections = html.select(".review__facts-and-figures__table")
 
     # Section index 0 - Specs
+    specs = [spec.text for spec in sections[0].select(".review__facts-and-figures__item__value")]
+    engine_size = specs[0]
+    engine_type = get_engine_type(html, specs[1].lower().replace("-", ""))
 
     # Section index 1 - Mpg, costs & insurance
-
+    # mpg_cost_insurance = [item.text for item in sections[1].select(".review__facts-and-figures__item__value")]
+    # mpg_uk_to_us_factor = 3.785411784/4.54609
+    # print(mpg_cost_insurance[0])
+    # mpg = float(mpg_cost_insurance[0].split(" ")[0]) * mpg_uk_to_us_factor
     # Section index 2 - Top speed & performance
+    return engine_type
+
 
 def parseHtml():
     path = f'{data_folder}/{mcn_folder}/{html_folder}'
     files = [f for f in listdir(path) if isfile(join(path, f))]
 
+    engine_types = set()
     for file in files:
         html = BeautifulSoup(open(f'{path}/{file}'), features="html.parser")
 
-        # # Extract model and year
-        model_and_year = html.find("h1").text.upper().replace("REVIEW", "")
-        print(model_and_year)
-        manufacturer, model, year_start, year_end = extract_model_and_year(model_and_year)
+        # # # Extract model and year
 
-        # Extract information from "At a glance" section
-        at_a_glance_items = html.find_all("tr", class_="review__at-a-glance__item")
-        power, seat_height, weight = extract_power_seat_and_weight(at_a_glance_items)
+        # manufacturer, model, year_start, year_end = extract_model_and_year(model_and_year)
+        #
+        # # Extract information from "At a glance" section
+        # at_a_glance_items = html.find_all("tr", class_="review__at-a-glance__item")
+        # power, seat_height, weight = extract_power_seat_and_weight(at_a_glance_items)
+        #
+        # # Extract rating information
+        # review = extract_rating_and_review_section_information(html)
+        # # print(rating_text)
 
-        # Extract rating information
-        review = extract_rating_and_review_section_information(html)
-        # print(rating_text)
-
-        extract_engine_info_insurance_info_tank_range_and_power(html)
+        engine_type = extract_engine_info_insurance_info_tank_range_and_power(html)
+        engine_types.add(engine_type)
+    print(engine_types)
 
 
 if __name__ == "__main__":
