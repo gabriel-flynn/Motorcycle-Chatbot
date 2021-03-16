@@ -10,6 +10,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
+from web_scraping import kbb
 from web_scraping.Review import Review
 
 base_url = "https://www.motorcyclenews.com"
@@ -78,7 +79,7 @@ def extract_model_and_year(model_and_year):
     if model_and_year == "HARLEY-DAVIDSON XL1200 SPORTSTER 72":
         model_and_year = "HARLEY-DAVIDSON XL1200 SPORTSTER 72 (2012 - 2016)"
 
-    matches = re.findall(r"^([\w\-]+) ([\w\-\s./&+]+) \(([\d]+)\s?-\s?([\w]+)\)", model_and_year)[0]
+    matches = re.findall(r"^([\w\-]+) ([\w\-\s./&+°]+) \(([\d]+)\s?-\s?([\w]+)\)", model_and_year)[0]
 
     manufacturer = ""
     model = ""
@@ -142,11 +143,15 @@ def traverse_ratings(ratings):
     return rating_text.strip()
 
 
-def extract_rating_and_review_section_information(html):
+def extract_rating_and_review_section_information(html, model):
     ratings = html.select(".review__main-content .star-rating__text")  # Overall rating from 1-5
     rating_list = []
     for rating in ratings:
         rating_list.append(int(rating.text[1:2]))
+
+    if not rating_list:
+        for i in range (6):
+            rating_list.append(None)
 
     # Overall Rating
     rating_text = html.select(".review__main-content__section:nth-of-type(1)  p")  # Ride quality and brakes
@@ -175,6 +180,30 @@ def extract_rating_and_review_section_information(html):
     # Equipment
     rating_text = html.select(".review__main-content__section:nth-of-type(8)  p")  # Ride quality and brakes
     equipment_rating_text = traverse_ratings(rating_text)
+
+    if model in {"HUSQVARNA 701 ENDURO (2015 - ON)", "HARLEY-DAVIDSON ROAD GLIDE SPECIAL (2015 - ON)", "KAWASAKI Z650 (2017 - 2019)", "SUZUKI GSX-R1000R (2017 - ON)"}:
+        rating_list.insert(1, None)
+    elif model in {"SWM SIX DAYS 440 (2018 - ON)"}:
+        rating_list.insert(2, None)
+        rating_list.insert(5, None)
+    elif model in {"HARLEY-DAVIDSON DELUXE (2018 - ON)"}:
+        rating_list.insert(3, None)
+    elif model in {"YAMAHA MT-10 SP (2017 - ON)"}:
+        rating_list.insert(1, None)
+        rating_list.insert(2, None)
+    elif model in {"SUZUKI DL1050 V-STROM (2020 - ON)"}:
+        rating_list.insert(4, None)
+        rating_list.insert(5, None)
+    elif model in {"TRIUMPH ROCKET 3 (2020-ON)", "HONDA CB1100RS (2017 - 2021)"}:
+        rating_list.insert(5, None)
+    elif model in {"YAMAHA MT-07 (2021 - ON)", "KAWASAKI Z650 (2020 - ON)"}:
+        rating_list.insert(4, None)
+    elif model in {"YAMAHA XMAX 400 (2018 - ON)"}:
+        rating_list.insert(0, None)
+        rating_list.insert(1, None)
+        rating_list.insert(2, None)
+        rating_list.insert(3, None)
+        rating_list.insert(5, None)
 
     return Review(overall_rating=rating_list[0], overall_rating_review_text=overall_rating_text,
                   ride_quality=rating_list[1], ride_quality_review_text=ride_quality_rating_text,
@@ -219,9 +248,9 @@ def get_engine_type(html, engine_type_str):
         engine_type = "i1"
     else:
         model_and_year = html.find("h1").text.upper().replace("REVIEW", "")
-        print(model_and_year)
+        # print(model_and_year)
         engine_type = ""
-        print(engine_type_str)
+        # print(engine_type_str)
     return engine_type
 
 
@@ -234,12 +263,25 @@ def extract_engine_info_insurance_info_tank_range_and_power(html):
     engine_type = get_engine_type(html, specs[1].lower().replace("-", ""))
 
     # Section index 1 - Mpg, costs & insurance
-    # mpg_cost_insurance = [item.text for item in sections[1].select(".review__facts-and-figures__item__value")]
-    # mpg_uk_to_us_factor = 3.785411784/4.54609
-    # print(mpg_cost_insurance[0])
-    # mpg = float(mpg_cost_insurance[0].split(" ")[0]) * mpg_uk_to_us_factor
+    mpg_cost_insurance = [item.text for item in sections[1].select(".review__facts-and-figures__item__value")]
+    mpg = None
+    if mpg_cost_insurance[0] != '-':
+        mpg_uk_to_us_factor = 3.785411784/4.54609
+        mpg = float(mpg_cost_insurance[0].split(" ")[0]) * mpg_uk_to_us_factor
+    insurance_group = None
+    if '-' not in mpg_cost_insurance[5]:
+        insurance_group = int(mpg_cost_insurance[5].split(" ")[0])
+
     # Section index 2 - Top speed & performance
-    return engine_type
+    power_and_tank_range = [item.text for item in sections[2].select(".review__facts-and-figures__item__value")]
+    power = None
+    if '-' not in power_and_tank_range[0]:
+        power = int(power_and_tank_range[0].split(" ")[0])
+    tank_range = None
+    if '-' not in power_and_tank_range[4]:
+        tank_range = power_and_tank_range[4].split(" ")[0]
+
+    return engine_size, engine_type, mpg, insurance_group, power, tank_range
 
 
 def parseHtml():
@@ -247,23 +289,27 @@ def parseHtml():
     files = [f for f in listdir(path) if isfile(join(path, f))]
 
     engine_types = set()
-    for file in files:
+    for index, file in enumerate(files, start=0):
         html = BeautifulSoup(open(f'{path}/{file}'), features="html.parser")
 
-        # # # Extract model and year
+        # Extract model and year
+        model_and_year = html.find("h1").text.upper().replace("REVIEW", "").strip()
+        print(f'\n\n{model_and_year}\t{index}')
+        manufacturer, model, year_start, year_end = extract_model_and_year(model_and_year)
 
-        # manufacturer, model, year_start, year_end = extract_model_and_year(model_and_year)
-        #
-        # # Extract information from "At a glance" section
-        # at_a_glance_items = html.find_all("tr", class_="review__at-a-glance__item")
-        # power, seat_height, weight = extract_power_seat_and_weight(at_a_glance_items)
-        #
-        # # Extract rating information
-        # review = extract_rating_and_review_section_information(html)
-        # # print(rating_text)
+        # Extract information from "At a glance" section
+        at_a_glance_items = html.find_all("tr", class_="review__at-a-glance__item")
+        power, seat_height, weight = extract_power_seat_and_weight(at_a_glance_items)
 
-        engine_type = extract_engine_info_insurance_info_tank_range_and_power(html)
+        # Extract rating information
+        review = extract_rating_and_review_section_information(html, model_and_year)
+        # print(rating_text)
+
+        engine_size, engine_type, mpg, insurance_group, power, tank_range = extract_engine_info_insurance_info_tank_range_and_power(html)
         engine_types.add(engine_type)
+
+        # Get the price using kbb
+        kbb.get_price(f'{year_start} {manufacturer} {model}')
     print(engine_types)
 
 

@@ -14,7 +14,7 @@ class Review:
     :param equipment: score of the equipment category in the review
     :param equipment_review_text: text listed under the equipment review
     """
-    def __init__(self, overall_rating, overall_rating_review_text, ride_quality, ride_quality_review_text, ride_quality_text, engine, engine_review_text, reliability, reliability_review_text, value, value_review_text, equipment, equipment_review_text):
+    def __init__(self, overall_rating, overall_rating_review_text, ride_quality, ride_quality_review_text, engine, engine_review_text, reliability, reliability_review_text, value, value_review_text, equipment, equipment_review_text):
         self.equipment_review_text = equipment_review_text
         self.equipment = equipment
         self.value_review_text = value_review_text
@@ -23,7 +23,6 @@ class Review:
         self.reliability = reliability
         self.engine_review_text = engine_review_text
         self.engine = engine
-        self.ride_quality_text = ride_quality_text
         self.ride_quality_review_text = ride_quality_review_text
         self.ride_quality = ride_quality
         self.overall_rating_review_text = overall_rating_review_text
