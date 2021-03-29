@@ -1,4 +1,5 @@
 # Script to scrape motorcyclenews.com for reviews
+import os
 import pickle
 import re
 import urllib.request
@@ -9,9 +10,15 @@ from urllib.error import HTTPError
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
 
-from web_scraping import kbb
+from web_scraping import kbb, wikipedia
+from web_scraping.Motorcycle import Motorcycle
 from web_scraping.Review import Review
+from web_scraping.model.Models import Motorcycle as MotorcycleModel
+from web_scraping.model.Models import Review as ReviewModel
+from dotenv import load_dotenv
 
 base_url = "https://www.motorcyclenews.com"
 data_folder = 'data'
@@ -150,7 +157,7 @@ def extract_rating_and_review_section_information(html, model):
         rating_list.append(int(rating.text[1:2]))
 
     if not rating_list:
-        for i in range (6):
+        for i in range(6):
             rating_list.append(None)
 
     # Overall Rating
@@ -181,7 +188,8 @@ def extract_rating_and_review_section_information(html, model):
     rating_text = html.select(".review__main-content__section:nth-of-type(8)  p")  # Ride quality and brakes
     equipment_rating_text = traverse_ratings(rating_text)
 
-    if model in {"HUSQVARNA 701 ENDURO (2015 - ON)", "HARLEY-DAVIDSON ROAD GLIDE SPECIAL (2015 - ON)", "KAWASAKI Z650 (2017 - 2019)", "SUZUKI GSX-R1000R (2017 - ON)"}:
+    if model in {"HUSQVARNA 701 ENDURO (2015 - ON)", "HARLEY-DAVIDSON ROAD GLIDE SPECIAL (2015 - ON)",
+                 "KAWASAKI Z650 (2017 - 2019)", "SUZUKI GSX-R1000R (2017 - ON)"}:
         rating_list.insert(1, None)
     elif model in {"SWM SIX DAYS 440 (2018 - ON)"}:
         rating_list.insert(2, None)
@@ -266,7 +274,7 @@ def extract_engine_info_insurance_info_tank_range_and_power(html):
     mpg_cost_insurance = [item.text for item in sections[1].select(".review__facts-and-figures__item__value")]
     mpg = None
     if mpg_cost_insurance[0] != '-':
-        mpg_uk_to_us_factor = 3.785411784/4.54609
+        mpg_uk_to_us_factor = 3.785411784 / 4.54609
         mpg = float(mpg_cost_insurance[0].split(" ")[0]) * mpg_uk_to_us_factor
     insurance_group = None
     if '-' not in mpg_cost_insurance[5]:
@@ -288,8 +296,10 @@ def parseHtml():
     path = f'{data_folder}/{mcn_folder}/{html_folder}'
     files = [f for f in listdir(path) if isfile(join(path, f))]
 
+    moto_set = set()
     engine_types = set()
-    for index, file in enumerate(files, start=0):
+    category_set = set()
+    for index, file in enumerate(files):
         html = BeautifulSoup(open(f'{path}/{file}'), features="html.parser")
 
         # Extract model and year
@@ -305,17 +315,72 @@ def parseHtml():
         review = extract_rating_and_review_section_information(html, model_and_year)
         # print(rating_text)
 
-        engine_size, engine_type, mpg, insurance_group, power, tank_range = extract_engine_info_insurance_info_tank_range_and_power(html)
+        engine_size, engine_type, mpg, insurance_group, power, tank_range = extract_engine_info_insurance_info_tank_range_and_power(
+            html)
         engine_types.add(engine_type)
+        print(engine_size)
 
         # Get the price using kbb
-        kbb.get_price(f'{year_start} {manufacturer} {model}')
+        price = kbb.get_price(f'{year_start} {manufacturer} {model}')
+        price = 0 if price is None else price[1:].replace(",", "")
+        category = wikipedia.get_category(f'{manufacturer} {model}')
+        for c in category:
+            category_set.add(c)
+        category = " ".join(category)
+        moto = Motorcycle(make=manufacturer, model=model, year_start=year_start, year_end=year_end, price=price,
+                          category=category, engine_size=engine_size, engine_type=engine_type,
+                          insurance_group=insurance_group, mpg=mpg, tank_range=tank_range, power=power,
+                          seat_height=seat_height, weight=weight,
+                          review=review)
+        # print(moto)
+        moto_set.add(moto)
+    pickle.dump(moto_set, open(f'{data_folder}/{mcn_folder}/moto_set.pickle', 'wb'))
     print(engine_types)
+    print(category_set)
+
+
+def create_review_model(review):
+    review_model = ReviewModel(overall_rating=review.overall_rating,
+                               overall_rating_review_text=review.overall_rating_review_text,
+                               ride_quality=review.ride_quality,
+                               ride_quality_review_text=review.ride_quality_review_text, engine=review.engine,
+                               engine_review_text=review.engine_review_text, reliability=review.reliability,
+                               reliability_review_text=review.reliability_review_text, value=review.value,
+                               value_review_text=review.value_review_text, equipment=review.equipment,
+                               equipment_review_text=review.equipment_review_text)
+    return review_model
+
+
+def create_motorcycle_model(_moto):
+    review = create_review_model(_moto.review)
+    motorcycle = MotorcycleModel(make=_moto.make, model=_moto.model, year_start=_moto.year_start,
+                                 year_end=_moto.year_end,
+                                 price=_moto.price, category=_moto.category, engine_size=_moto.engine_size,
+                                 engine_type=_moto.engine_type,
+                                 insurance_group=_moto.insurance_group, mpg=_moto.mpg, tank_range=_moto.tank_range,
+                                 power=_moto.power, seat_height=_moto.seat_height, weight=_moto.weight,
+                                 review=review, review_id=review.id)
+    return motorcycle
 
 
 if __name__ == "__main__":
     # uncomment to regenerate review or html pages
     # scrape_review_urls()
     # scrape_review_html_pages()
-    parseHtml()
+    # parseHtml()
+    load_dotenv()
+    db_user = os.getenv('db_user')
+    db_pass = os.getenv('db_pass')
+    db_host = os.getenv('db_host')
+    db_port = os.getenv('db_port')
+    db_name = os.getenv('db_name')
+    engine = create_engine(f"mysql://{db_user}:{db_pass}@{db_host}/{db_name}", echo=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    moto_set = pickle.load(open(f'{data_folder}/{mcn_folder}/moto_set.pickle', 'rb'))
+    for _moto in moto_set:
+        moto = create_motorcycle_model(_moto)
+        session.add(moto)
+    session.commit()
     pass
