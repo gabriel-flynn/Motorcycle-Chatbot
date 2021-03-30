@@ -1,10 +1,10 @@
 import random
-import re
 
 import sqlite3
 import spacy
 from spacytextblob.spacytextblob import SpacyTextBlob
 
+from motorcycle_finder import MotorcycleFinder
 from helpers import is_no, is_yes_or_no
 
 
@@ -17,6 +17,7 @@ class Chatbot:
         self.user_data = user_data
         self.name = ""
         self.conn = sqlite3.connect("knowledge_base.db").cursor()
+        self.motorcycle_finder = MotorcycleFinder(ner=self.ner)
 
     # Controls the flow of the chatbot
     def start(self):
@@ -28,6 +29,7 @@ class Chatbot:
             else:
                 print("That's awesome that you're already familiar with motorcycling!")
             self.prompt_user_if_they_want_overview_of_motorcycle_categories()
+            self.motorcycle_finder.begin_questions()
 
     def get_name(self):
         greeting = "Hi, I'm Moto and I'm a chatbot that is very knowledgeable about motorcycles! " \
