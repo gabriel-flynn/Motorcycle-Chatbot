@@ -5,7 +5,6 @@ api_url = "http://localhost:8081"
 
 def get_user():
     r = requests.get(f"{api_url}/user")
-    print(r.status_code)
     if r.status_code == 200:
         return r.json()
 
