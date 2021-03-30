@@ -22,13 +22,13 @@ class Chatbot:
     # Controls the flow of the chatbot
     def start(self):
         if not self.user_data:
-            self.name = self.get_name()
-            is_new_motorcycles = self.greet_user()
-            if is_new_motorcycles:
-                self.provide_info_on_motorcycles()
-            else:
-                print("That's awesome that you're already familiar with motorcycling!")
-            self.prompt_user_if_they_want_overview_of_motorcycle_categories()
+            # self.name = self.get_name()
+            # is_new_motorcycles = self.greet_user()
+            # if is_new_motorcycles:
+            #     self.provide_info_on_motorcycles()
+            # else:
+            #     print("That's awesome that you're already familiar with motorcycling!")
+            # self.prompt_user_if_they_want_overview_of_motorcycle_categories()
             self.motorcycle_finder.begin_questions()
 
     def get_name(self):
