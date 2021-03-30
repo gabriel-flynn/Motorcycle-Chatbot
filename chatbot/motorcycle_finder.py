@@ -101,7 +101,7 @@ class MotorcycleFinder:
                     doc = self.ner(seat_height)
             self.seat_height = int(seat_height)
 
-    # TODO: The NER is a little finicky - 2000 to 2009 doesn't get detected as a date but 2000 to 2009 does (maybe try the medium dataset for this to see if it works better?)
+    # TODO: The NER is a little finicky - 2000 to 2009 doesn't get detected as a date but 2000 to 2010 does (maybe try the medium dataset for this to see if it works better?)
     def get_year_range(self):
         years = input(
             "What is the year range you're looking for? Ex. I'm looking for one between 2000-2009, 2000 to 2009, 2000 2009, etc.  \n"
