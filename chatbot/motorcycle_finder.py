@@ -4,7 +4,7 @@ from botapi.Motorcycle import get_motorcycles
 
 class MotorcycleFinder:
     def __init__(self, ner):
-        self.category = None
+        self.categories = []
         self.budget = None
         self.seat_height = None
         self.year_start = 1800
@@ -25,10 +25,45 @@ class MotorcycleFinder:
         self.get_top_3_motorcycles()
 
     def get_category(self):
-        category = input("What category of motorcycle are you looking for? Supported Inputs (feel free to enter multiple):\n"
-                         "Standard, Dual sport, Supermotard, Sport bike, Cruiser, Scooter, Streetfighter, ")
-        if str.lower(category) != 'n/a':
-            self.category = category
+        category = input(
+            "What category of motorcycle are you looking for? Supported Inputs (feel free to enter multiple):\n"
+            "Standard, Dual sport, Naked, Sport bike, Supermoto, Enduro, Cruiser, Sport touring, Adventure, Electric\n")
+        categories = self.parse_category_input(category)
+        if categories is not None:
+            while not categories:
+                category = input("Couldn't detect a valid category, please try again. Valid categories:\n"
+                                 "Standard, Dual sport, Naked, Sport bike, Supermoto, Enduro, Cruiser, Sport touring, Adventure, Electric\n")
+                categories = self.parse_category_input(category)
+            self.categories = categories
+
+    def parse_category_input(self, _in):
+        category_list = []
+        if str.lower(_in) != 'n/a':
+            if re.search(r"(standard)", _in, re.IGNORECASE):
+                category_list.append("Standard")
+            if re.search(r"(dual)", _in, re.IGNORECASE):
+                category_list.append("Dual sport")
+            if re.search(r"(naked)", _in, re.IGNORECASE):
+                category_list.append("Naked")
+            if re.search(r"(sport[- ]?bike)|(sport(?!.*touring){0})", _in, re.IGNORECASE):
+                category_list.append("Sport bike")
+            if re.search(r"(supermoto)|(sumo)", _in, re.IGNORECASE):
+                category_list.append("Supermoto")
+            if re.search(r"(enduro)", _in, re.IGNORECASE):
+                category_list.append("Enduro")
+            if re.search(r"(cruiser)|(crusier)", _in, re.IGNORECASE):
+                category_list.append("Cruiser")
+            if re.search(r"(sport[- ?]touring)", _in, re.IGNORECASE):
+                category_list.append("Sport touring")
+            if re.search(r"(naked)", _in, re.IGNORECASE):
+                category_list.append("Naked")
+            if re.search(r"(adventure)", _in, re.IGNORECASE):
+                category_list.append("Adventure")
+            if re.search(r"(electric)", _in, re.IGNORECASE):
+                category_list.append("Electric")
+        else:
+            category_list = None
+        return category_list
 
     # TODO: $25000 doesn't seem to work
     def get_budget(self):
@@ -126,6 +161,25 @@ class MotorcycleFinder:
                     "ride quality, engine, reliability, value, and equipment\n")
 
     def get_top_3_motorcycles(self):
-        get_motorcycles(3, category=self.category, budget=self.budget, seat_height=self.seat_height,
-                        year_start=self.year_start, year_end=self.year_end, engine_types=self.engine_types,
-                        order_by=self.order_by)
+        response = get_motorcycles(3, categories=self.categories, budget=self.budget, seat_height=self.seat_height,
+                                   year_start=self.year_start, year_end=self.year_end, engine_types=self.engine_types,
+                                   order_by=self.order_by)
+
+        num2word = {2: 'two', 3: 'three'}
+        if response:
+            print(
+                f"\nThe top {f'{num2word[len(response)]} motorcycles' if len(response > 1) else 'motorcycle'} for you {'are' if len(response > 1) else 'is'}:")
+            for index, moto in enumerate(response, start=1):
+                print(
+                    f"{index}. {moto['year_start']}-{'current' if int(moto['year_end']) == 0 else moto['year_end']} {moto['make']} {moto['model']}\n"
+                    f"\tPrice(estimate): {moto['price']}\tCategory: {moto['category']}\tEngine Type: {moto['engine_type']}\tEngine Size: {moto['engine_size']}\tTank Range: {moto['tank_range']}\n"
+                    f"\tHorsepower: {moto['power']}\tSeat Height: {moto['seat_height']}\tWeight: {moto['weight']}\n")
+                review = moto['review']
+                print(f"\tReview Info (out of 5):")
+                print(f"\t\tOverall Rating: {review['overall_rating']}")
+                order_by = [" ".join(order.split("_")).title() for order in self.order_by]
+                for index, order in enumerate(order_by):
+                    print(f"\t\t{order}: {review[self.order_by[index]]}")
+                print()
+        else:  # TODO: IMPLEMENT THIS
+            input("Could not find any motorcycles matching your criteria. Would you like to try again?")

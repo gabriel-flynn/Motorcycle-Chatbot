@@ -292,6 +292,58 @@ def extract_engine_info_insurance_info_tank_range_and_power(html):
     return engine_size, engine_type, mpg, insurance_group, power, tank_range
 
 
+def parse_category(_category):
+    separator = ","
+
+    _category = " ".join(_category)
+    category = ""
+    print(_category)
+    # Check if it is a standard
+    category += f"{f'{separator} ' if category else ''}Standard" if re.search(r"(standard)", _category,
+                                                                              re.IGNORECASE) else ""
+
+    # Check if is dualsport
+    category += f"{f'{separator} ' if category else ''}Dual sport" if re.search(r"(dual)", _category,
+                                                                                re.IGNORECASE) else ""
+
+    # Check if it is a naked bike (going to consider streetfighter as naked - that includes the speed triples, street triple, ducati streetfighter, etc.
+    category += f"{f'{separator} ' if category else ''}Naked" if re.search(r"(naked)|(streetfighter)", _category, re.IGNORECASE) else ""
+
+    # Check if it is a sport bike
+    category += f"{f'{separator} ' if category else ''}Sport bike" if re.search(
+        r"(sport bike)|(super bike)|(sportbike)|(sportsbike)|^(sport)$", _category, re.IGNORECASE) else ""
+
+    # Check if it is a supermoto
+    category += f"{f'{separator} ' if category else ''}Supermoto" if re.search(r"(motard)|(supermoto)", _category,
+                                                                               re.IGNORECASE) else ""
+
+    # Grouping dirt bikes and enduro as MCN doesn't appear to cover many dirt bikes (or wikipedia just doesn't have a lot of them labeled as dirt bikes/enduro)
+    category += f"{f'{separator} ' if category else ''}Enduro" if re.search(r"(enduro)|(dirt)", _category,
+                                                                            re.IGNORECASE) else ""
+
+    # Check if it is a cruiser
+    category += f"{f'{separator} ' if category else ''}Cruiser" if re.search(
+        r"(cruiser)|(muscle)|(sportbike)|(chopper)|^(Touring)$", _category, re.IGNORECASE) else ""
+
+    # Check if it is a sport touring
+    category += f"{f'{separator} ' if category else ''}Sport touring" if re.search(r"(Sport[- ]?touring)|(Touring m)",
+                                                                                   _category, re.IGNORECASE) else ""
+
+    # Check if it is an adventure bike
+    category += f"{f'{separator} ' if category else ''}Adventure" if re.search(r"(adventure)", _category,
+                                                                               re.IGNORECASE) else ""
+
+    # Check if it is a scooter
+    category += f"{f'{separator} ' if category else ''}Scooter" if re.search(r"(scooter)|(underbone)", _category,
+                                                                             re.IGNORECASE) else ""
+
+    # Check if it is an electric bike
+    category += f"{f'{separator} ' if category else ''}Electric" if re.search(r"(electric motorcycle)", _category,
+                                                                              re.IGNORECASE) else ""
+
+    return category
+
+
 def parseHtml():
     path = f'{data_folder}/{mcn_folder}/{html_folder}'
     files = [f for f in listdir(path) if isfile(join(path, f))]
@@ -323,17 +375,20 @@ def parseHtml():
         # Get the price using kbb
         price = kbb.get_price(f'{year_start} {manufacturer} {model}')
         price = 0 if price is None else price[1:].replace(",", "")
+
+        # Get the category using wikipedia
         category = wikipedia.get_category(f'{manufacturer} {model}')
-        for c in category:
-            category_set.add(c)
-        category = " ".join(category)
-        moto = Motorcycle(make=manufacturer, model=model, year_start=year_start, year_end=year_end, price=price,
-                          category=category, engine_size=engine_size, engine_type=engine_type,
-                          insurance_group=insurance_group, mpg=mpg, tank_range=tank_range, power=power,
-                          seat_height=seat_height, weight=weight,
-                          review=review)
-        # print(moto)
-        moto_set.add(moto)
+        category = parse_category(category)
+        # for c in category:
+        #     category_set.add(c)
+        # category = " ".join(category)
+        print(category)
+        motorcycle = Motorcycle(make=manufacturer, model=model, year_start=year_start, year_end=year_end, price=price,
+                                category=category, engine_size=engine_size, engine_type=engine_type,
+                                insurance_group=insurance_group, mpg=mpg, tank_range=tank_range, power=power,
+                                seat_height=seat_height, weight=weight,
+                                review=review)
+        moto_set.add(motorcycle)
     pickle.dump(moto_set, open(f'{data_folder}/{mcn_folder}/moto_set.pickle', 'wb'))
     print(engine_types)
     print(category_set)
@@ -355,7 +410,7 @@ def create_motorcycle_model(_moto):
     review = create_review_model(_moto.review)
     motorcycle = MotorcycleModel(make=_moto.make, model=_moto.model, year_start=_moto.year_start,
                                  year_end=_moto.year_end,
-                                 price=_moto.price, category=_moto.category, engine_size=_moto.engine_size,
+                                 price=_moto.price, category=_moto.categories, engine_size=_moto.engine_size,
                                  engine_type=_moto.engine_type,
                                  insurance_group=_moto.insurance_group, mpg=_moto.mpg, tank_range=_moto.tank_range,
                                  power=_moto.power, seat_height=_moto.seat_height, weight=_moto.weight,
@@ -367,7 +422,7 @@ if __name__ == "__main__":
     # uncomment to regenerate review or html pages
     # scrape_review_urls()
     # scrape_review_html_pages()
-    # parseHtml()
+    parseHtml()
     load_dotenv()
     db_user = os.getenv('db_user')
     db_pass = os.getenv('db_pass')
