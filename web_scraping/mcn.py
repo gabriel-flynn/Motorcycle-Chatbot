@@ -91,7 +91,7 @@ def extract_model_and_year(model_and_year):
     manufacturer = ""
     model = ""
     year_start = 1800
-    year_end = 1800
+    year_end = 0
 
     curr_string = ""
     found_manufacturer = False
@@ -267,7 +267,7 @@ def extract_engine_info_insurance_info_tank_range_and_power(html):
 
     # Section index 0 - Specs
     specs = [spec.text for spec in sections[0].select(".review__facts-and-figures__item__value")]
-    engine_size = specs[0]
+    engine_size = specs[0][:-2] if len(specs[0]) > 0 else 0
     engine_type = get_engine_type(html, specs[1].lower().replace("-", ""))
 
     # Section index 1 - Mpg, costs & insurance

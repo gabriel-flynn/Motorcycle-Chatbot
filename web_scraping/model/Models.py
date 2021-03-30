@@ -18,7 +18,7 @@ class Motorcycle(Base):
     year_end = Column(Integer)
     price = Column(Integer)
     category = Column(String(40))
-    engine_size = Column(String(40))
+    engine_size = Column(Integer)
     engine_type = Column(String(40))
     insurance_group = Column(Integer)
     mpg = Column(Integer)
