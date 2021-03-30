@@ -25,7 +25,8 @@ class MotorcycleFinder:
         self.get_top_3_motorcycles()
 
     def get_category(self):
-        category = input("What category of motorcycle are you looking for? (Sport bike, naked bike, etc.)\n")
+        category = input("What category of motorcycle are you looking for? Supported Inputs (feel free to enter multiple):\n"
+                         "Standard, Dual sport, Supermotard, Sport bike, Cruiser, Scooter, Streetfighter, ")
         if str.lower(category) != 'n/a':
             self.category = category
 
@@ -38,7 +39,6 @@ class MotorcycleFinder:
             found = False
             while not found:
                 for ent in doc.ents:
-                    print(ent.text + " " + ent.label_)
                     if ent.label_ == 'MONEY' or ent.label_ == 'CARDINAL' or ent.label_ == 'DATE':
                         budget = re.sub(r'[$,]+', '', ent.text)
                         found = True
