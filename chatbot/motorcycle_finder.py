@@ -22,7 +22,7 @@ class MotorcycleFinder:
         self.get_year_range()
         self.get_engine_type()
         self.get_ranking_preference()
-        self.get_top_3_motorcycles()
+        return self.get_top_3_motorcycles()
 
     def get_category(self):
         category = input(
@@ -168,7 +168,7 @@ class MotorcycleFinder:
         num2word = {2: 'two', 3: 'three'}
         if response:
             print(
-                f"\nThe top {f'{num2word[len(response)]} motorcycles' if len(response > 1) else 'motorcycle'} for you {'are' if len(response > 1) else 'is'}:")
+                f"\nThe top {f'{num2word[len(response)]} motorcycles' if len(response) > 1 else 'motorcycle'} for you {'are' if len(response) > 1 else 'is'}:")
             for index, moto in enumerate(response, start=1):
                 print(
                     f"{index}. {moto['year_start']}-{'current' if int(moto['year_end']) == 0 else moto['year_end']} {moto['make']} {moto['model']}\n"
@@ -177,9 +177,11 @@ class MotorcycleFinder:
                 review = moto['review']
                 print(f"\tReview Info (out of 5):")
                 print(f"\t\tOverall Rating: {review['overall_rating']}")
-                order_by = [" ".join(order.split("_")).title() for order in self.order_by]
-                for index, order in enumerate(order_by):
-                    print(f"\t\t{order}: {review[self.order_by[index]]}")
+
+                review_categories = ["ride_quality", "engine", "reliability", "value", "equipment"] if len(self.order_by) < 5 else self.order_by
+                order_by = [" ".join(order.split("_")).title() for order in review_categories]
+                for indx, order in enumerate(order_by):
+                    print(f"\t\t{order}: {review[self.order_by[indx]]}")
                 print()
         else:  # TODO: IMPLEMENT THIS
-            input("Could not find any motorcycles matching your criteria. Would you like to try again?")
+            input("Could not find any motorcycles matching your criteria. Let's try again!")

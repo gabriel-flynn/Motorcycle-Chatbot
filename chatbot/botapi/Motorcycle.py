@@ -14,8 +14,6 @@ def get_motorcycles(top, **kwargs):
 
     data = {}
     data.update(dict(kwargs.items()))
-    print(data)
-    print(json.dumps(data))
     r = requests.post(f"{api_url}/motorcycles", params=params, data=json.dumps(data))
     if r.status_code == 200:
         return r.json()
