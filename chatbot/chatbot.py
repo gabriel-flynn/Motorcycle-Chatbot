@@ -6,7 +6,7 @@ from spacytextblob.spacytextblob import SpacyTextBlob
 
 from motorcycle_finder import MotorcycleFinder
 from helpers import is_no, is_yes_or_no, contains_yes_or_no
-from botapi.User import get_user_location, update_location, get_closest_track_travel_time
+from botapi.User import create_user_and_get_user_location, update_location, get_closest_track_travel_time, save_motorcycle_recommendations
 
 
 class Chatbot:
@@ -24,16 +24,16 @@ class Chatbot:
     # Controls the flow of the chatbot
     def start(self):
         if self.is_new_user:
-            # self.name = self.get_name()
-            # is_new_motorcycles = self.greet_user()
-            # if is_new_motorcycles:
-            #     self.provide_info_on_motorcycles()
-            # else:
-            #     print("That's awesome that you're already familiar with motorcycling!")
-            # self.prompt_user_if_they_want_overview_of_motorcycle_categories()
-            # top_motorcycles = self.motorcycle_finder.begin_questions()
+            self.name = self.get_name()
+            is_new_motorcycles = self.greet_user()
+            if is_new_motorcycles:
+                self.provide_info_on_motorcycles()
+            else:
+                print("That's awesome that you're already familiar with motorcycling!")
+            self.prompt_user_if_they_want_overview_of_motorcycle_categories()
+            top_motorcycles = self.motorcycle_finder.begin_questions()
             self.get_location()
-            self.save_user_info()
+            self.save_user_info(top_motorcycles)
 
     def get_name(self):
         greeting = "Hi, I'm Moto and I'm a chatbot that is very knowledgeable about motorcycles! " \
@@ -69,8 +69,8 @@ class Chatbot:
     def provide_info_on_motorcycles(self):
         print(
             "Motorcycling is one of my favorite things to do (or at least pretend to do, I am a bot after all)! "
-            "\nTo provide some background: a motorcycle is also commonly referred to as a motorbike, bike, or cycle and it is a two- or three-wheeled motor vehicle (although I think three-wheeled motor vehicles being called motorcycles is debatable)."
-            "\nMotorcycle design varies greatly to suit a range of different purposes: long-distance travel, commuting, cruising, sport, including racing, and off-road riding."
+            "\nTo provide some background: a motorcycle is also commonly referred to as a motorbike, bike, or cycle and it is a two- or three-wheeled motor vehicle (although I think three-wheeled motor vehicle being one is debatable)."
+            "\nMotorcycle design varies greatly to suit a range of different purposes: long-distance travel, commuting, cruising, sport, and off-road riding."
             "\nMotorcycling is riding a motorcycle and can involve other related social activity such as joining a motorcycle club, attending motorcycle rallies and going on group rides with friends or strangers.")
 
         print("\nSorry for all that information! Hopefully that helped and here's two fun facts about motorcycles: ")
@@ -149,7 +149,7 @@ class Chatbot:
             print("Ok, we'll go ahead and move onto the questions to help you find the perfect motorcycle for you!")
 
     def get_location(self):
-        response = get_user_location(self.is_new_user, self.name)
+        response = create_user_and_get_user_location(self.is_new_user, self.name)
         location_string = response['location']['location_string']
 
         print(location_string)
@@ -193,6 +193,6 @@ class Chatbot:
             website = f"\nHere's a link to their website to found out more information: {closest_track['url']}"
         print(f"The nearest motorcycle track is {travel_time} away from you! It's called {closest_track['name']} and it's located at {closest_track['address']}. {website}")
 
-    def save_user_info(self):
-        pass
+    def save_user_info(self, top_motorcycles):
+        save_motorcycle_recommendations(top_motorcycles)
 

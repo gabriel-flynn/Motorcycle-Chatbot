@@ -11,7 +11,7 @@ def get_user():
         return r.json()
 
 
-def get_user_location(is_new_user, name):
+def create_user_and_get_user_location(is_new_user, name):
     if is_new_user:
         r = requests.post(f"{api_url}/user", data=json.dumps({'name': name}))
         return r.json()
@@ -33,3 +33,7 @@ def make_test_user():
     r = requests.post(f"{api_url}/user", data=json.dumps({'name': 'Gabriel'}))
     print(r.status_code)
     print(r.json())
+
+
+def save_motorcycle_recommendations(motorcycles):
+    requests.post(f"{api_url}/user/motorcycles", data=json.dumps(motorcycles))
