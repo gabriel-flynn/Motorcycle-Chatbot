@@ -36,7 +36,6 @@ def is_yes_or_no(_in, nlp):
 
     # Check if first word is yes or no
     first_word = _in.split(" ")[0]
-    print(first_word)
 
     # Check if it's similar to yes
     tokens = nlp(f'yes {first_word}')
