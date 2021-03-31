@@ -19,6 +19,7 @@ class Chatbot:
         self.name = ""
         self.conn = sqlite3.connect("knowledge_base.db").cursor()
         self.motorcycle_finder = MotorcycleFinder(ner=self.ner)
+        self.top_motorcycles = []
         self.is_new_user = True
 
     # Controls the flow of the chatbot
@@ -31,9 +32,10 @@ class Chatbot:
             else:
                 print("That's awesome that you're already familiar with motorcycling!")
             self.prompt_user_if_they_want_overview_of_motorcycle_categories()
-            top_motorcycles = self.motorcycle_finder.begin_questions()
+            self.top_motorcycles = self.motorcycle_finder.begin_questions()
+            print(self.top_motorcycles)
             self.get_location()
-            self.save_user_info(top_motorcycles)
+            self.save_user_info(self.top_motorcycles)
 
     def get_name(self):
         greeting = "Hi, I'm Moto and I'm a chatbot that is very knowledgeable about motorcycles! " \
