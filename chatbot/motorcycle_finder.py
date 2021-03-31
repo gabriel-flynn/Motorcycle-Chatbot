@@ -183,5 +183,6 @@ class MotorcycleFinder:
                 for indx, order in enumerate(order_by):
                     print(f"\t\t{order}: {review[self.order_by[indx]]}")
                 print()
+                # TODO: ASK IF THEY WANT TO SEARCH AGAIN
         else:  # TODO: IMPLEMENT THIS
             input("Could not find any motorcycles matching your criteria. Let's try again!")

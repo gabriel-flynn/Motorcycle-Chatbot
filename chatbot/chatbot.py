@@ -5,7 +5,8 @@ import spacy
 from spacytextblob.spacytextblob import SpacyTextBlob
 
 from motorcycle_finder import MotorcycleFinder
-from helpers import is_no, is_yes_or_no
+from helpers import is_no, is_yes_or_no, contains_yes_or_no
+from botapi.User import get_user_location, update_location, get_closest_track_travel_time
 
 
 class Chatbot:
@@ -18,10 +19,11 @@ class Chatbot:
         self.name = ""
         self.conn = sqlite3.connect("knowledge_base.db").cursor()
         self.motorcycle_finder = MotorcycleFinder(ner=self.ner)
+        self.is_new_user = True
 
     # Controls the flow of the chatbot
     def start(self):
-        if not self.user_data:
+        if self.is_new_user:
             # self.name = self.get_name()
             # is_new_motorcycles = self.greet_user()
             # if is_new_motorcycles:
@@ -29,7 +31,9 @@ class Chatbot:
             # else:
             #     print("That's awesome that you're already familiar with motorcycling!")
             # self.prompt_user_if_they_want_overview_of_motorcycle_categories()
-            self.motorcycle_finder.begin_questions()
+            # top_motorcycles = self.motorcycle_finder.begin_questions()
+            self.get_location()
+            self.save_user_info()
 
     def get_name(self):
         greeting = "Hi, I'm Moto and I'm a chatbot that is very knowledgeable about motorcycles! " \
@@ -143,3 +147,52 @@ class Chatbot:
                   "\nDirt bikes are amazing off-road bikes as the name implies but aren't necessarily the best for the street as they usually aren't able to achieve very high top speeds as they're made for off-road and they also tend to have a much more frequent maintenance schedule. Dual-sport bikes would be a good option to look for if you want to do a pretty equal amount of off-road and street riding")
         else:
             print("Ok, we'll go ahead and move onto the questions to help you find the perfect motorcycle for you!")
+
+    def get_location(self):
+        response = get_user_location(self.is_new_user, self.name)
+        location_string = response['location']['location_string']
+
+        print(location_string)
+        if location_string:
+            location_message = f"I have detected you as being located near {location_string} is that correct?"
+        else:
+            location_message = "I was unable to detect your location, where are you located?" \
+                               "\nPlease enter either a location near to where you're located:" \
+                               "\nExamples: 'Texas', 'Dallas, Texas', 'United States', etc."
+
+        # Encourage user to attend a track day and confirm their location
+        _in = input(
+            "I hope that information helped you in the search for your next motorcycle! While motorcycling definitely isn't the safest hobby, it's one of my favorites!\n"
+            "I highly encourage you to attend a track day at your local motorcycle track as it's a great way to improve as well as being a great opportunity to push your new bike to it's limits!"
+            f"\n\n{location_message}\n")
+
+        no = False
+        if contains_yes_or_no(_in, self.nlp):
+            if not is_yes_or_no(_in, self.nlp):
+                no = True
+                _in = input("Please enter either a location near to where you're located:"
+                            "\nExamples: 'Texas', 'Dallas, Texas', 'United States', etc.")
+
+        if not location_string or no:
+            location = ""
+            while not location:
+                doc = self.nlp(_in)
+                for token in doc.ents:
+                    if token.label_ == "GPE" or token.label_ == "ORG":  # Sometimes city gets detected as an ORG
+                        location += f'{", " if location else ""}{token.text}'
+                if location:
+                    break
+                _in = input(
+                    "I didn't quite a catch your location, please input something like 'Texas' 'Dallas, Texas', 'United States', 'UT Dallas' etc.")
+            update_location(location)
+        print("Finding travel time to the nearest track...\n")
+        response = get_closest_track_travel_time()
+        travel_time = response['travel_time']
+        closest_track = response['track']
+        if closest_track['url']:
+            website = f"\nHere's a link to their website to found out more information: {closest_track['url']}"
+        print(f"The nearest motorcycle track is {travel_time} away from you! It's called {closest_track['name']} and it's located at {closest_track['address']}. {website}")
+
+    def save_user_info(self):
+        pass
+
