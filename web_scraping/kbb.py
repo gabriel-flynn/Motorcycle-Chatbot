@@ -1,10 +1,5 @@
 import pickle
-import re
-import urllib.request
 from os import path, mkdir
-
-from googlesearch import search
-from bs4 import BeautifulSoup
 
 # https://www.kbb.com/motorcycles/suzuki/sv650/2006/?pricetype=retail
 

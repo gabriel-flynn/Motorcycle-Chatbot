@@ -10,7 +10,8 @@ from urllib.error import HTTPError
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
-from sqlalchemy import create_engine, text
+from dotenv import load_dotenv
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from web_scraping import kbb, wikipedia
@@ -18,7 +19,6 @@ from web_scraping.Motorcycle import Motorcycle
 from web_scraping.Review import Review
 from web_scraping.model.Models import Motorcycle as MotorcycleModel
 from web_scraping.model.Models import Review as ReviewModel
-from dotenv import load_dotenv
 
 base_url = "https://www.motorcyclenews.com"
 data_folder = 'data'
@@ -307,7 +307,8 @@ def parse_category(_category):
                                                                                 re.IGNORECASE) else ""
 
     # Check if it is a naked bike (going to consider streetfighter as naked - that includes the speed triples, street triple, ducati streetfighter, etc.
-    category += f"{f'{separator} ' if category else ''}Naked" if re.search(r"(naked)|(streetfighter)", _category, re.IGNORECASE) else ""
+    category += f"{f'{separator} ' if category else ''}Naked" if re.search(r"(naked)|(streetfighter)", _category,
+                                                                           re.IGNORECASE) else ""
 
     # Check if it is a sport bike
     category += f"{f'{separator} ' if category else ''}Sport bike" if re.search(
@@ -410,7 +411,7 @@ def create_motorcycle_model(_moto):
     review = create_review_model(_moto.review)
     motorcycle = MotorcycleModel(make=_moto.make, model=_moto.model, year_start=_moto.year_start,
                                  year_end=_moto.year_end,
-                                 price=_moto.price, category=_moto.categories, engine_size=_moto.engine_size,
+                                 price=_moto.price, category=_moto.category, engine_size=_moto.engine_size,
                                  engine_type=_moto.engine_type,
                                  insurance_group=_moto.insurance_group, mpg=_moto.mpg, tank_range=_moto.tank_range,
                                  power=_moto.power, seat_height=_moto.seat_height, weight=_moto.weight,

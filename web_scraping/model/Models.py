@@ -2,6 +2,7 @@ import os
 
 from dotenv import load_dotenv
 from sqlalchemy import Column, Integer, String, create_engine, Text, ForeignKey
+from sqlalchemy.dialects.mysql import BIGINT
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
@@ -11,7 +12,7 @@ Base = declarative_base()
 class Motorcycle(Base):
     __tablename__ = 'motorcycles'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(BIGINT(unsigned=True), primary_key=True)
     make = Column(String(40))
     model = Column(String(40))
     year_start = Column(Integer)
@@ -26,14 +27,14 @@ class Motorcycle(Base):
     power = Column(Integer)
     seat_height = Column(Integer)
     weight = Column(Integer)
-    review_id = Column(Integer, ForeignKey('reviews.id'))
+    review_id = Column(BIGINT(unsigned=True), ForeignKey('reviews.id'))
     review = relationship("Review", backref="reviews")
 
 
 class Review(Base):
     __tablename__ = 'reviews'
 
-    id = Column(Integer, primary_key=True)
+    id = Column(BIGINT(unsigned=True), primary_key=True)
     overall_rating = Column(Integer)
     overall_rating_review_text = Column(Text)
     ride_quality = Column(Integer)

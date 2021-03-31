@@ -1,5 +1,4 @@
 class Motorcycle:
-
     """
     :param make: manufacturer of the motorcycle
     :param model: model of the motorcycle
@@ -17,7 +16,9 @@ class Motorcycle:
     :param weight: weight of the bike
     :param review: Review associated with the bike
     """
-    def __init__(self, make, model, year_start, year_end, price, category, engine_size, engine_type, insurance_group, mpg, tank_range, power, seat_height, weight, review):
+
+    def __init__(self, make, model, year_start, year_end, price, category, engine_size, engine_type, insurance_group,
+                 mpg, tank_range, power, seat_height, weight, review):
         self.review = review
         self.weight = weight
         self.seat_height = seat_height
