@@ -6,21 +6,25 @@ from spacytextblob.spacytextblob import SpacyTextBlob
 
 from motorcycle_finder import MotorcycleFinder
 from helpers import is_no, is_yes_or_no, contains_yes_or_no
-from botapi.User import create_user_and_get_user_location, update_location, get_closest_track_travel_time, save_motorcycle_recommendations
+from botapi.User import create_user_and_get_user_location, update_location, get_closest_track_travel_time, \
+    save_motorcycle_recommendations
 
 
 class Chatbot:
-    def __init__(self, user_data):
+    def __init__(self, name="", motorcycles=[], closest_track=None, **kwargs):
         self.nlp = spacy.load("en_core_web_md")
 
         # For NER (at least for detecting a person's name) it seems to perform a lot better with small, it wouldn't detect my name on medium
         self.ner = spacy.load("en_core_web_sm")
-        self.user_data = user_data
-        self.name = ""
+
+        # user data
+        self.name = name
+        self.motorcycles = motorcycles
+        self.closest_track = closest_track
+
         self.conn = sqlite3.connect("knowledge_base.db").cursor()
         self.motorcycle_finder = MotorcycleFinder(ner=self.ner)
-        self.top_motorcycles = []
-        self.is_new_user = True
+        self.is_new_user = True  # will eventually be something like True if name else False
 
     # Controls the flow of the chatbot
     def start(self):
@@ -32,10 +36,9 @@ class Chatbot:
             else:
                 print("That's awesome that you're already familiar with motorcycling!")
             self.prompt_user_if_they_want_overview_of_motorcycle_categories()
-            self.top_motorcycles = self.motorcycle_finder.begin_questions()
-            print(self.top_motorcycles)
+            self.motorcycles = self.motorcycle_finder.begin_questions()
             self.get_location()
-            self.save_user_info(self.top_motorcycles)
+            self.save_user_info(self.motorcycles)
 
     def get_name(self):
         greeting = "Hi, I'm Moto and I'm a chatbot that is very knowledgeable about motorcycles! " \
@@ -191,10 +194,11 @@ class Chatbot:
         response = get_closest_track_travel_time()
         travel_time = response['travel_time']
         closest_track = response['track']
+        website = ""
         if closest_track['url']:
             website = f"\nHere's a link to their website to found out more information: {closest_track['url']}"
-        print(f"The nearest motorcycle track is {travel_time} away from you! It's called {closest_track['name']} and it's located at {closest_track['address']}. {website}")
+        print(
+            f"The nearest motorcycle track is {travel_time} away from you! It's called {closest_track['name']} and it's located at {closest_track['address']}. {website}")
 
     def save_user_info(self, top_motorcycles):
         save_motorcycle_recommendations(top_motorcycles)
-
