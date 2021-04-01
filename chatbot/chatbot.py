@@ -24,7 +24,6 @@ class Chatbot:
         self.name = name
         self.motorcycles = motorcycles
         self.closest_track = closest_track
-
         self.conn = sqlite3.connect("knowledge_base.db").cursor()
         self.motorcycle_finder = MotorcycleFinder(ner=self.ner)
         self.sbert_model = SentenceTransformer('stsb-roberta-base')
@@ -49,9 +48,8 @@ class Chatbot:
             self.prompt_user_if_they_want_overview_of_motorcycle_categories()
             self.motorcycles = self.motorcycle_finder.begin_questions()
             self.get_location()
-            self.save_user_info(self.motorcycles)
+            save_motorcycle_recommendations(self.motorcycles)
         self.allow_user_to_ask_questions()
-
 
     def get_name(self):
         greeting = "Hi, I'm Moto and I'm a chatbot that is very knowledgeable about motorcycles! " \
@@ -106,51 +104,9 @@ class Chatbot:
         if is_no(question, self.nlp):
             return
         else:
-            doc = self.nlp(question)
-            query = ""
-            while not query:
-                last_adj = []
-                for indx, token in enumerate(doc):
-                    if token.pos_ == "NOUN":
-                        if last_adj and last_adj[1] == indx - 1:
-                            query += last_adj[0].text + " "
-                        query += token.lemma_  # Get the lemma of the word - helps for plurals like licenses, motorcycles, etc. where we may not be able to find licenses but we can find license
-                        break
-                    elif token.pos_ == "ADJ":
-                        last_adj = [token, indx]
-                if not query:
-                    input("I don't think that was a valid question or command, please try another question")
-            self.conn.execute(
-                f"select sentence FROM data where sentence like '%{query}%' and sentence not like '%[%' and sentence not like '%ISBN%' and sentence not like '%^ %' ")
-            rows = self.conn.fetchall()
-            if not rows:
-                print(f"I couldn't find anything that matched {query} exactly. I'll try another method")
-            new_query = ""
-            for indx, q in enumerate(query.split(" ")):
-                if indx == 0:
-                    new_query = f"where sentence like '%{q}%' "
-                else:
-                    new_query += f"and sentence like '%{q}%'"
-
-            self.conn.execute(
-                f"select sentence FROM data {new_query} and sentence not like '%[%' and sentence not like '%ISBN%' and sentence not like '%^ %' ")
-            rows = self.conn.fetchall()
-            if not rows:
-                print(
-                    f"Even with the 2nd method I couldn't find anything, sorry about that! We'll move onto something else")
-            else:
-                print(
-                    f"\nI found {len(rows)} result{'s' if len(rows) >= 2 else ''}, here's {2 if len(rows) >= 2 else 'the result'}:")
-                if len(rows) >= 2:
-                    results = random.sample(rows, 2)
-                else:
-                    results = rows
-
-                for indx, r in enumerate(results, start=1):
-                    print(f'{indx}. {r[0]}')
-
-                print(
-                    "Hopefully that answered your question! If not you'll have an opportunity to ask me more questions later")
+            self.ask_question(question)
+            print(
+                "Hopefully that answered your question! If not you'll have an opportunity to ask me more questions later")
 
     def prompt_user_if_they_want_overview_of_motorcycle_categories(self):
         _in = input(
@@ -213,40 +169,18 @@ class Chatbot:
         print(
             f"The nearest motorcycle track is {travel_time} away from you! It's called {closest_track['name']} and it's located at {closest_track['address']}. {website}")
 
-    def save_user_info(self, top_motorcycles):
-        save_motorcycle_recommendations(top_motorcycles)
-
     # Returns false if they want to continue with previous session data, true if they want to start over
     def get_continue_session_or_restart(self):
-        while True:
-            _in = input(f"Hey it's Moto here again and I'm super happy to get the change to talk to you again!"
-                        f"\nAm I speaking to {self.name}? If you're not {self.name} or you'd like to meet me all over again just tell me you want to start over or that it's not you\n")
+        _in = input(f"Hey it's Moto here again and I'm super happy to get the change to talk to you again!"
+                    f"\nAm I speaking to {self.name}? If you're not {self.name} or you'd like to meet me all over again just tell me you want to start over or that it's not you\n")
 
-            # Perform semantic textual similarity using SentenceTransformer
-            no_sentences = ["No, I want to start over", "No, that's not me", "I want to meet all over again",
-                            "Let's start over", f"No I'm not {self.name}"]
-            yes_sentences = [f"Yes I'm {self.name}", f"Yes, you got the right person", "I don't want to start over",
-                             "Yes that's me"]
-            sentences2 = [_in]
-
-            no_embeddings = self.sbert_model.encode(no_sentences, convert_to_tensor=True)
-            yes_embeddings = self.sbert_model.encode(yes_sentences, convert_to_tensor=True)
-            answer_embedding = self.sbert_model.encode(sentences2, convert_to_tensor=True)
-
-            cosine_scores = util.pytorch_cos_sim(no_embeddings, answer_embedding)
-            max_no = 0
-            for i in range(len(no_sentences)):
-                # print("{} \t\t {} \t\t Score: {:.4f}".format(no_sentences[i], _in, cosine_scores[i][0]))
-                max_no = max(max_no, cosine_scores[i][0])
-
-            cosine_scores = util.pytorch_cos_sim(yes_embeddings, answer_embedding)
-            max_yes = 0
-            for i in range(len(yes_sentences)):
-                # print("{} \t\t {} \t\t Score: {:.4f}".format(yes_sentences[i], _in, cosine_scores[i][0]))
-                max_yes = max(max_yes, cosine_scores[i][0])
-
-            # print(f"{'yes' if max_yes > max_no else 'no'}")
-            return False if max_yes > max_no else True
+        # Perform semantic textual similarity using SentenceTransformer
+        no_sentences = ["No, I want to start over", "No, that's not me", "I want to meet all over again",
+                        "Let's start over", f"No I'm not {self.name}"]
+        yes_sentences = [f"Yes I'm {self.name}", f"Yes, you got the right person", "I don't want to start over",
+                         "Yes that's me"]
+        return self.compute_if_first_sentences_has_higher_cosine_similarity(_in, no_sentences,
+                                                                            yes_sentences)  # Returns true if the first _sentences argument is True
 
     def get_user_wants_to_search_again(self):
         # TODO: Handle case where they had no motorcycles suggested to them (none matched their criteria)
@@ -255,26 +189,76 @@ class Chatbot:
             f"\nDon't worry, I won't be mad if you go with something else but make sure you don't forget to visit the track I told you about earlier {self.closest_track['name']} if you get the change, you won't regret it!"
             "\n\nEnough about that, would you like to search for another motorcycle? If not I'm happy to provide you with some interesting facts and answer your questions!\n")
 
-        # Perform semantic textual similarity using SentenceTransformer
+        yes_sentences = ["Yes, that sounds great", "Yes, I would love more recommendations",
+                         "Sure, let's search for more motorcycles"]
         no_sentences = ["No, I'm good for now", "No, I'd rather hear some interesting facts", "Nah, I'd rather not"]
-        yes_sentences = ["Yes, that sounds great", "Yes, I would love more recommendations", "Sure, let's search for more motorcycles"]
-        sentences2 = [_in]
+        return self.compute_if_first_sentences_has_higher_cosine_similarity(_in, yes_sentences, no_sentences)
 
-        no_embeddings = self.sbert_model.encode(no_sentences, convert_to_tensor=True)
-        yes_embeddings = self.sbert_model.encode(yes_sentences, convert_to_tensor=True)
-        answer_embedding = self.sbert_model.encode(sentences2, convert_to_tensor=True)
+    # Return true if sentences1 has the highest similarity score and false if sentences2 has the highest
+    def compute_if_first_sentences_has_higher_cosine_similarity(self, _in, sentences1, sentences2):
+        # Perform semantic textual similarity using SentenceTransformer
+        _input = [_in]
 
-        cosine_scores = util.pytorch_cos_sim(no_embeddings, answer_embedding)
-        max_no = 0
-        for i in range(len(no_sentences)):
-            max_no = max(max_no, cosine_scores[i][0])
+        sentence1_embeddings = self.sbert_model.encode(sentences1, convert_to_tensor=True)
+        sentence2_embeddings = self.sbert_model.encode(sentences2, convert_to_tensor=True)
+        answer_embedding = self.sbert_model.encode(_input, convert_to_tensor=True)
 
-        cosine_scores = util.pytorch_cos_sim(yes_embeddings, answer_embedding)
-        max_yes = 0
-        for i in range(len(yes_sentences)):
-            max_yes = max(max_yes, cosine_scores[i][0])
+        cosine_scores = util.pytorch_cos_sim(sentence1_embeddings, answer_embedding)
+        max_one = 0
+        for i in range(len(sentences1)):
+            max_one = max(max_one, cosine_scores[i][0])
 
-        return True if max_yes > max_no else False
+        cosine_scores = util.pytorch_cos_sim(sentence2_embeddings, answer_embedding)
+        max_two = 0
+        for i in range(len(sentences2)):
+            max_two = max(max_two, cosine_scores[i][0])
+
+        return True if max_one > max_two else False
+
+    def ask_question(self, initial_input):
+        doc = self.nlp(initial_input)
+        query = ""
+        while not query:
+            last_adj = []
+            for indx, token in enumerate(doc):
+                if token.pos_ == "NOUN":
+                    if last_adj and last_adj[1] == indx - 1:
+                        query += last_adj[0].text + " "
+                    query += token.lemma_  # Get the lemma of the word - helps for plurals like licenses, motorcycles, etc. where we may not be able to find licenses but we can find license
+                    break
+                elif token.pos_ == "ADJ":
+                    last_adj = [token, indx]
+            if not query:
+                query = input("I don't think that was a valid question or command, please try another question")
+        self.conn.execute(
+            f"select sentence FROM data where sentence like '%{query}%' and sentence not like '%[%' and sentence not like '%ISBN%' and sentence not like '%^ %' ")
+        rows = self.conn.fetchall()
+        if not rows:
+            print(f"I couldn't find anything that matched {query} exactly. I'll try another method")
+        new_query = ""
+        for indx, q in enumerate(query.split(" ")):
+            if indx == 0:
+                new_query = f"where sentence like '%{q}%' "
+            else:
+                new_query += f"and sentence like '%{q}%'"
+
+        self.conn.execute(
+            f"select sentence FROM data {new_query} and sentence not like '%[%' and sentence not like '%ISBN%' and sentence not like '%^ %' ")
+        rows = self.conn.fetchall()
+        if not rows:
+            print(
+                f"Even with the 2nd method I couldn't find anything, sorry about that! We'll move onto something else")
+        else:
+            print(
+                f"\nI found {len(rows)} result{'s' if len(rows) >= 2 else ''}, here's {2 if len(rows) >= 2 else 'the result'}:")
+            if len(rows) >= 2:
+                results = random.sample(rows, 2)
+            else:
+                results = rows
+
+            for indx, r in enumerate(results, start=1):
+                print(f'{indx}. {r[0]}')
 
     def allow_user_to_ask_questions(self):
-        pass
+        _in = input(
+            "Awesome! I love sharing the facts I know! To start tell me if you want to hear a random fact or if you have a question")
