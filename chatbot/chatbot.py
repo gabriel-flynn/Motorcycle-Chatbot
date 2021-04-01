@@ -2,6 +2,8 @@ import json
 import random
 
 import sqlite3
+import time
+
 import spacy
 from spacytextblob.spacytextblob import SpacyTextBlob
 
@@ -50,6 +52,7 @@ class Chatbot:
             self.get_location()
             save_motorcycle_recommendations(self.motorcycles)
         self.allow_user_to_ask_questions()
+        self.thank_user_for_their_time()
 
     def get_name(self):
         greeting = "Hi, I'm Moto and I'm a chatbot that is very knowledgeable about motorcycles! " \
@@ -93,9 +96,8 @@ class Chatbot:
 
         # Print two facts instead of one? Some of the results from this query still aren't great even with a lot of the junk ones removed
         self.conn.execute(
-            "select sentence FROM data where term == 'motorcycle' and sentence not like '%[%' and sentence not like '%ISBN%' and sentence not like '%^ %' ")
-        rows = self.conn.fetchall()
-        facts = random.sample(rows, 2)
+            "select sentence FROM data where term == 'motorcycle' and sentence not like '%[%' and sentence not like '%ISBN%' and sentence not like '%^ %' and sentence not like '%Wikipedia%' ORDER BY RANDOM() LIMIT 2")
+        facts = self.conn.fetchall()
         for i, fact in enumerate(facts, start=1):
             print(f'{i}. {fact[0]}')
 
@@ -199,21 +201,19 @@ class Chatbot:
         # Perform semantic textual similarity using SentenceTransformer
         _input = [_in]
 
-        sentence1_embeddings = self.sbert_model.encode(sentences1, convert_to_tensor=True)
-        sentence2_embeddings = self.sbert_model.encode(sentences2, convert_to_tensor=True)
-        answer_embedding = self.sbert_model.encode(_input, convert_to_tensor=True)
-
-        cosine_scores = util.pytorch_cos_sim(sentence1_embeddings, answer_embedding)
-        max_one = 0
-        for i in range(len(sentences1)):
-            max_one = max(max_one, cosine_scores[i][0])
-
-        cosine_scores = util.pytorch_cos_sim(sentence2_embeddings, answer_embedding)
-        max_two = 0
-        for i in range(len(sentences2)):
-            max_two = max(max_two, cosine_scores[i][0])
-
+        max_one = self.compute_highest_cosine_similarity(sentences1, _input)
+        max_two = self.compute_highest_cosine_similarity(sentences2, _input)
         return True if max_one > max_two else False
+
+    def compute_highest_cosine_similarity(self, sentences, _input):
+        embeddings = self.sbert_model.encode(sentences, convert_to_tensor=True)
+        answer_embedding = self.sbert_model.encode(_input, convert_to_tensor=True)
+        cosine_scores = util.pytorch_cos_sim(embeddings, answer_embedding)
+        _max = 0
+        for i in range(len(sentences)):
+            # print("{} \t\t {} \t\t Score: {:.4f}".format(sentences[i], _input, cosine_scores[i][0]))
+            _max = max(_max, cosine_scores[i][0])
+        return _max
 
     def ask_question(self, initial_input):
         doc = self.nlp(initial_input)
@@ -250,7 +250,7 @@ class Chatbot:
                 f"Even with the 2nd method I couldn't find anything, sorry about that! We'll move onto something else")
         else:
             print(
-                f"\nI found {len(rows)} result{'s' if len(rows) >= 2 else ''}, here's {2 if len(rows) >= 2 else 'the result'}:")
+                f"\nI found {len(rows)} result{'s' if len(rows) >= 2 else ''} for, here's {'2 of them' if len(rows) >= 2 else 'the result'}:")
             if len(rows) >= 2:
                 results = random.sample(rows, 2)
             else:
@@ -261,4 +261,43 @@ class Chatbot:
 
     def allow_user_to_ask_questions(self):
         _in = input(
-            "Awesome! I love sharing the facts I know! To start tell me if you want to hear a random fact or if you have a question")
+            "Awesome! I love sharing the facts I know! To start tell me if you want to hear a random fact or if you have a question.\n")
+        random_fact = ["I want to hear a random fact", "Tell me a random fact"]
+        question = ["I have a question", "Can I ask you something?", "Let me ask you a question"]
+
+        # If random fact
+        if self.compute_if_first_sentences_has_higher_cosine_similarity(_in, random_fact, question):
+            fact_queries = ['racing', 'sport', 'road', 'engine', 'motorcycle']
+            while True:
+                for i in range(3):
+                    term = random.sample(fact_queries, 1)[0]
+                    # Print two facts instead of one? Some of the results from this query still aren't great even with a lot of the junk ones removed
+                    print(f"\nFetching two facts under the term {term}")
+                    self.conn.execute(
+                        f"select sentence FROM data where term == '{term}' and sentence not like '%[%' and sentence not like '%ISBN%' and sentence not like '%^ %' and sentence not like '%Wikipedia%' ORDER BY RANDOM() LIMIT 2")
+                    facts = self.conn.fetchall()
+                    for i, fact in enumerate(facts, start=1):
+                        print(f'{i}. {fact[0]}')
+                    print()
+                    time.sleep(5)
+                _in = input("Would you like more facts or would you like to ask questions now?\n")
+                if not self.compute_if_first_sentences_has_higher_cosine_similarity(_in, random_fact, question):
+                    print("Ok we'll move onto questions now!")
+                    break
+                else:
+                    print("I'm glad you like my facts!")
+        while True:
+            question = input(
+                "\nDo you have any questions? Feel free to ask me things like 'How can I get a license?', 'What was the first motorcycle?',  'Tell me about licenses', etc. I'll do my best to answer it!\nIf you don't have any questions say I have no questions!\n")
+            done_with_questions = ["I have no questions", "I'm all done", "I don't have any"]
+
+            # Might need to tweak the similarity score threshold later
+            if self.compute_highest_cosine_similarity(done_with_questions, question) >= 0.5:
+                return
+            else:
+                self.ask_question(question)
+
+    def thank_user_for_their_time(self):
+        print(
+            f"\nIt was great getting to talk to you {self.name}, I had a lot fun! Hopefully you were able to learn more about motorcycles,"
+            f"feel free to come back and talk to me, I get lonely!")
