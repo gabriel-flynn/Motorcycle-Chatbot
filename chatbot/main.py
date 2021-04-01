@@ -1,8 +1,5 @@
-import json
-
-from chatbot import Chatbot
 from botapi.User import get_user
-
+from chatbot import Chatbot
 
 if __name__ == "__main__":
     print("Getting information on previous sessions..")

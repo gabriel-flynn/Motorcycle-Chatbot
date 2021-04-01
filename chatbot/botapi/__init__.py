@@ -1,2 +1,2 @@
-from . import User
 from . import Motorcycle
+from . import User

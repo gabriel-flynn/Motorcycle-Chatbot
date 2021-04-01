@@ -1,17 +1,15 @@
-import json
 import random
-
 import sqlite3
 import time
 
 import spacy
+from sentence_transformers import SentenceTransformer, util
 from spacytextblob.spacytextblob import SpacyTextBlob
 
-from motorcycle_finder import MotorcycleFinder
-from helpers import is_no, is_yes_or_no, contains_yes_or_no
 from botapi.User import create_user_and_get_user_location, update_location, get_closest_track_travel_time, \
     save_motorcycle_recommendations
-from sentence_transformers import SentenceTransformer, util
+from helpers import is_no, is_yes_or_no, contains_yes_or_no
+from motorcycle_finder import MotorcycleFinder
 
 
 class Chatbot:
