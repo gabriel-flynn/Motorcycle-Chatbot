@@ -41,25 +41,25 @@ class Chatbot:
 
     # Controls the flow of the chatbot
     def start(self):
-        # if not self.new_user:
-        #     self.new_user = self.get_continue_session_or_restart()
-        #
-        # wants_to_search = False
-        # if self.new_user:
-        #     self.name = self.get_name()
-        #     is_new_motorcycles = self.greet_user()
-        #     if is_new_motorcycles:
-        #         self.provide_info_on_motorcycles()
-        #     else:
-        #         print("That's awesome that you're already familiar with motorcycling!")
-        # else:
-        #     wants_to_search = self.get_user_wants_to_search_again()
-        # if self.new_user or wants_to_search:
-        #     self.prompt_user_if_they_want_overview_of_motorcycle_categories()
-        #     self.motorcycles = self.motorcycle_finder.begin_questions()
+        if not self.new_user:
+            self.new_user = self.get_continue_session_or_restart()
+
+        wants_to_search = False
+        if self.new_user:
+            self.name = self.get_name()
+            is_new_motorcycles = self.greet_user()
+            if is_new_motorcycles:
+                self.provide_info_on_motorcycles()
+            else:
+                print("That's awesome that you're already familiar with motorcycling!")
+        else:
+            wants_to_search = self.get_user_wants_to_search_again()
+        if self.new_user or wants_to_search:
+            self.prompt_user_if_they_want_overview_of_motorcycle_categories()
+            self.motorcycles = self.motorcycle_finder.begin_questions()
         self.get_location()
         save_motorcycle_recommendations(self.motorcycles)
-        self.allow_user_to_ask_questions()
+        self.allow_user_to_ask_questions(self.new_user or wants_to_search) # Pass in whether the user came from the search flow or went directly to
         self.thank_user_for_their_time()
 
     def get_name(self):
@@ -175,7 +175,7 @@ class Chatbot:
         closest_track = response['track']
         website = ""
         if closest_track['url']:
-            website = f"\nHere's a link to their website to found out more information: {closest_track['url']}"
+            website = f"\nHere's a link to their website to find out more information: {closest_track['url']}"
         print(
             f"The nearest motorcycle track is {travel_time} away from you! It's called {closest_track['name']} and it's located at {closest_track['address']}. {website}")
 
@@ -267,9 +267,13 @@ class Chatbot:
             for indx, r in enumerate(results, start=1):
                 print(f'{indx}. {r[0]}')
 
-    def allow_user_to_ask_questions(self):
+    def allow_user_to_ask_questions(self, came_from_search):
+        if came_from_search:
+            message = "Now you'll have the opportunity to ask me any questions you have or hear random facts that I know! Go ahead and tell me if you want to hears fact or ask questions!"
+        else:
+            message = "Awesome! I love sharing the facts I know! To start tell me if you want to hear a random fact or if you have a question."
         _in = input(
-            "Awesome! I love sharing the facts I know! To start tell me if you want to hear a random fact or if you have a question.\n")
+            f"{message}\n")
         random_fact = ["I want to hear a random fact", "Tell me a random fact"]
         question = ["I have a question", "Can I ask you something?", "Let me ask you a question"]
 
