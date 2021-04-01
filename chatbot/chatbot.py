@@ -267,17 +267,14 @@ class Chatbot:
         cosine_scores = util.pytorch_cos_sim(no_embeddings, answer_embedding)
         max_no = 0
         for i in range(len(no_sentences)):
-            # print("{} \t\t {} \t\t Score: {:.4f}".format(no_sentences[i], _in, cosine_scores[i][0]))
             max_no = max(max_no, cosine_scores[i][0])
 
         cosine_scores = util.pytorch_cos_sim(yes_embeddings, answer_embedding)
         max_yes = 0
         for i in range(len(yes_sentences)):
-            # print("{} \t\t {} \t\t Score: {:.4f}".format(yes_sentences[i], _in, cosine_scores[i][0]))
             max_yes = max(max_yes, cosine_scores[i][0])
 
-        # print(f"{'yes' if max_yes > max_no else 'no'}")
-        return False if max_yes > max_no else True
+        return True if max_yes > max_no else False
 
     def allow_user_to_ask_questions(self):
         pass
