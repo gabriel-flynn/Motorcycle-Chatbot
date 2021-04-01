@@ -1,5 +1,9 @@
 import pickle
+import re
+import urllib.request
 from os import path, mkdir
+from googlesearch import search
+from bs4 import BeautifulSoup
 
 data_folder = 'data'
 wiki_folder = 'wiki'

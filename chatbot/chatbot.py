@@ -1,3 +1,4 @@
+import json
 import random
 
 import sqlite3
@@ -8,10 +9,12 @@ from motorcycle_finder import MotorcycleFinder
 from helpers import is_no, is_yes_or_no, contains_yes_or_no
 from botapi.User import create_user_and_get_user_location, update_location, get_closest_track_travel_time, \
     save_motorcycle_recommendations
+from sentence_transformers import SentenceTransformer, util
 
 
 class Chatbot:
     def __init__(self, name="", motorcycles=[], closest_track=None, **kwargs):
+        print("Loading in NLP models...")
         self.nlp = spacy.load("en_core_web_md")
 
         # For NER (at least for detecting a person's name) it seems to perform a lot better with small, it wouldn't detect my name on medium
@@ -24,21 +27,31 @@ class Chatbot:
 
         self.conn = sqlite3.connect("knowledge_base.db").cursor()
         self.motorcycle_finder = MotorcycleFinder(ner=self.ner)
-        self.is_new_user = True  # will eventually be something like True if name else False
+        self.sbert_model = SentenceTransformer('stsb-roberta-base')
+        self.new_user = False if name else True  # will eventually be something like True if name else False
 
     # Controls the flow of the chatbot
     def start(self):
-        if self.is_new_user:
+        if not self.new_user:
+            self.new_user = self.get_continue_session_or_restart()
+
+        wants_to_search = False
+        if self.new_user:
             self.name = self.get_name()
             is_new_motorcycles = self.greet_user()
             if is_new_motorcycles:
                 self.provide_info_on_motorcycles()
             else:
                 print("That's awesome that you're already familiar with motorcycling!")
+        else:
+            wants_to_search = self.get_user_wants_to_search_again()
+        if self.new_user or wants_to_search:
             self.prompt_user_if_they_want_overview_of_motorcycle_categories()
             self.motorcycles = self.motorcycle_finder.begin_questions()
             self.get_location()
             self.save_user_info(self.motorcycles)
+        self.allow_user_to_ask_questions()
+
 
     def get_name(self):
         greeting = "Hi, I'm Moto and I'm a chatbot that is very knowledgeable about motorcycles! " \
@@ -154,7 +167,7 @@ class Chatbot:
             print("Ok, we'll go ahead and move onto the questions to help you find the perfect motorcycle for you!")
 
     def get_location(self):
-        response = create_user_and_get_user_location(self.is_new_user, self.name)
+        response = create_user_and_get_user_location(self.new_user, self.name)
         location_string = response['location']['location_string']
 
         print(location_string)
@@ -202,3 +215,69 @@ class Chatbot:
 
     def save_user_info(self, top_motorcycles):
         save_motorcycle_recommendations(top_motorcycles)
+
+    # Returns false if they want to continue with previous session data, true if they want to start over
+    def get_continue_session_or_restart(self):
+        while True:
+            _in = input(f"Hey it's Moto here again and I'm super happy to get the change to talk to you again!"
+                        f"\nAm I speaking to {self.name}? If you're not {self.name} or you'd like to meet me all over again just tell me you want to start over or that it's not you\n")
+
+            # Perform semantic textual similarity using SentenceTransformer
+            no_sentences = ["No, I want to start over", "No, that's not me", "I want to meet all over again",
+                            "Let's start over", f"No I'm not {self.name}"]
+            yes_sentences = [f"Yes I'm {self.name}", f"Yes, you got the right person", "I don't want to start over",
+                             "Yes that's me"]
+            sentences2 = [_in]
+
+            no_embeddings = self.sbert_model.encode(no_sentences, convert_to_tensor=True)
+            yes_embeddings = self.sbert_model.encode(yes_sentences, convert_to_tensor=True)
+            answer_embedding = self.sbert_model.encode(sentences2, convert_to_tensor=True)
+
+            cosine_scores = util.pytorch_cos_sim(no_embeddings, answer_embedding)
+            max_no = 0
+            for i in range(len(no_sentences)):
+                # print("{} \t\t {} \t\t Score: {:.4f}".format(no_sentences[i], _in, cosine_scores[i][0]))
+                max_no = max(max_no, cosine_scores[i][0])
+
+            cosine_scores = util.pytorch_cos_sim(yes_embeddings, answer_embedding)
+            max_yes = 0
+            for i in range(len(yes_sentences)):
+                # print("{} \t\t {} \t\t Score: {:.4f}".format(yes_sentences[i], _in, cosine_scores[i][0]))
+                max_yes = max(max_yes, cosine_scores[i][0])
+
+            # print(f"{'yes' if max_yes > max_no else 'no'}")
+            return False if max_yes > max_no else True
+
+    def get_user_wants_to_search_again(self):
+        # TODO: Handle case where they had no motorcycles suggested to them (none matched their criteria)
+        _in = input(
+            f"Thanks for clearing that up {self.name}! I had a ton of fun last time finding new bike recommendations for you such as the {self.motorcycles[0]['make']} {self.motorcycles[0]['model']} I told you about last time!\n"
+            f"\nDon't worry, I won't be mad if you go with something else but make sure you don't forget to visit the track I told you about earlier {self.closest_track['name']} if you get the change, you won't regret it!"
+            "\n\nEnough about that, would you like to search for another motorcycle? If not I'm happy to provide you with some interesting facts and answer your questions!\n")
+
+        # Perform semantic textual similarity using SentenceTransformer
+        no_sentences = ["No, I'm good for now", "No, I'd rather hear some interesting facts", "Nah, I'd rather not"]
+        yes_sentences = ["Yes, that sounds great", "Yes, I would love more recommendations", "Sure, let's search for more motorcycles"]
+        sentences2 = [_in]
+
+        no_embeddings = self.sbert_model.encode(no_sentences, convert_to_tensor=True)
+        yes_embeddings = self.sbert_model.encode(yes_sentences, convert_to_tensor=True)
+        answer_embedding = self.sbert_model.encode(sentences2, convert_to_tensor=True)
+
+        cosine_scores = util.pytorch_cos_sim(no_embeddings, answer_embedding)
+        max_no = 0
+        for i in range(len(no_sentences)):
+            # print("{} \t\t {} \t\t Score: {:.4f}".format(no_sentences[i], _in, cosine_scores[i][0]))
+            max_no = max(max_no, cosine_scores[i][0])
+
+        cosine_scores = util.pytorch_cos_sim(yes_embeddings, answer_embedding)
+        max_yes = 0
+        for i in range(len(yes_sentences)):
+            # print("{} \t\t {} \t\t Score: {:.4f}".format(yes_sentences[i], _in, cosine_scores[i][0]))
+            max_yes = max(max_yes, cosine_scores[i][0])
+
+        # print(f"{'yes' if max_yes > max_no else 'no'}")
+        return False if max_yes > max_no else True
+
+    def allow_user_to_ask_questions(self):
+        pass
