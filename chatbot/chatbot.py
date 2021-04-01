@@ -2,8 +2,10 @@ import random
 import sqlite3
 import time
 
-import spacy
+import en_core_web_md
+import en_core_web_sm
 from sentence_transformers import SentenceTransformer, util
+from spacy import Language
 from spacytextblob.spacytextblob import SpacyTextBlob
 
 from botapi.User import create_user_and_get_user_location, update_location, get_closest_track_travel_time, \
@@ -12,43 +14,51 @@ from helpers import is_no, is_yes_or_no, contains_yes_or_no
 from motorcycle_finder import MotorcycleFinder
 
 
+# Fixes SpacyTextBlob for spaCy 3.0
+# Credit to plaguss from github: https://github.com/SamEdwardes/spaCyTextBlob/issues/7
+@Language.component("spacy_text_blob")
+def textblob(doc):
+    spacy_text_blob = SpacyTextBlob()
+    return spacy_text_blob(doc)
+
+
 class Chatbot:
     def __init__(self, name="", motorcycles=[], closest_track=None, **kwargs):
         print("Loading in NLP models...")
-        self.nlp = spacy.load("en_core_web_md")
-
+        self.nlp = en_core_web_md.load()
+        self.sbert_model = SentenceTransformer('stsb-roberta-base')
         # For NER (at least for detecting a person's name) it seems to perform a lot better with small, it wouldn't detect my name on medium
-        self.ner = spacy.load("en_core_web_sm")
+        self.ner = en_core_web_sm.load()
 
         # user data
         self.name = name
         self.motorcycles = motorcycles
         self.closest_track = closest_track
+
         self.conn = sqlite3.connect("knowledge_base.db").cursor()
         self.motorcycle_finder = MotorcycleFinder(ner=self.ner)
-        self.sbert_model = SentenceTransformer('stsb-roberta-base')
         self.new_user = False if name else True  # will eventually be something like True if name else False
 
     # Controls the flow of the chatbot
     def start(self):
-        if not self.new_user:
-            self.new_user = self.get_continue_session_or_restart()
-
-        wants_to_search = False
-        if self.new_user:
-            self.name = self.get_name()
-            is_new_motorcycles = self.greet_user()
-            if is_new_motorcycles:
-                self.provide_info_on_motorcycles()
-            else:
-                print("That's awesome that you're already familiar with motorcycling!")
-        else:
-            wants_to_search = self.get_user_wants_to_search_again()
-        if self.new_user or wants_to_search:
-            self.prompt_user_if_they_want_overview_of_motorcycle_categories()
-            self.motorcycles = self.motorcycle_finder.begin_questions()
-            self.get_location()
-            save_motorcycle_recommendations(self.motorcycles)
+        # if not self.new_user:
+        #     self.new_user = self.get_continue_session_or_restart()
+        #
+        # wants_to_search = False
+        # if self.new_user:
+        #     self.name = self.get_name()
+        #     is_new_motorcycles = self.greet_user()
+        #     if is_new_motorcycles:
+        #         self.provide_info_on_motorcycles()
+        #     else:
+        #         print("That's awesome that you're already familiar with motorcycling!")
+        # else:
+        #     wants_to_search = self.get_user_wants_to_search_again()
+        # if self.new_user or wants_to_search:
+        #     self.prompt_user_if_they_want_overview_of_motorcycle_categories()
+        #     self.motorcycles = self.motorcycle_finder.begin_questions()
+        self.get_location()
+        save_motorcycle_recommendations(self.motorcycles)
         self.allow_user_to_ask_questions()
         self.thank_user_for_their_time()
 
@@ -75,7 +85,7 @@ class Chatbot:
 
         # Setup for sentiment analysis (if needed)
         spacy_text_blob = SpacyTextBlob()
-        self.nlp.add_pipe(spacy_text_blob)
+        self.nlp.add_pipe("spacy_text_blob")
 
         # Greet the user and get their response
         greeting = f"Hey {self.name}, it's nice to meet you! Are you new to motorcycles?\n"
@@ -118,7 +128,8 @@ class Chatbot:
                   "\nCrusiers tend to be one of the comfier bikes to ride and are great at 'crusing'. They make good commuter bikes but tend to a lack in cornering ability compared to sport bikes, naked bikes, etc."
                   "\nNaked bikes are, as the name implies, a little more naked when compared to sport bikes. They have very little fairings (body panels on a motorcycle), tend to have a lot of torque, and are usually much more comfortable than sport bikes as the seating position is more upright rather than hunched over"
                   "\nAdventure bikes are great for long distance rides as they tend to have lots of aftermarket parts available to add storage space, they are a lot taller than other bikes, and they handle trails really well. You can think of an adventure bike as a more practical or more steet-capable version of dirt bikes in a sense (geared better for the city, bigger engine, etc."
-                  "\nDirt bikes are amazing off-road bikes as the name implies but aren't necessarily the best for the street as they usually aren't able to achieve very high top speeds as they're made for off-road and they also tend to have a much more frequent maintenance schedule. Dual-sport bikes would be a good option to look for if you want to do a pretty equal amount of off-road and street riding")
+                  "\nDirt bikes are amazing off-road bikes as the name implies but aren't necessarily the best for the street as they usually aren't able to achieve very high top speeds as they're made for off-road and they also tend to have a much more frequent maintenance schedule. Dual-sport bikes would be a good option to look for if you want to do a pretty equal amount of off-road and street riding"
+                  "\nHopefully that helped give you more insight into the different types of motorcycles!\n")
         else:
             print("Ok, we'll go ahead and move onto the questions to help you find the perfect motorcycle for you!")
 
@@ -126,7 +137,6 @@ class Chatbot:
         response = create_user_and_get_user_location(self.new_user, self.name)
         location_string = response['location']['location_string']
 
-        print(location_string)
         if location_string:
             location_message = f"I have detected you as being located near {location_string} is that correct?"
         else:
@@ -248,7 +258,7 @@ class Chatbot:
                 f"Even with the 2nd method I couldn't find anything, sorry about that! We'll move onto something else")
         else:
             print(
-                f"\nI found {len(rows)} result{'s' if len(rows) >= 2 else ''} for, here's {'2 of them' if len(rows) >= 2 else 'the result'}:")
+                f"\nI found {len(rows)} result{'s' if len(rows) >= 2 else ''} for {query}, here's {'2 of them' if len(rows) >= 2 else 'the result'}:")
             if len(rows) >= 2:
                 results = random.sample(rows, 2)
             else:

@@ -12,8 +12,8 @@ def get_user():
 
 
 def create_user_and_get_user_location(is_new_user, name):
-    requests.delete(f"{api_url}/user")
     if is_new_user:
+        requests.delete(f"{api_url}/user")
         r = requests.post(f"{api_url}/user", data=json.dumps({'name': name}))
         return r.json()
     else:

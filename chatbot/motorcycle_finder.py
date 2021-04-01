@@ -13,10 +13,11 @@ class MotorcycleFinder:
         self.engine_types = []
         self.order_by = []
         self.ner = ner
+        self.review_categories = ["ride_quality", "engine", "reliability", "value", "equipment"]
 
     def begin_questions(self):
         print(
-            "If the question isn't important for you please type in N/A and it won't be used when finding your perfect bike")
+            "If the question isn't important for you please type in N/A and it won't be used when finding your perfect bike\n")
         self.get_category()
         self.get_budget()
         self.get_seat_height()
@@ -152,9 +153,16 @@ class MotorcycleFinder:
                 ranking_preference = re.findall(
                     r'(ride quality|engine|reliability|value|equipment)', ranking_preference)
                 if ranking_preference:
-                    index = ranking_preference.index("ride quality")
-                    if index:
-                        ranking_preference[index] = "ride_quality"
+                    try:
+                        index = ranking_preference.index("ride quality")
+                        if index:
+                            ranking_preference[index] = "ride_quality"
+                    except ValueError:
+                        pass
+                    if len(ranking_preference) < 5:
+                        for ranking in self.review_categories:
+                            if ranking not in ranking_preference:
+                                ranking_preference.append(ranking)
                     self.order_by = ranking_preference
                     return
                 ranking_preference = input(
@@ -179,8 +187,7 @@ class MotorcycleFinder:
                 print(f"\tReview Info (out of 5):")
                 print(f"\t\tOverall Rating: {review['overall_rating']}")
 
-                review_categories = ["ride_quality", "engine", "reliability", "value", "equipment"] if len(self.order_by) < 5 else self.order_by
-                order_by = [" ".join(order.split("_")).title() for order in review_categories]
+                order_by = [" ".join(order.split("_")) for order in self.order_by]
                 for indx, order in enumerate(order_by):
                     print(f"\t\t{order}: {review[self.order_by[indx]]}")
                 print()
