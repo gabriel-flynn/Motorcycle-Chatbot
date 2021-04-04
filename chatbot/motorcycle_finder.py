@@ -78,6 +78,7 @@ class MotorcycleFinder:
                 for ent in doc.ents:
                     if ent.label_ == 'MONEY' or ent.label_ == 'CARDINAL' or ent.label_ == 'DATE':
                         budget = re.sub(r'[$,]+', '', ent.text)
+                        budget = re.search(r'([0-9]+)', budget).group()
                         found = True
                         break
                 if not found:
@@ -89,18 +90,16 @@ class MotorcycleFinder:
     def get_seat_height(self):
         seat_height = input(
             "What is the max seat height you're looking for? (in inches - 31 or less is considered a low seat height, less than 34 is considered medium and anything 34 and above is considered tall)\n")
-        doc = self.ner(seat_height)
         if str.lower(seat_height) != 'n/a':
             found = False
             while not found:
-                for ent in doc.ents:
-                    if ent.label_ == 'CARDINAL':
-                        seat_height = re.sub(r'[^0-9]+', '', ent.text)
-                        found = True
+                seat_height = re.search(r'([0-9]+)', seat_height)
+                if seat_height:
+                    found = True
+                    seat_height = seat_height.group()
                 if not found:
                     seat_height = input(
                         "Couldn't detect a valid seat height. Please input something like 30in, 30, etc.\n")
-                    doc = self.ner(seat_height)
             self.seat_height = int(seat_height)
 
     # TODO: The NER is a little finicky - 2000 to 2009 doesn't get detected as a date but 2000 to 2010 does (maybe try the medium dataset for this to see if it works better?)
@@ -117,8 +116,8 @@ class MotorcycleFinder:
                 for ent in doc.ents:
                     if ent.label_ == 'DATE':
                         years_list = re.findall(r'[0-9]+', ent.text)
-                        year_start = years_list[0]
-                        year_end = years_list[1]
+                        year_start = years_list[0] if len(years_list) > 0 else 1800
+                        year_end = years_list[1] if len(years_list) > 1 else 1800
                         found = True
                         break
                 if not found:
@@ -191,7 +190,8 @@ class MotorcycleFinder:
                 for indx, order in enumerate(order_by):
                     print(f"\t\t{order}: {review[self.order_by[indx]]}")
                 print()
-                return response
+            return response
                 # TODO: ASK IF THEY WANT TO SEARCH AGAIN
         else:  # TODO: IMPLEMENT THIS
             input("Could not find any motorcycles matching your criteria. Let's try again!")
+            self.begin_questions()

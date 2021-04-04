@@ -24,7 +24,7 @@ def textblob(doc):
 
 class Chatbot:
     def __init__(self, name="", motorcycles=[], closest_track=None, **kwargs):
-        print("Loading in NLP models...")
+        print("Loading in NLP models... (this could take a minute or two)")
         self.nlp = en_core_web_md.load()
         self.sbert_model = SentenceTransformer('stsb-roberta-base')
         # For NER (at least for detecting a person's name) it seems to perform a lot better with small, it wouldn't detect my name on medium
@@ -57,9 +57,9 @@ class Chatbot:
         if self.new_user or wants_to_search:
             self.prompt_user_if_they_want_overview_of_motorcycle_categories()
             self.motorcycles = self.motorcycle_finder.begin_questions()
-        self.get_location()
-        save_motorcycle_recommendations(self.motorcycles)
-        self.allow_user_to_ask_questions(self.new_user or wants_to_search) # Pass in whether the user came from the search flow or went directly to
+            self.get_location()
+            save_motorcycle_recommendations(self.motorcycles)
+        self.allow_user_to_ask_questions() # Pass in whether the user came from the search flow or went directly to
         self.thank_user_for_their_time()
 
     def get_name(self):
@@ -96,7 +96,7 @@ class Chatbot:
     def provide_info_on_motorcycles(self):
         print(
             "Motorcycling is one of my favorite things to do (or at least pretend to do, I am a bot after all)! "
-            "\nTo provide some background: a motorcycle is also commonly referred to as a motorbike, bike, or cycle and it is a two- or three-wheeled motor vehicle (although I think three-wheeled motor vehicle being one is debatable)."
+            "\nTo provide some background: a motorcycle is also commonly referred to as a motorbike, bike, or cycle and it is a two- or three-wheeled motor vehicle (although I think a three-wheeled motor vehicle being one is debatable)."
             "\nMotorcycle design varies greatly to suit a range of different purposes: long-distance travel, commuting, cruising, sport, and off-road riding."
             "\nMotorcycling is riding a motorcycle and can involve other related social activity such as joining a motorcycle club, attending motorcycle rallies and going on group rides with friends or strangers.")
 
@@ -125,9 +125,9 @@ class Chatbot:
         if yes:
             print("\n\nSport bikes are high horsepower bikes designed for the race track. "
                   "The seating position is very aggressive and they typically aren't the best for commuting but they are the best at cornering."
-                  "\nCrusiers tend to be one of the comfier bikes to ride and are great at 'crusing'. They make good commuter bikes but tend to a lack in cornering ability compared to sport bikes, naked bikes, etc."
+                  "\nCruisers tend to be one of the comfier bikes to ride and are great at 'cruising'. They make good commuter bikes but tend to lack in cornering ability compared to sport bikes, naked bikes, etc."
                   "\nNaked bikes are, as the name implies, a little more naked when compared to sport bikes. They have very little fairings (body panels on a motorcycle), tend to have a lot of torque, and are usually much more comfortable than sport bikes as the seating position is more upright rather than hunched over"
-                  "\nAdventure bikes are great for long distance rides as they tend to have lots of aftermarket parts available to add storage space, they are a lot taller than other bikes, and they handle trails really well. You can think of an adventure bike as a more practical or more steet-capable version of dirt bikes in a sense (geared better for the city, bigger engine, etc."
+                  "\nAdventure bikes are great for long distance rides as they tend to have lots of aftermarket parts available to add storage space, they are a lot taller than other bikes, and they handle trails really well. You can think of an adventure bike as a more practical or more street-capable version of dirt bikes in a sense (geared better for the city, bigger engine, etc."
                   "\nDirt bikes are amazing off-road bikes as the name implies but aren't necessarily the best for the street as they usually aren't able to achieve very high top speeds as they're made for off-road and they also tend to have a much more frequent maintenance schedule. Dual-sport bikes would be a good option to look for if you want to do a pretty equal amount of off-road and street riding"
                   "\nHopefully that helped give you more insight into the different types of motorcycles!\n")
         else:
@@ -237,12 +237,12 @@ class Chatbot:
                 elif token.pos_ == "ADJ":
                     last_adj = [token, indx]
             if not query:
-                query = input("I don't think that was a valid question or command, please try another question")
+                query = input("I don't think that was a valid question or command, please try another question\n")
         self.conn.execute(
             f"select sentence FROM data where sentence like '%{query}%' and sentence not like '%[%' and sentence not like '%ISBN%' and sentence not like '%^ %' ")
         rows = self.conn.fetchall()
         if not rows:
-            print(f"I couldn't find anything that matched {query} exactly. I'll try another method")
+            print(f"I couldn't find anything that matched {query} exactly, I'll try another method.")
         new_query = ""
         for indx, q in enumerate(query.split(" ")):
             if indx == 0:
@@ -267,11 +267,8 @@ class Chatbot:
             for indx, r in enumerate(results, start=1):
                 print(f'{indx}. {r[0]}')
 
-    def allow_user_to_ask_questions(self, came_from_search):
-        if came_from_search:
-            message = "Now you'll have the opportunity to ask me any questions you have or hear random facts that I know! Go ahead and tell me if you want to hears fact or ask questions!"
-        else:
-            message = "Awesome! I love sharing the facts I know! To start tell me if you want to hear a random fact or if you have a question."
+    def allow_user_to_ask_questions(self):
+        message = "Now you'll have the opportunity to ask me any questions you have or hear random facts that I know! Go ahead and tell me if you want to hear facts or ask questions!"
         _in = input(
             f"{message}\n")
         random_fact = ["I want to hear a random fact", "Tell me a random fact"]
@@ -311,5 +308,5 @@ class Chatbot:
 
     def thank_user_for_their_time(self):
         print(
-            f"\nIt was great getting to talk to you {self.name}, I had a lot fun! Hopefully you were able to learn more about motorcycles,"
+            f"\nIt was great getting to talk to you {self.name}, I had a lot fun! Hopefully you were able to learn more about motorcycles, "
             f"feel free to come back and talk to me, I get lonely!")

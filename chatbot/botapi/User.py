@@ -2,7 +2,7 @@ import json
 
 import requests
 
-api_url = "http://localhost:8081"
+api_url = "http://motoinfo.space:8081"
 
 
 def get_user():
