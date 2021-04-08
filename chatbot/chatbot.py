@@ -5,21 +5,12 @@ import time
 import en_core_web_md
 import en_core_web_sm
 from sentence_transformers import SentenceTransformer, util
-from spacy import Language
 from spacytextblob.spacytextblob import SpacyTextBlob
 
 from botapi.User import create_user_and_get_user_location, update_location, get_closest_track_travel_time, \
     save_motorcycle_recommendations
 from helpers import is_no, is_yes_or_no, contains_yes_or_no
 from motorcycle_finder import MotorcycleFinder
-
-
-# Fixes SpacyTextBlob for spaCy 3.0
-# Credit to plaguss from github: https://github.com/SamEdwardes/spaCyTextBlob/issues/7
-@Language.component("spacy_text_blob")
-def textblob(doc):
-    spacy_text_blob = SpacyTextBlob()
-    return spacy_text_blob(doc)
 
 
 class Chatbot:
@@ -84,8 +75,7 @@ class Chatbot:
     def greet_user(self):
 
         # Setup for sentiment analysis (if needed)
-        spacy_text_blob = SpacyTextBlob()
-        self.nlp.add_pipe("spacy_text_blob")
+        self.nlp.add_pipe("spacytextblob")
 
         # Greet the user and get their response
         greeting = f"Hey {self.name}, it's nice to meet you! Are you new to motorcycles?\n"

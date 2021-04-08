@@ -69,7 +69,7 @@ def is_yes_or_no(_in, nlp):
     # (probably isn't very accurate but performing dependency parse or something else to get that info would be complicated and would require a lot of test cases/data)
     # With the test cases I tried on AllenNLP(https://demo.allennlp.org/sentiment-analysis/glove-sentiment-analysis) this worked really well but spaCy doesn't work quite as well with the same test cases I tried
     doc = nlp(_in)
-    if doc._.sentiment.polarity >= 0.0:
+    if doc._.polarity >= 0.0:
         return True
     else:
         return False
