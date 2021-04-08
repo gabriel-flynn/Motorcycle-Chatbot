@@ -195,7 +195,7 @@ class Chatbot:
     def get_user_wants_to_search_again(self):
         # TODO: Handle case where they had no motorcycles suggested to them (none matched their criteria)
         _in = input(
-            f"Thanks for clearing that up {self.name}! I had a ton of fun last time finding new bike recommendations for you such as the {self.motorcycles[0]['make']} {self.motorcycles[0]['model']} I told you about last time!\n"
+            f"Thanks for clearing that up {self.name}! I had a ton of fun last time finding new bike recommendations for you such as the {self.motorcycles[0]['make'] if self.motorcycles else ''} {self.motorcycles[0]['model'] if self.motorcycles else ''} I told you about last time!\n"
             f"\nDon't worry, I won't be mad if you go with something else but make sure you don't forget to visit the track I told you about earlier {self.closest_track['name']} if you get the change, you won't regret it!"
             "\n\nEnough about that, would you like to search for another motorcycle? If not I'm happy to provide you with some interesting facts and answer your questions!\n")
 

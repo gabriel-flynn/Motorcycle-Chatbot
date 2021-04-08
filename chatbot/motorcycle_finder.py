@@ -154,8 +154,7 @@ class MotorcycleFinder:
                 if ranking_preference:
                     try:
                         index = ranking_preference.index("ride quality")
-                        if index:
-                            ranking_preference[index] = "ride_quality"
+                        ranking_preference[index] = "ride_quality"
                     except ValueError:
                         pass
                     if len(ranking_preference) < 5:
@@ -193,5 +192,5 @@ class MotorcycleFinder:
             return response
                 # TODO: ASK IF THEY WANT TO SEARCH AGAIN
         else:  # TODO: IMPLEMENT THIS
-            input("Could not find any motorcycles matching your criteria. Let's try again!")
+            print("Could not find any motorcycles matching your criteria. Let's try again!")
             self.begin_questions()
